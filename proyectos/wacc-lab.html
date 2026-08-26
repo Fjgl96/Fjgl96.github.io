@@ -15,7 +15,7 @@
   <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700|Raleway:400,600,700|Poppins:400,500,600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Raleway:400,600,700|Poppins:400,500,600,700&display=swap" rel="stylesheet">
   <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
   <link href="../assets/css/style.css" rel="stylesheet">
@@ -48,7 +48,7 @@
       </header>
 
       <figure class="proyecto-media sub-figura">
-        <img src="../assets/img/proyectos/wacc-lab-damodaran.jpg" alt="Captura del Laboratorio de Costo de Capital con la curva y el álgebra" loading="lazy" decoding="async">
+        <img width="1200" height="900" src="../assets/img/proyectos/wacc-lab-damodaran.jpg" alt="Captura del Laboratorio de Costo de Capital con la curva y el álgebra" loading="lazy" decoding="async">
         <figcaption>La curva del WACC sobre la estructura de capital, con el álgebra al costado.</figcaption>
       </figure>
 
@@ -63,18 +63,17 @@
         <h2 id="t-flujo">Cómo funciona</h2>
         <p>Cada paso alimenta al siguiente y se muestra en pantalla con su fórmula y su número. Al mover un supuesto se ve exactamente qué eslabón de la cadena cambió y cuánto arrastró al resto.</p>
         <figure class="proyecto-media sub-figura sub-figura--bloques">
-          <img src="../assets/img/proyectos/flujo-wacc-lab.svg" alt="Álgebra bottom-up del Laboratorio de Costo de Capital" loading="lazy" decoding="async">
+          <img width="900" height="330" src="../assets/img/proyectos/flujo-wacc-lab.svg" alt="Álgebra bottom-up del Laboratorio de Costo de Capital" loading="lazy" decoding="async">
           <figcaption>Los siete pasos que van de la beta del sector al WACC final.</figcaption>
         </figure>
       </section>
 
       <section class="sub-seccion" aria-labelledby="t-bloques">
         <h2 id="t-bloques">Cómo está compuesto</h2>
-        <p>Cada capa depende solo de la que tiene encima. Los bloques en azul son los que
-           concentran el estado o la decisión; los punteados son piezas externas o de despliegue.</p>
+        <p>El scraper alimenta al HTML, y el HTML se basta solo a partir de ahí.</p>
         <figure class="proyecto-media sub-figura sub-figura--bloques">
-          <img src="../assets/img/proyectos/bloques-wacc-lab.svg" alt="Diagrama de bloques de Laboratorio de Costo de Capital" loading="lazy" decoding="async">
-          <figcaption>Composición por capas, con los módulos reales del repositorio.</figcaption>
+          <img width="900" height="558" src="../assets/img/proyectos/bloques-wacc-lab.svg" alt="Diagrama de bloques de Laboratorio de Costo de Capital" loading="lazy" decoding="async">
+          <figcaption>Toda la aplicación en un archivo: sin compilación, sin framework, sin backend.</figcaption>
         </figure>
         <div class="notas-grid"><div class="nota-bloque"><h3>Un solo archivo</h3><p>Toda la aplicación vive en wacc.html: sin build, sin framework.</p></div><div class="nota-bloque"><h3>Scraper propio</h3><p>Lee las tablas de Damodaran y las incrusta en el HTML.</p></div><div class="nota-bloque"><h3>Rating sintético</h3><p>La cobertura EBIT/intereses clasifica y define el spread.</p></div><div class="nota-bloque"><h3>Cuatro casos</h3><p>Presets que cargan escenarios completos para arrancar.</p></div></div>
       </section>

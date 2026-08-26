@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600" role="img" aria-label="Football field">
-  <rect x="2" y="2" width="796" height="596" rx="14" fill="#eaf2fb" stroke="#b9d5ee" stroke-width="3" stroke-dasharray="12 9"/>
-  <g transform="translate(352.0,186.0) scale(4.0000)" fill="none" stroke="#149ddd" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M3 3v18h18"/><path d="M7 15l4-5 3 3 5-7"/>
-  </g>
-  <text x="400.0" y="360.0" text-anchor="middle" font-family="Raleway, Helvetica, Arial, sans-serif" font-size="31.2" font-weight="700" fill="#173b6c">Football field</text>
-  <text x="400.0" y="406.8" text-anchor="middle" font-family="Open Sans, Helvetica, Arial, sans-serif" font-size="22.8" fill="#7d94b0">Reemplazar — 800 x 600 px</text>
-</svg>

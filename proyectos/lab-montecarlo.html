@@ -15,7 +15,7 @@
   <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700|Raleway:400,600,700|Poppins:400,500,600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Raleway:400,600,700|Poppins:400,500,600,700&display=swap" rel="stylesheet">
   <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
   <link href="../assets/css/style.css" rel="stylesheet">
@@ -47,7 +47,7 @@
       </header>
 
       <figure class="proyecto-media sub-figura">
-        <img src="../assets/img/proyectos/lab-montecarlo.jpg" alt="Laboratorio de Monte Carlo: fan chart de dos mil trayectorias de patrimonio con bandas de percentiles y la línea de meta" loading="lazy" decoding="async">
+        <img width="1200" height="900" src="../assets/img/proyectos/lab-montecarlo.jpg" alt="Laboratorio de Monte Carlo: fan chart de dos mil trayectorias de patrimonio con bandas de percentiles y la línea de meta" loading="lazy" decoding="async">
         <figcaption>Dos mil trayectorias resumidas en bandas de percentiles, con la meta como línea móvil.</figcaption>
       </figure>
 
@@ -60,11 +60,10 @@
 
       <section class="sub-seccion" aria-labelledby="t-bloques">
         <h2 id="t-bloques">Cómo está compuesto</h2>
-        <p>Los supuestos entran por arriba, el motor calcula y la salida solo dibuja.
-           Ninguna vista hace cuentas: si el número está mal, está mal en el motor.</p>
+        <p>La semilla fija vive en el motor: por eso la misma configuración da el mismo resultado.</p>
         <figure class="proyecto-media sub-figura sub-figura--bloques">
-          <img src="../assets/img/proyectos/bloques-lab-montecarlo.svg" alt="Diagrama de bloques de Laboratorio de Monte Carlo" loading="lazy" decoding="async">
-          <figcaption>Composición por capas.</figcaption>
+          <img width="900" height="468" src="../assets/img/proyectos/bloques-lab-montecarlo.svg" alt="Diagrama de bloques de Laboratorio de Monte Carlo" loading="lazy" decoding="async">
+          <figcaption>Los supuestos entran arriba, el motor simula y la salida solo dibuja.</figcaption>
         </figure>
         <div class="notas-grid"><div class="nota-bloque"><h3>Semilla fija</h3><p>La misma configuración da siempre el mismo resultado: se puede comparar entre corridas.</p></div><div class="nota-bloque"><h3>Meta en términos reales</h3><p>La meta se puede fijar en moneda de hoy y los flujos crecen con la inflación.</p></div><div class="nota-bloque"><h3>Error estándar a la vista</h3><p>58 % ± 2,2 pp: la simulación reporta su propia incertidumbre.</p></div><div class="nota-bloque"><h3>Escala logarítmica</h3><p>Un fan chart en log muestra el crecimiento compuesto sin aplastar los años iniciales.</p></div></div>
       </section>

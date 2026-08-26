@@ -39,14 +39,13 @@
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700|Raleway:400,600,700|Poppins:400,500,600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Raleway:400,600,700|Poppins:400,500,600,700&display=swap" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet" media="print" onload="this.media='all'">
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
   <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
@@ -127,7 +126,7 @@
 
       <div class="profile">
         <!-- PLACEHOLDER: reemplaza por tu foto (cuadrada, mínimo 240x240 px) -->
-        <img src="assets/img/profile-img.svg" alt="" class="img-fluid rounded-circle">
+        <img decoding="async" width="400" height="400" fetchpriority="high" src="assets/img/profile-img.svg" alt="" class="img-fluid rounded-circle">
         <div class="site-name text-light"><a href="index.html">Francisco Guerrero</a></div>
         <div class="social-links mt-3 text-center">
           <a href="https://www.linkedin.com/in/fguerrerol01/" class="linkedin"
@@ -178,7 +177,7 @@
         <div class="row">
           <div class="col-lg-4">
             <!-- PLACEHOLDER: reemplaza por una foto tuya vertical (aprox. 3:4) -->
-            <img src="assets/img/about-img.svg" class="img-fluid about-img" alt="Retrato de Francisco Guerrero">
+            <img decoding="async" width="600" height="800" src="assets/img/about-img.svg" class="img-fluid about-img" alt="Retrato de Francisco Guerrero">
           </div>
           <div class="col-lg-8 pt-4 pt-lg-0 content">
             <h3>Del diseño del modelo a la decisión de inversión</h3>
@@ -304,7 +303,7 @@
 
         <!-- 02 · Laboratorio de Costo de Capital -->
         <article class="proyecto" data-aos="fade-up">
-          <div class="proyecto-grid proyecto-grid--invertido">
+          <div class="proyecto-grid">
             <figure class="proyecto-media">
               <img src="assets/img/proyectos/wacc-lab-damodaran.jpg" width="1200" height="900" loading="lazy" decoding="async"
                    alt="Captura del WACC Lab: panel de supuestos, curva del WACC según estructura de capital y desglose del álgebra bottom-up en siete pasos">
@@ -338,7 +337,7 @@
 
         <!-- 03 · Laboratorio de Monte Carlo -->
         <article class="proyecto" data-aos="fade-up">
-          <div class="proyecto-grid proyecto-grid--invertido">
+          <div class="proyecto-grid">
             <figure class="proyecto-media">
               <img src="assets/img/proyectos/lab-montecarlo.jpg" width="1200" height="900" loading="lazy" decoding="async"
                    alt="Monte Carlo Lab: fan chart de dos mil trayectorias de patrimonio con bandas de percentiles y la línea de meta">
@@ -398,7 +397,7 @@
 
         <!-- 05 · CFAAgent -->
         <article class="proyecto" data-aos="fade-up">
-          <div class="proyecto-grid proyecto-grid--invertido">
+          <div class="proyecto-grid">
             <figure class="proyecto-media">
               <img src="assets/img/proyectos/flujo-cfagent.svg" width="900" height="470" loading="lazy" decoding="async"
                    alt="Diagrama del enrutamiento multi-agente de CFAAgent: un supervisor clasifica la consulta y la deriva a RAG, a cinco agentes especialistas o al agente de ayuda">
@@ -852,15 +851,12 @@
   <a href="#header" class="back-to-top d-flex align-items-center justify-content-center" aria-label="Volver arriba"><i class="bi bi-arrow-up-short" aria-hidden="true"></i></a>
 
   <!-- Vendor JS Files -->
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/typed.js/typed.umd.js"></script>
-  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script defer src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script defer src="assets/vendor/aos/aos.js"></script>
+  <script defer src="assets/vendor/typed.js/typed.umd.js"></script>
 
   <!-- Template Main JS File -->
-  <script src="assets/js/main.js"></script>
+  <script defer src="assets/js/main.js"></script>
 
 </body>
 

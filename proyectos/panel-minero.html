@@ -15,7 +15,7 @@
   <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700|Raleway:400,600,700|Poppins:400,500,600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Raleway:400,600,700|Poppins:400,500,600,700&display=swap" rel="stylesheet">
   <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
   <link href="../assets/css/style.css" rel="stylesheet">
@@ -46,7 +46,7 @@
       </header>
 
       <figure class="proyecto-media sub-figura">
-        <img src="../assets/img/proyectos/flujo-panel-minero.svg" alt="Arquitectura de datos de Panel Minero" loading="lazy" decoding="async">
+        <img width="900" height="400" src="../assets/img/proyectos/flujo-panel-minero.svg" alt="Arquitectura de datos de Panel Minero" loading="lazy" decoding="async">
         <figcaption>Las cuatro fuentes externas y cómo llegan a la aplicación.</figcaption>
       </figure>
 
@@ -59,11 +59,10 @@
 
       <section class="sub-seccion" aria-labelledby="t-bloques">
         <h2 id="t-bloques">Cómo está compuesto</h2>
-        <p>Cada capa depende solo de la que tiene encima. Los bloques en azul son los que
-           concentran el estado o la decisión; los punteados son piezas externas o de despliegue.</p>
+        <p>Ninguna vista calcula: la matemática vive en <code>lib/</code> y los componentes solo dibujan.</p>
         <figure class="proyecto-media sub-figura sub-figura--bloques">
-          <img src="../assets/img/proyectos/bloques-panel-minero.svg" alt="Diagrama de bloques de Panel Minero" loading="lazy" decoding="async">
-          <figcaption>Composición por capas, con los módulos reales del repositorio.</figcaption>
+          <img width="900" height="714" src="../assets/img/proyectos/bloques-panel-minero.svg" alt="Diagrama de bloques de Panel Minero" loading="lazy" decoding="async">
+          <figcaption>Cuatro fuentes externas, una capa de datos regenerable y diez rutas que la consumen.</figcaption>
         </figure>
         <div class="notas-grid"><div class="nota-bloque"><h3>10 rutas</h3><p>Cada una responde una pregunta distinta del sector.</p></div><div class="nota-bloque"><h3>17 componentes</h3><p>Cinco de ellos son familias de gráficos reutilizables.</p></div><div class="nota-bloque"><h3>7 módulos de lógica</h3><p>Ningún componente calcula: la matemática vive en lib/.</p></div><div class="nota-bloque"><h3>3 scripts de datos</h3><p>Regeneran los seeds de EEFF, commodities y parámetros.</p></div></div>
       </section>

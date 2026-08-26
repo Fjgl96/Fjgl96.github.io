@@ -15,7 +15,7 @@
   <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700|Raleway:400,600,700|Poppins:400,500,600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Raleway:400,600,700|Poppins:400,500,600,700&display=swap" rel="stylesheet">
   <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
   <link href="../assets/css/style.css" rel="stylesheet">
@@ -46,7 +46,7 @@
       </header>
 
       <figure class="proyecto-media sub-figura">
-        <img src="../assets/img/proyectos/flujo-cfagent.svg" alt="Enrutamiento multi-agente de CFAAgent" loading="lazy" decoding="async">
+        <img width="900" height="470" src="../assets/img/proyectos/flujo-cfagent.svg" alt="Enrutamiento multi-agente de CFAAgent" loading="lazy" decoding="async">
         <figcaption>El supervisor clasifica la consulta y decide quién la responde.</figcaption>
       </figure>
 
@@ -59,11 +59,10 @@
 
       <section class="sub-seccion" aria-labelledby="t-bloques">
         <h2 id="t-bloques">Cómo está compuesto</h2>
-        <p>Cada capa depende solo de la que tiene encima. Los bloques en azul son los que
-           concentran el estado o la decisión; los punteados son piezas externas o de despliegue.</p>
+        <p>El enrutado es la pieza: define qué agente responde y con qué contexto.</p>
         <figure class="proyecto-media sub-figura sub-figura--bloques">
-          <img src="../assets/img/proyectos/bloques-cfagent.svg" alt="Diagrama de bloques de CFAAgent" loading="lazy" decoding="async">
-          <figcaption>Composición por capas, con los módulos reales del repositorio.</figcaption>
+          <img width="900" height="558" src="../assets/img/proyectos/bloques-cfagent.svg" alt="Diagrama de bloques de CFAAgent" loading="lazy" decoding="async">
+          <figcaption>Del punto de entrada al agente de síntesis, con el supervisor decidiendo en medio.</figcaption>
         </figure>
         <div class="notas-grid"><div class="nota-bloque"><h3>Clasificación en una pasada</h3><p>Teórica, práctica o ayuda, en torno a medio segundo.</p></div><div class="nota-bloque"><h3>Microservicio de búsqueda</h3><p>RAG separado, con índice invertido y deduplicación.</p></div><div class="nota-bloque"><h3>Cadena de respaldo</h3><p>Si un proveedor falla, el siguiente responde.</p></div><div class="nota-bloque"><h3>Tres suites de tests</h3><p>Supervisor, agentes y herramientas financieras.</p></div></div>
       </section>

@@ -15,7 +15,7 @@
   <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700|Raleway:400,600,700|Poppins:400,500,600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Raleway:400,600,700|Poppins:400,500,600,700&display=swap" rel="stylesheet">
   <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
   <link href="../assets/css/style.css" rel="stylesheet">
@@ -47,7 +47,7 @@
       </header>
 
       <figure class="proyecto-media sub-figura">
-        <img src="../assets/img/proyectos/lab-payoff.jpg" alt="Laboratorio de Derivados: constructor de patas de opciones con la silueta de resultado al vencimiento y sus breakevens" loading="lazy" decoding="async">
+        <img width="1200" height="900" src="../assets/img/proyectos/lab-payoff.jpg" alt="Laboratorio de Derivados: constructor de patas de opciones con la silueta de resultado al vencimiento y sus breakevens" loading="lazy" decoding="async">
         <figcaption>Se arman las patas a la izquierda; la silueta y los breakevens se recalculan solos.</figcaption>
       </figure>
 
@@ -60,11 +60,10 @@
 
       <section class="sub-seccion" aria-labelledby="t-bloques">
         <h2 id="t-bloques">Cómo está compuesto</h2>
-        <p>Los supuestos entran por arriba, el motor calcula y la salida solo dibuja.
-           Ninguna vista hace cuentas: si el número está mal, está mal en el motor.</p>
+        <p>Los catorce presets son entradas al mismo motor, no catorce dibujos distintos.</p>
         <figure class="proyecto-media sub-figura sub-figura--bloques">
-          <img src="../assets/img/proyectos/bloques-lab-payoff.svg" alt="Diagrama de bloques de Laboratorio de Derivados" loading="lazy" decoding="async">
-          <figcaption>Composición por capas.</figcaption>
+          <img width="900" height="520" src="../assets/img/proyectos/bloques-lab-payoff.svg" alt="Diagrama de bloques de Laboratorio de Derivados" loading="lazy" decoding="async">
+          <figcaption>Las patas entran a la izquierda y la silueta sale calculada, no dibujada a mano.</figcaption>
         </figure>
         <div class="notas-grid"><div class="nota-bloque"><h3>Una sola operación</h3><p>Catorce estructuras dejan de ser catorce dibujos y pasan a ser una suma de patas.</p></div><div class="nota-bloque"><h3>Dos ejes, no uno</h3><p>Dirección y volatilidad se clasifican por separado: son independientes.</p></div><div class="nota-bloque"><h3>Breakeven calculado</h3><p>No se memoriza: es donde la suma de las patas cruza cero.</p></div><div class="nota-bloque"><h3>Zona esperada</h3><p>Se fija un piso y un techo para leer la estructura dentro del rango que importa.</p></div></div>
       </section>
