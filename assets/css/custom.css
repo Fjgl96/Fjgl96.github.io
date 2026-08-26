@@ -496,7 +496,7 @@ a:hover { color: var(--accent-text-dk); }
 /*--------------------------------------------------------------
 # Research — subtítulos, figuras y cita
 --------------------------------------------------------------*/
-.paper-sub {
+h3.paper-sub, h4.paper-sub, .paper-sub {
   font-family: "Raleway", sans-serif;
   font-size: 17px;
   font-weight: 700;
@@ -515,4 +515,112 @@ a:hover { color: var(--accent-text-dk); }
   font-size: 13px !important;
   line-height: 1.65;
   color: var(--muted) !important;
+}
+
+/*--------------------------------------------------------------
+# Contacto — CTAs en lugar del formulario
+--------------------------------------------------------------*/
+.contact .contacto-cta {
+  width: 100%;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 34px 36px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.contact .contacto-cta h3 {
+  font-family: "Raleway", sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--ink);
+  margin: 0 0 12px 0;
+  padding: 0;
+}
+.contact .contacto-cta > p {
+  font-size: 15px;
+  line-height: 1.7;
+  color: #272829;
+  margin-bottom: 24px;
+}
+.contact .contacto-botones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.contact .contacto-botones .btn-demo,
+.contact .contacto-botones .btn-repo {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: "Poppins", sans-serif;
+  font-size: 13.5px;
+  font-weight: 500;
+  padding: 11px 24px;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: background .3s, color .3s;
+}
+.contact .contacto-botones .btn-demo { color: #fff; background: var(--accent-text); }
+.contact .contacto-botones .btn-demo:hover { background: var(--accent-text-dk); color: #fff; }
+.contact .contacto-botones .btn-repo {
+  color: var(--accent-text); background: #fff; border: 1px solid var(--accent-text);
+}
+.contact .contacto-botones .btn-repo:hover { background: var(--accent-text); color: #fff; }
+.contact .contacto-nota {
+  margin: 20px 0 0 0;
+  font-size: 13px;
+  color: var(--muted);
+  font-style: italic;
+}
+@media (max-width: 768px) {
+  .contact .contacto-cta { padding: 26px 22px; }
+}
+
+.paper-hallazgo {
+  font-size: 15px !important;
+  line-height: 1.72;
+  color: #3d4d63 !important;
+  background: var(--bg-soft);
+  border-left: 3px solid var(--accent);
+  padding: 16px 18px;
+  border-radius: 0 6px 6px 0;
+  margin-bottom: 4px;
+}
+.paper-hallazgo strong { color: var(--ink); }
+.paper .proyecto-links { display: flex; flex-wrap: wrap; gap: 10px; }
+
+/*--------------------------------------------------------------
+# Densidad en móvil
+# La página vive en una sola columna: se aprieta el ritmo vertical
+# sin retirar contenido.
+--------------------------------------------------------------*/
+@media (max-width: 768px) {
+  section { padding: 40px 0; }
+  .section-title { padding-bottom: 20px; }
+  .section-title h2 { font-size: 26px; margin-bottom: 14px; }
+  .section-title p { font-size: 14px; line-height: 1.6; }
+
+  .proyecto { margin-bottom: 34px; }
+  .proyecto-grid { gap: 18px; }
+  .proyecto-media { padding: 10px; }
+  .proyecto-desc { font-size: 14.5px; margin-bottom: 12px; }
+  .proyecto-tech { margin-bottom: 14px; }
+
+  .agents .agent-card { padding: 20px 18px; margin-bottom: 18px; }
+  .agents .agent-head { margin-bottom: 14px; }
+  .agents .agent-tagline { margin-bottom: 14px; }
+  .agents .agent-specs { margin-bottom: 14px; }
+  .agents .agent-specs li { margin-bottom: 7px; line-height: 1.5; }
+  .agents .agent-pipeline { padding-top: 12px; }
+  .agents .agent-foot { margin-top: 10px; }
+  .agents .agents-stats { margin-bottom: 0; }
+  .agents .count-box { padding: 14px 20px; }
+  .agents .count-box p { padding-top: 8px; }
+
+  .resume .resume-item { padding-bottom: 14px; }
+  .resume .resume-title { margin-top: 16px; }
+
+  .paper { padding: 22px 18px; }
 }

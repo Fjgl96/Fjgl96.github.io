@@ -3,23 +3,8 @@
 Sitio personal de Francisco Guerrero López — planeamiento financiero, control de gestión y agentes de IA.
 Construido sobre la plantilla [iPortfolio](https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/) de BootstrapMade.
 
-## ⚠️ Antes de publicar: renombra el repositorio
-
-GitHub sirve un sitio en `https://<usuario>.github.io/` **solo si el repo se llama igual que la cuenta**.
-Tu cuenta es `Fjgl96` y el repo se llama `fguerrero.github.io`, así que hoy se publicaría en
-`https://fjgl96.github.io/fguerrero.github.io/`, no en la raíz.
-
-**Solución:** Settings → General → Repository name → `Fjgl96.github.io`.
-
-Todas las URL absolutas del sitio (canonical, Open Graph, sitemap) apuntan a `https://fjgl96.github.io/`.
-Si decides **no** renombrar, corrígelas con:
-
-```bash
-sed -i 's|https://fjgl96\.github\.io/|https://fjgl96.github.io/fguerrero.github.io/|g' \
-  index.html proyectos/*.html sitemap.xml robots.txt
-```
-
-`robots.txt` solo funciona en la raíz del dominio, así que sin el renombrado quedaría inactivo.
+El sitio se publica en **https://fjgl96.github.io/**. Todas las URL absolutas
+(canonical, Open Graph, sitemap, JSON-LD) apuntan ahí.
 
 ## Publicar
 
@@ -37,6 +22,8 @@ proyectos/                 Una sub-página por proyecto, con diagrama de bloques
   lab-montecarlo.html
   lab-payoff.html
   cfagent.html
+research/
+  banks-fintechs.html      El modelo del paper, con sus diagramas
 404.html · robots.txt · sitemap.xml
 assets/
   css/style.css            CSS de iPortfolio (sin modificar)
@@ -62,8 +49,7 @@ Busca `PLACEHOLDER` en `index.html` para ubicarlos en contexto.
 | Foto de la sección Perfil | `assets/img/about-img.svg` | 600 × 800 px (3:4) |
 | Fondo de portada | `assets/img/hero-bg.svg` | 1920 × 1080 px; la regla está en `custom.css` |
 | **Imagen para compartir** | `assets/img/og-image.jpg` | **1200 × 630 px, JPG, < 300 KB.** Sin ella, LinkedIn y WhatsApp muestran una tarjeta gris |
-| Endpoint del formulario | `index.html` → `formspree.io/f/TU_ID` | GitHub Pages no ejecuta PHP; crea el endpoint en [formspree.io](https://formspree.io) |
-| URL del WACC Lab | `index.html` y `proyectos/wacc-lab.html` | Pega la URL de Vercel |
+| Rol en Good Finance | Sección CV | Falta confirmar cargo y fecha de inicio |
 | CV en PDF | `assets/docs/cv-francisco-guerrero.pdf` | El botón de descarga ya apunta ahí |
 | Ícono para iOS | `assets/img/apple-touch-icon.png` | 180 × 180 px, opcional |
 
