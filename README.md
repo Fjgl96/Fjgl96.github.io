@@ -49,7 +49,7 @@ Busca `PLACEHOLDER` en `index.html` para ubicarlos en contexto.
 | Foto de la sección Perfil | `assets/img/about-img.svg` | 600 × 800 px (3:4) |
 | Fondo de portada | `assets/img/hero-bg.svg` | 1920 × 1080 px; la regla está en `custom.css` |
 | **Imagen para compartir** | `assets/img/og-image.jpg` | **1200 × 630 px, JPG, < 300 KB.** Sin ella, LinkedIn y WhatsApp muestran una tarjeta gris |
-| Rol en Good Finance | Sección CV | Falta confirmar cargo y fecha de inicio |
+| Fecha de inicio en Good Finance | Sección CV | Hoy dice «En paralelo · actualidad»; añade el mes y año cuando lo tengas |
 | CV en PDF | `assets/docs/cv-francisco-guerrero.pdf` | El botón de descarga ya apunta ahí |
 | Ícono para iOS | `assets/img/apple-touch-icon.png` | 180 × 180 px, opcional |
 
