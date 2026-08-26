@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio Suite — Francisco Guerrero</title>
+  <meta name="description" content="Suite de gestión de portafolio con la estructura societaria escrita en código: el Directorio fija los parámetros, el comité clasifica y el risk engine veta.">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#0b6d9e">
+  <link rel="canonical" href="https://fjgl96.github.io/proyectos/portfolio-suite.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Portfolio Suite — Francisco Guerrero">
+  <meta property="og:description" content="El código determinista toca la plata; los agentes proponen y el código dispone.">
+  <meta property="og:url" content="https://fjgl96.github.io/proyectos/portfolio-suite.html">
+  <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700|Raleway:400,600,700|Poppins:400,500,600&display=swap" rel="stylesheet">
+  <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="../assets/css/style.css" rel="stylesheet">
+  <link href="../assets/css/custom.css" rel="stylesheet">
+  <link href="../assets/css/subpagina.css" rel="stylesheet">
+</head>
+<body class="subpagina">
+  <a href="#contenido" class="skip-link">Saltar al contenido</a>
+  <header class="sub-top">
+    <div class="container">
+      <a href="../index.html#proyectos" class="sub-volver"><i class="bi bi-arrow-left" aria-hidden="true"></i> Proyectos</a>
+      <a href="../index.html" class="sub-marca">Francisco Guerrero</a>
+    </div>
+  </header>
+
+  <main id="contenido">
+    <article class="container sub-wrap">
+      <header class="sub-head">
+        <span class="proyecto-estado proyecto-estado--curso">En construcción</span>
+        <h1>Portfolio Suite</h1>
+        <p class="sub-lead">
+          Gestión de portafolio automatizada, con la estructura societaria escrita en código.
+        </p>
+        <p class="proyecto-nota proyecto-nota--aviso">
+          Repositorio privado y sistema en desarrollo. La ejecución real está desarmada por defecto;
+          lo que corre hoy es <span lang="en">backtest</span> y <span lang="en">paper trading</span>.
+        </p>
+      </header>
+
+      <section class="sub-seccion" aria-labelledby="t-que">
+        <h2 id="t-que">La tesis</h2>
+        <p class="proyecto-concepto">
+          <strong>El código determinista toca la plata; los agentes proponen y el código dispone.</strong>
+          Todo lo que mueve capital —o simula moverlo— es código probado, sin modelo de lenguaje en el
+          medio. El agente decide solo en la zona difusa, y hasta sus órdenes pasan por el mismo motor
+          de riesgo que las demás.
+        </p>
+        <p>
+          La idea que ordena el sistema es que un portafolio no se gobierna con una función, se gobierna
+          con una estructura. Así que la estructura está escrita: el Directorio fija targets, bandas,
+          topes y <span lang="en">kill-switch</span> en un solo archivo de parámetros, y cambiarlo es
+          literalmente un acta —un <em>commit</em> versionado—. Ningún número de gobierno vive
+          incrustado en la lógica.
+        </p>
+        <ul class="proyecto-tech">
+          <li>Python</li><li>SQLite WAL</li><li>REST y WebSocket</li><li>Parquet</li><li>ccxt</li>
+        </ul>
+      </section>
+
+      <section class="sub-seccion" aria-labelledby="t-zonas">
+        <h2 id="t-zonas">Las tres zonas del comité</h2>
+        <p>
+          En cada ciclo el comité de reglas clasifica la situación según la desviación respecto de los
+          targets. La zona decide quién manda.
+        </p>
+        <div class="notas-grid">
+          <div class="nota-bloque"><h3>Verde — manda la política</h3>
+            <p>Dentro de banda. Si la desviación pasa el umbral, rebalanceo completo a los targets, escalonado bajo los topes por orden y por ciclo.</p></div>
+          <div class="nota-bloque"><h3>Amarilla — decide el agente</h3>
+            <p>La zona difusa entre ambas bandas. Aquí actúa el gestor agéntico, con un contrato fijo: recibe contexto y devuelve órdenes con su fundamento. Hoy es determinista; el contrato ya admite un modelo.</p></div>
+          <div class="nota-bloque"><h3>Roja — frena el riesgo</h3>
+            <p>Desviación fuera de banda: rebalanceo forzado. Pérdida diaria bajo el umbral de corte: alto total y rearme manual.</p></div>
+        </div>
+      </section>
+
+      <section class="sub-seccion" aria-labelledby="t-org">
+        <h2 id="t-org">La estructura societaria, en código</h2>
+        <p>
+          Cada nivel de gobierno tiene su contraparte en el repositorio: accionistas que leen NAV y
+          comisiones, un directorio que fija parámetros, y gerencias de riesgos, inversiones, finanzas
+          y sistemas que ejecutan.
+        </p>
+        <figure class="proyecto-media sub-figura sub-figura--bloques">
+          <img src="../assets/img/proyectos/portfolio-suite-organigrama.svg" alt="Organigrama societario del sistema: accionistas, directorio y las cuatro gerencias con su contraparte en el repositorio" loading="lazy" decoding="async">
+          <figcaption>Quién decide qué, y dónde vive esa decisión en el código.</figcaption>
+        </figure>
+      </section>
+
+      <section class="sub-seccion" aria-labelledby="t-flujo">
+        <h2 id="t-flujo">Por dónde fluyen los datos</h2>
+        <figure class="proyecto-media sub-figura sub-figura--bloques">
+          <img src="../assets/img/proyectos/portfolio-suite-arquitectura.svg" alt="Organigrama del sistema: del exchange al colector, al caché histórico, al motor de backtest y al carril de paper trading" loading="lazy" decoding="async">
+          <figcaption>Del dato de mercado al registro auditable, pasando por riesgo y ejecución.</figcaption>
+        </figure>
+        <p>
+          El motor corre contra reloj: trae precios, marca el patrimonio, deja que el comité clasifique,
+          escalona las órdenes bajo los topes, deja que el motor de riesgo vete lo que no pasa y cobra
+          comisión y deslizamiento en el calce. Todo queda en el registro: cada ejecución con su costo y
+          cada decisión con su zona y su autor, política o agente.
+        </p>
+        <figure class="proyecto-media sub-figura sub-figura--bloques">
+          <img src="../assets/img/proyectos/bloques-portfolio-suite.svg" alt="Diagrama de bloques de Portfolio Suite por capas: gobierno, datos, decisión, control, ejecución y salida" loading="lazy" decoding="async">
+          <figcaption>Composición por capas, con los módulos reales del repositorio.</figcaption>
+        </figure>
+      </section>
+
+      <section class="sub-seccion" aria-labelledby="t-carry">
+        <h2 id="t-carry">El módulo de carry, y lo que no captura</h2>
+        <p>
+          Un carril aparte mide el rendimiento de una posición neutral: largo al contado y corto en
+          perpetuo por el mismo nocional. El precio se cancela y lo que queda es el
+          <span lang="en">funding</span> que se cobra cada ocho horas. Con datos reales desde 2019, la
+          mediana anual ronda 8,4&nbsp;% en bitcoin y 8,9&nbsp;% en éter, con alrededor de 86&nbsp;% de
+          los períodos en positivo.
+        </p>
+        <p class="proyecto-concepto">
+          <strong>Lo que el modelo no captura.</strong> El percentil 10 es negativo: hay semanas en que
+          se paga en lugar de cobrar. Y quedan fuera tres riesgos que importan: contraparte —la pata en
+          perpetuo vive en el exchange—, liquidación de la pata corta y movimientos de
+          <span lang="en">basis</span>. Ponerlo por escrito es parte del entregable.
+        </p>
+      </section>
+
+      <section class="sub-seccion" aria-labelledby="t-falta">
+        <h2 id="t-falta">Qué falta</h2>
+        <div class="notas-grid">
+          <div class="nota-bloque"><h3>Precios sin retraso</h3><p>Conectar un feed institucional contra cuenta de práctica, manteniendo la misma interfaz: el motor no cambia una línea.</p></div>
+          <div class="nota-bloque"><h3>Modelo en la zona amarilla</h3><p>Sustituir el gestor determinista por uno con modelo de lenguaje, conservando el contrato. El contexto ya lleva veredicto, pesos, targets y caja.</p></div>
+          <div class="nota-bloque"><h3>Conciliación y reporte</h3><p>Cuadrar el registro contra el exchange y emitir reporte mensual a inversores.</p></div>
+          <div class="nota-bloque"><h3>Custodia y estructura legal</h3><p>El cuello de botella real, y no es técnico.</p></div>
+        </div>
+      </section>
+    </article>
+  </main>
+
+  <footer id="footer" class="sub-footer">
+    <div class="container">
+      <div class="copyright">&copy; <strong><span>Francisco Guerrero López</span></strong></div>
+      <div class="credits"><span lang="en">Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a></span></div>
+    </div>
+  </footer>
+</body>
+</html>

@@ -16,6 +16,7 @@ El archivo `.nojekyll` evita que Jekyll procese los assets.
 ```
 index.html                 Portada (una sola página, navegación por anclas)
 proyectos/                 Una sub-página por proyecto, con diagrama de bloques
+  portfolio-suite.html     En construcción
   panel-minero.html
   wacc-lab.html            Laboratorio de Costo de Capital
   lab-montecarlo.html      Laboratorio de Monte Carlo

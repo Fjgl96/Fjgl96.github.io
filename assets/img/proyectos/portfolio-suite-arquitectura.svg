@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 640" font-family="Consolas, 'Courier New', monospace">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#23415F"/>
+    </marker>
+    <marker id="arrg" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#CBA13F"/>
+    </marker>
+  </defs>
+  <rect width="920" height="640" fill="#ECE6D8"/>
+  <text x="460" y="36" text-anchor="middle" font-size="18" font-weight="bold" letter-spacing="3" fill="#0A1A2F">ORGANIGRAMA DEL SISTEMA</text>
+
+  <!-- fuente -->
+  <rect x="310" y="56" width="300" height="44" rx="10" fill="#0A1A2F"/>
+  <text x="460" y="74" text-anchor="middle" font-size="13" font-weight="bold" fill="#ECE6D8">EXCHANGE</text>
+  <text x="460" y="90" text-anchor="middle" font-size="11" fill="#A9B6C6">API pública — sin llaves</text>
+
+  <line x1="460" y1="100" x2="170" y2="134" stroke="#23415F" stroke-width="1.5" marker-end="url(#arr)"/>
+  <line x1="460" y1="100" x2="460" y2="134" stroke="#23415F" stroke-width="1.5" marker-end="url(#arr)"/>
+  <line x1="460" y1="100" x2="750" y2="134" stroke="#23415F" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- carril BACKTEST -->
+  <rect x="60" y="140" width="220" height="56" rx="10" fill="#FFFFFF" stroke="#23415F" stroke-width="1.5"/>
+  <text x="170" y="163" text-anchor="middle" font-size="13" font-weight="bold" fill="#0A1A2F">collector.py</text>
+  <text x="170" y="181" text-anchor="middle" font-size="11" fill="#3E5871">OHLCV diario · ccxt</text>
+  <line x1="170" y1="196" x2="170" y2="218" stroke="#23415F" stroke-width="1.5" marker-end="url(#arr)"/>
+  <rect x="60" y="224" width="220" height="56" rx="10" fill="#FFFFFF" stroke="#23415F" stroke-width="1.5"/>
+  <text x="170" y="247" text-anchor="middle" font-size="13" font-weight="bold" fill="#0A1A2F">data/*.parquet</text>
+  <text x="170" y="265" text-anchor="middle" font-size="11" fill="#3E5871">caché histórico</text>
+  <line x1="170" y1="280" x2="170" y2="302" stroke="#23415F" stroke-width="1.5" marker-end="url(#arr)"/>
+  <rect x="60" y="308" width="220" height="56" rx="10" fill="#FFFFFF" stroke="#23415F" stroke-width="1.5"/>
+  <text x="170" y="331" text-anchor="middle" font-size="13" font-weight="bold" fill="#0A1A2F">engine.py</text>
+  <text x="170" y="349" text-anchor="middle" font-size="11" fill="#3E5871">fees diarios + banda</text>
+  <line x1="170" y1="364" x2="170" y2="386" stroke="#23415F" stroke-width="1.5" marker-end="url(#arr)"/>
+  <rect x="60" y="392" width="220" height="56" rx="10" fill="#FFFFFF" stroke="#23415F" stroke-width="1.5"/>
+  <text x="170" y="415" text-anchor="middle" font-size="13" font-weight="bold" fill="#0A1A2F">results/</text>
+  <text x="170" y="433" text-anchor="middle" font-size="11" fill="#3E5871">equity + summary</text>
+
+  <!-- carril LIVE PAPER -->
+  <rect x="350" y="140" width="220" height="56" rx="10" fill="#FFFFFF" stroke="#23415F" stroke-width="1.5"/>
+  <text x="460" y="163" text-anchor="middle" font-size="13" font-weight="bold" fill="#0A1A2F">paper_broker.py</text>
+  <text x="460" y="181" text-anchor="middle" font-size="11" fill="#3E5871">bid/ask en vivo</text>
+  <line x1="460" y1="196" x2="460" y2="218" stroke="#23415F" stroke-width="1.5" marker-end="url(#arr)"/>
+  <rect x="350" y="224" width="220" height="56" rx="10" fill="#FFFFFF" stroke="#23415F" stroke-width="1.5"/>
+  <text x="460" y="247" text-anchor="middle" font-size="13" font-weight="bold" fill="#0A1A2F">loop.py</text>
+  <text x="460" y="265" text-anchor="middle" font-size="11" fill="#3E5871">marca → decide → opera</text>
+  <line x1="460" y1="280" x2="460" y2="302" stroke="#23415F" stroke-width="1.5" marker-end="url(#arr)"/>
+  <rect x="350" y="308" width="220" height="56" rx="10" fill="#FFFFFF" stroke="#23415F" stroke-width="1.5"/>
+  <text x="460" y="331" text-anchor="middle" font-size="13" font-weight="bold" fill="#0A1A2F">regla + risk engine</text>
+  <text x="460" y="349" text-anchor="middle" font-size="11" fill="#3E5871">mes nuevo · banda · vetos duros</text>
+  <line x1="460" y1="364" x2="460" y2="386" stroke="#23415F" stroke-width="1.5" marker-end="url(#arr)"/>
+  <rect x="350" y="392" width="220" height="56" rx="10" fill="#FFFFFF" stroke="#23415F" stroke-width="1.5"/>
+  <text x="460" y="415" text-anchor="middle" font-size="13" font-weight="bold" fill="#0A1A2F">live_state/</text>
+  <text x="460" y="433" text-anchor="middle" font-size="11" fill="#3E5871">nav · trades · state</text>
+
+  <line x1="460" y1="448" x2="460" y2="470" stroke="#23415F" stroke-width="1.5" marker-end="url(#arr)"/>
+  <rect x="350" y="476" width="220" height="56" rx="10" fill="#FFFFFF" stroke="#23415F" stroke-width="1.5"/>
+  <text x="460" y="499" text-anchor="middle" font-size="13" font-weight="bold" fill="#0A1A2F">ops/report.py</text>
+  <text x="460" y="517" text-anchor="middle" font-size="11" fill="#3E5871">reporte LP · drawdown · fees</text>
+
+  <!-- carril CARRY -->
+  <rect x="640" y="140" width="220" height="56" rx="10" fill="#FFFFFF" stroke="#23415F" stroke-width="1.5"/>
+  <text x="750" y="163" text-anchor="middle" font-size="13" font-weight="bold" fill="#0A1A2F">funding.py</text>
+  <text x="750" y="181" text-anchor="middle" font-size="11" fill="#3E5871">funding 8h perps</text>
+  <line x1="750" y1="196" x2="750" y2="218" stroke="#23415F" stroke-width="1.5" marker-end="url(#arr)"/>
+  <rect x="640" y="224" width="220" height="56" rx="10" fill="#FFFFFF" stroke="#23415F" stroke-width="1.5"/>
+  <text x="750" y="247" text-anchor="middle" font-size="13" font-weight="bold" fill="#0A1A2F">data/funding_*.parquet</text>
+  <text x="750" y="265" text-anchor="middle" font-size="11" fill="#3E5871">caché histórico</text>
+  <line x1="750" y1="280" x2="750" y2="302" stroke="#23415F" stroke-width="1.5" marker-end="url(#arr)"/>
+  <rect x="640" y="308" width="220" height="56" rx="10" fill="#FFFFFF" stroke="#23415F" stroke-width="1.5"/>
+  <text x="750" y="331" text-anchor="middle" font-size="13" font-weight="bold" fill="#0A1A2F">carry/backtest.py</text>
+  <text x="750" y="349" text-anchor="middle" font-size="11" fill="#3E5871">yield neto anual</text>
+  <line x1="750" y1="364" x2="750" y2="386" stroke="#23415F" stroke-width="1.5" marker-end="url(#arr)"/>
+  <rect x="640" y="392" width="220" height="56" rx="10" fill="#FFFFFF" stroke="#23415F" stroke-width="1.5"/>
+  <text x="750" y="415" text-anchor="middle" font-size="13" font-weight="bold" fill="#0A1A2F">cash_yield</text>
+  <text x="750" y="433" text-anchor="middle" font-size="11" fill="#3E5871">al engine del backtest</text>
+
+  <!-- conexión carry -> engine -->
+  <path d="M 640 420 L 284 344" stroke="#CBA13F" stroke-width="2" stroke-dasharray="6 4" fill="none" marker-end="url(#arrg)"/>
+  <text x="448" y="378" text-anchor="middle" font-size="11" font-weight="bold" fill="#8A6D1F">--cash-yield</text>
+
+  <!-- banner de perillas -->
+  <rect x="60" y="540" width="800" height="76" rx="14" fill="#FBF9F3" stroke="#CBA13F" stroke-width="2"/>
+  <text x="80" y="565" font-size="12" font-weight="bold" letter-spacing="2" fill="#8A6D1F">AJUSTES FINOS — QUÉ PERILLA VIVE EN QUÉ ARCHIVO</text>
+  <text x="80" y="587" font-size="11" fill="#0A1A2F">pesos de la política → policies.py   ·   banda → run_paper.py --band   ·   costos → --trade-bps</text>
+  <text x="80" y="605" font-size="11" fill="#0A1A2F">rendimiento del cash → run_backtest.py --cash-yield   (lo estima el carril CARRY, arriba a la derecha)</text>
+</svg>

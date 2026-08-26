@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 700" font-family="Consolas, 'Courier New', monospace">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#23415F"/>
+    </marker>
+    <marker id="arrg" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#CBA13F"/>
+    </marker>
+  </defs>
+  <rect width="920" height="700" fill="#ECE6D8"/>
+  <text x="460" y="36" text-anchor="middle" font-size="18" font-weight="bold" letter-spacing="3" fill="#0A1A2F">ORGANIGRAMA SOCIETARIO — QUIÉN DECIDE QUÉ</text>
+
+  <!-- accionistas -->
+  <rect x="360" y="52" width="200" height="42" rx="10" fill="#0A1A2F"/>
+  <text x="460" y="70" text-anchor="middle" font-size="13" font-weight="bold" fill="#ECE6D8">ACCIONISTAS (3)</text>
+  <text x="460" y="86" text-anchor="middle" font-size="10.5" fill="#A9B6C6">leen NAV + fees trimestrales</text>
+
+  <line x1="460" y1="94" x2="460" y2="116" stroke="#23415F" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- directorio -->
+  <rect x="310" y="120" width="300" height="56" rx="10" fill="#FFFFFF" stroke="#CBA13F" stroke-width="2"/>
+  <text x="460" y="142" text-anchor="middle" font-size="13" font-weight="bold" fill="#0A1A2F">DIRECTORIO (5)</text>
+  <text x="460" y="160" text-anchor="middle" font-size="10.5" fill="#8A6D1F">fija governance/policies.toml — targets, bandas, caps</text>
+
+  <line x1="460" y1="176" x2="460" y2="198" stroke="#CBA13F" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#arrg)"/>
+  <text x="530" y="192" font-size="10.5" font-weight="bold" fill="#8A6D1F">policy (versionada en git)</text>
+
+  <!-- gerencias -->
+  <rect x="50" y="202" width="195" height="46" rx="10" fill="#FFFFFF" stroke="#23415F" stroke-width="1.5"/>
+  <text x="147" y="222" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#0A1A2F">GERENCIA RIESGOS</text>
+  <text x="147" y="239" text-anchor="middle" font-size="10.5" fill="#3E5871">mide, clasifica, frena</text>
+
+  <rect x="265" y="202" width="195" height="46" rx="10" fill="#FFFFFF" stroke="#23415F" stroke-width="1.5"/>
+  <text x="362" y="222" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#0A1A2F">GERENCIA INVERSIONES</text>
+  <text x="362" y="239" text-anchor="middle" font-size="10.5" fill="#3E5871">decide exposición</text>
+
+  <rect x="480" y="202" width="195" height="46" rx="10" fill="#FFFFFF" stroke="#23415F" stroke-width="1.5"/>
+  <text x="577" y="222" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#0A1A2F">GERENCIA FINANZAS</text>
+  <text x="577" y="239" text-anchor="middle" font-size="10.5" fill="#3E5871">registra y reporta</text>
+
+  <rect x="695" y="202" width="195" height="46" rx="10" fill="#FFFFFF" stroke="#23415F" stroke-width="1.5"/>
+  <text x="792" y="222" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#0A1A2F">GERENCIA SISTEMAS</text>
+  <text x="792" y="239" text-anchor="middle" font-size="10.5" fill="#3E5871">tuberías y ejecución</text>
+
+  <line x1="147" y1="248" x2="147" y2="272" stroke="#23415F" stroke-width="1.5" marker-end="url(#arr)"/>
+  <line x1="362" y1="248" x2="362" y2="272" stroke="#23415F" stroke-width="1.5" marker-end="url(#arr)"/>
+  <line x1="577" y1="248" x2="577" y2="272" stroke="#23415F" stroke-width="1.5" marker-end="url(#arr)"/>
+  <line x1="792" y1="248" x2="792" y2="272" stroke="#23415F" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- subgerencias ejecutoras -->
+  <rect x="50" y="276" width="195" height="118" rx="10" fill="#FBF9F3" stroke="#23415F" stroke-width="1"/>
+  <text x="66" y="298" font-size="11.5" font-weight="bold" fill="#0A1A2F">SUBGERENCIAS (3)</text>
+  <text x="66" y="320" font-size="10.5" fill="#0A1A2F">· comité de reglas</text>
+  <text x="66" y="340" font-size="10.5" fill="#0A1A2F">   rules/matrix.py</text>
+  <text x="66" y="360" font-size="10.5" fill="#0A1A2F">· vetos duros + kill-switch</text>
+  <text x="66" y="380" font-size="10.5" fill="#0A1A2F">   risk/engine.py</text>
+
+  <rect x="265" y="276" width="195" height="118" rx="10" fill="#FBF9F3" stroke="#23415F" stroke-width="1"/>
+  <text x="281" y="298" font-size="11.5" font-weight="bold" fill="#0A1A2F">SUBGERENCIAS (2)</text>
+  <text x="281" y="320" font-size="10.5" fill="#0A1A2F">· PM agéntico (zona difusa)</text>
+  <text x="281" y="340" font-size="10.5" fill="#0A1A2F">   agents/pm_stub.py</text>
+  <text x="281" y="360" font-size="10.5" fill="#0A1A2F">· ejecución escalonada</text>
+  <text x="281" y="380" font-size="10.5" fill="#0A1A2F">   run_engine.py</text>
+
+  <rect x="480" y="276" width="195" height="118" rx="10" fill="#FBF9F3" stroke="#23415F" stroke-width="1"/>
+  <text x="496" y="298" font-size="11.5" font-weight="bold" fill="#0A1A2F">SUBGERENCIAS (2)</text>
+  <text x="496" y="320" font-size="10.5" fill="#0A1A2F">· ledger SQLite auditable</text>
+  <text x="496" y="340" font-size="10.5" fill="#0A1A2F">   systems/ledger.py</text>
+  <text x="496" y="360" font-size="10.5" fill="#0A1A2F">· reportes semanal + LP</text>
+  <text x="496" y="380" font-size="10.5" fill="#0A1A2F">   ops/weekly.py · ops/report.py</text>
+
+  <rect x="695" y="276" width="195" height="118" rx="10" fill="#FBF9F3" stroke="#23415F" stroke-width="1"/>
+  <text x="711" y="298" font-size="11.5" font-weight="bold" fill="#0A1A2F">SUBGERENCIAS (3)</text>
+  <text x="711" y="320" font-size="10.5" fill="#0A1A2F">· feed de mercado</text>
+  <text x="711" y="340" font-size="10.5" fill="#0A1A2F">   systems/feed.py</text>
+  <text x="711" y="360" font-size="10.5" fill="#0A1A2F">· matching simulado + panel</text>
+  <text x="711" y="380" font-size="10.5" fill="#0A1A2F">   systems/matching.py · ops/api.py</text>
+
+  <!-- flujo del ciclo -->
+  <rect x="50" y="424" width="840 " height="120" rx="14" fill="#FFFFFF" stroke="#23415F" stroke-width="1.5"/>
+  <text x="70" y="450" font-size="12" font-weight="bold" letter-spacing="2" fill="#0A1A2F">EL CICLO — CADA 5 SEGUNDOS (run_engine.py)</text>
+  <text x="70" y="478" font-size="11.5" fill="#0A1A2F">feed → marca equity → comité clasifica (verde/amarillo/rojo) →</text>
+  <text x="70" y="498" font-size="11.5" fill="#0A1A2F">   verde: rebalancea a targets  ·  amarillo: decide el agente  ·  rojo: veto o kill-switch →</text>
+  <text x="70" y="518" font-size="11.5" fill="#0A1A2F">risk engine veta lo ilegal → matching cobra comisión + slippage → todo queda en el ledger</text>
+
+  <!-- regla de oro -->
+  <rect x="50" y="570" width="840" height="100" rx="14" fill="#FBF9F3" stroke="#CBA13F" stroke-width="2"/>
+  <text x="70" y="596" font-size="12" font-weight="bold" letter-spacing="2" fill="#8A6D1F">REGLA DE ORO</text>
+  <text x="70" y="620" font-size="11.5" fill="#0A1A2F">el agente SOLO decide en zona difusa (amarilla), y sus órdenes pasan por el mismo risk engine que las de nadie.</text>
+  <text x="70" y="640" font-size="11.5" fill="#0A1A2F">Los parámetros que definen las zonas los fija el Directorio en policies.toml — cambiarlos es un acta: commit en git.</text>
+  <text x="70" y="660" font-size="11.5" fill="#0A1A2F">Nada que mueva capital queda sin registro: cada fill, cada veto, cada decisión del agente vive en el ledger.</text>
+</svg>
