@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="210" viewBox="0 0 900 210" role="img" aria-label="Flujo de Visualización financiera animada">
+<defs><marker id="f" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#9db9d6"/></marker></defs>
+<style>
+ .b{fill:#f5f8fd;stroke:#cfe0f2;stroke-width:1.3}
+ .b1{fill:#dff3fc;stroke:#9fd4ef;stroke-width:1.3}
+ .n{font-family:'Open Sans',Helvetica,Arial,sans-serif;font-size:11.5px;fill:#173b6c}
+ .i{font-family:Poppins,Helvetica,Arial,sans-serif;font-size:9.5px;font-weight:600;letter-spacing:.8px;fill:#a8b6cc}
+ .lb{font-family:Poppins,Helvetica,Arial,sans-serif;font-size:10px;font-weight:600;letter-spacing:1.1px;fill:#0b6d9e}
+ .s{font-family:'Open Sans',Helvetica,Arial,sans-serif;font-size:11px;fill:#5f7391}
+ .ln{stroke:#9db9d6;stroke-width:1.6;fill:none;marker-end:url(#f)}
+</style>
+<rect width="900" height="210" fill="#fff"/>
+<text class="lb" x="16" y="26">FLUJO</text>
+<rect class="b1" x="61" y="52" width="118" height="56" rx="7"/>
+<text class="i" x="71" y="69">01</text>
+<text class="n" x="120.0" y="87" text-anchor="middle">Forma del</text>
+<text class="n" x="120.0" y="101" text-anchor="middle">dato</text>
+<path class="ln" d="M179 80 L190 80"/>
+<rect class="b" x="193" y="52" width="118" height="56" rx="7"/>
+<text class="i" x="203" y="69">02</text>
+<text class="n" x="252.0" y="94" text-anchor="middle">Poda de tipos</text>
+<path class="ln" d="M311 80 L322 80"/>
+<rect class="b" x="325" y="52" width="118" height="56" rx="7"/>
+<text class="i" x="335" y="69">03</text>
+<text class="n" x="384.0" y="87" text-anchor="middle">Variantes de</text>
+<text class="n" x="384.0" y="101" text-anchor="middle">ángulo</text>
+<path class="ln" d="M443 80 L454 80"/>
+<rect class="b" x="457" y="52" width="118" height="56" rx="7"/>
+<text class="i" x="467" y="69">04</text>
+<text class="n" x="516.0" y="94" text-anchor="middle">Plantilla</text>
+<path class="ln" d="M575 80 L586 80"/>
+<rect class="b" x="589" y="52" width="118" height="56" rx="7"/>
+<text class="i" x="599" y="69">05</text>
+<text class="n" x="648.0" y="94" text-anchor="middle">Datos y notas</text>
+<path class="ln" d="M707 80 L718 80"/>
+<rect class="b1" x="721" y="52" width="118" height="56" rx="7"/>
+<text class="i" x="731" y="69">06</text>
+<text class="n" x="780.0" y="94" text-anchor="middle">Revisión</text>
+<text class="s" x="16" y="150">El dato poda; la narrativa elige entre lo que queda. Nunca al revés.</text>
+</svg>

@@ -3,13 +3,13 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>WACC Lab — Francisco Guerrero</title>
+  <title>Laboratorio de Costo de Capital — Francisco Guerrero</title>
   <meta name="description" content="Calculadora de costo de capital bottom-up con el método de Damodaran.">
   <meta name="robots" content="index, follow, max-image-preview:large">
   <meta name="theme-color" content="#0b6d9e">
   <link rel="canonical" href="https://fjgl96.github.io/proyectos/wacc-lab.html">
   <meta property="og:type" content="article">
-  <meta property="og:title" content="WACC Lab — Francisco Guerrero">
+  <meta property="og:title" content="Laboratorio de Costo de Capital — Francisco Guerrero">
   <meta property="og:description" content="Calculadora de costo de capital bottom-up con el método de Damodaran.">
   <meta property="og:url" content="https://fjgl96.github.io/proyectos/wacc-lab.html">
   <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
@@ -39,7 +39,7 @@
 
       <header class="sub-head">
         <span class="proyecto-estado proyecto-estado--activo">Activo</span>
-        <h1>WACC Lab <span class="proyecto-marca">Good Finance</span></h1>
+        <h1>Laboratorio de Costo de Capital <span class="proyecto-marca">Good Finance</span></h1>
         <p class="sub-lead">Calculadora de costo de capital bottom-up con el método de Damodaran.</p>
         <div class="proyecto-links">
           <a href="https://goodfinance-wacc-lab.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn-demo">Ver la demo <i class="bi bi-box-arrow-up-right" aria-hidden="true"></i></a>
@@ -48,7 +48,7 @@
       </header>
 
       <figure class="proyecto-media sub-figura">
-        <img src="../assets/img/proyectos/wacc-lab-damodaran.jpg" alt="Captura del WACC Lab con la curva y el álgebra" loading="lazy" decoding="async">
+        <img src="../assets/img/proyectos/wacc-lab-damodaran.jpg" alt="Captura del Laboratorio de Costo de Capital con la curva y el álgebra" loading="lazy" decoding="async">
         <figcaption>La curva del WACC sobre la estructura de capital, con el álgebra al costado.</figcaption>
       </figure>
 
@@ -63,7 +63,7 @@
         <h2 id="t-flujo">Cómo funciona</h2>
         <p>Cada paso alimenta al siguiente y se muestra en pantalla con su fórmula y su número. Al mover un supuesto se ve exactamente qué eslabón de la cadena cambió y cuánto arrastró al resto.</p>
         <figure class="proyecto-media sub-figura sub-figura--bloques">
-          <img src="../assets/img/proyectos/flujo-wacc-lab.svg" alt="Álgebra bottom-up del WACC Lab" loading="lazy" decoding="async">
+          <img src="../assets/img/proyectos/flujo-wacc-lab.svg" alt="Álgebra bottom-up del Laboratorio de Costo de Capital" loading="lazy" decoding="async">
           <figcaption>Los siete pasos que van de la beta del sector al WACC final.</figcaption>
         </figure>
       </section>
@@ -73,7 +73,7 @@
         <p>Cada capa depende solo de la que tiene encima. Los bloques en azul son los que
            concentran el estado o la decisión; los punteados son piezas externas o de despliegue.</p>
         <figure class="proyecto-media sub-figura sub-figura--bloques">
-          <img src="../assets/img/proyectos/bloques-wacc-lab.svg" alt="Diagrama de bloques de WACC Lab" loading="lazy" decoding="async">
+          <img src="../assets/img/proyectos/bloques-wacc-lab.svg" alt="Diagrama de bloques de Laboratorio de Costo de Capital" loading="lazy" decoding="async">
           <figcaption>Composición por capas, con los módulos reales del repositorio.</figcaption>
         </figure>
         <div class="notas-grid"><div class="nota-bloque"><h3>Un solo archivo</h3><p>Toda la aplicación vive en wacc.html: sin build, sin framework.</p></div><div class="nota-bloque"><h3>Scraper propio</h3><p>Lee las tablas de Damodaran y las incrusta en el HTML.</p></div><div class="nota-bloque"><h3>Rating sintético</h3><p>La cobertura EBIT/intereses clasifica y define el spread.</p></div><div class="nota-bloque"><h3>Cuatro casos</h3><p>Presets que cargan escenarios completos para arrancar.</p></div></div>

@@ -17,11 +17,18 @@ El archivo `.nojekyll` evita que Jekyll procese los assets.
 index.html                 Portada (una sola página, navegación por anclas)
 proyectos/                 Una sub-página por proyecto, con diagrama de bloques
   panel-minero.html
-  wacc-lab.html
-  atlas.html
-  lab-montecarlo.html
-  lab-payoff.html
+  wacc-lab.html            Laboratorio de Costo de Capital
+  lab-montecarlo.html      Laboratorio de Monte Carlo
+  lab-payoff.html          Laboratorio de Derivados
   cfagent.html
+  atlas.html               Proyecto especial, fuera de la portada
+agentes/                   Índice y ficha de cada flujo de automatización
+  index.html
+  reporte-ejecutivo.html
+  investigacion-redaccion.html
+  visualizacion-animada.html
+  briefs-visuales.html
+  tutoria-cfa.html
 research/
   banks-fintechs.html      El modelo del paper, con sus diagramas
 404.html · robots.txt · sitemap.xml
@@ -37,7 +44,9 @@ assets/
                            Waypoints, PureCounter
 ```
 
-Secciones: Inicio · Perfil · Proyectos · Panel de agentes · Research · CV · Contacto.
+Secciones: Inicio · Perfil · Proyectos · Automatización financiera · Research · CV · Contacto.
+
+La portada funciona como índice: muestra cinco proyectos y tres flujos, y el detalle vive en las sub-páginas.
 
 ## Qué falta completar
 

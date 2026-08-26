@@ -381,7 +381,7 @@ a:hover { color: var(--accent-text-dk); }
   font-size: 11px; font-weight: 600; color: var(--accent-text);
   background: #dff3fc; padding: 3px 10px; border-radius: 20px;
 }
-.agents .agent-name {
+.agents h2.agent-name, .agents .agent-name {
   font-family: "Raleway", sans-serif; font-size: 19px; font-weight: 700;
   color: var(--ink); margin: 0 0 8px 0; line-height: 1.3;
 }
@@ -624,3 +624,154 @@ h3.paper-sub, h4.paper-sub, .paper-sub {
 
   .paper { padding: 22px 18px; }
 }
+
+/*--------------------------------------------------------------
+# Proyectos especiales
+--------------------------------------------------------------*/
+.especiales {
+  margin-top: 8px;
+  padding-top: 30px;
+  border-top: 1px solid var(--line);
+}
+.especiales-titulo {
+  font-family: "Raleway", sans-serif;
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--ink);
+  margin: 0 0 6px 0;
+}
+.especiales-intro {
+  font-size: 14px;
+  color: var(--muted);
+  margin-bottom: 18px;
+  max-width: 62ch;
+}
+.especial-card {
+  display: block;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 22px 24px;
+  text-decoration: none;
+  transition: border-color .3s, box-shadow .3s, transform .3s;
+}
+.especial-card:hover {
+  border-color: #c3e8fa;
+  box-shadow: 0 10px 26px rgba(20, 157, 221, .12);
+  transform: translateY(-2px);
+}
+.especial-nombre {
+  display: block;
+  font-family: "Raleway", sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 6px;
+}
+.especial-desc {
+  display: block;
+  font-size: 14px;
+  line-height: 1.65;
+  color: #272829;
+  margin-bottom: 12px;
+  max-width: 78ch;
+}
+.especial-cta {
+  font-family: "Poppins", sans-serif;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--accent-text);
+}
+.especial-card:hover .especial-cta { color: var(--accent-text-dk); }
+.especial-cta i { transition: transform .3s; display: inline-block; }
+.especial-card:hover .especial-cta i { transform: translateX(4px); }
+
+/*--------------------------------------------------------------
+# Índice de automatización — enlace al listado completo
+--------------------------------------------------------------*/
+.agents .agents-indice {
+  text-align: center;
+  margin-top: 6px;
+}
+.agents .agents-indice a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--accent-text);
+  background: #fff;
+  border: 1px solid var(--accent-text);
+  padding: 11px 26px;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: background .3s, color .3s;
+}
+.agents .agents-indice a:hover { background: var(--accent-text); color: #fff; }
+
+@media (max-width: 768px) {
+  .especial-card { padding: 18px 18px; }
+}
+
+/*--------------------------------------------------------------
+# Fichas de flujo — entrada/salida y tarjetas de índice
+--------------------------------------------------------------*/
+.io-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+  margin-top: 22px;
+}
+.io-bloque {
+  background: var(--bg-soft);
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--muted);
+  border-radius: 0 8px 8px 0;
+  padding: 16px 18px;
+}
+.io-bloque--salida { border-left-color: var(--accent); }
+.io-bloque h3 {
+  font-family: "Poppins", sans-serif;
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 0 0 8px 0;
+}
+.io-bloque--salida h3 { color: var(--accent-text); }
+.io-bloque p { font-size: 14px !important; line-height: 1.6; margin: 0; }
+
+.sub-wrap--ancho { max-width: 1140px; }
+
+a.indice-card { text-decoration: none; }
+a.indice-card .agent-cta { margin-top: auto; padding-top: 16px; }
+a.indice-card:hover { text-decoration: none; }
+a.indice-card:focus-visible { outline: 3px solid var(--accent-text); outline-offset: 3px; }
+
+.sub-head .agent-foot { margin-top: 16px; }
+
+.agents .agent-interno {
+  font-family: "Poppins", sans-serif;
+  font-size: 10.5px;
+  font-weight: 500;
+  letter-spacing: .4px;
+  color: var(--muted);
+  margin: -4px 0 10px 0;
+}
+.agents .agent-ficha {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 14px;
+  font-family: "Poppins", sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--accent-text);
+  text-decoration: none;
+  transition: color .3s;
+}
+.agents .agent-ficha:hover { color: var(--accent-text-dk); }
+.agents .agent-ficha i { transition: transform .3s; display: inline-block; }
+.agents .agent-ficha:hover i { transform: translateX(4px); }
