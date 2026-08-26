@@ -129,3 +129,13 @@ body.subpagina #footer .container {
   gap: 6px;
   align-items: center;
 }
+
+.sub-modulo {
+  font-family: "Poppins", sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: #0b6d9e;
+  margin: 12px 0 0 0;
+}

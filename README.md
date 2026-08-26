@@ -34,6 +34,8 @@ proyectos/                 Una sub-página por proyecto, con diagrama de bloques
   panel-minero.html
   wacc-lab.html
   atlas.html
+  lab-montecarlo.html
+  lab-payoff.html
   cfagent.html
 404.html · robots.txt · sitemap.xml
 assets/
@@ -42,6 +44,7 @@ assets/
   css/subpagina.css        Estilos de las sub-páginas de proyecto
   js/main.js               JS de la plantilla (sin Swiper ni Isotope; respeta prefers-reduced-motion)
   img/proyectos/           Capturas reales y diagramas SVG
+  img/research/            Diagramas del paper (círculo de Salop, regiones)
   docs/                    CV en PDF
   vendor/                  Bootstrap, AOS, Boxicons, Bootstrap Icons, GLightbox, Typed.js,
                            Waypoints, PureCounter
@@ -62,7 +65,6 @@ Busca `PLACEHOLDER` en `index.html` para ubicarlos en contexto.
 | Endpoint del formulario | `index.html` → `formspree.io/f/TU_ID` | GitHub Pages no ejecuta PHP; crea el endpoint en [formspree.io](https://formspree.io) |
 | URL del WACC Lab | `index.html` y `proyectos/wacc-lab.html` | Pega la URL de Vercel |
 | CV en PDF | `assets/docs/cv-francisco-guerrero.pdf` | El botón de descarga ya apunta ahí |
-| Detalle del paper | Sección Research | Resumen, datos, metodología y resultados |
 | Ícono para iOS | `assets/img/apple-touch-icon.png` | 180 × 180 px, opcional |
 
 Después de subir el `og-image.jpg`, fuerza el re-escaneo en el

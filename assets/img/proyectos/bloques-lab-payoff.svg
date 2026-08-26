@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="520" viewBox="0 0 900 520" role="img" aria-label="Diagrama de bloques de Payoff Lab">
+<style>
+  .lyr{fill:#fff;stroke:#cfe0f2;stroke-width:1.4}
+  .bk{fill:#f5f8fd;stroke:#cfe0f2;stroke-width:1.2}
+  .bka{fill:#dff3fc;stroke:#9fd4ef;stroke-width:1.2}
+  .bkd{fill:#fff;stroke:#cfe0f2;stroke-width:1.2;stroke-dasharray:4 3}
+  .lt{font-family:Poppins,Helvetica,Arial,sans-serif;font-size:10px;font-weight:600;letter-spacing:1.1px;fill:#5f7391}
+  .bt{font-family:'Open Sans',Helvetica,Arial,sans-serif;font-size:11.5px;fill:#173b6c}
+</style>
+<rect width="900" height="520" fill="#fff"/>
+<text class="lt" x="16" y="24" style="fill:#0b6d9e">DIAGRAMA DE BLOQUES</text>
+<rect class="lyr" x="16" y="44" width="868" height="128" rx="8"/>
+<text class="lt" x="30" y="112.0">ENTRADA</text>
+<rect class="bkd" x="134" y="60" width="138" height="44" rx="6"/>
+<text class="bt" x="203.0" y="87" text-anchor="middle">Patas</text>
+<rect class="bkd" x="282" y="60" width="138" height="44" rx="6"/>
+<text class="bt" x="351.0" y="87" text-anchor="middle">Call</text>
+<rect class="bkd" x="430" y="60" width="138" height="44" rx="6"/>
+<text class="bt" x="499.0" y="87" text-anchor="middle">Put</text>
+<rect class="bkd" x="578" y="60" width="138" height="44" rx="6"/>
+<text class="bt" x="647.0" y="87" text-anchor="middle">Subyacente</text>
+<rect class="bkd" x="726" y="60" width="138" height="44" rx="6"/>
+<text class="bt" x="795.0" y="87" text-anchor="middle">Cantidad</text>
+<rect class="bkd" x="134" y="112" width="138" height="44" rx="6"/>
+<text class="bt" x="203.0" y="139" text-anchor="middle">Strike</text>
+<rect class="bkd" x="282" y="112" width="138" height="44" rx="6"/>
+<text class="bt" x="351.0" y="139" text-anchor="middle">Prima</text>
+<rect class="lyr" x="16" y="186" width="868" height="128" rx="8"/>
+<text class="lt" x="30" y="254.0">PRESETS</text>
+<rect class="bk" x="134" y="202" width="138" height="44" rx="6"/>
+<text class="bt" x="203.0" y="229" text-anchor="middle">14 estructuras</text>
+<rect class="bk" x="282" y="202" width="138" height="44" rx="6"/>
+<text class="bt" x="351.0" y="229" text-anchor="middle">Collar</text>
+<rect class="bk" x="430" y="202" width="138" height="44" rx="6"/>
+<text class="bt" x="499.0" y="229" text-anchor="middle">Straddle</text>
+<rect class="bk" x="578" y="202" width="138" height="44" rx="6"/>
+<text class="bt" x="647.0" y="229" text-anchor="middle">Mariposa</text>
+<rect class="bk" x="726" y="202" width="138" height="44" rx="6"/>
+<text class="bt" x="795.0" y="229" text-anchor="middle">Risk reversal</text>
+<rect class="bk" x="134" y="254" width="138" height="44" rx="6"/>
+<text class="bt" x="203.0" y="281" text-anchor="middle">Seagull</text>
+<rect class="lyr" x="16" y="328" width="868" height="76" rx="8"/>
+<text class="lt" x="30" y="370.0">MOTOR</text>
+<rect class="bka" x="134" y="344" width="138" height="44" rx="6"/>
+<text class="bt" x="203.0" y="371" text-anchor="middle">payoff-engine.js</text>
+<rect class="bka" x="282" y="344" width="138" height="44" rx="6"/>
+<text class="bt" x="351.0" y="371" text-anchor="middle">Suma de patas</text>
+<rect class="bka" x="430" y="344" width="138" height="44" rx="6"/>
+<text class="bt" x="499.0" y="371" text-anchor="middle">Breakevens</text>
+<rect class="bka" x="578" y="344" width="138" height="44" rx="6"/>
+<text class="bt" x="647.0" y="371" text-anchor="middle">Clasificación</text>
+<rect class="lyr" x="16" y="418" width="868" height="76" rx="8"/>
+<text class="lt" x="30" y="460.0">SALIDA</text>
+<rect class="bka" x="134" y="434" width="138" height="44" rx="6"/>
+<text class="bt" x="203.0" y="461" text-anchor="middle">Silueta de payoff</text>
+<rect class="bka" x="282" y="434" width="138" height="44" rx="6"/>
+<text class="bt" x="351.0" y="461" text-anchor="middle">Puntos de equilibrio</text>
+<rect class="bka" x="430" y="434" width="138" height="44" rx="6"/>
+<text class="bt" x="499.0" y="461" text-anchor="middle">Dirección</text>
+<rect class="bka" x="578" y="434" width="138" height="44" rx="6"/>
+<text class="bt" x="647.0" y="461" text-anchor="middle">Volatilidad</text>
+<rect class="bka" x="726" y="434" width="138" height="44" rx="6"/>
+<text class="bt" x="795.0" y="461" text-anchor="middle">Piso y techo</text>
+</svg>

@@ -83,7 +83,8 @@
         "knowsAbout": [
           "Planeamiento financiero", "Control de gestión", "Análisis de estados financieros",
           "Modelamiento financiero", "Valuación de empresas", "Riesgo de crédito",
-          "Econometría aplicada", "Power BI", "Python", "SQL", "Diseño de agentes de IA"
+          "Econometría aplicada", "Organización industrial", "Regulación financiera",
+          "Power BI", "Python", "SQL", "Diseño de agentes de IA"
         ],
         "knowsLanguage": [
           { "@type": "Language", "name": "Español" },
@@ -312,9 +313,9 @@
                 <span class="proyecto-estado proyecto-estado--curso">En curso</span>
               </header>
               <p class="proyecto-desc">
-                Sitio de estudio para el Nivel III del programa CFA. Cinco volúmenes, 26 módulos,
-                266 subtemas y 268 figuras de recall. Cada concepto entra por el gráfico, se mueve con
-                controles y recién después aparece la fórmula.
+                Proyecto en curso: un sitio de estudio donde cada concepto entra por el gráfico, se mueve
+                con controles y recién después aparece la fórmula. De ahí salen los dos labs de abajo,
+                que son sus piezas más trabajadas.
               </p>
               <p class="proyecto-concepto">
                 <strong>El concepto.</strong> El currículo como grafo, no como pila de PDFs. Tres primitivas
@@ -327,17 +328,93 @@
                 <li>HTML y SVG</li><li>JavaScript sin framework</li><li>JSON</li><li>localStorage</li>
               </ul>
               <div class="proyecto-links">
+                <a href="https://atlas-l3.vercel.app/labs/montecarlo.html" target="_blank" rel="noopener" class="btn-demo">
+                  Lab de Monte Carlo <i class="bi bi-box-arrow-up-right" aria-hidden="true"></i>
+                </a>
+                <a href="https://atlas-l3.vercel.app/labs/payoff.html" target="_blank" rel="noopener" class="btn-demo">
+                  Lab de Payoff <i class="bi bi-box-arrow-up-right" aria-hidden="true"></i>
+                </a>
                 <a href="proyectos/atlas.html" class="btn-repo btn-detalle">Cómo está compuesto <i class="bi bi-diagram-3" aria-hidden="true"></i></a>
-                <span class="proyecto-nota proyecto-nota--aviso">
-                  Sin enlace público: el repositorio es privado y parte del contenido todavía deriva de
-                  material de terceros pendiente de reescribir.
-                </span>
               </div>
             </div>
           </div>
         </article>
 
-        <!-- 04 · CFAAgent -->
+
+        <!-- 04 · Monte Carlo Lab -->
+        <article class="proyecto" data-aos="fade-up">
+          <div class="proyecto-grid proyecto-grid--invertido">
+            <figure class="proyecto-media">
+              <img src="assets/img/proyectos/lab-montecarlo.jpg" width="1200" height="900" loading="lazy" decoding="async"
+                   alt="Monte Carlo Lab: fan chart de dos mil trayectorias de patrimonio con bandas de percentiles y la línea de meta">
+              <figcaption>Dos mil trayectorias resumidas en bandas de percentiles, con la meta como línea móvil.</figcaption>
+            </figure>
+            <div class="proyecto-body">
+              <header class="proyecto-head">
+                <h3>Monte Carlo Lab</h3>
+                <span class="proyecto-estado proyecto-estado--activo">En línea</span>
+              </header>
+              <p class="proyecto-desc">
+                Simula la evolución del patrimonio bajo incertidumbre y responde lo que el retorno esperado
+                no responde: con qué probabilidad se llega a una meta.
+              </p>
+              <p class="proyecto-concepto">
+                <strong>El concepto.</strong> Una cartera con 7,7&nbsp;% esperado y 10&nbsp;% de volatilidad no
+                entrega 7,7&nbsp;% cada año: entrega una distribución. Lo que importa es qué fracción de esa
+                distribución cruza la meta. El lab la reporta con su error estándar —una simulación también
+                tiene ruido— y deja ver que sin aportes lo que manda es el múltiplo, no el monto.
+              </p>
+              <ul class="proyecto-tech">
+                <li>JavaScript sin framework</li><li>SVG</li><li>Simulación Monte Carlo</li>
+              </ul>
+              <div class="proyecto-links">
+                <a href="https://atlas-l3.vercel.app/labs/montecarlo.html" target="_blank" rel="noopener" class="btn-demo">
+                  Abrir el lab <i class="bi bi-box-arrow-up-right" aria-hidden="true"></i>
+                </a>
+                <a href="proyectos/lab-montecarlo.html" class="btn-repo btn-detalle">Cómo está compuesto <i class="bi bi-diagram-3" aria-hidden="true"></i></a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- 05 · Payoff Lab -->
+        <article class="proyecto" data-aos="fade-up">
+          <div class="proyecto-grid">
+            <figure class="proyecto-media">
+              <img src="assets/img/proyectos/lab-payoff.jpg" width="1200" height="900" loading="lazy" decoding="async"
+                   alt="Payoff Lab: constructor de patas de opciones con la silueta de resultado al vencimiento y sus breakevens">
+              <figcaption>Se arman las patas a la izquierda; la silueta y los breakevens se recalculan solos.</figcaption>
+            </figure>
+            <div class="proyecto-body">
+              <header class="proyecto-head">
+                <h3>Payoff Lab</h3>
+                <span class="proyecto-estado proyecto-estado--activo">En línea</span>
+              </header>
+              <p class="proyecto-desc">
+                Cualquier combinación de opciones —calls, puts y subyacente— con su perfil de resultado al
+                vencimiento, sus puntos de equilibrio y su clasificación, calculados solos.
+              </p>
+              <p class="proyecto-concepto">
+                <strong>El concepto.</strong> Las estrategias con opciones suelen estudiarse como catorce
+                siluetas memorizadas por separado. Todas son la misma operación: una suma de patas. El lab
+                invierte el orden —construyes la combinación y la silueta aparece— y entonces se nota que el
+                breakeven no se memoriza, es donde la suma cruza cero, y que dirección y volatilidad son dos
+                ejes independientes.
+              </p>
+              <ul class="proyecto-tech">
+                <li>JavaScript sin framework</li><li>SVG</li><li>14 estructuras precargadas</li>
+              </ul>
+              <div class="proyecto-links">
+                <a href="https://atlas-l3.vercel.app/labs/payoff.html" target="_blank" rel="noopener" class="btn-demo">
+                  Abrir el lab <i class="bi bi-box-arrow-up-right" aria-hidden="true"></i>
+                </a>
+                <a href="proyectos/lab-payoff.html" class="btn-repo btn-detalle">Cómo está compuesto <i class="bi bi-diagram-3" aria-hidden="true"></i></a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- 06 · CFAAgent -->
         <article class="proyecto" data-aos="fade-up">
           <div class="proyecto-grid proyecto-grid--invertido">
             <figure class="proyecto-media">
@@ -567,34 +644,82 @@
 
         <div class="section-title">
           <h2 id="research-title">Research</h2>
-          <p>Investigación aplicada en intermediación financiera y economía.</p>
+          <p>Investigación en organización industrial de la intermediación financiera.</p>
         </div>
 
         <div class="row" data-aos="fade-up">
           <div class="col-lg-12">
             <article class="paper">
               <header class="paper-head">
-                <span class="paper-tipo">Tesis de maestría · Documento de trabajo</span>
-                <h3 class="paper-titulo" lang="en">Sectorial and qualitative differentiation for heterogeneous financial intermediaries</h3>
+                <span class="paper-tipo">Documento de trabajo RedNIE N.º 327 · Febrero 2024</span>
+                <h3 class="paper-titulo" lang="en">Banks or Fintechs? A Roadmap for Regulation</h3>
                 <p class="paper-meta">
-                  M.A. en Economía · Universidad de San Andrés (UdeSA), Argentina ·
-                  Publicado en la serie de documentos de trabajo de la RedNIE
+                  Francisco Jesús Guerrero López · Paula Margaretic · Lucía Quesada · Federico Sturzenegger<br>
+                  Universidad de San Andrés · Universidad de Chile
                 </p>
               </header>
 
               <div class="paper-body">
                 <p>
-                  La tesis estudia cómo se comportan los intermediarios financieros cuando dejan de tratarse
-                  como un bloque homogéneo y se los diferencia por sector y por atributos cualitativos.
-                  La formación cuantitativa detrás incluye economía aplicada, macroeconometría y
-                  <span lang="en">big data</span> y sistemas sociales complejos.
+                  Los bancos tradicionales compiten cada vez más con bancos digitales, fintechs y grandes
+                  tecnológicas. La pregunta regulatoria de fondo es si esos intermediarios no bancarios deben
+                  poder captar depósitos y dar crédito, o si esas actividades deben quedar reservadas a la banca.
+                  El paper construye un modelo para responderla, en vez de resolverla por doctrina.
                 </p>
-                <!-- PLACEHOLDER: el resumen, los datos, la metodología y los resultados
-                     se completan cuando subas el PDF (el dominio de la RedNIE está bloqueado
-                     desde este entorno y no pude leerlo). -->
-                <p class="paper-pendiente">
-                  <i class="bi bi-info-circle" aria-hidden="true"></i>
-                  Resumen, metodología, datos y resultados: pendientes de completar con el documento final.
+
+                <h4 class="paper-sub">El modelo</h4>
+                <p>
+                  Los bancos se ubican simétricamente sobre un <strong>círculo de Salop</strong>, con los
+                  consumidores repartidos por el perímetro. La innovación —siguiendo a Madden y Pezzino (2011)—
+                  es meter una <strong>fintech dentro del círculo</strong>, equidistante de todos los clientes:
+                  no tiene ventaja geográfica con nadie, pero tampoco desventaja. Todos eligen su grado de
+                  especialización y todos pagan un costo fijo.
+                </p>
+
+                <figure class="proyecto-media paper-figura">
+                  <img src="assets/img/research/salop.svg" width="900" height="430" loading="lazy" decoding="async"
+                       alt="Círculo de Salop: cinco bancos repartidos sobre el perímetro junto a los consumidores, y una fintech en el centro equidistante de todos">
+                  <figcaption>Los bancos compiten por cercanía; la fintech llega a todos por igual desde el centro.</figcaption>
+                </figure>
+
+                <p>
+                  Ese costo fijo es lo que rompe la competencia perfecta. Como cada intermediario enfrenta una
+                  demanda con pendiente negativa, el equilibrio de mercado produce <strong>entrada excesiva de
+                  bancos y menos especialización</strong> de la socialmente deseable. Un planificador preferiría
+                  lo contrario: menos bancos, más especializados.
+                </p>
+
+                <h4 class="paper-sub">El resultado</h4>
+                <p>
+                  No hay una respuesta única: hay regiones de parámetros. Para algunos valores el planificador
+                  quiere <strong>excluir a los intermediarios no bancarios</strong>; para otros quiere
+                  <strong>excluir a los bancos</strong> y dejar toda la intermediación en manos de la fintech.
+                  Lo que decide es el intercambio entre la ganancia por especialización que aportan los bancos
+                  y el costo de intermediación, más alto en la banca porque cada institución paga su propio
+                  costo fijo.
+                </p>
+
+                <figure class="proyecto-media paper-figura">
+                  <img src="assets/img/research/regiones.svg" width="900" height="330" loading="lazy" decoding="async"
+                       alt="Tres regiones de parámetros: excluir a la fintech, admitir a ambos, o excluir a los bancos, según el costo fijo bancario">
+                  <figcaption>Qué prefiere el planificador según cuánto cuesta operar un banco.</figcaption>
+                </figure>
+
+                <h4 class="paper-sub">Por qué importa</h4>
+                <p>
+                  Existen regiones donde el costo fijo bancario es tan alto que el mercado queda desatendido por
+                  la banca aunque la fintech podría servirlo. Ahí, prohibirle intermediar genera una
+                  <strong>pérdida de bienestar significativa</strong>. El modelo también encaja con lo que se
+                  observa en la industria: la competencia de las grandes tecnológicas es intensa en el negocio
+                  minorista y mucho menor en el crédito corporativo, justo donde la especialización pesa más.
+                  La conclusión es que, para ciertos tipos de crédito, la regulación bancaria es más restrictiva
+                  con los no bancos de lo que conviene.
+                </p>
+
+                <p class="paper-cita">
+                  Guerrero López, F., Margaretic, P., Quesada, L. y Sturzenegger, F. (2024).
+                  <em lang="en">Banks or Fintechs? A Roadmap for Regulation</em>.
+                  Documento de trabajo RedNIE N.º 327.
                 </p>
               </div>
 
@@ -749,6 +874,12 @@
                 <i class="bi bi-envelope" aria-hidden="true"></i>
                 <h3>Email</h3>
                 <p><a href="mailto:fguerrerolopez@udesa.edu.ar">fguerrerolopez@udesa.edu.ar</a></p>
+              </div>
+
+              <div class="phone">
+                <i class="bi bi-telephone" aria-hidden="true"></i>
+                <h3>Teléfono</h3>
+                <p><a href="tel:+51945478801">+51 945 478 801</a></p>
               </div>
 
               <div class="phone">

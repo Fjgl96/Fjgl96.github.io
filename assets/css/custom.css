@@ -492,3 +492,27 @@ a:hover { color: var(--accent-text-dk); }
   .agents .agent-card:hover { transform: none; }
   [data-aos] { opacity: 1 !important; transform: none !important; }
 }
+
+/*--------------------------------------------------------------
+# Research — subtítulos, figuras y cita
+--------------------------------------------------------------*/
+.paper-sub {
+  font-family: "Raleway", sans-serif;
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--ink);
+  margin: 30px 0 12px 0;
+}
+.paper-figura {
+  margin: 22px 0 24px 0;
+  overflow-x: auto;
+}
+.paper-figura img { min-width: 620px; }
+.paper-cita {
+  margin-top: 28px;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+  font-size: 13px !important;
+  line-height: 1.65;
+  color: var(--muted) !important;
+}

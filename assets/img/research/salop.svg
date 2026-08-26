@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="430" viewBox="0 0 900 430" role="img" aria-label="Modelo de círculo de Salop con bancos en el perímetro y una fintech en el centro">
+<style>
+  .ttl{font-family:Raleway,Helvetica,Arial,sans-serif;font-size:13px;font-weight:700;fill:#173b6c}
+  .lb{font-family:Poppins,Helvetica,Arial,sans-serif;font-size:10px;font-weight:600;letter-spacing:1.1px;fill:#0b6d9e}
+  .t{font-family:'Open Sans',Helvetica,Arial,sans-serif;font-size:11.5px;fill:#173b6c}
+  .s{font-family:'Open Sans',Helvetica,Arial,sans-serif;font-size:11px;fill:#5f7391}
+  .bank{fill:#fff;stroke:#0b6d9e;stroke-width:2}
+  .fin{fill:#149ddd;stroke:#fff;stroke-width:2.5}
+  .cons{fill:#9db9d6}
+  .ring{fill:none;stroke:#cfe0f2;stroke-width:2}
+  .spoke{stroke:#c6dbef;stroke-width:1.2;stroke-dasharray:3 4}
+  .arc{fill:none;stroke:#149ddd;stroke-width:2.5}
+</style>
+<rect width="900" height="430" fill="#fff"/>
+<text class="lb" x="24" y="30">EL MODELO · CÍRCULO DE SALOP</text>
+<circle class="ring" cx="300" cy="215" r="140"/>
+<circle class="cons" cx="440.0" cy="215.0" r="2.2"/>
+<circle class="cons" cx="439.2" cy="229.6" r="2.2"/>
+<circle class="cons" cx="436.9" cy="244.1" r="2.2"/>
+<circle class="cons" cx="433.1" cy="258.3" r="2.2"/>
+<circle class="cons" cx="427.9" cy="271.9" r="2.2"/>
+<circle class="cons" cx="421.2" cy="285.0" r="2.2"/>
+<circle class="cons" cx="413.3" cy="297.3" r="2.2"/>
+<circle class="cons" cx="404.0" cy="308.7" r="2.2"/>
+<circle class="cons" cx="393.7" cy="319.0" r="2.2"/>
+<circle class="cons" cx="382.3" cy="328.3" r="2.2"/>
+<circle class="cons" cx="370.0" cy="336.2" r="2.2"/>
+<circle class="cons" cx="356.9" cy="342.9" r="2.2"/>
+<circle class="cons" cx="343.3" cy="348.1" r="2.2"/>
+<circle class="cons" cx="329.1" cy="351.9" r="2.2"/>
+<circle class="cons" cx="314.6" cy="354.2" r="2.2"/>
+<circle class="cons" cx="300.0" cy="355.0" r="2.2"/>
+<circle class="cons" cx="285.4" cy="354.2" r="2.2"/>
+<circle class="cons" cx="270.9" cy="351.9" r="2.2"/>
+<circle class="cons" cx="256.7" cy="348.1" r="2.2"/>
+<circle class="cons" cx="243.1" cy="342.9" r="2.2"/>
+<circle class="cons" cx="230.0" cy="336.2" r="2.2"/>
+<circle class="cons" cx="217.7" cy="328.3" r="2.2"/>
+<circle class="cons" cx="206.3" cy="319.0" r="2.2"/>
+<circle class="cons" cx="196.0" cy="308.7" r="2.2"/>
+<circle class="cons" cx="186.7" cy="297.3" r="2.2"/>
+<circle class="cons" cx="178.8" cy="285.0" r="2.2"/>
+<circle class="cons" cx="172.1" cy="271.9" r="2.2"/>
+<circle class="cons" cx="166.9" cy="258.3" r="2.2"/>
+<circle class="cons" cx="163.1" cy="244.1" r="2.2"/>
+<circle class="cons" cx="160.8" cy="229.6" r="2.2"/>
+<circle class="cons" cx="160.0" cy="215.0" r="2.2"/>
+<circle class="cons" cx="160.8" cy="200.4" r="2.2"/>
+<circle class="cons" cx="163.1" cy="185.9" r="2.2"/>
+<circle class="cons" cx="166.9" cy="171.7" r="2.2"/>
+<circle class="cons" cx="172.1" cy="158.1" r="2.2"/>
+<circle class="cons" cx="178.8" cy="145.0" r="2.2"/>
+<circle class="cons" cx="186.7" cy="132.7" r="2.2"/>
+<circle class="cons" cx="196.0" cy="121.3" r="2.2"/>
+<circle class="cons" cx="206.3" cy="111.0" r="2.2"/>
+<circle class="cons" cx="217.7" cy="101.7" r="2.2"/>
+<circle class="cons" cx="230.0" cy="93.8" r="2.2"/>
+<circle class="cons" cx="243.1" cy="87.1" r="2.2"/>
+<circle class="cons" cx="256.7" cy="81.9" r="2.2"/>
+<circle class="cons" cx="270.9" cy="78.1" r="2.2"/>
+<circle class="cons" cx="285.4" cy="75.8" r="2.2"/>
+<circle class="cons" cx="300.0" cy="75.0" r="2.2"/>
+<circle class="cons" cx="314.6" cy="75.8" r="2.2"/>
+<circle class="cons" cx="329.1" cy="78.1" r="2.2"/>
+<circle class="cons" cx="343.3" cy="81.9" r="2.2"/>
+<circle class="cons" cx="356.9" cy="87.1" r="2.2"/>
+<circle class="cons" cx="370.0" cy="93.8" r="2.2"/>
+<circle class="cons" cx="382.3" cy="101.7" r="2.2"/>
+<circle class="cons" cx="393.7" cy="111.0" r="2.2"/>
+<circle class="cons" cx="404.0" cy="121.3" r="2.2"/>
+<circle class="cons" cx="413.3" cy="132.7" r="2.2"/>
+<circle class="cons" cx="421.2" cy="145.0" r="2.2"/>
+<circle class="cons" cx="427.9" cy="158.1" r="2.2"/>
+<circle class="cons" cx="433.1" cy="171.7" r="2.2"/>
+<circle class="cons" cx="436.9" cy="185.9" r="2.2"/>
+<circle class="cons" cx="439.2" cy="200.4" r="2.2"/>
+<line class="spoke" x1="300" y1="215" x2="300.0" y2="75.0"/>
+<circle class="bank" cx="300.0" cy="75.0" r="15"/>
+<text class="t" x="300.0" y="79.0" text-anchor="middle" style="font-size:10.5px;font-weight:700">B1</text>
+<line class="spoke" x1="300" y1="215" x2="433.1" y2="171.7"/>
+<circle class="bank" cx="433.1" cy="171.7" r="15"/>
+<text class="t" x="433.1" y="175.7" text-anchor="middle" style="font-size:10.5px;font-weight:700">B2</text>
+<line class="spoke" x1="300" y1="215" x2="382.3" y2="328.3"/>
+<circle class="bank" cx="382.3" cy="328.3" r="15"/>
+<text class="t" x="382.3" y="332.3" text-anchor="middle" style="font-size:10.5px;font-weight:700">B3</text>
+<line class="spoke" x1="300" y1="215" x2="217.7" y2="328.3"/>
+<circle class="bank" cx="217.7" cy="328.3" r="15"/>
+<text class="t" x="217.7" y="332.3" text-anchor="middle" style="font-size:10.5px;font-weight:700">B4</text>
+<line class="spoke" x1="300" y1="215" x2="166.9" y2="171.7"/>
+<circle class="bank" cx="166.9" cy="171.7" r="15"/>
+<text class="t" x="166.9" y="175.7" text-anchor="middle" style="font-size:10.5px;font-weight:700">B5</text>
+<circle class="fin" cx="300" cy="215" r="24"/>
+<text class="t" x="300" y="219" text-anchor="middle" style="fill:#fff;font-weight:700;font-size:11px">FIN</text>
+<text class="ttl" x="300" y="397" text-anchor="middle">Consumidores repartidos por el perímetro</text>
+<text class="ttl" x="530" y="78">Bancos</text>
+<text class="s" x="530" y="98">Se ubican simétricamente sobre el círculo.</text>
+<text class="s" x="530" y="115">Cada uno paga su propio costo fijo y tiene</text>
+<text class="s" x="530" y="132">ventaja geográfica solo con los clientes cercanos.</text>
+<text class="ttl" x="530" y="186">Fintech</text>
+<text class="s" x="530" y="206">Se sitúa dentro del círculo, equidistante</text>
+<text class="s" x="530" y="223">de todos los clientes: llega a todos por igual,</text>
+<text class="s" x="530" y="240">sin ventaja ni desventaja de ubicación.</text>
+<text class="ttl" x="530" y="294">La fricción</text>
+<text class="s" x="530" y="314">Con costos fijos el mercado no es de competencia</text>
+<text class="s" x="530" y="331">perfecta: entran demasiados bancos y todos se</text>
+<text class="s" x="530" y="348">especializan menos de lo que sería óptimo.</text>
+</svg>

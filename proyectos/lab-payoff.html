@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Payoff Lab — Francisco Guerrero</title>
+  <meta name="description" content="Cualquier combinación de opciones, con su silueta, sus breakevens y su clasificación calculados solos.">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#0b6d9e">
+  <link rel="canonical" href="https://fjgl96.github.io/proyectos/lab-payoff.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Payoff Lab — Francisco Guerrero">
+  <meta property="og:description" content="Cualquier combinación de opciones, con su silueta, sus breakevens y su clasificación calculados solos.">
+  <meta property="og:url" content="https://fjgl96.github.io/proyectos/lab-payoff.html">
+  <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700|Raleway:400,600,700|Poppins:400,500,600&display=swap" rel="stylesheet">
+  <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="../assets/css/style.css" rel="stylesheet">
+  <link href="../assets/css/custom.css" rel="stylesheet">
+  <link href="../assets/css/subpagina.css" rel="stylesheet">
+</head>
+<body class="subpagina">
+  <a href="#contenido" class="skip-link">Saltar al contenido</a>
+  <header class="sub-top">
+    <div class="container">
+      <a href="../index.html#proyectos" class="sub-volver"><i class="bi bi-arrow-left" aria-hidden="true"></i> Proyectos</a>
+      <a href="../index.html" class="sub-marca">Francisco Guerrero</a>
+    </div>
+  </header>
+
+  <main id="contenido">
+    <article class="container sub-wrap">
+      <header class="sub-head">
+        <span class="proyecto-estado proyecto-estado--activo">En línea</span>
+        <p class="sub-modulo">Atlas · Nivel III — Derivatives LM01</p>
+        <h1>Payoff Lab</h1>
+        <p class="sub-lead">Cualquier combinación de opciones, con su silueta, sus breakevens y su clasificación calculados solos.</p>
+        <div class="proyecto-links">
+          <a href="https://atlas-l3.vercel.app/labs/payoff.html" target="_blank" rel="noopener" class="btn-demo">
+            Abrir el lab <i class="bi bi-box-arrow-up-right" aria-hidden="true"></i>
+          </a>
+          <a href="atlas.html" class="btn-repo">Sobre Atlas <i class="bi bi-diagram-3" aria-hidden="true"></i></a>
+        </div>
+      </header>
+
+      <figure class="proyecto-media sub-figura">
+        <img src="../assets/img/proyectos/lab-payoff.jpg" alt="Payoff Lab: constructor de patas de opciones con la silueta de resultado al vencimiento y sus breakevens" loading="lazy" decoding="async">
+        <figcaption>Se arman las patas a la izquierda; la silueta y los breakevens se recalculan solos.</figcaption>
+      </figure>
+
+      <section class="sub-seccion" aria-labelledby="t-que">
+        <h2 id="t-que">Qué hace</h2>
+        <p>Se arman las patas —calls, puts y subyacente, con su cantidad, strike y prima— y el lab dibuja el perfil de resultado al vencimiento, marca los puntos de equilibrio y clasifica la estructura por dirección y por exposición a volatilidad. Trae catorce estructuras precargadas.</p>
+        <p class="proyecto-concepto"><strong>El concepto.</strong> Las estrategias con opciones suelen estudiarse como catorce siluetas memorizadas por separado: el collar, el straddle, la mariposa. Pero todas son la misma operación —una suma de patas— y verlas como catálogo esconde eso. El lab invierte el orden: construyes la combinación y la silueta aparece sola. Entonces se nota que un collar y un bull call spread comparten forma, que el breakeven no es un dato que se memoriza sino donde la suma cruza cero, y que dirección y volatilidad son dos ejes independientes: se puede ser alcista y estar corto de volatilidad al mismo tiempo.</p>
+        <ul class="proyecto-tech"><li>JavaScript sin framework</li><li>SVG</li></ul>
+      </section>
+
+      <section class="sub-seccion" aria-labelledby="t-bloques">
+        <h2 id="t-bloques">Cómo está compuesto</h2>
+        <p>Los supuestos entran por arriba, el motor calcula y la salida solo dibuja.
+           Ninguna vista hace cuentas: si el número está mal, está mal en el motor.</p>
+        <figure class="proyecto-media sub-figura sub-figura--bloques">
+          <img src="../assets/img/proyectos/bloques-lab-payoff.svg" alt="Diagrama de bloques de Payoff Lab" loading="lazy" decoding="async">
+          <figcaption>Composición por capas.</figcaption>
+        </figure>
+        <div class="notas-grid"><div class="nota-bloque"><h3>Una sola operación</h3><p>Catorce estructuras dejan de ser catorce dibujos y pasan a ser una suma de patas.</p></div><div class="nota-bloque"><h3>Dos ejes, no uno</h3><p>Dirección y volatilidad se clasifican por separado: son independientes.</p></div><div class="nota-bloque"><h3>Breakeven calculado</h3><p>No se memoriza: es donde la suma de las patas cruza cero.</p></div><div class="nota-bloque"><h3>Zona esperada</h3><p>Se fija un piso y un techo para leer la estructura dentro del rango que importa.</p></div></div>
+      </section>
+    </article>
+  </main>
+
+  <footer id="footer" class="sub-footer">
+    <div class="container">
+      <div class="copyright">&copy; <strong><span>Francisco Guerrero López</span></strong></div>
+      <div class="credits"><span lang="en">Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a></span></div>
+    </div>
+  </footer>
+</body>
+</html>
