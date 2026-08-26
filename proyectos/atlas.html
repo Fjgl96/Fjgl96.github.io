@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Atlas · Nivel III — Francisco Guerrero</title>
+  <meta name="description" content="Sitio de estudio para el Nivel III del programa CFA.">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#0b6d9e">
+  <link rel="canonical" href="https://fjgl96.github.io/proyectos/atlas.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Atlas · Nivel III — Francisco Guerrero">
+  <meta property="og:description" content="Sitio de estudio para el Nivel III del programa CFA.">
+  <meta property="og:url" content="https://fjgl96.github.io/proyectos/atlas.html">
+  <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700|Raleway:400,600,700|Poppins:400,500,600&display=swap" rel="stylesheet">
+  <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="../assets/css/style.css" rel="stylesheet">
+  <link href="../assets/css/custom.css" rel="stylesheet">
+  <link href="../assets/css/subpagina.css" rel="stylesheet">
+</head>
+<body class="subpagina">
+  <a href="#contenido" class="skip-link">Saltar al contenido</a>
+
+  <header class="sub-top">
+    <div class="container">
+      <a href="../index.html#proyectos" class="sub-volver">
+        <i class="bi bi-arrow-left" aria-hidden="true"></i> Proyectos
+      </a>
+      <a href="../index.html" class="sub-marca">Francisco Guerrero</a>
+    </div>
+  </header>
+
+  <main id="contenido">
+    <article class="container sub-wrap">
+
+      <header class="sub-head">
+        <span class="proyecto-estado proyecto-estado--curso">En curso</span>
+        <h1>Atlas · Nivel III</h1>
+        <p class="sub-lead">Sitio de estudio para el Nivel III del programa CFA.</p>
+        <div class="proyecto-links"></div>
+        <p class="proyecto-nota proyecto-nota--aviso">Sin enlace público: el repositorio es privado y parte del contenido todavía deriva de material de terceros pendiente de reescribir.</p>
+      </header>
+
+      <figure class="proyecto-media sub-figura">
+        <img src="../assets/img/proyectos/atlas-nivel-3-cfa.jpg" alt="Portada de Atlas Nivel III con los cinco volúmenes" loading="lazy" decoding="async">
+        <figcaption>Los cinco volúmenes del currículo con su cobertura real.</figcaption>
+      </figure>
+
+      <section class="sub-seccion" aria-labelledby="t-que">
+        <h2 id="t-que">Qué es</h2>
+        <p>Cinco volúmenes, 26 módulos, 266 subtemas y 268 figuras de recall. Cada concepto entra por el gráfico, se mueve con controles y recién después aparece la fórmula.</p>
+        <p class="proyecto-concepto"><strong>El concepto.</strong> El currículo como grafo, no como pila de PDFs. Tres primitivas de aprendizaje: muros para recall activo, labs para mover los parámetros a mano y explainers que se explican solos paso a paso. Lo que fallas vuelve al día siguiente y lo que sabes vuelve cada vez más tarde: una cola de repaso espaciado tipo Leitner que vive en el navegador, sin enviar nada a ningún servidor.</p>
+        <ul class="proyecto-tech"><li>HTML y SVG</li><li>JavaScript sin framework</li><li>JSON</li><li>localStorage</li></ul>
+      </section>
+
+      <section class="sub-seccion" aria-labelledby="t-flujo">
+        <h2 id="t-flujo">Cómo funciona</h2>
+        <p>El contenido vive en JSON y el shell lo pide cuando la ruta lo necesita. Las tres primitivas leen de ahí, y todo lo que marcas alimenta un único módulo de estado que decide cuándo te vuelve a preguntar.</p>
+        <figure class="proyecto-media sub-figura sub-figura--bloques">
+          <img src="../assets/img/proyectos/flujo-atlas.svg" alt="Primitivas de aprendizaje de Atlas Nivel III" loading="lazy" decoding="async">
+          <figcaption>Del JSON de contenido a la cola de repaso: el recorrido de una figura.</figcaption>
+        </figure>
+      </section>
+
+      <section class="sub-seccion" aria-labelledby="t-bloques">
+        <h2 id="t-bloques">Cómo está compuesto</h2>
+        <p>Cada capa depende solo de la que tiene encima. Los bloques en azul son los que
+           concentran el estado o la decisión; los punteados son piezas externas o de despliegue.</p>
+        <figure class="proyecto-media sub-figura sub-figura--bloques">
+          <img src="../assets/img/proyectos/bloques-atlas.svg" alt="Diagrama de bloques de Atlas · Nivel III" loading="lazy" decoding="async">
+          <figcaption>Composición por capas, con los módulos reales del repositorio.</figcaption>
+        </figure>
+        <div class="notas-grid"><div class="nota-bloque"><h3>Cuatro costuras</h3><p>Progress guarda, atlas.css pinta, text.js escribe y los motores calculan. Ninguna vista hace dos cosas.</p></div><div class="nota-bloque"><h3>Carga diferida</h3><p>El shell arranca con index.json y pide lo demás cuando la ruta lo necesita.</p></div><div class="nota-bloque"><h3>Referencias automáticas</h3><p>Trampas, glosario y fórmulas se generan solos desde los muros.</p></div><div class="nota-bloque"><h3>Sin servidor</h3><p>El progreso nunca sale del navegador.</p></div></div>
+      </section>
+
+    </article>
+  </main>
+
+  <footer id="footer" class="sub-footer">
+    <div class="container">
+      <div class="copyright">&copy; <strong><span>Francisco Guerrero López</span></strong></div>
+      <div class="credits"><span lang="en">Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a></span></div>
+    </div>
+  </footer>
+</body>
+</html>

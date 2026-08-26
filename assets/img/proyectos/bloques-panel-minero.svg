@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="714" viewBox="0 0 900 714" role="img" aria-label="Diagrama de bloques de Panel Minero">
+<style>
+  .lyr{fill:#fff;stroke:#cfe0f2;stroke-width:1.4}
+  .bk{fill:#f5f8fd;stroke:#cfe0f2;stroke-width:1.2}
+  .bka{fill:#dff3fc;stroke:#9fd4ef;stroke-width:1.2}
+  .bkd{fill:#fff;stroke:#cfe0f2;stroke-width:1.2;stroke-dasharray:4 3}
+  .lt{font-family:Poppins,Helvetica,Arial,sans-serif;font-size:10px;font-weight:600;letter-spacing:1.1px;fill:#5f7391}
+  .bt{font-family:'Open Sans',Helvetica,Arial,sans-serif;font-size:11.5px;fill:#173b6c}
+</style>
+<rect width="900" height="714" fill="#fff"/>
+<text class="lt" x="16" y="24" style="fill:#0b6d9e">DIAGRAMA DE BLOQUES</text>
+<rect class="lyr" x="16" y="44" width="868" height="76" rx="8"/>
+<text class="lt" x="30" y="86.0">FUENTES</text>
+<rect class="bkd" x="134" y="60" width="138" height="44" rx="6"/>
+<text class="bt" x="203.0" y="87" text-anchor="middle">SMV · web service</text>
+<rect class="bkd" x="282" y="60" width="138" height="44" rx="6"/>
+<text class="bt" x="351.0" y="87" text-anchor="middle">Yahoo Finance</text>
+<rect class="bkd" x="430" y="60" width="138" height="44" rx="6"/>
+<text class="bt" x="499.0" y="87" text-anchor="middle">Damodaran NYU</text>
+<rect class="bkd" x="578" y="60" width="138" height="44" rx="6"/>
+<text class="bt" x="647.0" y="87" text-anchor="middle">vigilante-smv</text>
+<rect class="lyr" x="16" y="134" width="868" height="76" rx="8"/>
+<text class="lt" x="30" y="176.0">DATOS</text>
+<rect class="bka" x="134" y="150" width="138" height="44" rx="6"/>
+<text class="bt" x="203.0" y="177" text-anchor="middle">eeff-snapshot.json</text>
+<rect class="bka" x="282" y="150" width="138" height="44" rx="6"/>
+<text class="bt" x="351.0" y="177" text-anchor="middle">commodities.json</text>
+<rect class="bka" x="430" y="150" width="138" height="44" rx="6"/>
+<text class="bt" x="499.0" y="177" text-anchor="middle">parametros.json</text>
+<rect class="bka" x="578" y="150" width="138" height="44" rx="6"/>
+<text class="bt" x="647.0" y="177" text-anchor="middle">Supabase</text>
+<rect class="lyr" x="16" y="224" width="868" height="128" rx="8"/>
+<text class="lt" x="30" y="292.0">LÓGICA</text>
+<rect class="bk" x="134" y="240" width="138" height="44" rx="6"/>
+<text class="bt" x="203.0" y="267" text-anchor="middle">lib/eeff</text>
+<rect class="bk" x="282" y="240" width="138" height="44" rx="6"/>
+<text class="bt" x="351.0" y="267" text-anchor="middle">lib/commodities</text>
+<rect class="bk" x="430" y="240" width="138" height="44" rx="6"/>
+<text class="bt" x="499.0" y="267" text-anchor="middle">lib/calidad</text>
+<rect class="bk" x="578" y="240" width="138" height="44" rx="6"/>
+<text class="bt" x="647.0" y="267" text-anchor="middle">lib/descomposicion</text>
+<rect class="bk" x="726" y="240" width="138" height="44" rx="6"/>
+<text class="bt" x="795.0" y="267" text-anchor="middle">lib/mina-modelo</text>
+<rect class="bk" x="134" y="292" width="138" height="44" rx="6"/>
+<text class="bt" x="203.0" y="319" text-anchor="middle">lib/formato</text>
+<rect class="bk" x="282" y="292" width="138" height="44" rx="6"/>
+<text class="bt" x="351.0" y="319" text-anchor="middle">lib/supabase</text>
+<rect class="lyr" x="16" y="366" width="868" height="180" rx="8"/>
+<text class="lt" x="30" y="460.0">COMPONENTES</text>
+<rect class="bk" x="134" y="382" width="138" height="44" rx="6"/>
+<text class="bt" x="203.0" y="409" text-anchor="middle">Cabecera</text>
+<rect class="bk" x="282" y="382" width="138" height="44" rx="6"/>
+<text class="bt" x="351.0" y="409" text-anchor="middle">KpiStrip</text>
+<rect class="bk" x="430" y="382" width="138" height="44" rx="6"/>
+<text class="bt" x="499.0" y="409" text-anchor="middle">LineaTiempo</text>
+<rect class="bk" x="578" y="382" width="138" height="44" rx="6"/>
+<text class="bt" x="647.0" y="409" text-anchor="middle">Comparativa</text>
+<rect class="bk" x="726" y="382" width="138" height="44" rx="6"/>
+<text class="bt" x="795.0" y="409" text-anchor="middle">PanelMina</text>
+<rect class="bk" x="134" y="434" width="138" height="44" rx="6"/>
+<text class="bt" x="203.0" y="461" text-anchor="middle">MatrizSensibilidad</text>
+<rect class="bk" x="282" y="434" width="138" height="44" rx="6"/>
+<text class="bt" x="351.0" y="461" text-anchor="middle">ControlEstructura</text>
+<rect class="bk" x="430" y="434" width="138" height="44" rx="6"/>
+<text class="bt" x="499.0" y="461" text-anchor="middle">TarjetaEscenario</text>
+<rect class="bk" x="578" y="434" width="138" height="44" rx="6"/>
+<text class="bt" x="647.0" y="461" text-anchor="middle">FiltrosChips</text>
+<rect class="bk" x="726" y="434" width="138" height="44" rx="6"/>
+<text class="bt" x="795.0" y="461" text-anchor="middle">TourGuiado</text>
+<rect class="bk" x="134" y="486" width="138" height="44" rx="6"/>
+<text class="bt" x="203.0" y="513" text-anchor="middle">5 gráficos</text>
+<rect class="bk" x="282" y="486" width="138" height="44" rx="6"/>
+<text class="bt" x="351.0" y="513" text-anchor="middle">Pie</text>
+<rect class="lyr" x="16" y="560" width="868" height="128" rx="8"/>
+<text class="lt" x="30" y="628.0">RUTAS</text>
+<rect class="bka" x="134" y="576" width="138" height="44" rx="6"/>
+<text class="bt" x="203.0" y="603" text-anchor="middle">/</text>
+<rect class="bka" x="282" y="576" width="138" height="44" rx="6"/>
+<text class="bt" x="351.0" y="603" text-anchor="middle">/hechos</text>
+<rect class="bka" x="430" y="576" width="138" height="44" rx="6"/>
+<text class="bt" x="499.0" y="603" text-anchor="middle">/valuacion</text>
+<rect class="bka" x="578" y="576" width="138" height="44" rx="6"/>
+<text class="bt" x="647.0" y="603" text-anchor="middle">/comparativa</text>
+<rect class="bka" x="726" y="576" width="138" height="44" rx="6"/>
+<text class="bt" x="795.0" y="603" text-anchor="middle">/mina</text>
+<rect class="bka" x="134" y="628" width="138" height="44" rx="6"/>
+<text class="bt" x="203.0" y="655" text-anchor="middle">/empresa/[ticker]</text>
+<rect class="bka" x="282" y="628" width="138" height="44" rx="6"/>
+<text class="bt" x="351.0" y="655" text-anchor="middle">/calidad</text>
+<rect class="bka" x="430" y="628" width="138" height="44" rx="6"/>
+<text class="bt" x="499.0" y="655" text-anchor="middle">/descomposicion</text>
+<rect class="bka" x="578" y="628" width="138" height="44" rx="6"/>
+<text class="bt" x="647.0" y="655" text-anchor="middle">/tendencias</text>
+<rect class="bka" x="726" y="628" width="138" height="44" rx="6"/>
+<text class="bt" x="795.0" y="655" text-anchor="middle">/variaciones</text>
+</svg>

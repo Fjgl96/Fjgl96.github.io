@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="400" viewBox="0 0 900 400" role="img" aria-label="Arquitectura de datos de Panel Minero">
+<defs>
+  <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+    <path d="M0 0 L10 5 L0 10 z" fill="#9db9d6"/>
+  </marker>
+  <style>
+    .bx{fill:#ffffff;stroke:#cfe0f2;stroke-width:1.5}
+    .bxa{fill:#149ddd;stroke:#149ddd;stroke-width:1.5}
+    .bxg{fill:#f5f8fd;stroke:#cfe0f2;stroke-width:1.5;stroke-dasharray:5 4}
+    .t{font-family:Raleway,Helvetica,Arial,sans-serif;font-size:14px;font-weight:700;fill:#173b6c}
+    .ta{font-family:Raleway,Helvetica,Arial,sans-serif;font-size:14px;font-weight:700;fill:#fff}
+    .s{font-family:'Open Sans',Helvetica,Arial,sans-serif;font-size:11px;fill:#6f7180}
+    .sa{font-family:'Open Sans',Helvetica,Arial,sans-serif;font-size:11px;fill:#dff3fc}
+    .lb{font-family:Poppins,Helvetica,Arial,sans-serif;font-size:10px;font-weight:600;letter-spacing:1.2px;fill:#a8b6cc}
+    .ln{stroke:#9db9d6;stroke-width:1.6;fill:none;marker-end:url(#ar)}
+    .lnp{stroke:#9db9d6;stroke-width:1.6;fill:none;stroke-dasharray:4 4;marker-end:url(#ar)}
+    .fm{font-family:'Courier New',monospace;font-size:10.5px;fill:#6f7180}
+  </style>
+</defs>
+<rect width="900" height="400" fill="#f5f8fd"/>
+<text class="lb" x="16" y="22">FUENTES</text><text class="lb" x="300" y="22">CAPA DE DATOS</text><text class="lb" x="610" y="22">APLICACIÓN</text><rect class="bx" x="16" y="38" width="200" height="62" rx="8"/><text class="t" x="116.0" y="66.0" text-anchor="middle">SMV</text><text class="s" x="116.0" y="83.0" text-anchor="middle">web service oficial</text><rect class="bx" x="300" y="38" width="220" height="62" rx="8"/><text class="t" x="410.0" y="66.0" text-anchor="middle">eeff-snapshot.json</text><text class="s" x="410.0" y="83.0" text-anchor="middle">actualizar-eeff.py</text><path class="ln" d="M216 69 L296 69"/><path class="ln" d="M520 69 H563.0 V200 H606"/><rect class="bx" x="16" y="126" width="200" height="62" rx="8"/><text class="t" x="116.0" y="154.0" text-anchor="middle">Yahoo Finance</text><text class="s" x="116.0" y="171.0" text-anchor="middle">futuros COMEX</text><rect class="bx" x="300" y="126" width="220" height="62" rx="8"/><text class="t" x="410.0" y="154.0" text-anchor="middle">commodities.json</text><text class="s" x="410.0" y="171.0" text-anchor="middle">actualizar-commodities</text><path class="ln" d="M216 157 L296 157"/><path class="ln" d="M520 157 H563.0 V200 H606"/><rect class="bx" x="16" y="214" width="200" height="62" rx="8"/><text class="t" x="116.0" y="242.0" text-anchor="middle">Damodaran</text><text class="s" x="116.0" y="259.0" text-anchor="middle">NYU Stern</text><rect class="bx" x="300" y="214" width="220" height="62" rx="8"/><text class="t" x="410.0" y="242.0" text-anchor="middle">parametros.json</text><text class="s" x="410.0" y="259.0" text-anchor="middle">actualizar-damodaran</text><path class="ln" d="M216 245 L296 245"/><path class="ln" d="M520 245 H563.0 V200 H606"/><rect class="bx" x="16" y="302" width="200" height="62" rx="8"/><text class="t" x="116.0" y="330.0" text-anchor="middle">vigilante-smv</text><text class="s" x="116.0" y="347.0" text-anchor="middle">hechos de importancia</text><rect class="bxg" x="300" y="302" width="220" height="62" rx="8"/><text class="t" x="410.0" y="330.0" text-anchor="middle">Supabase</text><text class="s" x="410.0" y="347.0" text-anchor="middle">lectura en vivo · RLS</text><path class="lnp" d="M216 333 L296 333"/><path class="lnp" d="M520 333 H563.0 V200 H606"/><rect class="bxa" x="610" y="150" width="274" height="100" rx="8"/><text class="ta" x="747.0" y="192.0" text-anchor="middle">Panel Minero</text><text class="sa" x="747.0" y="208.0" text-anchor="middle">Next.js 15 · React 19</text><text class="sa" x="747.0" y="222.0" text-anchor="middle">desplegado en Vercel</text><rect class="bx" x="610" y="284" width="86" height="30" rx="6"/><text class="fm" x="653" y="303" text-anchor="middle">/hechos</text><rect class="bx" x="704" y="284" width="86" height="30" rx="6"/><text class="fm" x="747" y="303" text-anchor="middle">/valuacion</text><rect class="bx" x="798" y="284" width="86" height="30" rx="6"/><text class="fm" x="841" y="303" text-anchor="middle">/comparativa</text><path class="ln" d="M747 250 L747 280"/><text class="s" x="16" y="382">Cinco mineras de la BVL: Buenaventura, Cerro Verde, Minsur, Nexa y Volcan.</text></svg>

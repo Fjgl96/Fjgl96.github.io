@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CFAAgent — Francisco Guerrero</title>
+  <meta name="description" content="Sistema multi-agente para estudiar el programa CFA.">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#0b6d9e">
+  <link rel="canonical" href="https://fjgl96.github.io/proyectos/cfagent.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="CFAAgent — Francisco Guerrero">
+  <meta property="og:description" content="Sistema multi-agente para estudiar el programa CFA.">
+  <meta property="og:url" content="https://fjgl96.github.io/proyectos/cfagent.html">
+  <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700|Raleway:400,600,700|Poppins:400,500,600&display=swap" rel="stylesheet">
+  <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="../assets/css/style.css" rel="stylesheet">
+  <link href="../assets/css/custom.css" rel="stylesheet">
+  <link href="../assets/css/subpagina.css" rel="stylesheet">
+</head>
+<body class="subpagina">
+  <a href="#contenido" class="skip-link">Saltar al contenido</a>
+
+  <header class="sub-top">
+    <div class="container">
+      <a href="../index.html#proyectos" class="sub-volver">
+        <i class="bi bi-arrow-left" aria-hidden="true"></i> Proyectos
+      </a>
+      <a href="../index.html" class="sub-marca">Francisco Guerrero</a>
+    </div>
+  </header>
+
+  <main id="contenido">
+    <article class="container sub-wrap">
+
+      <header class="sub-head">
+        <span class="proyecto-estado proyecto-estado--activo">Público</span>
+        <h1 lang="en">CFAAgent</h1>
+        <p class="sub-lead">Sistema multi-agente para estudiar el programa CFA.</p>
+        <div class="proyecto-links"><a href="https://github.com/Fjgl96/CFAVFin" target="_blank" rel="noopener" class="btn-repo">Código <i class="bi bi-github" aria-hidden="true"></i></a></div>
+        
+      </header>
+
+      <figure class="proyecto-media sub-figura">
+        <img src="../assets/img/proyectos/flujo-cfagent.svg" alt="Enrutamiento multi-agente de CFAAgent" loading="lazy" decoding="async">
+        <figcaption>El supervisor clasifica la consulta y decide quién la responde.</figcaption>
+      </figure>
+
+      <section class="sub-seccion" aria-labelledby="t-que">
+        <h2 id="t-que">Qué es</h2>
+        <p>Ocho agentes especializados —renta fija, finanzas corporativas, equity, portafolios, derivados, búsqueda, ayuda y síntesis— coordinados por un supervisor que decide quién responde.</p>
+        <p class="proyecto-concepto"><strong>El concepto.</strong> Una pregunta teórica y una de cálculo no se responden igual. El supervisor clasifica en una sola pasada —teórica, práctica o de ayuda— y enruta: lo teórico va a búsqueda vectorial con la consulta traducida al inglés y enriquecida con términos CFA; lo práctico va al especialista que tiene la fórmula. Si un proveedor de modelo se cae, la cadena sigue con el siguiente.</p>
+        <ul class="proyecto-tech"><li>Python 3.11</li><li>LangGraph</li><li>FastAPI</li><li>Elasticsearch</li><li>Docker</li></ul>
+      </section>
+
+      <section class="sub-seccion" aria-labelledby="t-bloques">
+        <h2 id="t-bloques">Cómo está compuesto</h2>
+        <p>Cada capa depende solo de la que tiene encima. Los bloques en azul son los que
+           concentran el estado o la decisión; los punteados son piezas externas o de despliegue.</p>
+        <figure class="proyecto-media sub-figura sub-figura--bloques">
+          <img src="../assets/img/proyectos/bloques-cfagent.svg" alt="Diagrama de bloques de CFAAgent" loading="lazy" decoding="async">
+          <figcaption>Composición por capas, con los módulos reales del repositorio.</figcaption>
+        </figure>
+        <div class="notas-grid"><div class="nota-bloque"><h3>Clasificación en una pasada</h3><p>Teórica, práctica o ayuda, en torno a medio segundo.</p></div><div class="nota-bloque"><h3>Microservicio de búsqueda</h3><p>RAG separado, con índice invertido y deduplicación.</p></div><div class="nota-bloque"><h3>Cadena de respaldo</h3><p>Si un proveedor falla, el siguiente responde.</p></div><div class="nota-bloque"><h3>Tres suites de tests</h3><p>Supervisor, agentes y herramientas financieras.</p></div></div>
+      </section>
+
+    </article>
+  </main>
+
+  <footer id="footer" class="sub-footer">
+    <div class="container">
+      <div class="copyright">&copy; <strong><span>Francisco Guerrero López</span></strong></div>
+      <div class="credits"><span lang="en">Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a></span></div>
+    </div>
+  </footer>
+</body>
+</html>

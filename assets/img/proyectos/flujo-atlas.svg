@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="360" viewBox="0 0 900 360" role="img" aria-label="Primitivas de aprendizaje de Atlas Nivel III">
+<defs>
+  <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+    <path d="M0 0 L10 5 L0 10 z" fill="#9db9d6"/>
+  </marker>
+  <style>
+    .bx{fill:#ffffff;stroke:#cfe0f2;stroke-width:1.5}
+    .bxa{fill:#149ddd;stroke:#149ddd;stroke-width:1.5}
+    .bxg{fill:#f5f8fd;stroke:#cfe0f2;stroke-width:1.5;stroke-dasharray:5 4}
+    .t{font-family:Raleway,Helvetica,Arial,sans-serif;font-size:14px;font-weight:700;fill:#173b6c}
+    .ta{font-family:Raleway,Helvetica,Arial,sans-serif;font-size:14px;font-weight:700;fill:#fff}
+    .s{font-family:'Open Sans',Helvetica,Arial,sans-serif;font-size:11px;fill:#6f7180}
+    .sa{font-family:'Open Sans',Helvetica,Arial,sans-serif;font-size:11px;fill:#dff3fc}
+    .lb{font-family:Poppins,Helvetica,Arial,sans-serif;font-size:10px;font-weight:600;letter-spacing:1.2px;fill:#a8b6cc}
+    .ln{stroke:#9db9d6;stroke-width:1.6;fill:none;marker-end:url(#ar)}
+    .lnp{stroke:#9db9d6;stroke-width:1.6;fill:none;stroke-dasharray:4 4;marker-end:url(#ar)}
+    .fm{font-family:'Courier New',monospace;font-size:10.5px;fill:#6f7180}
+  </style>
+</defs>
+<rect width="900" height="360" fill="#f5f8fd"/>
+<text class="lb" x="16" y="24">CONTENIDO</text><text class="lb" x="300" y="24">TRES PRIMITIVAS</text><text class="lb" x="650" y="24">MEMORIA</text><rect class="bx" x="16" y="40" width="210" height="62" rx="8"/><text class="t" x="121.0" y="68.0" text-anchor="middle">content/*.json</text><text class="s" x="121.0" y="85.0" text-anchor="middle">temas, muros, conceptos</text><rect class="bx" x="16" y="120" width="210" height="62" rx="8"/><text class="t" x="121.0" y="148.0" text-anchor="middle">Shell</text><text class="s" x="121.0" y="165.0" text-anchor="middle">carga diferida con fetch()</text><path class="ln" d="M121 102 L121 116"/><rect class="bx" x="300" y="40" width="240" height="62" rx="8"/><text class="t" x="420.0" y="68.0" text-anchor="middle">Muros</text><text class="s" x="420.0" y="85.0" text-anchor="middle">recall activo</text><path class="ln" d="M226 151 H261.0 V71 H296"/><rect class="bx" x="300" y="120" width="240" height="62" rx="8"/><text class="t" x="420.0" y="148.0" text-anchor="middle">Labs</text><text class="s" x="420.0" y="165.0" text-anchor="middle">interacción libre</text><path class="ln" d="M226 151 H261.0 V151 H296"/><rect class="bx" x="300" y="200" width="240" height="62" rx="8"/><text class="t" x="420.0" y="228.0" text-anchor="middle">Explainers</text><text class="s" x="420.0" y="245.0" text-anchor="middle">figura paso a paso</text><path class="ln" d="M226 151 H261.0 V231 H296"/><rect class="bxa" x="650" y="100" width="234" height="62" rx="8"/><text class="ta" x="767.0" y="128.0" text-anchor="middle">Progress</text><text class="sa" x="767.0" y="145.0" text-anchor="middle">localStorage · sin servidor</text><path class="ln" d="M540 71 H593.0 V131 H646"/><path class="ln" d="M767 162 L767 186"/><rect class="bx" x="650" y="186" width="234" height="62" rx="8"/><text class="t" x="767.0" y="214.0" text-anchor="middle">Cola Leitner</text><text class="s" x="767.0" y="231.0" text-anchor="middle">repaso espaciado</text><rect class="bxg" x="300" y="280" width="240" height="56" rx="8"/><text class="t" x="420.0" y="305.0" text-anchor="middle">Referencias</text><text class="s" x="420.0" y="322.0" text-anchor="middle">trampas, glosario y fórmulas</text><text class="s" x="16" y="236">5 volúmenes · 26 módulos</text><text class="s" x="16" y="254">266 subtemas · 268 figuras</text><text class="s" x="16" y="272">14 piezas interactivas</text><text class="s" x="16" y="330">Las referencias se generan</text><text class="s" x="16" y="348">solas desde los muros.</text><path class="ln" d="M420 262 H420.0 V276 H420"/></svg>

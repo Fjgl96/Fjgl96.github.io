@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="330" viewBox="0 0 900 330" role="img" aria-label="Álgebra bottom-up del WACC Lab">
+<defs>
+  <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+    <path d="M0 0 L10 5 L0 10 z" fill="#9db9d6"/>
+  </marker>
+  <style>
+    .bx{fill:#ffffff;stroke:#cfe0f2;stroke-width:1.5}
+    .bxa{fill:#149ddd;stroke:#149ddd;stroke-width:1.5}
+    .bxg{fill:#f5f8fd;stroke:#cfe0f2;stroke-width:1.5;stroke-dasharray:5 4}
+    .t{font-family:Raleway,Helvetica,Arial,sans-serif;font-size:14px;font-weight:700;fill:#173b6c}
+    .ta{font-family:Raleway,Helvetica,Arial,sans-serif;font-size:14px;font-weight:700;fill:#fff}
+    .s{font-family:'Open Sans',Helvetica,Arial,sans-serif;font-size:11px;fill:#6f7180}
+    .sa{font-family:'Open Sans',Helvetica,Arial,sans-serif;font-size:11px;fill:#dff3fc}
+    .lb{font-family:Poppins,Helvetica,Arial,sans-serif;font-size:10px;font-weight:600;letter-spacing:1.2px;fill:#a8b6cc}
+    .ln{stroke:#9db9d6;stroke-width:1.6;fill:none;marker-end:url(#ar)}
+    .lnp{stroke:#9db9d6;stroke-width:1.6;fill:none;stroke-dasharray:4 4;marker-end:url(#ar)}
+    .fm{font-family:'Courier New',monospace;font-size:10.5px;fill:#6f7180}
+  </style>
+</defs>
+<rect width="900" height="330" fill="#f5f8fd"/>
+<text class="lb" x="16" y="24">COSTO DE CAPITAL BOTTOM-UP · MÉTODO DAMODARAN</text><rect class="bx" x="16" y="46" width="200" height="66" rx="8"/><text class="t" x="116.0" y="84.0" text-anchor="middle">Beta del sector</text><text class="fm" x="116" y="94" text-anchor="middle">&#946;U desapalancada</text><path class="ln" d="M216 79 L228 79"/><rect class="bx" x="238" y="46" width="200" height="66" rx="8"/><text class="t" x="338.0" y="84.0" text-anchor="middle">Beta reapalancada</text><text class="fm" x="338" y="94" text-anchor="middle">&#946;L = &#946;U[1+(1&#8722;t)D/E]</text><path class="ln" d="M438 79 L450 79"/><rect class="bx" x="460" y="46" width="200" height="66" rx="8"/><text class="t" x="560.0" y="84.0" text-anchor="middle">Prima efectiva</text><text class="fm" x="560" y="94" text-anchor="middle">ERP + &#955; &#215; riesgo país</text><path class="ln" d="M660 79 L672 79"/><rect class="bx" x="682" y="46" width="200" height="66" rx="8"/><text class="t" x="782.0" y="84.0" text-anchor="middle">Costo del equity</text><text class="fm" x="782" y="94" text-anchor="middle">Re = RF + &#946;L &#183; ERPef</text><rect class="bx" x="16" y="150" width="200" height="66" rx="8"/><text class="t" x="116.0" y="188.0" text-anchor="middle">Rating sintético</text><text class="fm" x="116" y="198" text-anchor="middle">EBIT / intereses &#8594; spread</text><path class="ln" d="M216 183 L228 183"/><rect class="bx" x="238" y="150" width="200" height="66" rx="8"/><text class="t" x="338.0" y="188.0" text-anchor="middle">Costo de la deuda</text><text class="fm" x="338" y="198" text-anchor="middle">Rd = (RF + spread)(1&#8722;t)</text><path class="ln" d="M460 183 L476 183"/><rect class="bxa" x="476" y="142" width="408" height="82" rx="8"/><text class="ta" x="680.0" y="175.0" text-anchor="middle">WACC</text><text class="sa" x="680.0" y="191.0" text-anchor="middle">Re &#215; E/V + Rd &#215; D/V</text><text class="sa" x="680.0" y="205.0" text-anchor="middle">curva completa sobre la estructura de capital</text><text class="s" x="16" y="258">Datos sectoriales y primas por país de Aswath Damodaran (NYU Stern), actualizados por scraper propio.</text><text class="s" x="16" y="280">La curva muestra a qué D/V se minimiza el WACC — y por qué el rating sintético la empina.</text><text class="s" x="16" y="302">Cuatro casos precargados: madura sin deuda, industrial mexicana, Argentina emergente y utility regulada.</text></svg>

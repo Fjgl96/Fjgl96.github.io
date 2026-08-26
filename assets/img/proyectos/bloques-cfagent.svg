@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="558" viewBox="0 0 900 558" role="img" aria-label="Diagrama de bloques de CFAAgent">
+<style>
+  .lyr{fill:#fff;stroke:#cfe0f2;stroke-width:1.4}
+  .bk{fill:#f5f8fd;stroke:#cfe0f2;stroke-width:1.2}
+  .bka{fill:#dff3fc;stroke:#9fd4ef;stroke-width:1.2}
+  .bkd{fill:#fff;stroke:#cfe0f2;stroke-width:1.2;stroke-dasharray:4 3}
+  .lt{font-family:Poppins,Helvetica,Arial,sans-serif;font-size:10px;font-weight:600;letter-spacing:1.1px;fill:#5f7391}
+  .bt{font-family:'Open Sans',Helvetica,Arial,sans-serif;font-size:11.5px;fill:#173b6c}
+</style>
+<rect width="900" height="558" fill="#fff"/>
+<text class="lt" x="16" y="24" style="fill:#0b6d9e">DIAGRAMA DE BLOQUES</text>
+<rect class="lyr" x="16" y="44" width="868" height="76" rx="8"/>
+<text class="lt" x="30" y="86.0">ENTRADA</text>
+<rect class="bkd" x="134" y="60" width="138" height="44" rx="6"/>
+<text class="bt" x="203.0" y="87" text-anchor="middle">api.py · FastAPI</text>
+<rect class="bkd" x="282" y="60" width="138" height="44" rx="6"/>
+<text class="bt" x="351.0" y="87" text-anchor="middle">config.py</text>
+<rect class="lyr" x="16" y="134" width="868" height="76" rx="8"/>
+<text class="lt" x="30" y="176.0">ORQUESTACIÓN</text>
+<rect class="bka" x="134" y="150" width="138" height="44" rx="6"/>
+<text class="bt" x="203.0" y="177" text-anchor="middle">agent_graph.py</text>
+<rect class="bka" x="282" y="150" width="138" height="44" rx="6"/>
+<text class="bt" x="351.0" y="177" text-anchor="middle">Supervisor LLM</text>
+<rect class="bka" x="430" y="150" width="138" height="44" rx="6"/>
+<text class="bt" x="499.0" y="177" text-anchor="middle">Router</text>
+<rect class="lyr" x="16" y="224" width="868" height="128" rx="8"/>
+<text class="lt" x="30" y="292.0">AGENTES</text>
+<rect class="bk" x="134" y="240" width="138" height="44" rx="6"/>
+<text class="bt" x="203.0" y="267" text-anchor="middle">Renta fija</text>
+<rect class="bk" x="282" y="240" width="138" height="44" rx="6"/>
+<text class="bt" x="351.0" y="267" text-anchor="middle">Corporativas</text>
+<rect class="bk" x="430" y="240" width="138" height="44" rx="6"/>
+<text class="bt" x="499.0" y="267" text-anchor="middle">Equity</text>
+<rect class="bk" x="578" y="240" width="138" height="44" rx="6"/>
+<text class="bt" x="647.0" y="267" text-anchor="middle">Portafolios</text>
+<rect class="bk" x="726" y="240" width="138" height="44" rx="6"/>
+<text class="bt" x="795.0" y="267" text-anchor="middle">Derivados</text>
+<rect class="bk" x="134" y="292" width="138" height="44" rx="6"/>
+<text class="bt" x="203.0" y="319" text-anchor="middle">RAG</text>
+<rect class="bk" x="282" y="292" width="138" height="44" rx="6"/>
+<text class="bt" x="351.0" y="319" text-anchor="middle">Ayuda</text>
+<rect class="bk" x="430" y="292" width="138" height="44" rx="6"/>
+<text class="bt" x="499.0" y="319" text-anchor="middle">Síntesis</text>
+<rect class="lyr" x="16" y="366" width="868" height="76" rx="8"/>
+<text class="lt" x="30" y="408.0">HERRAMIENTAS</text>
+<rect class="bk" x="134" y="382" width="138" height="44" rx="6"/>
+<text class="bt" x="203.0" y="409" text-anchor="middle">financial_tools</text>
+<rect class="bk" x="282" y="382" width="138" height="44" rx="6"/>
+<text class="bt" x="351.0" y="409" text-anchor="middle">help_tools</text>
+<rect class="bk" x="430" y="382" width="138" height="44" rx="6"/>
+<text class="bt" x="499.0" y="409" text-anchor="middle">schemas</text>
+<rect class="bk" x="578" y="382" width="138" height="44" rx="6"/>
+<text class="bt" x="647.0" y="409" text-anchor="middle">utils/logger</text>
+<rect class="lyr" x="16" y="456" width="868" height="76" rx="8"/>
+<text class="lt" x="30" y="498.0">INFRA</text>
+<rect class="bkd" x="134" y="472" width="138" height="44" rx="6"/>
+<text class="bt" x="203.0" y="499" text-anchor="middle">Elasticsearch</text>
+<rect class="bkd" x="282" y="472" width="138" height="44" rx="6"/>
+<text class="bt" x="351.0" y="499" text-anchor="middle">Dockerfile</text>
+<rect class="bkd" x="430" y="472" width="138" height="44" rx="6"/>
+<text class="bt" x="499.0" y="499" text-anchor="middle">devcontainer</text>
+<rect class="bkd" x="578" y="472" width="138" height="44" rx="6"/>
+<text class="bt" x="647.0" y="499" text-anchor="middle">tests ×3</text>
+</svg>

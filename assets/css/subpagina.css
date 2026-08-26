@@ -1,0 +1,131 @@
+/*--------------------------------------------------------------
+# Sub-páginas de proyecto — sin sidebar, ancho de lectura
+--------------------------------------------------------------*/
+body.subpagina { background: #fff; }
+body.subpagina #footer { margin-left: 0; }
+
+.sub-top {
+  background: #040b14;
+  padding: 16px 0;
+  position: sticky;
+  top: 0;
+  z-index: 900;
+}
+.sub-top .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+.sub-volver,
+.sub-marca {
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  color: #a8a9b4;
+  transition: color .3s;
+}
+.sub-volver { display: inline-flex; align-items: center; gap: 8px; }
+.sub-volver:hover, .sub-marca:hover { color: #fff; }
+.sub-marca { font-weight: 700; color: #fff; }
+.sub-top a:focus-visible { outline: 3px solid #149ddd; outline-offset: 3px; border-radius: 4px; }
+
+.sub-wrap { max-width: 900px; padding-top: 48px; padding-bottom: 64px; }
+
+.sub-head { margin-bottom: 34px; }
+.sub-head h1 {
+  font-family: "Raleway", sans-serif;
+  font-size: 38px;
+  font-weight: 700;
+  color: #173b6c;
+  margin: 14px 0 12px 0;
+  line-height: 1.2;
+}
+.sub-lead {
+  font-size: 17px;
+  line-height: 1.7;
+  color: #5f7391;
+  margin-bottom: 22px;
+}
+.sub-head .proyecto-links { margin-bottom: 16px; }
+
+.sub-figura { margin: 0 0 34px 0; }
+.sub-figura--bloques { background: #fff; }
+.sub-figura--bloques img { border-radius: 0; }
+
+.sub-seccion { margin-bottom: 44px; }
+.sub-seccion h2 {
+  font-family: "Raleway", sans-serif;
+  font-size: 26px;
+  font-weight: 700;
+  color: #173b6c;
+  margin-bottom: 16px;
+  padding-bottom: 10px;
+  position: relative;
+}
+.sub-seccion h2::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 48px;
+  height: 3px;
+  background: #149ddd;
+}
+.sub-seccion p { font-size: 15px; line-height: 1.75; color: #272829; }
+.sub-seccion .proyecto-tech { margin-top: 18px; }
+
+.notas-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 18px;
+  margin-top: 26px;
+}
+.nota-bloque {
+  background: #f5f8fd;
+  border: 1px solid #e4edf9;
+  border-radius: 8px;
+  padding: 18px 20px;
+}
+.nota-bloque h3 {
+  font-family: "Raleway", sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: #173b6c;
+  margin: 0 0 6px 0;
+}
+.nota-bloque p {
+  font-size: 13.5px;
+  line-height: 1.65;
+  color: #5f7391;
+  margin: 0;
+}
+
+/* El diagrama de bloques puede desbordar en móvil: que scrollee solo */
+.sub-figura--bloques { overflow-x: auto; }
+.sub-figura--bloques img { min-width: 680px; }
+
+@media (max-width: 768px) {
+  .sub-head h1 { font-size: 29px; }
+  .sub-seccion h2 { font-size: 22px; }
+  .sub-wrap { padding-top: 32px; }
+}
+
+/*--------------------------------------------------------------
+# Footer — la plantilla lo fija al sidebar; aquí no hay sidebar
+--------------------------------------------------------------*/
+body.subpagina #footer {
+  position: static;
+  width: 100%;
+  left: auto;
+  bottom: auto;
+  padding: 22px 15px;
+  text-align: center;
+}
+body.subpagina #footer .container {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  align-items: center;
+}

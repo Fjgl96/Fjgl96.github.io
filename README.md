@@ -1,74 +1,81 @@
 # fguerrero.github.io
 
-Sitio personal de Francisco Guerrero — finanzas corporativas y agentes de IA.
-Página única construida sobre la plantilla [iPortfolio](https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/) de BootstrapMade.
+Sitio personal de Francisco Guerrero López — planeamiento financiero, control de gestión y agentes de IA.
+Construido sobre la plantilla [iPortfolio](https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/) de BootstrapMade.
 
-## Publicar en GitHub Pages
+## ⚠️ Antes de publicar: renombra el repositorio
 
-En el repositorio: **Settings → Pages → Build and deployment → Source: Deploy from a branch**,
-rama `main` (o la que uses), carpeta `/ (root)`. El sitio queda en `https://fjgl96.github.io/`.
+GitHub sirve un sitio en `https://<usuario>.github.io/` **solo si el repo se llama igual que la cuenta**.
+Tu cuenta es `Fjgl96` y el repo se llama `fguerrero.github.io`, así que hoy se publicaría en
+`https://fjgl96.github.io/fguerrero.github.io/`, no en la raíz.
 
-El archivo `.nojekyll` está incluido para que GitHub Pages sirva los assets tal cual, sin procesarlos con Jekyll.
+**Solución:** Settings → General → Repository name → `Fjgl96.github.io`.
 
-## Qué falta reemplazar
+Todas las URL absolutas del sitio (canonical, Open Graph, sitemap) apuntan a `https://fjgl96.github.io/`.
+Si decides **no** renombrar, corrígelas con:
 
-Todo lo marcado abajo son **placeholders**. Busca `PLACEHOLDER` en `index.html` para encontrarlos en contexto.
+```bash
+sed -i 's|https://fjgl96\.github\.io/|https://fjgl96.github.io/fguerrero.github.io/|g' \
+  index.html proyectos/*.html sitemap.xml robots.txt
+```
 
-### Imágenes
+`robots.txt` solo funciona en la raíz del dominio, así que sin el renombrado quedaría inactivo.
 
-| Archivo | Uso | Tamaño sugerido |
-|---|---|---|
-| `assets/img/profile-img.svg` | Foto del sidebar (se muestra circular) | 400 × 400 px |
-| `assets/img/about-img.svg` | Foto de la sección Perfil | 600 × 800 px (3:4) |
-| `assets/img/hero-bg.svg` | Fondo de la portada | 1920 × 1080 px |
-| `assets/img/portfolio/portfolio-1..9.svg` | Capturas de los entregables | 800 × 600 px (4:3) |
-| `assets/img/apple-touch-icon.png` | Ícono para iOS (opcional) | 180 × 180 px |
+## Publicar
 
-Si subes `.jpg` o `.png` en lugar de `.svg`, acuérdate de cambiar la extensión en `index.html`.
-Para el fondo de portada, la regla está en `assets/css/custom.css` (al final del archivo).
-
-### Enlaces y datos
-
-- **Redes del sidebar** — los `href="#"` de LinkedIn y GitHub en `index.html` (línea ~60).
-- **LinkedIn en Contacto** — el texto `[tu perfil de LinkedIn]`.
-- **Enlaces "Ver más" del portafolio** — los `href="#"` de cada proyecto.
-- **Formulario de contacto** — apunta a `https://formspree.io/f/TU_ID`. Crea una cuenta gratis en
-  [formspree.io](https://formspree.io), copia tu endpoint y reemplaza `TU_ID`.
-  GitHub Pages no ejecuta PHP, por eso no se usa el formulario original de la plantilla.
-
-### CV
-
-La sección **CV** tiene la estructura armada pero los datos entre corchetes son placeholders:
-formación, experiencia, certificaciones e idiomas. Reemplaza cada `[...]` con tus datos reales.
-También puedes subir tu CV en PDF a `assets/docs/cv-francisco-guerrero.pdf` — el botón de descarga ya apunta ahí.
+Settings → Pages → Source: *Deploy from a branch*, rama `main`, carpeta `/ (root)`.
+El archivo `.nojekyll` evita que Jekyll procese los assets.
 
 ## Estructura
 
 ```
-index.html                 Página completa (una sola página, navegación por anclas)
+index.html                 Portada (una sola página, navegación por anclas)
+proyectos/                 Una sub-página por proyecto, con diagrama de bloques
+  panel-minero.html
+  wacc-lab.html
+  atlas.html
+  cfagent.html
+404.html · robots.txt · sitemap.xml
 assets/
-  css/style.css            CSS de la plantilla iPortfolio (sin modificar)
-  css/custom.css           Estilos propios: panel de agentes, hero, portafolio, botón de CV
-  js/main.js               JS de la plantilla (se quitaron los bloques de Swiper, no se usa)
-  img/                     Imágenes y placeholders
+  css/style.css            CSS de iPortfolio (sin modificar)
+  css/custom.css           Estilos propios + correcciones de accesibilidad
+  css/subpagina.css        Estilos de las sub-páginas de proyecto
+  js/main.js               JS de la plantilla (sin Swiper ni Isotope; respeta prefers-reduced-motion)
+  img/proyectos/           Capturas reales y diagramas SVG
   docs/                    CV en PDF
-  vendor/                  Librerías: Bootstrap, AOS, Boxicons, Bootstrap Icons,
-                           GLightbox, Isotope, Typed.js, Waypoints, PureCounter
+  vendor/                  Bootstrap, AOS, Boxicons, Bootstrap Icons, GLightbox, Typed.js,
+                           Waypoints, PureCounter
 ```
 
-Las secciones son: Inicio, Perfil, **Panel de Agentes**, Portafolio, CV y Contacto.
-La plantilla original trae una sección de testimonios; se eliminó junto con la librería Swiper
-que la movía, porque por ahora no hay recomendaciones que mostrar.
+Secciones: Inicio · Perfil · Proyectos · Panel de agentes · Research · CV · Contacto.
+
+## Qué falta completar
+
+Busca `PLACEHOLDER` en `index.html` para ubicarlos en contexto.
+
+| Pendiente | Dónde | Nota |
+|---|---|---|
+| Foto de perfil | `assets/img/profile-img.svg` | 400 × 400 px |
+| Foto de la sección Perfil | `assets/img/about-img.svg` | 600 × 800 px (3:4) |
+| Fondo de portada | `assets/img/hero-bg.svg` | 1920 × 1080 px; la regla está en `custom.css` |
+| **Imagen para compartir** | `assets/img/og-image.jpg` | **1200 × 630 px, JPG, < 300 KB.** Sin ella, LinkedIn y WhatsApp muestran una tarjeta gris |
+| Endpoint del formulario | `index.html` → `formspree.io/f/TU_ID` | GitHub Pages no ejecuta PHP; crea el endpoint en [formspree.io](https://formspree.io) |
+| URL del WACC Lab | `index.html` y `proyectos/wacc-lab.html` | Pega la URL de Vercel |
+| CV en PDF | `assets/docs/cv-francisco-guerrero.pdf` | El botón de descarga ya apunta ahí |
+| Detalle del paper | Sección Research | Resumen, datos, metodología y resultados |
+| Ícono para iOS | `assets/img/apple-touch-icon.png` | 180 × 180 px, opcional |
+
+Después de subir el `og-image.jpg`, fuerza el re-escaneo en el
+[Post Inspector de LinkedIn](https://www.linkedin.com/post-inspector/): cachea las previsualizaciones ~7 días.
 
 ## Desarrollo local
 
 ```bash
 python3 -m http.server 8000
-# abrir http://127.0.0.1:8000
+# http://127.0.0.1:8000
 ```
 
 ## Créditos
 
-Plantilla iPortfolio de [BootstrapMade](https://bootstrapmade.com/), usada bajo su
-[licencia gratuita](https://bootstrapmade.com/license/), que exige mantener el enlace de
-atribución en el pie de página.
+Plantilla iPortfolio de [BootstrapMade](https://bootstrapmade.com/), bajo su
+[licencia gratuita](https://bootstrapmade.com/license/), que exige mantener el enlace de atribución en el pie.
