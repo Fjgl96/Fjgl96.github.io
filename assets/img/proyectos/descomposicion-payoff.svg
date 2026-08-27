@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="856" height="384" viewBox="0 0 856 384" role="img" aria-labelledby="t-p d-p">
+<title id="t-p">Una estrategia es la suma de sus patas</title>
+<desc id="d-p">Tres paneles. El primero muestra el resultado de comprar una call con strike noventa y cinco pagando seis: pierde la prima hasta el strike y luego sube sin techo. El segundo, el de vender una call con strike ciento cinco cobrando dos: cobra la prima hasta el strike y luego cae sin piso. El tercero suma ambos punto por punto; las dos ramas sin límite se cancelan y la silueta resultante queda acotada, con pérdida máxima de cuatro, ganancia máxima de seis y punto de equilibrio en noventa y nueve. Ninguno de esos tres números se memoriza: salen de la suma.</desc>
+<style>
+ .h{font-family:Poppins,Helvetica,Arial,sans-serif;font-size:9.5px;font-weight:600;letter-spacing:1px;fill:#0b6d9e}
+ .pt{font-family:Raleway,Helvetica,Arial,sans-serif;font-size:11px;font-weight:700;fill:#173b6c}
+ .hi{font-family:Poppins,Helvetica,Arial,sans-serif;font-size:8.5px;font-weight:600}
+ .op{font-family:Raleway,Helvetica,Arial,sans-serif;font-size:24px;font-weight:700;fill:#9db9d6}
+ .n{font-family:'Open Sans',Helvetica,Arial,sans-serif;font-size:9px;fill:#5f7391}
+ .an{font-family:Poppins,Helvetica,Arial,sans-serif;font-size:8.5px;font-weight:600;fill:#5f7391}
+</style>
+<rect width="856" height="384" fill="#fff"/>
+<text class="h" x="16" y="22">LA SILUETA NO SE DIBUJA &#183; SE CALCULA</text>
+<rect x="16" y="46" width="252" height="138" rx="8" fill="#fff" stroke="#cfe0f2" stroke-width="1.2"/><text class="pt" x="26" y="61">Compra call &#183; K 95 &#183; prima 6</text><clipPath id="c1"><rect x="26" y="72" width="232" height="92"/></clipPath><line x1="26" y1="127.2" x2="258" y2="127.2" stroke="#cfe0f2" stroke-width="1.2" stroke-dasharray="3 3"/><polyline clip-path="url(#c1)" points="26.0,154.8 32.4,154.8 38.9,154.8 45.3,154.8 51.8,154.8 58.2,154.8 64.7,154.8 71.1,154.8 77.6,154.8 84.0,154.8 90.4,154.8 96.9,154.8 103.3,150.2 109.8,145.6 116.2,141.0 122.7,136.4 129.1,131.8 135.6,127.2 142.0,122.6 148.4,118.0 154.9,113.4 161.3,108.8 167.8,104.2 174.2,99.6 180.7,95.0 187.1,90.4 193.6,85.8 200.0,81.2 206.4,76.6 212.9,72.0 219.3,67.4 225.8,62.8 232.2,58.2 238.7,53.6 245.1,49.0 251.6,44.4 258.0,39.8" fill="none" stroke="#7fb4d6" stroke-width="2.2" stroke-linejoin="round"/>
+<rect x="16" y="230" width="252" height="138" rx="8" fill="#fff" stroke="#cfe0f2" stroke-width="1.2"/><text class="pt" x="26" y="245">Vende call &#183; K 105 &#183; prima 2</text><clipPath id="c2"><rect x="26" y="256" width="232" height="92"/></clipPath><line x1="26" y1="311.2" x2="258" y2="311.2" stroke="#cfe0f2" stroke-width="1.2" stroke-dasharray="3 3"/><polyline clip-path="url(#c2)" points="26.0,302.0 32.4,302.0 38.9,302.0 45.3,302.0 51.8,302.0 58.2,302.0 64.7,302.0 71.1,302.0 77.6,302.0 84.0,302.0 90.4,302.0 96.9,302.0 103.3,302.0 109.8,302.0 116.2,302.0 122.7,302.0 129.1,302.0 135.6,302.0 142.0,302.0 148.4,302.0 154.9,302.0 161.3,302.0 167.8,306.6 174.2,311.2 180.7,315.8 187.1,320.4 193.6,325.0 200.0,329.6 206.4,334.2 212.9,338.8 219.3,343.4 225.8,348.0 232.2,352.6 238.7,357.2 245.1,361.8 251.6,366.4 258.0,371.0" fill="none" stroke="#7fb4d6" stroke-width="2.2" stroke-linejoin="round"/>
+<text class="op" x="142" y="216" text-anchor="middle">+</text>
+<text class="op" x="318" y="216" text-anchor="middle">=</text>
+<text class="an" x="274" y="96">sube sin techo &#8599;</text>
+<text class="an" x="274" y="332">cae sin piso &#8600;</text>
+<rect x="368" y="46" width="320" height="322" rx="8" fill="#fff" stroke="#cfe0f2" stroke-width="1.2"/><text class="pt" x="378" y="61">Resultado al vencimiento</text><clipPath id="c3"><rect x="378" y="72" width="300" height="276"/></clipPath><line x1="378" y1="237.6" x2="678" y2="237.6" stroke="#cfe0f2" stroke-width="1.2" stroke-dasharray="3 3"/><line x1="469.7" y1="72" x2="469.7" y2="348" stroke="#5f7391" stroke-width="1.1" stroke-dasharray="2 3" opacity=".55"/><line x1="503.0" y1="72" x2="503.0" y2="348" stroke="#0f6b46" stroke-width="1.1" stroke-dasharray="2 3" opacity=".55"/><line x1="553.0" y1="72" x2="553.0" y2="348" stroke="#5f7391" stroke-width="1.1" stroke-dasharray="2 3" opacity=".55"/><polyline clip-path="url(#c3)" points="378.0,292.8 386.3,292.8 394.7,292.8 403.0,292.8 411.3,292.8 419.7,292.8 428.0,292.8 436.3,292.8 444.7,292.8 453.0,292.8 461.3,292.8 469.7,292.8 478.0,279.0 486.3,265.2 494.7,251.4 503.0,237.6 511.3,223.8 519.7,210.0 528.0,196.2 536.3,182.4 544.7,168.6 553.0,154.8 561.3,154.8 569.7,154.8 578.0,154.8 586.3,154.8 594.7,154.8 603.0,154.8 611.3,154.8 619.7,154.8 628.0,154.8 636.3,154.8 644.7,154.8 653.0,154.8 661.3,154.8 669.7,154.8 678.0,154.8" fill="none" stroke="#149ddd" stroke-width="3.2" stroke-linejoin="round"/><circle cx="469.7" cy="292.8" r="4" fill="#5f7391"/><text class="hi" x="469.7" y="363" text-anchor="middle" fill="#5f7391">K 95</text><circle cx="503.0" cy="237.6" r="4" fill="#0f6b46"/><text class="hi" x="503.0" y="363" text-anchor="middle" fill="#0f6b46">99</text><circle cx="553.0" cy="154.8" r="4" fill="#5f7391"/><text class="hi" x="553.0" y="363" text-anchor="middle" fill="#5f7391">K 105</text>
+<rect x="706" y="46" width="134" height="322" rx="8" fill="#f5f8fd" stroke="#cfe0f2" stroke-width="1.2"/>
+<text class="h" x="720" y="70">DE LA SUMA</text>
+<text class="pt" x="720" y="108" style="font-size:10px">Pérdida máxima</text>
+<text x="720" y="138" font-family="Raleway,Helvetica,sans-serif" font-size="25" font-weight="700" fill="#b33a3a">&#8722;4</text>
+<text class="n" x="720" y="156">el débito neto: 6 &#8722; 2</text>
+<text class="pt" x="720" y="196" style="font-size:10px">Equilibrio</text>
+<text x="720" y="226" font-family="Raleway,Helvetica,sans-serif" font-size="25" font-weight="700" fill="#0f6b46">99</text>
+<text class="n" x="720" y="244">K1 + débito neto</text>
+<text class="pt" x="720" y="284" style="font-size:10px">Ganancia máxima</text>
+<text x="720" y="314" font-family="Raleway,Helvetica,sans-serif" font-size="25" font-weight="700" fill="#0b6d9e">+6</text>
+<text class="n" x="720" y="332">(105 &#8722; 95) &#8722; 4</text>
+</svg>

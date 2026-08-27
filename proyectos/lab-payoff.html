@@ -58,6 +58,35 @@
         <ul class="proyecto-tech"><li>JavaScript sin framework</li><li>SVG</li></ul>
       </section>
 
+      <section class="sub-seccion" aria-labelledby="t-suma">
+        <h2 id="t-suma">La suma de las patas</h2>
+        <p>
+          Decir que una estrategia es una suma de patas es fácil. Verlo exige separar la
+          operación en sus partes y volver a juntarlas. Aquí está hecho con un bull call
+          spread: dos patas, una comprada y una vendida.
+        </p>
+        <figure class="proyecto-media sub-figura sub-figura--bloques">
+          <img src="../assets/img/proyectos/descomposicion-payoff.svg" width="856" height="384"
+               loading="lazy" decoding="async"
+               alt="Tres paneles. El primero muestra el resultado de comprar una call con strike 95 pagando 6 de prima. El segundo, el de vender una call con strike 105 cobrando 2. El tercero suma ambos punto por punto y de esa suma salen la pérdida máxima de 4, el equilibrio en 99 y la ganancia máxima de 6.">
+          <figcaption>Los tres números de la derecha no se memorizan: se leen de la silueta que sale de la suma.</figcaption>
+        </figure>
+        <p>
+          La pata comprada pierde su prima mientras el subyacente no llegue a 95 y luego sube sin
+          techo. La pata vendida cobra su prima mientras el subyacente no pase de 105 y a partir de
+          ahí devuelve todo lo que gana la otra. Sumadas punto por punto, la pérdida se detiene en
+          el débito neto —lo pagado menos lo cobrado, 4— y la ganancia se detiene en la distancia
+          entre strikes menos ese débito, 6. El equilibrio cae donde la suma cruza cero: 99.
+        </p>
+        <p class="proyecto-concepto">
+          <strong>Por qué importa el orden.</strong> Estudiadas como catálogo, las catorce
+          estructuras son catorce siluetas que hay que reconocer de memoria. Construidas como
+          suma, son una sola operación: cambiar el strike vendido de 105 a 115 mueve el techo sin
+          tocar nada más, y quitar esa pata deja la call comprada sola. El techo, el piso y el
+          equilibrio dejan de ser datos y pasan a ser consecuencias.
+        </p>
+      </section>
+
       <section class="sub-seccion" aria-labelledby="t-bloques">
         <h2 id="t-bloques">Cómo está compuesto</h2>
         <p>Los catorce presets son entradas al mismo motor, no catorce dibujos distintos.</p>
