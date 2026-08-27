@@ -1,0 +1,202 @@
+/*--------------------------------------------------------------
+# Notas de análisis
+# Formato de nota de equity research. Hereda de subpagina.css:
+# aquí solo va lo propio del formato de nota.
+--------------------------------------------------------------*/
+
+/* Cabecera: la nota se fecha y declara su corte de datos, siempre */
+.nota-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 18px;
+  margin: 0 0 18px 0;
+  font-family: "Poppins", sans-serif;
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: .8px;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.nota-ticker {
+  color: #fff;
+  background: var(--accent-text);
+  padding: 4px 11px;
+  border-radius: 4px;
+  letter-spacing: 1px;
+}
+.nota-borrador {
+  color: #8a6d1f;
+  background: #faf6ec;
+  border: 1px solid #e8dcc0;
+  padding: 3px 10px;
+  border-radius: 4px;
+}
+
+/* La tesis, en una sola frase, antes que nada */
+.nota-tesis {
+  border-left: 4px solid var(--accent-text);
+  background: var(--bg-soft);
+  border-radius: 0 8px 8px 0;
+  padding: 22px 26px;
+  margin: 0 0 34px 0;
+}
+.nota-tesis h2 {
+  font-family: "Poppins", sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  color: var(--accent-text);
+  margin: 0 0 10px 0;
+  padding: 0;
+}
+.nota-tesis h2::after { display: none; }
+.nota-tesis p {
+  font-size: 17px;
+  line-height: 1.66;
+  color: var(--ink);
+  margin: 0;
+  font-weight: 500;
+}
+.nota-tesis p + p { margin-top: 12px; font-size: 15px; font-weight: 400; color: var(--muted); }
+
+/* Cifras sueltas que anclan un párrafo */
+.nota-cifras {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  overflow: hidden;
+  margin: 26px 0;
+}
+.nota-cifra { background: #fff; padding: 16px 18px; }
+.nota-cifra dt {
+  font-family: "Poppins", sans-serif;
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: .6px;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 0 0 6px 0;
+}
+.nota-cifra dd {
+  font-family: "Raleway", sans-serif;
+  font-size: 25px;
+  font-weight: 700;
+  color: var(--ink);
+  margin: 0;
+  line-height: 1.1;
+}
+.nota-cifra dd small {
+  display: block;
+  font-family: "Open Sans", sans-serif;
+  font-size: 11.5px;
+  font-weight: 400;
+  color: var(--muted);
+  margin-top: 5px;
+  line-height: 1.5;
+}
+.nota-cifra--alza dd { color: var(--accent-text); }
+.nota-cifra--baja dd { color: #b33a3a; }
+
+/* Advertencia de alcance: lo que estos datos no pueden sostener */
+.nota-limite {
+  border: 1px solid #e8dcc0;
+  background: #faf6ec;
+  border-radius: 8px;
+  padding: 20px 24px;
+  margin: 30px 0;
+}
+.nota-limite h3 {
+  font-family: "Poppins", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #8a6d1f;
+  margin: 0 0 12px 0;
+}
+.nota-limite ul { margin: 0; padding-left: 18px; }
+.nota-limite li { font-size: 14.5px; line-height: 1.7; color: var(--ink); margin-bottom: 9px; }
+.nota-limite li:last-child { margin-bottom: 0; }
+
+/* Descargo y fuentes, al cierre */
+.nota-pie {
+  border-top: 1px solid var(--line);
+  margin-top: 44px;
+  padding-top: 22px;
+  font-size: 12.5px;
+  line-height: 1.75;
+  color: var(--muted);
+}
+.nota-pie h3 {
+  font-family: "Poppins", sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 0 0 10px 0;
+}
+.nota-pie p { margin: 0 0 12px 0; max-width: none; }
+.nota-pie p:last-child { margin-bottom: 0; }
+
+/*--------------------------------------------------------------
+# Figuras animadas
+# Se dibujan UNA vez al entrar en pantalla y quedan quietas. Un
+# bucle eterno compite con el texto en una página que se lee.
+--------------------------------------------------------------*/
+.fig-animada { --t: 900ms; }
+.fig-animada svg { display: block; width: 100%; height: auto; }
+/* El texto de estas figuras es de 9 px: reducirlas a un teléfono las vuelve
+   ilegibles. Van a tamaño real y se deslizan, como los demás diagramas.
+   La regla de subpagina.css solo alcanza a <img>; estos SVG van en línea. */
+.fig-animada .sub-figura-lienzo svg { min-width: 856px; }
+
+/* Barras: crecen desde su base */
+.fig-animada .an-barra {
+  transform: scaleY(0);
+  transform-box: fill-box;
+  transform-origin: bottom;
+  transition: transform var(--t) cubic-bezier(.22,.75,.3,1) var(--d, 0ms);
+}
+/* Barras de cascada: crecen desde donde arrancan, no desde el piso */
+.fig-animada .an-flota {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 420ms ease var(--d, 0ms), transform 420ms ease var(--d, 0ms);
+}
+/* Líneas: se dibujan */
+.fig-animada .an-linea {
+  stroke-dasharray: var(--largo);
+  stroke-dashoffset: var(--largo);
+  transition: stroke-dashoffset calc(var(--t) * 1.5) ease var(--d, 0ms);
+}
+/* Puntos y textos: aparecen */
+.fig-animada .an-aparece {
+  opacity: 0;
+  transition: opacity 460ms ease var(--d, 0ms);
+}
+
+.fig-animada.revelado .an-barra { transform: scaleY(1); }
+.fig-animada.revelado .an-flota { opacity: 1; transform: translateY(0); }
+.fig-animada.revelado .an-linea { stroke-dashoffset: 0; }
+.fig-animada.revelado .an-aparece { opacity: 1; }
+
+/* Sin animación: el estado final, de entrada */
+@media (prefers-reduced-motion: reduce) {
+  .fig-animada .an-barra { transform: scaleY(1); }
+  .fig-animada .an-flota { opacity: 1; transform: none; }
+  .fig-animada .an-linea { stroke-dashoffset: 0; }
+  .fig-animada .an-aparece { opacity: 1; }
+  .fig-animada * { transition: none !important; }
+}
+
+@media (max-width: 768px) {
+  .nota-tesis { padding: 18px 20px; }
+  .nota-tesis p { font-size: 15.5px; }
+  .nota-cifra dd { font-size: 21px; }
+}
