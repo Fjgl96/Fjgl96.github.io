@@ -163,6 +163,14 @@
   transform-origin: bottom;
   transition: transform var(--t) cubic-bezier(.22,.75,.3,1) var(--d, 0ms);
 }
+/* Barras horizontales: crecen desde su centro. Necesitan clase propia porque
+   un transform en línea gana sobre la regla de .revelado y las dejaría en cero. */
+.fig-animada .an-barra-h {
+  transform: scaleX(0);
+  transform-box: fill-box;
+  transform-origin: center;
+  transition: transform var(--t) cubic-bezier(.22,.75,.3,1) var(--d, 0ms);
+}
 /* Barras de cascada: crecen desde donde arrancan, no desde el piso */
 .fig-animada .an-flota {
   opacity: 0;
@@ -182,6 +190,7 @@
 }
 
 .fig-animada.revelado .an-barra { transform: scaleY(1); }
+.fig-animada.revelado .an-barra-h { transform: scaleX(1); }
 .fig-animada.revelado .an-flota { opacity: 1; transform: translateY(0); }
 .fig-animada.revelado .an-linea { stroke-dashoffset: 0; }
 .fig-animada.revelado .an-aparece { opacity: 1; }
@@ -189,6 +198,7 @@
 /* Sin animación: el estado final, de entrada */
 @media (prefers-reduced-motion: reduce) {
   .fig-animada .an-barra { transform: scaleY(1); }
+  .fig-animada .an-barra-h { transform: scaleX(1); }
   .fig-animada .an-flota { opacity: 1; transform: none; }
   .fig-animada .an-linea { stroke-dashoffset: 0; }
   .fig-animada .an-aparece { opacity: 1; }
