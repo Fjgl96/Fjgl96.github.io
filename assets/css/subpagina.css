@@ -102,9 +102,10 @@ body.subpagina #footer { margin-left: 0; }
   margin: 0;
 }
 
-/* El diagrama de bloques puede desbordar en móvil: que scrollee solo */
-.sub-figura--bloques { overflow-x: auto; }
-.sub-figura--bloques img { min-width: 680px; }
+/* El diagrama puede desbordar en móvil: que scrollee solo el lienzo,
+   nunca el pie de figura, que debe leerse completo sin deslizar. */
+.sub-figura-lienzo { overflow-x: auto; }
+.sub-figura-lienzo img { min-width: 680px; }
 
 @media (max-width: 768px) {
   .sub-head h1 { font-size: 29px; }
@@ -158,12 +159,12 @@ body.subpagina:has(.sub-wrap--ancho) .sub-top .container { max-width: 1140px; }
 .paper-body > p { max-width: 70ch; }
 
 /* Señal de deslizamiento en los diagramas anchos */
-.sub-figura--bloques {
+.sub-figura-lienzo {
   -webkit-overflow-scrolling: touch; scrollbar-width: thin;
   -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 40px), transparent 100%);
           mask-image: linear-gradient(to right, #000 calc(100% - 40px), transparent 100%);
 }
-.sub-figura--bloques:hover { -webkit-mask-image: none; mask-image: none; }
+.sub-figura-lienzo:hover { -webkit-mask-image: none; mask-image: none; }
 @media (max-width: 991px) {
   .sub-figura--bloques::after {
     content: "Desliza para ver el diagrama completo →";
@@ -171,3 +172,7 @@ body.subpagina:has(.sub-wrap--ancho) .sub-top .container { max-width: 1140px; }
     font-size: 11.5px; font-style: italic; color: var(--muted);
   }
 }
+
+/* Los diagramas de decisión y de traza llevan texto de 8 px: reducirlos a 680
+   los vuelve ilegibles en el teléfono. Se muestran a tamaño real y se deslizan. */
+.sub-figura--denso .sub-figura-lienzo img { min-width: 856px; }

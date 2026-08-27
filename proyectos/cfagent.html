@@ -64,10 +64,12 @@
           sirve es qué resuelve el supervisor en su única llamada, y qué queda en pie cuando
           una pieza de la cadena se cae.
         </p>
-        <figure class="proyecto-media sub-figura sub-figura--bloques">
-          <img src="../assets/img/proyectos/traza-cfagent.svg" width="856" height="512"
+        <figure class="proyecto-media sub-figura sub-figura--bloques sub-figura--denso">
+          <div class="sub-figura-lienzo">
+            <img src="../assets/img/proyectos/traza-cfagent.svg" width="856" height="512"
                loading="lazy" decoding="async"
                alt="Arriba, una consulta de cálculo recorrida en cuatro pasos: entra sin historial, una sola llamada al modelo devuelve un esquema con categoría, agente y consulta optimizada, el especialista de finanzas corporativas ejecuta la herramienta de WACC y la respuesta cierra con una de cuatro etiquetas. Abajo, cuatro capas de respaldo independientes —proveedor de modelo, decisión de ruta, agente elegido y memoria de sesión— y un cortacircuitos que detiene la ejecución cuando se agotan.">
+          </div>
           <figcaption>Arriba, una consulta de cálculo de punta a punta. Abajo, lo que sostiene al sistema cuando algo falla.</figcaption>
         </figure>
         <p>
@@ -91,7 +93,9 @@
         <h2 id="t-bloques">Cómo está compuesto</h2>
         <p>El enrutado es la pieza: define qué agente responde y con qué contexto.</p>
         <figure class="proyecto-media sub-figura sub-figura--bloques">
-          <img width="900" height="558" src="../assets/img/proyectos/bloques-cfagent.svg" alt="Diagrama de bloques de CFAAgent" loading="lazy" decoding="async">
+          <div class="sub-figura-lienzo">
+            <img width="900" height="558" src="../assets/img/proyectos/bloques-cfagent.svg" alt="Diagrama de bloques de CFAAgent" loading="lazy" decoding="async">
+          </div>
           <figcaption>Del punto de entrada al agente de síntesis, con el supervisor decidiendo en medio.</figcaption>
         </figure>
         <div class="notas-grid"><div class="nota-bloque"><h3>Clasificación en una pasada</h3><p>Teórica, práctica o ayuda, en torno a medio segundo.</p></div><div class="nota-bloque"><h3>Microservicio de búsqueda</h3><p>RAG separado, con índice invertido y deduplicación.</p></div><div class="nota-bloque"><h3>Cadena de respaldo</h3><p>Si un proveedor falla, el siguiente responde.</p></div><div class="nota-bloque"><h3>Tres suites de tests</h3><p>Supervisor, agentes y herramientas financieras.</p></div></div>

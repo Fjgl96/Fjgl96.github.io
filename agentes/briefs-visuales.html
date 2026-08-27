@@ -52,13 +52,24 @@
       <section class="sub-seccion" aria-labelledby="t-flujo">
         <h2 id="t-flujo">El flujo</h2>
         <figure class="proyecto-media sub-figura sub-figura--bloques">
-          <img width="900" height="150" src="../assets/img/agentes/flujo-briefs-visuales.svg" alt="Flujo de Briefs visuales financieros" loading="lazy" decoding="async">
+          <div class="sub-figura-lienzo">
+            <img width="900" height="150" src="../assets/img/agentes/flujo-briefs-visuales.svg" alt="Flujo de Briefs visuales financieros" loading="lazy" decoding="async">
+          </div>
           <figcaption>Los datos exactos se sobreponen después en edición: el generador produce la estructura visual, no la cifra.</figcaption>
         </figure>
       </section>
 
       <section class="sub-seccion" aria-labelledby="t-reglas">
         <h2 id="t-reglas">Qué decide y cómo</h2>
+        <p>Dos cosas quedan fuera por diseño: el dato exacto, que no se le pide al generador, y la instrucción que no llega al umbral de calidad.</p>
+        <figure class="proyecto-media sub-figura sub-figura--bloques sub-figura--denso">
+          <div class="sub-figura-lienzo">
+            <img src="../assets/img/agentes/decisiones-briefs-visuales.svg" width="856" height="252"
+               loading="lazy" decoding="async"
+               alt="Diagrama de decisión del flujo de briefs visuales. La secuencia va del concepto a ilustrar al estilo, de ahí a la escena con sus restricciones, luego a la autoevaluación contra el umbral y finalmente a la instrucción lista. El dato exacto se excluye y se sobrepone después en edición; por debajo del umbral la instrucción se reescribe; y el resultado siempre lo revisa una persona.">
+          </div>
+          <figcaption>El umbral no es un adorno: por debajo, la instrucción vuelve al motor de iteración en vez de entregarse.</figcaption>
+        </figure>
         <div class="notas-grid"><div class="nota-bloque"><h3>Estilo</h3><p>Seis: infografía, diagrama, editorial, mapa, ilustración y figura tridimensional.</p></div><div class="nota-bloque"><h3>Restricciones</h3><p>Toda instrucción incluye qué no debe aparecer en la imagen.</p></div><div class="nota-bloque"><h3>Umbral</h3><p>Si el puntaje de calidad no llega al mínimo, entra al motor de iteración en vez de entregarse.</p></div></div>
       </section>
 

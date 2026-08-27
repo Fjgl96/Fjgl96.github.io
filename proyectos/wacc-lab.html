@@ -63,7 +63,9 @@
         <h2 id="t-flujo">Cómo funciona</h2>
         <p>Cada paso alimenta al siguiente y se muestra en pantalla con su fórmula y su número. Al mover un supuesto se ve exactamente qué eslabón de la cadena cambió y cuánto arrastró al resto.</p>
         <figure class="proyecto-media sub-figura sub-figura--bloques">
-          <img width="900" height="330" src="../assets/img/proyectos/flujo-wacc-lab.svg" alt="Álgebra bottom-up del Laboratorio de Costo de Capital" loading="lazy" decoding="async">
+          <div class="sub-figura-lienzo">
+            <img width="900" height="330" src="../assets/img/proyectos/flujo-wacc-lab.svg" alt="Álgebra bottom-up del Laboratorio de Costo de Capital" loading="lazy" decoding="async">
+          </div>
           <figcaption>Los siete pasos que van de la beta del sector al WACC final.</figcaption>
         </figure>
       </section>
@@ -75,10 +77,12 @@
           que tiene. Eso lo decide una tensión: subir la deuda recorre dos caminos a la vez, y los
           dos empujan el costo hacia arriba.
         </p>
-        <figure class="proyecto-media sub-figura sub-figura--bloques">
-          <img src="../assets/img/proyectos/causal-wacc.svg" width="856" height="476"
+        <figure class="proyecto-media sub-figura sub-figura--bloques sub-figura--denso">
+          <div class="sub-figura-lienzo">
+            <img src="../assets/img/proyectos/causal-wacc.svg" width="856" height="476"
                loading="lazy" decoding="async"
                alt="Grafo causal con signos. La estructura objetivo sube la beta reapalancada y con ella el costo del equity; en paralelo deteriora la cobertura de intereses, lo que baja el rating sintético, ensancha el spread y encarece la deuda. Ambas cadenas llegan al WACC.">
+          </div>
           <figcaption>Los números son los del caso industrial mexicano precargado en el laboratorio.</figcaption>
         </figure>
         <p>
@@ -100,7 +104,9 @@
         <h2 id="t-bloques">Cómo está compuesto</h2>
         <p>El scraper alimenta al HTML, y el HTML se basta solo a partir de ahí.</p>
         <figure class="proyecto-media sub-figura sub-figura--bloques">
-          <img width="900" height="558" src="../assets/img/proyectos/bloques-wacc-lab.svg" alt="Diagrama de bloques de Laboratorio de Costo de Capital" loading="lazy" decoding="async">
+          <div class="sub-figura-lienzo">
+            <img width="900" height="558" src="../assets/img/proyectos/bloques-wacc-lab.svg" alt="Diagrama de bloques de Laboratorio de Costo de Capital" loading="lazy" decoding="async">
+          </div>
           <figcaption>Toda la aplicación en un archivo: sin compilación, sin framework, sin backend.</figcaption>
         </figure>
         <div class="notas-grid"><div class="nota-bloque"><h3>Un solo archivo</h3><p>Toda la aplicación vive en wacc.html: sin build, sin framework.</p></div><div class="nota-bloque"><h3>Scraper propio</h3><p>Lee las tablas de Damodaran y las incrusta en el HTML.</p></div><div class="nota-bloque"><h3>Rating sintético</h3><p>La cobertura EBIT/intereses clasifica y define el spread.</p></div><div class="nota-bloque"><h3>Cuatro casos</h3><p>Presets que cargan escenarios completos para arrancar.</p></div></div>
