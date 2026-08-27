@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="856" height="512" viewBox="0 0 856 512" role="img" aria-labelledby="t-c d-c">
+<title id="t-c">Una consulta de principio a fin, y lo que sostiene al sistema cuando algo falla</title>
+<desc id="d-c">Arriba, el recorrido de una consulta de cálculo en cuatro pasos: entra sin historial porque no trae palabras de refinamiento; una sola llamada al modelo devuelve un esquema con la categoría, el agente y la consulta optimizada; el especialista de finanzas corporativas ejecuta la herramienta de WACC; y la respuesta cierra con una de cuatro etiquetas que el supervisor lee para saber si el intento cont&#243; como &#233;xito o como fallo. Abajo, cuatro capas de respaldo independientes: el proveedor de modelo pasa de Claude a OpenAI y luego a Gemini, la decisión de ruta cae a práctica y finanzas corporativas si la llamada falla, el agente se elige por palabras clave si el nombre devuelto no existe, y la memoria de sesión pasa de PostgreSQL a la del proceso. Si nada de eso alcanza, un cortacircuitos detiene la ejecución y explica por qué.</desc>
+<style>
+ .h{font-family:Poppins,Helvetica,Arial,sans-serif;font-size:9.5px;font-weight:600;letter-spacing:1px;fill:#0b6d9e}
+ .bt{font-family:Poppins,Helvetica,Arial,sans-serif;font-size:8.5px;font-weight:600;letter-spacing:.6px;fill:#0b6d9e}
+ .tx{font-family:'Open Sans',Helvetica,Arial,sans-serif;font-size:9px;fill:#173b6c}
+ .mu{font-family:'Open Sans',Helvetica,Arial,sans-serif;font-size:9px;fill:#5f7391}
+ .mo{font-family:'Courier New',monospace;font-size:9px;fill:#173b6c}
+ .lb{font-family:Poppins,Helvetica,Arial,sans-serif;font-size:9px;font-weight:600;fill:#173b6c}
+ .sb{font-family:'Open Sans',Helvetica,Arial,sans-serif;font-size:8px;fill:#5f7391}
+ .ch{font-family:'Open Sans',Helvetica,Arial,sans-serif;font-size:9px;fill:#173b6c}
+</style>
+<rect width="856" height="512" fill="#fff"/>
+<defs><marker id="fl" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#9db9d6"/></marker></defs>
+<text class="h" x="24" y="24">UNA CONSULTA, PASO A PASO</text>
+<rect x="24" y="38" width="196" height="156" rx="8" fill="#fff" stroke="#cfe0f2" stroke-width="1.2"/>
+<text class="bt" x="36" y="58">LA CONSULTA</text>
+<line x1="36" y1="66" x2="208" y2="66" stroke="#cfe0f2" stroke-width="1"/>
+<text class="tx" x="36" y="82">&#171;&#191;Cu&#225;l es el WACC si el equity</text>
+<text class="tx" x="36" y="96">es 60, la deuda 40, Re 13&#160;%,</text>
+<text class="tx" x="36" y="110">Rd 7&#160;% y la tasa 30&#160;%?&#187;</text>
+<line x1="36" y1="120" x2="208" y2="120" stroke="#cfe0f2" stroke-width="1" stroke-dasharray="2 3"/>
+<text class="mu" x="36" y="134">No trae palabras de refinamiento:</text>
+<text class="mu" x="36" y="148">entra sola, sin historial.</text>
+<line x1="226" y1="116.0" x2="238" y2="116.0" stroke="#9db9d6" stroke-width="1.6" marker-end="url(#fl)"/>
+<rect x="244" y="38" width="176" height="156" rx="8" fill="#fff" stroke="#cfe0f2" stroke-width="1.2"/>
+<text class="bt" x="256" y="58">UNA SOLA LLAMADA</text>
+<line x1="256" y1="66" x2="408" y2="66" stroke="#cfe0f2" stroke-width="1"/>
+<text class="mo" x="256" y="82">categoria  PRACTICA</text>
+<text class="mo" x="256" y="96">agente     Fin_Corp</text>
+<text class="mo" x="256" y="110">query      con datos</text>
+<line x1="256" y1="120" x2="408" y2="120" stroke="#cfe0f2" stroke-width="1" stroke-dasharray="2 3"/>
+<text class="mu" x="256" y="134">El modelo no redacta:</text>
+<text class="mu" x="256" y="148">llena un esquema.</text>
+<line x1="426" y1="116.0" x2="438" y2="116.0" stroke="#9db9d6" stroke-width="1.6" marker-end="url(#fl)"/>
+<rect x="444" y="38" width="176" height="156" rx="8" fill="#fff" stroke="#cfe0f2" stroke-width="1.2"/>
+<text class="bt" x="456" y="58">EL ESPECIALISTA</text>
+<line x1="456" y1="66" x2="608" y2="66" stroke="#cfe0f2" stroke-width="1"/>
+<text class="tx" x="456" y="82">Agente_Finanzas_Corp</text>
+<text class="mu" x="456" y="96">VAN &#183; WACC &#183; TIR &#183; payback &#183; IR</text>
+<text class="mo" x="456" y="110">ejecuta _calcular_wacc</text>
+<line x1="456" y1="120" x2="608" y2="120" stroke="#cfe0f2" stroke-width="1" stroke-dasharray="2 3"/>
+<text class="mu" x="456" y="134">Si faltara un dato, tiene</text>
+<text class="mu" x="456" y="148">prohibido inventarlo.</text>
+<line x1="626" y1="116.0" x2="638" y2="116.0" stroke="#9db9d6" stroke-width="1.6" marker-end="url(#fl)"/>
+<rect x="644" y="38" width="196" height="156" rx="8" fill="#fff" stroke="#cfe0f2" stroke-width="1.2"/>
+<text class="bt" x="656" y="58">EL CIERRE</text>
+<line x1="656" y1="66" x2="828" y2="66" stroke="#cfe0f2" stroke-width="1"/>
+<text class="tx" x="656" y="82">Termina en una de cuatro etiquetas</text>
+<text class="mo" x="656" y="96" fill="#0f6b46" font-weight="700">TAREA_COMPLETADA</text>
+<text class="mo" x="656" y="110">FALTAN_DATOS</text>
+<text class="mo" x="656" y="124">ERROR_BLOQUEANTE</text>
+<text class="mo" x="656" y="138">TRANSFERIR_A_RAG</text>
+<line x1="656" y1="148" x2="828" y2="148" stroke="#cfe0f2" stroke-width="1" stroke-dasharray="2 3"/>
+<text class="mu" x="656" y="162">El supervisor lee la etiqueta,</text>
+<text class="mu" x="656" y="176">no el texto.</text>
+<text class="h" x="24" y="234">CUATRO REDES INDEPENDIENTES</text>
+<text class="lb" x="24" y="266">Proveedor de modelo</text>
+<text class="sb" x="24" y="278">30 s de espera, 2 reintentos</text>
+<rect x="212.0" y="252" width="181.3" height="30" rx="6" fill="#fff" stroke="#cfe0f2" stroke-width="1.2"/>
+<text class="ch" x="302.7" y="271" text-anchor="middle">Claude 3.5 Haiku</text>
+<line x1="401.3" y1="267" x2="423.3" y2="267" stroke="#9db9d6" stroke-width="1.6" marker-end="url(#fl)"/>
+<rect x="431.3" y="252" width="181.3" height="30" rx="6" fill="#f5f8fd" stroke="#cfe0f2" stroke-width="1.2"/>
+<text class="ch" x="522.0" y="271" text-anchor="middle" fill="#5f7391">GPT-4o</text>
+<line x1="620.7" y1="267" x2="642.7" y2="267" stroke="#9db9d6" stroke-width="1.6" marker-end="url(#fl)"/>
+<rect x="650.7" y="252" width="181.3" height="30" rx="6" fill="#f5f8fd" stroke="#cfe0f2" stroke-width="1.2"/>
+<text class="ch" x="741.3" y="271" text-anchor="middle" fill="#5f7391">Gemini 1.5 Flash</text>
+<text class="lb" x="24" y="310">Decisi&#243;n de ruta</text>
+<text class="sb" x="24" y="322">si la llamada falla</text>
+<rect x="212.0" y="296" width="291.0" height="30" rx="6" fill="#fff" stroke="#cfe0f2" stroke-width="1.2"/>
+<text class="ch" x="357.5" y="315" text-anchor="middle">esquema del modelo</text>
+<line x1="511.0" y1="311" x2="533.0" y2="311" stroke="#9db9d6" stroke-width="1.6" marker-end="url(#fl)"/>
+<rect x="541.0" y="296" width="291.0" height="30" rx="6" fill="#f5f8fd" stroke="#cfe0f2" stroke-width="1.2"/>
+<text class="ch" x="686.5" y="315" text-anchor="middle" fill="#5f7391">PR&#193;CTICA &#183; Finanzas Corporativas</text>
+<text class="lb" x="24" y="354">Agente elegido</text>
+<text class="sb" x="24" y="366">si el nombre no existe</text>
+<rect x="212.0" y="340" width="291.0" height="30" rx="6" fill="#fff" stroke="#cfe0f2" stroke-width="1.2"/>
+<text class="ch" x="357.5" y="359" text-anchor="middle">el que sugiere el modelo</text>
+<line x1="511.0" y1="355" x2="533.0" y2="355" stroke="#9db9d6" stroke-width="1.6" marker-end="url(#fl)"/>
+<rect x="541.0" y="340" width="291.0" height="30" rx="6" fill="#f5f8fd" stroke="#cfe0f2" stroke-width="1.2"/>
+<text class="ch" x="686.5" y="359" text-anchor="middle" fill="#5f7391">enrutado por palabras clave</text>
+<text class="lb" x="24" y="398">Memoria de sesi&#243;n</text>
+<text class="sb" x="24" y="410">si Postgres no responde</text>
+<rect x="212.0" y="384" width="291.0" height="30" rx="6" fill="#fff" stroke="#cfe0f2" stroke-width="1.2"/>
+<text class="ch" x="357.5" y="403" text-anchor="middle">PostgreSQL</text>
+<line x1="511.0" y1="399" x2="533.0" y2="399" stroke="#9db9d6" stroke-width="1.6" marker-end="url(#fl)"/>
+<rect x="541.0" y="384" width="291.0" height="30" rx="6" fill="#f5f8fd" stroke="#cfe0f2" stroke-width="1.2"/>
+<text class="ch" x="686.5" y="403" text-anchor="middle" fill="#5f7391">memoria del proceso</text>
+<rect x="24" y="428" width="808" height="60" rx="8" fill="#fdf4f4" stroke="#eccfcf" stroke-width="1.2"/>
+<text class="bt" x="40" y="450" fill="#b33a3a">Y SI NADA DE ESO ALCANZA &#183; CORTACIRCUITOS</text>
+<text class="tx" x="40" y="471">Dos fallos de herramienta, tres de validaci&#243;n o dos errores en total: se detiene, dice cu&#225;l fue el problema y devuelve el control. No sigue intentando.</text>
+</svg>

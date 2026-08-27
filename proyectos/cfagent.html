@@ -57,6 +57,36 @@
         <ul class="proyecto-tech"><li>Python 3.11</li><li>LangGraph</li><li>FastAPI</li><li>Elasticsearch</li><li>Docker</li></ul>
       </section>
 
+      <section class="sub-seccion" aria-labelledby="t-traza">
+        <h2 id="t-traza">El recorrido de una consulta</h2>
+        <p>
+          Que haya ocho agentes no dice gran cosa por sí solo. Lo que decide si el sistema
+          sirve es qué resuelve el supervisor en su única llamada, y qué queda en pie cuando
+          una pieza de la cadena se cae.
+        </p>
+        <figure class="proyecto-media sub-figura sub-figura--bloques">
+          <img src="../assets/img/proyectos/traza-cfagent.svg" width="856" height="512"
+               loading="lazy" decoding="async"
+               alt="Arriba, una consulta de cálculo recorrida en cuatro pasos: entra sin historial, una sola llamada al modelo devuelve un esquema con categoría, agente y consulta optimizada, el especialista de finanzas corporativas ejecuta la herramienta de WACC y la respuesta cierra con una de cuatro etiquetas. Abajo, cuatro capas de respaldo independientes —proveedor de modelo, decisión de ruta, agente elegido y memoria de sesión— y un cortacircuitos que detiene la ejecución cuando se agotan.">
+          <figcaption>Arriba, una consulta de cálculo de punta a punta. Abajo, lo que sostiene al sistema cuando algo falla.</figcaption>
+        </figure>
+        <p>
+          El especialista tiene un turno, y solo uno. Al terminar debe cerrar con una de cuatro
+          etiquetas, y el supervisor lee esa etiqueta —no el texto de la respuesta— para saber si
+          el intento contó como éxito o como fallo. De ahí sale el conteo que alimenta al
+          cortacircuitos, y de ahí sale también que el sistema no entre en bucle: el camino de
+          vuelta siempre termina.
+        </p>
+        <p class="proyecto-concepto">
+          <strong>Degradar antes que caerse.</strong> Las cuatro redes de abajo son independientes
+          entre sí: el proveedor de modelo puede caerse sin tocar el enrutado, y el enrutado puede
+          fallar sin tocar la memoria. Cada una responde una sola pregunta —qué hago si esto no
+          responde— y ninguna intenta arreglar el problema de otra. La regla que las ordena a todas
+          está en el protocolo de los agentes: si falta un dato, está prohibido inventarlo. Vale
+          más detenerse y decir por qué que devolver un número que nadie puede auditar.
+        </p>
+      </section>
+
       <section class="sub-seccion" aria-labelledby="t-bloques">
         <h2 id="t-bloques">Cómo está compuesto</h2>
         <p>El enrutado es la pieza: define qué agente responde y con qué contexto.</p>
