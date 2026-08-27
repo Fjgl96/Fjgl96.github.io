@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="856" height="391" viewBox="0 0 856 391" role="img" aria-labelledby="t-cur d-cur">
+<title id="t-cur">La forma del currículo de Atlas Nivel III</title>
+<desc id="d-cur">Cinco volúmenes en columnas. Cada barra es un módulo con ancho proporcional a sus subtemas. Private Markets concentra ochenta subtemas en siete módulos; Derivatives sostiene cuarenta y seis figuras de recall con solo tres módulos.</desc>
+<style>
+ .h{font-family:Poppins,Helvetica,Arial,sans-serif;font-size:9.5px;font-weight:600;letter-spacing:1px;fill:#0b6d9e}
+ .v{font-family:Raleway,Helvetica,Arial,sans-serif;font-size:12px;font-weight:700;fill:#173b6c}
+ .c{font-family:'Open Sans',Helvetica,Arial,sans-serif;font-size:9px;fill:#5f7391}
+ .m{font-family:'Open Sans',Helvetica,Arial,sans-serif;font-size:8.5px;fill:#173b6c}
+ .n{font-family:'Open Sans',Helvetica,Arial,sans-serif;font-size:10.5px;fill:#5f7391}
+</style>
+<rect width="856" height="391" fill="#fff"/>
+<text class="h" x="14" y="23">LA FORMA DEL CURRÍCULO · 5 VOLÚMENES · 26 MÓDULOS · 266 SUBTEMAS · 268 FIGURAS</text>
+<rect x="14" y="40" width="156" height="313" rx="9" fill="#f5f8fd" stroke="#cfe0f2" stroke-width="1.2"/>
+<text class="v" x="25" y="65">Asset Allocation</text>
+<text class="c" x="25" y="83">6 módulos · 51 subtemas</text>
+<rect x="25" y="116" width="81.5" height="19" rx="4" fill="#dff3fc" stroke="#9fd4ef" stroke-width="1.1"/>
+<text class="m" x="30" y="129">01 · 11</text>
+<rect x="25" y="145" width="56.2" height="19" rx="4" fill="#dff3fc" stroke="#9fd4ef" stroke-width="1.1"/>
+<text class="m" x="30" y="158">02 · 7</text>
+<rect x="25" y="174" width="49.9" height="19" rx="4" fill="#dff3fc" stroke="#9fd4ef" stroke-width="1.1"/>
+<text class="m" x="30" y="187">03 · 6</text>
+<rect x="25" y="203" width="113.1" height="19" rx="4" fill="#dff3fc" stroke="#9fd4ef" stroke-width="1.1"/>
+<text class="m" x="30" y="216">04 · 16</text>
+<rect x="25" y="232" width="49.9" height="19" rx="4" fill="#dff3fc" stroke="#9fd4ef" stroke-width="1.1"/>
+<text class="m" x="30" y="245">05 · 6</text>
+<rect x="25" y="261" width="43.6" height="19" rx="4" fill="#dff3fc" stroke="#9fd4ef" stroke-width="1.1"/>
+<text class="m" x="30" y="274">06·a · 5</text>
+<text class="c" x="25" y="341">58 figuras</text>
+<rect x="181" y="40" width="156" height="313" rx="9" fill="#f5f8fd" stroke="#cfe0f2" stroke-width="1.2"/>
+<text class="v" x="192" y="61">Portfolio</text>
+<text class="v" x="192" y="75">Construction</text>
+<text class="c" x="192" y="91">7 módulos · 56 subtemas</text>
+<rect x="192" y="116" width="75.2" height="19" rx="4" fill="#dff3fc" stroke="#9fd4ef" stroke-width="1.1"/>
+<text class="m" x="197" y="129">01 · 10</text>
+<rect x="192" y="145" width="87.8" height="19" rx="4" fill="#dff3fc" stroke="#9fd4ef" stroke-width="1.1"/>
+<text class="m" x="197" y="158">02 · 12</text>
+<rect x="192" y="174" width="56.2" height="19" rx="4" fill="#dff3fc" stroke="#9fd4ef" stroke-width="1.1"/>
+<text class="m" x="197" y="187">03 · 7</text>
+<rect x="192" y="203" width="68.8" height="19" rx="4" fill="#dff3fc" stroke="#9fd4ef" stroke-width="1.1"/>
+<text class="m" x="197" y="216">04 · 9</text>
+<rect x="192" y="232" width="62.5" height="19" rx="4" fill="#dff3fc" stroke="#9fd4ef" stroke-width="1.1"/>
+<text class="m" x="197" y="245">05 · 8</text>
+<rect x="192" y="261" width="43.6" height="19" rx="4" fill="#dff3fc" stroke="#9fd4ef" stroke-width="1.1"/>
+<text class="m" x="197" y="274">06 · 5</text>
+<rect x="192" y="290" width="43.6" height="19" rx="4" fill="#dff3fc" stroke="#9fd4ef" stroke-width="1.1"/>
+<text class="m" x="197" y="303">07 · 5</text>
+<text class="c" x="192" y="341">64 figuras</text>
+<rect x="348" y="40" width="156" height="313" rx="9" fill="#f5f8fd" stroke="#cfe0f2" stroke-width="1.2"/>
+<text class="v" x="359" y="61">Derivatives &amp;</text>
+<text class="v" x="359" y="75">Risk Management</text>
+<text class="c" x="359" y="91">3 módulos · 36 subtemas</text>
+<rect x="359" y="116" width="75.2" height="19" rx="4" fill="#dff3fc" stroke="#9fd4ef" stroke-width="1.1"/>
+<text class="m" x="364" y="129">01 · 10</text>
+<rect x="359" y="145" width="56.2" height="19" rx="4" fill="#dff3fc" stroke="#9fd4ef" stroke-width="1.1"/>
+<text class="m" x="364" y="158">02 · 7</text>
+<rect x="359" y="174" width="132.0" height="19" rx="4" fill="#dff3fc" stroke="#9fd4ef" stroke-width="1.1"/>
+<text class="m" x="364" y="187">03 · 19</text>
+<text class="c" x="359" y="341">46 figuras</text>
+<rect x="515" y="40" width="156" height="313" rx="9" fill="#f5f8fd" stroke="#cfe0f2" stroke-width="1.2"/>
+<text class="v" x="526" y="61">Performance</text>
+<text class="v" x="526" y="75">Measurement</text>
+<text class="c" x="526" y="91">3 módulos · 43 subtemas</text>
+<rect x="526" y="116" width="113.1" height="19" rx="4" fill="#dff3fc" stroke="#9fd4ef" stroke-width="1.1"/>
+<text class="m" x="531" y="129">01 · 16</text>
+<rect x="526" y="145" width="94.1" height="19" rx="4" fill="#dff3fc" stroke="#9fd4ef" stroke-width="1.1"/>
+<text class="m" x="531" y="158">02 · 13</text>
+<rect x="526" y="174" width="100.4" height="19" rx="4" fill="#dff3fc" stroke="#9fd4ef" stroke-width="1.1"/>
+<text class="m" x="531" y="187">03 · 14</text>
+<text class="c" x="526" y="341">46 figuras</text>
+<rect x="682" y="40" width="156" height="313" rx="9" fill="#f5f8fd" stroke="#cfe0f2" stroke-width="1.2"/>
+<text class="v" x="693" y="65">Private Markets</text>
+<text class="c" x="693" y="83">7 módulos · 80 subtemas</text>
+<rect x="693" y="116" width="75.2" height="19" rx="4" fill="#dff3fc" stroke="#9fd4ef" stroke-width="1.1"/>
+<text class="m" x="698" y="129">01 · 10</text>
+<rect x="693" y="145" width="62.5" height="19" rx="4" fill="#dff3fc" stroke="#9fd4ef" stroke-width="1.1"/>
+<text class="m" x="698" y="158">02 · 8</text>
+<rect x="693" y="174" width="62.5" height="19" rx="4" fill="#dff3fc" stroke="#9fd4ef" stroke-width="1.1"/>
+<text class="m" x="698" y="187">03 · 8</text>
+<rect x="693" y="203" width="87.8" height="19" rx="4" fill="#dff3fc" stroke="#9fd4ef" stroke-width="1.1"/>
+<text class="m" x="698" y="216">04 · 12</text>
+<rect x="693" y="232" width="125.7" height="19" rx="4" fill="#dff3fc" stroke="#9fd4ef" stroke-width="1.1"/>
+<text class="m" x="698" y="245">05 · 18</text>
+<rect x="693" y="261" width="62.5" height="19" rx="4" fill="#dff3fc" stroke="#9fd4ef" stroke-width="1.1"/>
+<text class="m" x="698" y="274">06 · 8</text>
+<rect x="693" y="290" width="113.1" height="19" rx="4" fill="#dff3fc" stroke="#9fd4ef" stroke-width="1.1"/>
+<text class="m" x="698" y="303">07 · 16</text>
+<text class="c" x="693" y="341">54 figuras</text>
+<text class="n" x="14" y="375">El ancho de cada barra es proporcional a sus subtemas. Private Markets concentra 80 subtemas en siete módulos; Derivatives sostiene 46 figuras con solo tres.</text>
+</svg>
