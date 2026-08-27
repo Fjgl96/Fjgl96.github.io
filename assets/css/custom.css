@@ -792,6 +792,10 @@ a.indice-card:focus-visible { outline: 3px solid var(--accent-text); outline-off
 # Medida de lectura — las líneas iban de 101 a 142 caracteres
 --------------------------------------------------------------*/
 .section-title p { max-width: 72ch; }
+/* La plantilla anula el margen inferior del párrafo de sección, porque la
+   pensó para uno solo. Con dos hace falta aire entre ellos, pero no después
+   del último: por eso el margen va en el hermano, no en todos. */
+.section-title p + p { margin-top: 15px; }
 .about .content p { max-width: 78ch; }
 .paper { max-width: 820px; }
 
