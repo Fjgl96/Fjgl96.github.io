@@ -1,0 +1,153 @@
+{
+  "version": "4.0",
+  "mode": "diagnostic",
+  "sector": "distribution",
+  "country": "peru",
+  "empresa": "NUTRIANDES DISTRIBUCIONES S.A.C.",
+  "periodo": "2028",
+  "moneda": "PEN",
+  "severity": "riesgo",
+  "periods": 2,
+  "data_richness": "minimal",
+  "distortions": [
+    {
+      "type": "no_recurrente_material",
+      "impact": [
+        "margen_neto"
+      ],
+      "no_recurrente_total": 1415000,
+      "resultado_ajustado": 570844,
+      "note": "Resultado depende de ingresos no recurrentes (S/ 1,415,000). Sin ellos, resultado sería S/ 570,844.",
+      "severity": "warning"
+    },
+    {
+      "type": "puente_no_operativo",
+      "impact": [
+        "margen_neto",
+        "resultado_ejercicio",
+        "lectura_general"
+      ],
+      "var_operativo_pct": -38.0,
+      "var_neto_pct": 10.2,
+      "no_operativo": 1415000,
+      "resultado_sin_no_operativo": 570844,
+      "note": "El resultado operativo cae 38.0% y el resultado neto sube 10.2%. El puente entre ambos son S/ 1,415,000 de partidas no operativas. Sin ellas el resultado sería S/ 570,844. La mejora del neto no proviene de la operación.",
+      "severity": "critical"
+    }
+  ],
+  "alerts": [],
+  "slides": [
+    {
+      "id": "portada",
+      "type": "cover",
+      "template": "slide_portada",
+      "page_num": 1
+    },
+    {
+      "id": "resumen",
+      "type": "B",
+      "template": "slide_resumen_diagnostic",
+      "include_stakeholder": true,
+      "page_num": 2
+    },
+    {
+      "id": "egp",
+      "type": "A",
+      "template": "slide_egp",
+      "columns": [
+        "actual",
+        "pct_vertical"
+      ],
+      "comment_depth": "full",
+      "page_num": 3
+    },
+    {
+      "id": "sectorial",
+      "type": "D",
+      "template": "slide_kpi_distribution",
+      "benchmark_mode": "sector",
+      "page_num": 4
+    },
+    {
+      "id": "esf_activos",
+      "type": "A",
+      "template": "slide_esf_activos",
+      "columns": [
+        "actual",
+        "pct_vertical"
+      ],
+      "comment_depth": "full",
+      "page_num": 5
+    },
+    {
+      "id": "esf_pasivo_patrimonio",
+      "type": "A",
+      "template": "slide_esf_pasivo",
+      "columns": [
+        "actual",
+        "pct_vertical"
+      ],
+      "comment_depth": "full",
+      "page_num": 6
+    },
+    {
+      "id": "ratios",
+      "type": "A",
+      "template": "slide_ratios",
+      "eval_mode": "benchmark",
+      "page_num": 7
+    },
+    {
+      "id": "estructura",
+      "type": "C",
+      "template": "slide_estructura",
+      "chart_type": "stacked_bars",
+      "page_num": 8
+    },
+    {
+      "id": "conclusiones",
+      "type": "E",
+      "template": "slide_conclusiones",
+      "blocks": [
+        "hallazgos",
+        "riesgos",
+        "prioridades"
+      ],
+      "page_num": 9
+    },
+    {
+      "id": "cierre",
+      "type": "cover",
+      "template": "slide_cierre",
+      "page_num": 10
+    }
+  ],
+  "charts": {
+    "estructura": "stacked_bars_comparison",
+    "sectorial": "kpi_cards_only",
+    "resumen": "kpi_cards_with_semaphore",
+    "ratios": "table_with_heatmap"
+  },
+  "comment_templates": {
+    "egp_summary": "positive",
+    "esf_act_summary": "positive",
+    "esf_pp_summary": "positive",
+    "footer_default": "riesgo"
+  },
+  "mode_config": {
+    "summary_box_style": "interpretive",
+    "bullet_style": "dato_causa_accion",
+    "footer_style": "action_oriented",
+    "kpi_eval_against": "benchmark",
+    "include_recommendations": true,
+    "include_risk_matrix": true,
+    "include_stakeholder_grid": true,
+    "table_format": "absolute_vertical",
+    "conclusion_blocks": [
+      "hallazgos",
+      "riesgos",
+      "prioridades"
+    ],
+    "tone": "constructive"
+  }
+}

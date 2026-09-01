@@ -1,0 +1,281 @@
+{
+  "empresa": "NUTRIANDES DISTRIBUCIONES S.A.C.",
+  "periodo": "2028",
+  "periodos": [
+    "2027",
+    "2028"
+  ],
+  "moneda": "PEN",
+  "sector": "distribution",
+  "balance": {
+    "2027": {
+      "activo_corriente": {
+        "efectivo": 1420000,
+        "cuentas_por_cobrar": 5520000,
+        "cxc_personal": 28000,
+        "cxc_diversas": 390000,
+        "inventarios": 4010000,
+        "gastos_anticipados": 48000,
+        "otros_activos_corr": 380000,
+        "total_activo_corriente": 11796000
+      },
+      "activo_no_corriente": {
+        "otras_cxc_nc": 420000,
+        "cxc_diversas": 2050000,
+        "intangibles": 195000,
+        "ime_bruto": 6240000,
+        "total_activo_no_corriente": 8905000
+      },
+      "pasivo_corriente": {
+        "cuentas_por_pagar": 8640000,
+        "tributos_pagar": 95000,
+        "remuneraciones_pagar": 348000,
+        "cxp_diversas": 2900000,
+        "total_pasivo_corriente": 11983000
+      },
+      "pasivo_no_corriente": {
+        "cxp_diversas": 2266725,
+        "total_pasivo_no_corriente": 2266725
+      },
+      "patrimonio": {
+        "capital_social": 3000000,
+        "resultados_acumulados": 1650000,
+        "resultado_periodo": 1801275,
+        "total_patrimonio": 6451275
+      },
+      "total_activo": 20701000,
+      "total_pasivo": 14249725
+    },
+    "2028": {
+      "activo_corriente": {
+        "efectivo": 1180000,
+        "cuentas_por_cobrar": 5780000,
+        "cxc_personal": 19000,
+        "cxc_diversas": 1395000,
+        "inventarios": 4995000,
+        "gastos_anticipados": 138000,
+        "otros_activos_corr": 720000,
+        "total_activo_corriente": 14227000
+      },
+      "activo_no_corriente": {
+        "otras_cxc_nc": 120000,
+        "cxc_diversas": 1250000,
+        "intangibles": 248000,
+        "ime_bruto": 7410000,
+        "total_activo_no_corriente": 9028000
+      },
+      "pasivo_corriente": {
+        "cuentas_por_pagar": 9780000,
+        "tributos_pagar": 735000,
+        "remuneraciones_pagar": 432000,
+        "cxp_diversas": 1310000,
+        "total_pasivo_corriente": 12435000
+      },
+      "pasivo_no_corriente": {
+        "cxp_diversas": 3282881,
+        "total_pasivo_no_corriente": 3282881
+      },
+      "patrimonio": {
+        "capital_social": 3000000,
+        "resultados_acumulados": 2551275,
+        "resultado_periodo": 1985844,
+        "total_patrimonio": 7537119
+      },
+      "total_activo": 23255000,
+      "total_pasivo": 15717881
+    }
+  },
+  "estado_resultados": {
+    "2027": {
+      "margen_bruto": 7770000,
+      "ventas_netas": 42000000,
+      "costo_ventas": 34230000,
+      "gastos_admin": 1290000,
+      "gastos_ventas": 1940000,
+      "margen_operativo": 3400000,
+      "ing_financieros_total": 85000,
+      "gastos_financieros": 640000,
+      "otros_ing_gastos_bloque": -290000,
+      "perdida_diferencia_cambio": -350000,
+      "otros_ingresos_gestion": 60000,
+      "utilidad_antes_impuestos": 2555000,
+      "impuesto_renta": 753725,
+      "resultado_ejercicio": 1801275,
+      "utilidad_bruta": 7770000,
+      "costo_de_ventas": 34230000,
+      "gastos": 4370000,
+      "gastos_de_administracion": 1290000,
+      "gastos_de_venta": 1940000,
+      "gastos_de_produccion": 215000,
+      "gastos_de_distribucion": 925000,
+      "utilidad_operativa": 3400000,
+      "ingresos_financieros": 85000,
+      "otros_ingresos_y_gastos": -290000,
+      "diferencia_de_cambio_neto": -350000,
+      "otros_ingresos_de_gestion": 60000,
+      "utilidad_antes_de_imp_y_participac": 2555000,
+      "gasto_en_impuesto_sobre_la_renta": 753725,
+      "resultado_del_ejercicio": 1801275
+    },
+    "2028": {
+      "margen_bruto": 7494800,
+      "ventas_netas": 45700000,
+      "costo_ventas": 38205200,
+      "gastos_admin": 1505000,
+      "gastos_ventas": 2060000,
+      "margen_operativo": 2106800,
+      "ing_financieros_total": 105000,
+      "gastos_financieros": 810000,
+      "otros_ing_gastos_bloque": 1415000,
+      "perdida_diferencia_cambio": 1240000,
+      "otros_ingresos_gestion": 175000,
+      "utilidad_antes_impuestos": 2816800,
+      "impuesto_renta": 830956,
+      "resultado_ejercicio": 1985844,
+      "utilidad_bruta": 7494800,
+      "costo_de_ventas": 38205200,
+      "gastos": 5388000,
+      "gastos_de_administracion": 1505000,
+      "gastos_de_venta": 2060000,
+      "gastos_de_produccion": 248000,
+      "gastos_de_distribucion": 1180000,
+      "gastos_de_desarrollo_de_nuevos_negocios": 395000,
+      "utilidad_operativa": 2106800,
+      "ingresos_financieros": 105000,
+      "otros_ingresos_y_gastos": 1415000,
+      "diferencia_de_cambio_neto": 1240000,
+      "otros_ingresos_de_gestion": 175000,
+      "utilidad_antes_de_imp_y_participac": 2816800,
+      "gasto_en_impuesto_sobre_la_renta": 830956,
+      "resultado_del_ejercicio": 1985844
+    }
+  },
+  "esf": {
+    "activo_corriente": {
+      "efectivo": 1180000,
+      "cxc_comerciales": 5780000,
+      "cxc_personal": 19000,
+      "cxc_diversas": 1395000,
+      "mercaderias": 4995000,
+      "gastos_anticipados": 138000,
+      "otros_activos_corr": 720000,
+      "total_ac": 14227000
+    },
+    "activo_no_corriente": {
+      "otras_cxc_nc": 120000,
+      "cxc_diversas": 1250000,
+      "intangibles": 248000,
+      "ime_bruto": 7410000,
+      "total_anc": 9028000
+    },
+    "pasivo_corriente": {
+      "cxp_comerciales": 9780000,
+      "tributos_pagar": 735000,
+      "remuneraciones_pagar": 432000,
+      "cxp_diversas": 1310000,
+      "total_pc": 12435000
+    },
+    "pasivo_no_corriente": {
+      "cxp_diversas": 3282881,
+      "total_pnc": 3282881
+    },
+    "patrimonio": {
+      "capital": 3000000,
+      "resultados_acum": 2551275,
+      "resultado_ejercicio": 1985844,
+      "total_patrimonio": 7537119
+    },
+    "totales": {
+      "activo": 23255000,
+      "pasivo_patrimonio": 23255000
+    }
+  },
+  "egp": {
+    "utilidad_bruta": 7494800,
+    "_lineas": {
+      "utilidad_bruta": 7494800,
+      "ventas_netas": 45700000,
+      "costo_de_ventas": 38205200,
+      "gastos": 5388000,
+      "gastos_de_administracion": 1505000,
+      "gastos_de_venta": 2060000,
+      "gastos_de_produccion": 248000,
+      "gastos_de_distribucion": 1180000,
+      "gastos_de_desarrollo_de_nuevos_negocios": 395000,
+      "utilidad_operativa": 2106800,
+      "ingresos_financieros": 105000,
+      "gastos_financieros": 810000,
+      "otros_ingresos_y_gastos": 1415000,
+      "diferencia_de_cambio_neto": 1240000,
+      "otros_ingresos_de_gestion": 175000,
+      "utilidad_antes_de_imp_y_participac": 2816800,
+      "gasto_en_impuesto_sobre_la_renta": 830956,
+      "resultado_del_ejercicio": 1985844
+    },
+    "ventas_netas": 45700000,
+    "costo_ventas": 38205200,
+    "gastos_admin": 1505000,
+    "gastos_ventas": 2060000,
+    "ebit": 2106800,
+    "ingresos_financieros": 105000,
+    "gastos_financieros": 810000,
+    "otros_ing_gastos_bloque": 1415000,
+    "dif_cambio": 1240000,
+    "otros_ingresos": 175000,
+    "utilidad_antes_impuestos": 2816800,
+    "impuesto_renta": 830956,
+    "resultado_ejercicio": 1985844
+  },
+  "monthly": {},
+  "complementary": {
+    "has_cost_detail": false,
+    "has_centro_costos": false,
+    "has_monthly_egp": false,
+    "has_gastos_detalle": false,
+    "has_usd_operations": false,
+    "cost_categories": {},
+    "gastos_restaurante_detalle": {},
+    "gastos_admin_detalle": {}
+  },
+  "data_quality": {
+    "balance_check": true,
+    "completeness": 1.0,
+    "periods_found": 2,
+    "warnings": []
+  },
+  "_encabezados": {
+    "2027": {
+      "balance": {
+        "titulo": "ESTADO DE SITUACIÓN FINANCIERA",
+        "periodo_declarado": "Al 31 de Diciembre del 2027",
+        "rotulo_columna": "11/2027"
+      },
+      "estado_resultados": {
+        "titulo": "ESTADO DE RESULTADOS INTEGRALES",
+        "periodo_declarado": "Al 31 de Diciembre del 2027",
+        "rotulo_columna": ""
+      }
+    },
+    "2028": {
+      "balance": {
+        "titulo": "ESTADO DE SITUACIÓN FINANCIERA",
+        "periodo_declarado": "Al 31 de Diciembre del 2028",
+        "rotulo_columna": "12/2028"
+      },
+      "estado_resultados": {
+        "titulo": "ESTADO DE RESULTADOS INTEGRALES",
+        "periodo_declarado": "Al 31/10/2028",
+        "rotulo_columna": ""
+      }
+    }
+  },
+  "_meta": {
+    "source_file": "caso_demo.xlsx",
+    "sheets_used": {
+      "esf": "BG 2028",
+      "egp": "ERF 2028"
+    },
+    "sector_detected": "distribution",
+    "sector_used": "distribution"
+  }
+}
