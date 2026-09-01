@@ -15,8 +15,8 @@
       "impact": [
         "margen_neto"
       ],
-      "no_recurrente_total": 1415000.0,
-      "resultado_ajustado": 570844.0,
+      "no_recurrente_total": 1415000,
+      "resultado_ajustado": 570844,
       "note": "Resultado depende de ingresos no recurrentes (S/ 1,415,000). Sin ellos, resultado sería S/ 570,844.",
       "severity": "warning"
     },
@@ -29,8 +29,8 @@
       ],
       "var_operativo_pct": -38.0,
       "var_neto_pct": 10.2,
-      "no_operativo": 1415000.0,
-      "resultado_sin_no_operativo": 570844.0,
+      "no_operativo": 1415000,
+      "resultado_sin_no_operativo": 570844,
       "note": "El resultado operativo cae 38.0% y el resultado neto sube 10.2%. El puente entre ambos son S/ 1,415,000 de partidas no operativas. Sin ellas el resultado sería S/ 570,844. La mejora del neto no proviene de la operación.",
       "severity": "critical"
     }

@@ -4,7 +4,7 @@
       "liquidez": {
         "ratio_corriente": 0.98,
         "prueba_acida": 0.65,
-        "capital_trabajo": -187000.0,
+        "capital_trabajo": -187000,
         "ratio_efectivo": 0.12
       },
       "solvencia": {
@@ -32,7 +32,7 @@
         "rotacion_cxp": 3.96,
         "periodo_pago_dias": 91.0,
         "cce_dias": -1.0,
-        "recursos_cce": 890000.0
+        "recursos_cce": 890000
       },
       "dupont": {
         "margen_neto": 4.3,
@@ -45,7 +45,7 @@
       "liquidez": {
         "ratio_corriente": 1.14,
         "prueba_acida": 0.74,
-        "capital_trabajo": 1792000.0,
+        "capital_trabajo": 1792000,
         "ratio_efectivo": 0.09
       },
       "solvencia": {
@@ -73,7 +73,7 @@
         "rotacion_cxp": 4.15,
         "periodo_pago_dias": 87.0,
         "cce_dias": 0.0,
-        "recursos_cce": 995000.0
+        "recursos_cce": 995000
       },
       "dupont": {
         "margen_neto": 4.3,
@@ -86,35 +86,35 @@
   "variaciones": {
     "2028_vs_2027": {
       "ventas": {
-        "monto": 3700000.0,
+        "monto": 3700000,
         "pct": 8.8
       },
       "margen_bruto": {
-        "monto": -275200.0,
+        "monto": -275200,
         "pct": -3.5
       },
       "margen_operativo": {
-        "monto": -1293200.0,
+        "monto": -1293200,
         "pct": -38.0
       },
       "resultado_neto": {
-        "monto": 184569.0,
+        "monto": 184569,
         "pct": 10.2
       },
       "total_activo": {
-        "monto": 2554000.0,
+        "monto": 2554000,
         "pct": 12.3
       },
       "total_pasivo": {
-        "monto": 1468156.0,
+        "monto": 1468156,
         "pct": 10.3
       },
       "patrimonio": {
-        "monto": 1085844.0,
+        "monto": 1085844,
         "pct": 16.8
       },
       "capital_trabajo": {
-        "monto": 1979000.0,
+        "monto": 1979000,
         "pct": 1058.3
       }
     }
@@ -136,7 +136,7 @@
       "estado_resultados": {
         "costo_ventas_pct": 81.5,
         "margen_bruto_pct": 18.5,
-        "gastos_operativos_pct": 6.8,
+        "gastos_operativos_pct": 4.6,
         "margen_operativo_pct": 8.1,
         "margen_neto_pct": 4.3
       }
@@ -157,7 +157,7 @@
       "estado_resultados": {
         "costo_ventas_pct": 83.6,
         "margen_bruto_pct": 16.4,
-        "gastos_operativos_pct": 7.1,
+        "gastos_operativos_pct": 4.5,
         "margen_operativo_pct": 4.6,
         "margen_neto_pct": 4.3
       }
@@ -165,21 +165,21 @@
   },
   "punto_equilibrio": {
     "2027": {
-      "punto_equilibrio": 15486486.0,
-      "gastos_fijos": 2865000.0,
+      "punto_equilibrio": 10486486.0,
+      "gastos_fijos": 1940000,
       "margen_contribucion_pct": 18.5,
-      "cobertura_pe_pct": 271.2
+      "cobertura_pe_pct": 400.5
     },
     "2028": {
-      "punto_equilibrio": 19756098.0,
-      "gastos_fijos": 3240000.0,
+      "punto_equilibrio": 12560976.0,
+      "gastos_fijos": 2060000,
       "margen_contribucion_pct": 16.4,
-      "cobertura_pe_pct": 231.3
+      "cobertura_pe_pct": 363.8
     }
   },
   "kpis_resumen": {
-    "ventas_netas": 45700000.0,
-    "resultado_neto": 1985844.0,
+    "ventas_netas": 45700000,
+    "resultado_neto": 1985844,
     "margen_bruto_pct": 16.4,
     "margen_neto_pct": 4.3,
     "roe": 26.3,
@@ -190,35 +190,35 @@
     "moneda": "PEN",
     "variaciones": {
       "ventas": {
-        "monto": 3700000.0,
+        "monto": 3700000,
         "pct": 8.8
       },
       "margen_bruto": {
-        "monto": -275200.0,
+        "monto": -275200,
         "pct": -3.5
       },
       "margen_operativo": {
-        "monto": -1293200.0,
+        "monto": -1293200,
         "pct": -38.0
       },
       "resultado_neto": {
-        "monto": 184569.0,
+        "monto": 184569,
         "pct": 10.2
       },
       "total_activo": {
-        "monto": 2554000.0,
+        "monto": 2554000,
         "pct": 12.3
       },
       "total_pasivo": {
-        "monto": 1468156.0,
+        "monto": 1468156,
         "pct": 10.3
       },
       "patrimonio": {
-        "monto": 1085844.0,
+        "monto": 1085844,
         "pct": 16.8
       },
       "capital_trabajo": {
-        "monto": 1979000.0,
+        "monto": 1979000,
         "pct": 1058.3
       }
     }
@@ -238,7 +238,7 @@
       "dias_efectivo": 1.0,
       "cxc_pct_activo": 26.7,
       "concentracion_top10_pct": "N/D",
-      "perdida_tc": 350000.0,
+      "perdida_tc": 350000,
       "perdida_tc_pct_ventas": 0.8,
       "benchmarks": {
         "dso": {
@@ -281,7 +281,7 @@
       "dias_efectivo": 1.0,
       "cxc_pct_activo": 24.9,
       "concentracion_top10_pct": "N/D",
-      "perdida_tc": 1240000.0,
+      "perdida_tc": 1240000,
       "perdida_tc_pct_ventas": 2.7,
       "benchmarks": {
         "dso": {
