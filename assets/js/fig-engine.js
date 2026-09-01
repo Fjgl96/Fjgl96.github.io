@@ -55,15 +55,22 @@
       .replace(/"/g, '&quot;');
   }
   function r1(n) { return Math.round(n * 10) / 10; }
+
+  /* Separador de miles a la española (punto). Sin esto, "2106800" obliga al
+     lector a contar dígitos —que es exactamente el trabajo que la figura
+     tiene que ahorrarle. */
+  function miles(x, dec) {
+    var s = Math.abs(x).toFixed(dec == null ? 0 : dec).split(".");
+    s[0] = s[0].replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+    return s.join(",");
+  }
   /* El signo menos tipográfico, no el guion del teclado: en una cifra
      negativa el guion se lee como separador. */
   function conSigno(v, dec) {
-    var s = Math.abs(v).toFixed(dec == null ? 0 : dec);
-    return (v < 0 ? '\u2212' : '+') + s;
+    return (v < 0 ? '\u2212' : '+') + miles(v, dec);
   }
   function sinSigno(v, dec) {
-    var s = Math.abs(v).toFixed(dec == null ? 0 : dec);
-    return (v < 0 ? '\u2212' : '') + s;
+    return (v < 0 ? '\u2212' : '') + miles(v, dec);
   }
 
   /* =====================================================================
@@ -139,9 +146,17 @@
     var y = function (v) { return g.piso - (v / techo) * banda; };
 
     /* Reparto horizontal: las barras se distribuyen parejo en el ancho útil. */
+    /* El ancho de barra es un MÁXIMO, no un fijo: con muchos tramos el paso
+       entre barras se achica y un ancho fijo las hace solaparse. Se deja un
+       18 % de aire entre barras contiguas. */
     var util = g.ancho - g.izq - g.der;
     var n = pasos.length;
-    var salto = n > 1 ? (util - g.barra) / (n - 1) : 0;
+    var barra = g.barra;
+    if (n > 1) {
+      var pasoMax = util / n;
+      if (barra > pasoMax * 0.82) barra = Math.max(pasoMax * 0.82, 14);
+    }
+    var salto = n > 1 ? (util - barra) / (n - 1) : 0;
     var x = function (k) { return g.izq + k * salto; };
 
     var piezas = [];
@@ -167,13 +182,13 @@
          aparece y se desliza (`an-flota`). Es la diferencia que el CSS ya
          distingue. */
       piezas.push('<rect class="' + (fijo ? 'an-barra' : 'an-flota') + '" style="--d:' + dBarra + 'ms" x="' +
-        r1(px) + '" y="' + r1(yTop) + '" width="' + g.barra + '" height="' + r1(alto) +
+        r1(px) + '" y="' + r1(yTop) + '" width="' + r1(barra) + '" height="' + r1(alto) +
         '" rx="3" fill="' + color + '" fill-opacity="' + (fijo ? '1' : '0.9') + '"/>');
 
       var texto = fijo ? sinSigno(p.valor, dec) : conSigno(p.valor, dec);
-      piezas.push('<text class="fv an-aparece" style="--d:' + dTexto + 'ms" x="' + r1(px + g.barra / 2) +
+      piezas.push('<text class="fv an-aparece" style="--d:' + dTexto + 'ms" x="' + r1(px + barra / 2) +
         '" y="' + r1(yTop - 9) + '" text-anchor="middle" fill="' + color + '">' + esc(texto) + '</text>');
-      piezas.push('<text class="fe an-aparece" style="--d:' + dTexto + 'ms" x="' + r1(px + g.barra / 2) +
+      piezas.push('<text class="fe an-aparece" style="--d:' + dTexto + 'ms" x="' + r1(px + barra / 2) +
         '" y="' + (g.piso + 20) + '" text-anchor="middle">' + esc(p.etiqueta) + '</text>');
 
       /* Conector: sale del nivel donde quedó la barra anterior y llega al
@@ -181,7 +196,7 @@
       if (i > 0) {
         var prev = pasos[i - 1];
         var yEnlace = y(prev.hasta);
-        piezas.push('<line class="an-aparece" style="--d:' + dBarra + 'ms" x1="' + r1(x(i - 1) + g.barra) +
+        piezas.push('<line class="an-aparece" style="--d:' + dBarra + 'ms" x1="' + r1(x(i - 1) + barra) +
           '" y1="' + r1(yEnlace) + '" x2="' + r1(px) + '" y2="' + r1(yEnlace) +
           '" stroke="' + COLOR.guia + '" stroke-width="1.2" stroke-dasharray="3 3"/>');
       }
@@ -326,6 +341,34 @@
     tira('una cascada de un solo paso tira error', function () {
       API.cascada({ pasos: [{ etiqueta: 'a', valor: 1, tipo: 'base' }] });
     }, 'al menos dos');
+
+    /* ---- legibilidad de las cifras ---- */
+    eq("miles con separador español", miles(2106800), "2.106.800");
+    eq("miles no toca los de tres dígitos", miles(908), "908");
+    eq("tramo negativo grande, con signo y separador", conSigno(-830956), "\u2212830.956");
+    var grande = API.cascada({ pasos: [
+      { etiqueta: "a", valor: 2106800, tipo: "base" },
+      { etiqueta: "b", valor: 1240000, tipo: "delta" },
+      { etiqueta: "c", valor: -830956, tipo: "delta" },
+      { etiqueta: "d", valor: 2515844, tipo: "total" }
+    ] });
+    ok("las cifras grandes salen agrupadas", grande.indexOf("2.106.800") > 0);
+
+    /* ---- las barras no se solapan, haya los tramos que haya ---- */
+    function solapan(nPasos) {
+      var ps = [{ etiqueta: "base", valor: 1000, tipo: "base" }], acum = 1000, i;
+      for (i = 1; i < nPasos - 1; i++) { ps.push({ etiqueta: "t" + i, valor: 100, tipo: "delta" }); acum += 100; }
+      ps.push({ etiqueta: "fin", valor: acum, tipo: "total" });
+      var svg = API.cascada({ pasos: ps }), m, re = /<rect class="an-[^"]*"[^>]*x="([\d.]+)"[^>]*width="([\d.]+)"/g;
+      var cajas = [];
+      while ((m = re.exec(svg))) cajas.push([+m[1], +m[1] + +m[2]]);
+      cajas.sort(function (a, b) { return a[0] - b[0]; });
+      for (i = 1; i < cajas.length; i++) if (cajas[i][0] < cajas[i - 1][1] - 0.01) return true;
+      return false;
+    }
+    ok("4 tramos: sin solape", !solapan(4));
+    ok("7 tramos: sin solape", !solapan(7));
+    ok("12 tramos: sin solape", !solapan(12));
 
     /* ---- lectura derivada ---- */
     var c = API.conversion(buena);
