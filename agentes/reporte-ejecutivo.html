@@ -4,13 +4,13 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Reporte ejecutivo financiero — Francisco Guerrero</title>
-  <meta name="description" content="De un PDF de estados financieros a un reporte de directorio en una sola corrida.">
+  <meta name="description" content="De un juego de estados financieros a un reporte de directorio y una minuta de inconsistencias para contabilidad, en una sola corrida.">
   <meta name="robots" content="index, follow, max-image-preview:large">
   <meta name="theme-color" content="#0b6d9e">
   <link rel="canonical" href="https://fjgl96.github.io/agentes/reporte-ejecutivo.html">
   <meta property="og:type" content="article">
   <meta property="og:title" content="Reporte ejecutivo financiero — Francisco Guerrero">
-  <meta property="og:description" content="De un PDF de estados financieros a un reporte de directorio en una sola corrida.">
+  <meta property="og:description" content="De un juego de estados financieros a un reporte de directorio y una minuta de inconsistencias para contabilidad, en una sola corrida.">
   <meta property="og:url" content="https://fjgl96.github.io/agentes/reporte-ejecutivo.html">
   <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png">
@@ -23,13 +23,6 @@
   <link href="../assets/css/custom.css" rel="stylesheet">
   <link href="../assets/css/subpagina.css" rel="stylesheet">
   <link href="../assets/css/analisis.css" rel="stylesheet">
-<style>
-  .galeria{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:12px;margin:22px 0}
-  .galeria .lam{display:block;border:1px solid var(--line,#e2e8f0);border-radius:8px;overflow:hidden;
-    background:#fff;transition:box-shadow .18s ease,transform .18s ease}
-  .galeria .lam:hover{box-shadow:0 6px 18px rgba(16,42,67,.14);transform:translateY(-2px)}
-  .galeria img{display:block;width:100%;height:auto}
-</style>
 <style>
   .galeria{display:grid;grid-template-columns:repeat(auto-fill,minmax(215px,1fr));gap:12px;margin:22px 0}
   .galeria .lam{display:block;padding:0;border:1px solid #e2e8f0;border-radius:9px;overflow:hidden;
@@ -86,22 +79,32 @@
           <span>Automatización financiera · Financial Executive Report V4.2.1</span>
         </p>
         <h1>Reporte ejecutivo financiero</h1>
-        <p class="sub-lead">De un juego de estados financieros a un reporte de directorio y una minuta
-          para contabilidad, en una sola corrida. Primero cómo funciona; después, el flujo entero
-          corriendo sobre un caso real de punta a punta.</p>
+        <p class="sub-lead">Un juego de estados financieros entra; salen el reporte que va al directorio
+          y la minuta que va a contabilidad, en una sola corrida. Reemplaza el trabajo de tijera del
+          cierre y agrega lo que ese trabajo nunca alcanza a hacer a fin de mes: auditar el archivo
+          antes de que un número entre a una lámina.</p>
         <div class="agent-foot"><span class="agent-chip">PPTX</span><span class="agent-chip">HTML</span><span class="agent-chip">PDF</span><span class="agent-chip">DOCX</span></div>
       </header>
 
       <section class="sub-seccion" aria-labelledby="t-prob">
         <h2 id="t-prob">El problema</h2>
         <p>Armar el reporte mensual de directorio es trabajo de tijera: extraer cifras de un PDF o un
-          Excel, recalcular ratios, redactar los comentarios y maquetar las láminas. Se repite en cada
-          cierre y consume los días que deberían ir al análisis.</p>
+          Excel, transcribirlas a una plantilla, recalcular ratios, cruzar que el balance cuadre, redactar
+          los comentarios y maquetar las láminas. Se repite en cada cierre y consume los días que
+          deberían ir al análisis.</p>
+        <p>Y el apuro tiene un segundo costo, más caro que las horas: <strong>en esa cadena de
+          transcripción manual nadie audita el archivo de origen</strong>. Un encabezado que declara un
+          periodo distinto al que tienen las cifras, una cuenta nueva que rompe la comparación contra el
+          año anterior, un subtotal contado dos veces. Todo eso pasa el cierre sin que nadie lo mire y
+          aparece proyectado en una reunión de directorio, donde discutirlo cuesta credibilidad además
+          de tiempo.</p>
         <div class="io-grid">
-          <div class="io-bloque"><h3>Entra</h3><p>Balance general y estado de resultados en PDF o Excel,
-            uno o varios periodos. Las hojas no necesitan tener la misma estructura entre años.</p></div>
-          <div class="io-bloque io-bloque--salida"><h3>Sale</h3><p>Presentación en PPTX, reporte HTML
-            interactivo y su PDF, más una minuta contable en DOCX con las observaciones detectadas.</p></div>
+          <div class="io-bloque"><h3>Entra</h3><p>Balance general y estado de resultados, en PDF o Excel,
+            uno o varios periodos. Las hojas no necesitan tener la misma estructura entre años ni
+            llamarse de ninguna manera en particular.</p></div>
+          <div class="io-bloque io-bloque--salida"><h3>Sale</h3><p>El reporte listo para presentar —en
+            pantalla, impreso o editable— y, por separado, la minuta con las inconsistencias que el
+            archivo trae y quién tiene que resolverlas antes de que se presente.</p></div>
         </div>
       </section>
 
@@ -120,9 +123,9 @@
             contabilidad y no llega al directorio.</figcaption>
         </figure>
 
-        <h3 class="paper-sub">Qué decide y cómo</h3>
-        <p>El flujo no es una tubería recta. En tres puntos distintos puede pedir confirmación, devolver
-          el trabajo o detenerse antes de que nada llegue al directorio.</p>
+        <h3 class="paper-sub">Qué decide, y por qué eso importa</h3>
+        <p>El flujo no es una tubería recta. En tres puntos puede pedir confirmación, devolver el trabajo
+          o detenerse antes de que nada llegue al directorio.</p>
         <figure class="proyecto-media sub-figura sub-figura--bloques sub-figura--denso">
           <div class="sub-figura-lienzo">
             <img src="../assets/img/agentes/decisiones-reporte-ejecutivo.svg" width="856" height="252"
@@ -133,52 +136,81 @@
             inconsistencia, el reporte espera a que contabilidad la resuelva.</figcaption>
         </figure>
         <div class="notas-grid">
-          <div class="nota-bloque"><h3>Sector</h3><p>Nueve módulos, cada uno con sus ratios y sus
-            umbrales. El sector se detecta del archivo y se confirma con el usuario, no se asume.</p></div>
-          <div class="nota-bloque"><h3>Modo</h3><p>Diagnóstico completo o seguimiento mensual: cambian
-            la profundidad, el juego de láminas y el tono de los comentarios.</p></div>
-          <div class="nota-bloque"><h3>País</h3><p>Módulo de normativa contable peruana para las
-            observaciones de la minuta y las alertas regulatorias.</p></div>
+          <div class="nota-bloque"><h3>El sector decide qué se mide</h3><p>La rotación de inventarios
+            manda en una distribuidora y no dice casi nada en una consultora. El flujo elige el juego de
+            indicadores y sus umbrales <em>antes</em> de calcular, y te pide confirmar cuál es: lo detecta
+            del archivo, no lo asume. Es la diferencia entre un reporte que lista todos los ratios que se
+            pueden calcular y uno que pone adelante los que gobiernan tu caso.</p></div>
+          <div class="nota-bloque"><h3>Las decisiones quedan fijas</h3><p>Qué periodo comparar, qué
+            severidad tiene el cuadro, qué distorsión gobierna el caso, qué gráfico cuenta mejor cada
+            lámina. Son decisiones que hoy toma una persona en cada cierre; acá las toma la misma regla
+            todos los meses, así que el reporte de marzo y el de abril son comparables.</p></div>
+          <div class="nota-bloque"><h3>Lo que falta se marca</h3><p>Cuando el dato no está en el archivo
+            sale <span class="mono">N/D</span>. No se estima ni se rellena para completar la lámina, y la
+            minuta deja constancia de qué faltó.</p></div>
         </div>
+        <p class="proyecto-concepto"><strong>Quién escribe qué.</strong> Los ratios, el enrutamiento por
+          sector y país y la generación de las tres salidas son código determinista: los mismos datos
+          producen las mismas láminas y las mismas cifras, siempre. Lo que aporta el modelo es la lectura
+          —qué hallazgo gobierna el caso y cómo se redacta el comentario—, no el cálculo. Si el número lo
+          inventara un modelo, esto no serviría para nada.</p>
       </section>
 
       <section class="sub-seccion" aria-labelledby="t-caso">
         <h2 id="t-caso">El caso, de punta a punta</h2>
-        <p>Lo que sigue es el flujo corriendo entero sobre un juego de estados financieros completo, sin
-          intervención manual entre etapas. <strong>Entra</strong> un Excel de cuatro hojas —un balance y
-          un estado de resultados por cada uno de dos ejercicios— de una distribuidora mayorista, con
-          estructuras que no coinciden entre años. <strong>Sale</strong> el reporte de directorio en sus
-          tres formatos y la minuta contable. Todos los archivos están publicados abajo para que
-          cualquiera lo repita.</p>
+        <p>Hasta acá es el plano. Lo que sigue es el flujo corriendo entero, sin intervención manual entre
+          etapas, sobre un juego de estados financieros que parece bueno hasta que se lo mira dos veces.
+          <strong>Entra</strong> un Excel de cuatro hojas —un balance y un estado de resultados por cada
+          uno de dos ejercicios— de una distribuidora mayorista, con estructuras que no coinciden entre
+          años. <strong>Sale</strong> todo lo que ves abajo.</p>
 
-        <div class="nota-tesis">
-          <h2>Por qué el caso es inventado</h2>
-          <p>Los estados financieros reales no se usan como datos. La estructura de cuentas y las mañas de
-            formato imitan un juego real peruano; ninguna cifra proviene de una empresa existente.</p>
-          <p>Además de resolver la confidencialidad, permite algo que los datos reales no dan:
-            <strong>diseñar el caso</strong>, para que contenga exactamente los hallazgos y los defectos de
-            calidad que se quiere poner a prueba. La empresa, NUTRIANDES DISTRIBUCIONES S.A.C., no existe,
-            y los ejercicios son 2027 y 2028 —futuros a propósito— para que nadie los confunda con algo
-            real. El generador se corre y verifica sus propias invariantes contables.</p>
-        </div>
-
-        <h3 class="paper-sub">Lo que entra</h3>
+        <h3 class="paper-sub">Las cuatro cifras del año</h3>
         <dl class="nota-cifras">
           <div class="nota-cifra"><dt>Ventas 2028</dt><dd>45,7<small>millones de soles · +8,8&nbsp;%</small></dd></div>
           <div class="nota-cifra nota-cifra--baja"><dt>Utilidad operativa</dt><dd>2,11<small>millones · −38,0&nbsp;%</small></dd></div>
           <div class="nota-cifra nota-cifra--alza"><dt>Resultado neto</dt><dd>1,99<small>millones · +10,2&nbsp;%</small></dd></div>
           <div class="nota-cifra nota-cifra--baja"><dt>Cobertura de intereses</dt><dd>2,60<small>veces · desde 5,31</small></dd></div>
         </dl>
+        <p>Léelas juntas: la utilidad operativa se cayó 38&nbsp;% y el resultado neto subió 10,2&nbsp;%.
+          Las dos cosas son ciertas al mismo tiempo, y esa es toda la historia del caso.</p>
       </section>
 
       <section class="sub-seccion" aria-labelledby="t-reporte">
-        <h2 id="t-reporte">El reporte</h2>
-        <p>Ocho láminas en HTML interactivo, con su PDF, más la versión PPTX de diez láminas para editar.
-          Las tres salidas se generan de los mismos JSON del flujo, así que dos corridas sobre el mismo
-          archivo dan el mismo reporte. Hacé clic en cualquier lámina para verla en grande.</p>
+        <h2 id="t-reporte">Los titulares decían buen año. No fue un buen año.</h2>
+        <p>Las ventas suben 8,8&nbsp;%, el resultado neto sube 10,2&nbsp;%, el margen neto queda estable y
+          el ratio corriente cruza 1 por primera vez. Cualquiera que lea el estado de resultados por
+          arriba firma que 2028 fue mejor que 2027. El reporte dice lo contrario, y lo sustenta.</p>
+        <p>La utilidad bruta <strong>cayó</strong> 3,5&nbsp;% en soles aunque las ventas subieron: se
+          vendió más y se ganó menos. El margen bruto perdió 210 puntos básicos y el operativo 349. La
+          cobertura de intereses se partió a la mitad. Y las existencias crecieron 24,6&nbsp;% mientras
+          las ventas crecían 8,8&nbsp;%: se acumuló inventario más rápido de lo que se vendía.</p>
+
+        <figure class="proyecto-media sub-figura sub-figura--bloques fig-animada">
+          <div class="sub-figura-lienzo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 856 340" width="856" height="340" role="img" aria-labelledby="t-puente d-puente"><title id="t-puente">Puente del resultado operativo al resultado neto en 2028</title><desc id="d-puente">Cascada de siete tramos. Parte del resultado operativo de 2.106.800 soles, suma 105.000 de ingresos financieros, resta 810.000 de gastos financieros, suma 1.240.000 de diferencia de cambio, suma 175.000 de otros ingresos, resta 830.956 de impuesto a la renta y cierra en un resultado neto de 1.985.844 soles. El tramo de diferencia de cambio es el mayor de todos los positivos.</desc><style>
+ .fh{font-family:Poppins,Helvetica,Arial,sans-serif;font-size:9.5px;font-weight:600;letter-spacing:1px;fill:#0b6d9e}
+ .fe{font-family:Poppins,Helvetica,Arial,sans-serif;font-size:9px;font-weight:600;fill:#5f7391}
+ .fv{font-family:Raleway,Helvetica,Arial,sans-serif;font-size:12px;font-weight:700;fill:#173b6c}
+ .fn{font-family:'Open Sans',Helvetica,Arial,sans-serif;font-size:9px;fill:#5f7391}
+</style><rect width="856" height="340" fill="#fff"/><text class="fh" x="24" y="26">DEL RESULTADO OPERATIVO AL RESULTADO NETO · 2028, SOLES</text><line x1="84" y1="266" x2="784" y2="266" stroke="#cfe0f2" stroke-width="1.4"/><rect class="an-barra" style="--d:0ms" x="84" y="119.4" width="82" height="146.6" rx="3" fill="#173b6c" fill-opacity="1"/><text class="fv an-aparece" style="--d:320ms" x="125" y="110.4" text-anchor="middle" fill="#173b6c">2.106.800</text><text class="fe an-aparece" style="--d:320ms" x="125" y="286" text-anchor="middle">Result. operativo</text><rect class="an-flota" style="--d:180ms" x="187" y="112.1" width="82" height="7.3" rx="3" fill="#149ddd" fill-opacity="0.9"/><text class="fv an-aparece" style="--d:500ms" x="228" y="103.1" text-anchor="middle" fill="#149ddd">+105.000</text><text class="fe an-aparece" style="--d:500ms" x="228" y="286" text-anchor="middle">Ing. financieros</text><line class="an-aparece" style="--d:180ms" x1="166" y1="119.4" x2="187" y2="119.4" stroke="#cfe0f2" stroke-width="1.2" stroke-dasharray="3 3"/><rect class="an-flota" style="--d:360ms" x="290" y="112.1" width="82" height="56.4" rx="3" fill="#b33a3a" fill-opacity="0.9"/><text class="fv an-aparece" style="--d:680ms" x="331" y="103.1" text-anchor="middle" fill="#b33a3a">−810.000</text><text class="fe an-aparece" style="--d:680ms" x="331" y="286" text-anchor="middle">Gastos financieros</text><line class="an-aparece" style="--d:360ms" x1="269" y1="112.1" x2="290" y2="112.1" stroke="#cfe0f2" stroke-width="1.2" stroke-dasharray="3 3"/><rect class="an-flota" style="--d:540ms" x="393" y="82.2" width="82" height="86.3" rx="3" fill="#149ddd" fill-opacity="0.9"/><text class="fv an-aparece" style="--d:860ms" x="434" y="73.2" text-anchor="middle" fill="#149ddd">+1.240.000</text><text class="fe an-aparece" style="--d:860ms" x="434" y="286" text-anchor="middle">Difer. de cambio</text><line class="an-aparece" style="--d:540ms" x1="372" y1="168.5" x2="393" y2="168.5" stroke="#cfe0f2" stroke-width="1.2" stroke-dasharray="3 3"/><rect class="an-flota" style="--d:720ms" x="496" y="70" width="82" height="12.2" rx="3" fill="#149ddd" fill-opacity="0.9"/><text class="fv an-aparece" style="--d:1040ms" x="537" y="61" text-anchor="middle" fill="#149ddd">+175.000</text><text class="fe an-aparece" style="--d:1040ms" x="537" y="286" text-anchor="middle">Otros ingresos</text><line class="an-aparece" style="--d:720ms" x1="475" y1="82.2" x2="496" y2="82.2" stroke="#cfe0f2" stroke-width="1.2" stroke-dasharray="3 3"/><rect class="an-flota" style="--d:900ms" x="599" y="70" width="82" height="57.8" rx="3" fill="#b33a3a" fill-opacity="0.9"/><text class="fv an-aparece" style="--d:1220ms" x="640" y="61" text-anchor="middle" fill="#b33a3a">−830.956</text><text class="fe an-aparece" style="--d:1220ms" x="640" y="286" text-anchor="middle">Impuesto renta</text><line class="an-aparece" style="--d:900ms" x1="578" y1="70" x2="599" y2="70" stroke="#cfe0f2" stroke-width="1.2" stroke-dasharray="3 3"/><rect class="an-barra" style="--d:1080ms" x="702" y="127.8" width="82" height="138.2" rx="3" fill="#0f6b46" fill-opacity="1"/><text class="fv an-aparece" style="--d:1400ms" x="743" y="118.8" text-anchor="middle" fill="#0f6b46">1.985.844</text><text class="fe an-aparece" style="--d:1400ms" x="743" y="286" text-anchor="middle">Resultado neto</text><line class="an-aparece" style="--d:1080ms" x1="681" y1="127.8" x2="702" y2="127.8" stroke="#cfe0f2" stroke-width="1.2" stroke-dasharray="3 3"/><text class="fn" x="24" y="324">El resultado operativo cae 38 % contra 2027. Lo que sostiene el resultado neto es la diferencia de cambio, que no viene de la operación.</text></svg></div>
+          <figcaption>La barra azul del centro es la que salva el año, y es la única que la empresa no controla.</figcaption>
+        </figure>
+
+        <p>La mejora del neto sale de la diferencia de cambio, que pasó de una pérdida de 350.000 a una
+          ganancia de 1.240.000. Un swing de 1.590.000 que no viene del negocio. <strong>Sin el efecto
+          cambiario, 2028 fue peor que 2027 en todas las líneas.</strong> Y esto no lo vio nadie leyendo:
+          lo dispara una regla que compara la dirección del resultado operativo contra la del neto y mide
+          el puente entre los dos. Con ese hallazgo, el diagnóstico general del caso pasó de
+          <em>sano</em> a <em>riesgo</em>.</p>
+
+        <h3 class="paper-sub">Así llega al directorio</h3>
+        <p>Ese es el diagnóstico; estas son las ocho láminas donde el reporte lo sostiene. Llegan con la
+          lectura hecha: cada una trae su comentario redactado y el número que lo respalda al lado. No es
+          un tablero que alguien tiene que interpretar el lunes a la mañana, es el material que se
+          presenta el lunes a la mañana. El HTML se recorre en pantalla, el PDF se adjunta al acta y el
+          PPTX se abre para reescribir la lámina que quieras discutir de otra forma.</p>
         <div class="galeria"><button class="lam" data-i="0" type="button"><img src="../assets/demo/reporte-ejecutivo/laminas/pag-01.png" width="1122" height="794" loading="lazy" decoding="async" alt="Lámina 1: Portada"><span class="lam-cap">01 · Portada</span></button><button class="lam" data-i="1" type="button"><img src="../assets/demo/reporte-ejecutivo/laminas/pag-02.png" width="1122" height="794" loading="lazy" decoding="async" alt="Lámina 2: Resumen ejecutivo"><span class="lam-cap">02 · Resumen ejecutivo</span></button><button class="lam" data-i="2" type="button"><img src="../assets/demo/reporte-ejecutivo/laminas/pag-03.png" width="1122" height="794" loading="lazy" decoding="async" alt="Lámina 3: Estado de resultados"><span class="lam-cap">03 · Estado de resultados</span></button><button class="lam" data-i="3" type="button"><img src="../assets/demo/reporte-ejecutivo/laminas/pag-04.png" width="1122" height="794" loading="lazy" decoding="async" alt="Lámina 4: Del resultado operativo al neto"><span class="lam-cap">04 · Del resultado operativo al neto</span></button><button class="lam" data-i="4" type="button"><img src="../assets/demo/reporte-ejecutivo/laminas/pag-05.png" width="1122" height="794" loading="lazy" decoding="async" alt="Lámina 5: Capital de trabajo"><span class="lam-cap">05 · Capital de trabajo</span></button><button class="lam" data-i="5" type="button"><img src="../assets/demo/reporte-ejecutivo/laminas/pag-06.png" width="1122" height="794" loading="lazy" decoding="async" alt="Lámina 6: Ratios financieros"><span class="lam-cap">06 · Ratios financieros</span></button><button class="lam" data-i="6" type="button"><img src="../assets/demo/reporte-ejecutivo/laminas/pag-07.png" width="1122" height="794" loading="lazy" decoding="async" alt="Lámina 7: Conclusiones"><span class="lam-cap">07 · Conclusiones</span></button><button class="lam" data-i="7" type="button"><img src="../assets/demo/reporte-ejecutivo/laminas/pag-08.png" width="1122" height="794" loading="lazy" decoding="async" alt="Lámina 8: Cierre"><span class="lam-cap">08 · Cierre</span></button></div>
 
-        <p>O recorrelo acá mismo, en vivo:</p>
+        <p>O recórrelo acá mismo, en vivo:</p>
         <div class="embed">
           <iframe src="../assets/demo/reporte-ejecutivo/reporte.html" title="Reporte ejecutivo NUTRIANDES DISTRIBUCIONES S.A.C." loading="lazy"></iframe>
           <div class="embed-pie">
@@ -193,42 +225,21 @@
         </div>
       </section>
 
-      <section class="sub-seccion" aria-labelledby="t-hallazgo">
-        <h2 id="t-hallazgo">Lo que el reporte encontró</h2>
-        <p>Los titulares del año son buenos. Las ventas suben 8,8&nbsp;%, el resultado neto sube 10,2&nbsp;%,
-          el margen neto queda estable y el ratio corriente cruza 1 por primera vez. Leído así, buen año.</p>
-        <p>Lo que pasó de verdad es otra cosa. La utilidad bruta <strong>cayó</strong> 3,5&nbsp;% en soles
-          aunque las ventas subieron: se vendió más y se ganó menos. El margen bruto perdió 210 puntos
-          básicos y el operativo 349. La utilidad operativa se desplomó 38&nbsp;%. La cobertura de intereses
-          se partió a la mitad. Y las existencias crecieron 24,6&nbsp;% mientras las ventas crecían
-          8,8&nbsp;%: se acumuló inventario más rápido de lo que se vendía.</p>
-
-        <figure class="proyecto-media sub-figura sub-figura--bloques fig-animada">
-          <div class="sub-figura-lienzo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 856 340" width="856" height="340" role="img" aria-labelledby="t-puente d-puente"><title id="t-puente">Puente del resultado operativo al resultado neto en 2028</title><desc id="d-puente">Cascada de siete tramos. Parte del resultado operativo de 2.106.800 soles, suma 105.000 de ingresos financieros, resta 810.000 de gastos financieros, suma 1.240.000 de diferencia de cambio, suma 175.000 de otros ingresos, resta 830.956 de impuesto a la renta y cierra en un resultado neto de 1.985.844 soles. El tramo de diferencia de cambio es el mayor de todos los positivos.</desc><style>
- .fh{font-family:Poppins,Helvetica,Arial,sans-serif;font-size:9.5px;font-weight:600;letter-spacing:1px;fill:#0b6d9e}
- .fe{font-family:Poppins,Helvetica,Arial,sans-serif;font-size:9px;font-weight:600;fill:#5f7391}
- .fv{font-family:Raleway,Helvetica,Arial,sans-serif;font-size:12px;font-weight:700;fill:#173b6c}
- .fn{font-family:'Open Sans',Helvetica,Arial,sans-serif;font-size:9px;fill:#5f7391}
-</style><rect width="856" height="340" fill="#fff"/><text class="fh" x="24" y="26">DEL RESULTADO OPERATIVO AL RESULTADO NETO · 2028, SOLES</text><line x1="84" y1="266" x2="784" y2="266" stroke="#cfe0f2" stroke-width="1.4"/><rect class="an-barra" style="--d:0ms" x="84" y="119.4" width="82" height="146.6" rx="3" fill="#173b6c" fill-opacity="1"/><text class="fv an-aparece" style="--d:320ms" x="125" y="110.4" text-anchor="middle" fill="#173b6c">2.106.800</text><text class="fe an-aparece" style="--d:320ms" x="125" y="286" text-anchor="middle">Result. operativo</text><rect class="an-flota" style="--d:180ms" x="187" y="112.1" width="82" height="7.3" rx="3" fill="#149ddd" fill-opacity="0.9"/><text class="fv an-aparece" style="--d:500ms" x="228" y="103.1" text-anchor="middle" fill="#149ddd">+105.000</text><text class="fe an-aparece" style="--d:500ms" x="228" y="286" text-anchor="middle">Ing. financieros</text><line class="an-aparece" style="--d:180ms" x1="166" y1="119.4" x2="187" y2="119.4" stroke="#cfe0f2" stroke-width="1.2" stroke-dasharray="3 3"/><rect class="an-flota" style="--d:360ms" x="290" y="112.1" width="82" height="56.4" rx="3" fill="#b33a3a" fill-opacity="0.9"/><text class="fv an-aparece" style="--d:680ms" x="331" y="103.1" text-anchor="middle" fill="#b33a3a">−810.000</text><text class="fe an-aparece" style="--d:680ms" x="331" y="286" text-anchor="middle">Gastos financieros</text><line class="an-aparece" style="--d:360ms" x1="269" y1="112.1" x2="290" y2="112.1" stroke="#cfe0f2" stroke-width="1.2" stroke-dasharray="3 3"/><rect class="an-flota" style="--d:540ms" x="393" y="82.2" width="82" height="86.3" rx="3" fill="#149ddd" fill-opacity="0.9"/><text class="fv an-aparece" style="--d:860ms" x="434" y="73.2" text-anchor="middle" fill="#149ddd">+1.240.000</text><text class="fe an-aparece" style="--d:860ms" x="434" y="286" text-anchor="middle">Difer. de cambio</text><line class="an-aparece" style="--d:540ms" x1="372" y1="168.5" x2="393" y2="168.5" stroke="#cfe0f2" stroke-width="1.2" stroke-dasharray="3 3"/><rect class="an-flota" style="--d:720ms" x="496" y="70" width="82" height="12.2" rx="3" fill="#149ddd" fill-opacity="0.9"/><text class="fv an-aparece" style="--d:1040ms" x="537" y="61" text-anchor="middle" fill="#149ddd">+175.000</text><text class="fe an-aparece" style="--d:1040ms" x="537" y="286" text-anchor="middle">Otros ingresos</text><line class="an-aparece" style="--d:720ms" x1="475" y1="82.2" x2="496" y2="82.2" stroke="#cfe0f2" stroke-width="1.2" stroke-dasharray="3 3"/><rect class="an-flota" style="--d:900ms" x="599" y="70" width="82" height="57.8" rx="3" fill="#b33a3a" fill-opacity="0.9"/><text class="fv an-aparece" style="--d:1220ms" x="640" y="61" text-anchor="middle" fill="#b33a3a">−830.956</text><text class="fe an-aparece" style="--d:1220ms" x="640" y="286" text-anchor="middle">Impuesto renta</text><line class="an-aparece" style="--d:900ms" x1="578" y1="70" x2="599" y2="70" stroke="#cfe0f2" stroke-width="1.2" stroke-dasharray="3 3"/><rect class="an-barra" style="--d:1080ms" x="702" y="127.8" width="82" height="138.2" rx="3" fill="#0f6b46" fill-opacity="1"/><text class="fv an-aparece" style="--d:1400ms" x="743" y="118.8" text-anchor="middle" fill="#0f6b46">1.985.844</text><text class="fe an-aparece" style="--d:1400ms" x="743" y="286" text-anchor="middle">Resultado neto</text><line class="an-aparece" style="--d:1080ms" x1="681" y1="127.8" x2="702" y2="127.8" stroke="#cfe0f2" stroke-width="1.2" stroke-dasharray="3 3"/><text class="fn" x="24" y="324">El resultado operativo cae 38 % contra 2027. Lo que sostiene el resultado neto es la diferencia de cambio, que no viene de la operación.</text></svg></div>
-          <figcaption>La barra azul del centro es la que salva el año, y es la única que la empresa no controla.</figcaption>
-        </figure>
-
-        <p>La mejora del neto sale de la diferencia de cambio, que pasó de una pérdida de 350.000 a una
-          ganancia de 1.240.000. Un swing de 1.590.000 que no viene del negocio. La utilidad operativa cayó
-          1,29 millones y el resultado neto igual subió.</p>
-        <p class="proyecto-concepto"><strong>Sin el efecto cambiario, 2028 fue peor que 2027 en todas las
-          líneas.</strong> Ese es el punto: el valor no está en que la herramienta arme diapositivas, sino
-          en que el reporte contradiga la lectura superficial del estado de resultados y lo sustente con
-          los números. El diagnóstico general del caso sale clasificado como <em>riesgo</em>, no como
-          <em>sano</em>.</p>
-      </section>
-
       <section class="sub-seccion" aria-labelledby="t-minuta">
         <h2 id="t-minuta">La minuta contable</h2>
-        <p>El segundo documento, y el que sale primero en el flujo. Está escrita para ir a contabilidad,
-          no al directorio: reporta hechos y números, sin interpretación de negocio. Sobre este archivo
-          levantó tres observaciones y dejó constancia de seis verificaciones. Esto es el documento
-          completo, tal como sale.</p>
+        <p><strong>Esto es lo que nadie más entrega junto con el reporte.</strong> Cualquiera arma
+          láminas; el problema casi nunca es la lámina, es el número que entró en ella. Antes de calcular
+          un solo ratio, el flujo audita el archivo contra sí mismo: que el activo cuadre con pasivo más
+          patrimonio en cada ejercicio, que el resultado del estado de resultados sea el mismo que declara
+          el patrimonio, que el encabezado diga el periodo que las cifras realmente tienen, que el plan de
+          cuentas no haya cambiado de un año al otro sin aviso.</p>
+        <p>Queda además una pregunta abierta del hallazgo anterior: de dónde salieron los 1,29 millones
+          que perdió el operativo. Parte de la respuesta está acá abajo —una cuenta de 395.000 soles que
+          existe en 2028 y no existía en 2027—, y ahí se ve para qué sirve el segundo documento.
+          <strong>Sobre este archivo encontró tres defectos reales</strong> y dejó constancia de seis
+          verificaciones que pasaron. Sale en un DOCX escrito para contabilidad, no para el directorio:
+          hechos, números y la acción sugerida al pie de cada observación, sin interpretación de negocio.
+          Este es el documento completo, tal como sale.</p>
         <div class="minuta"><h4 class="mn-sec">Ecuación Patrimonial</h4><div class="mn-item mn-ok"><p class="mn-tipo">Verificado</p><p class="mn-txt">Total Activo (S/ 23,255,000) = Total Pasivo + Patrimonio (S/ 23,255,000). Cuadra correctamente.</p></div><h4 class="mn-sec">Consistencia EGP ↔ ESF</h4><div class="mn-item mn-ok"><p class="mn-tipo">Verificado</p><p class="mn-txt">Resultado del Ejercicio coincide entre EGP y ESF: S/ 1,985,844.</p></div><h4 class="mn-sec">Coherencia de Periodos</h4><div class="mn-item mn-warn"><p class="mn-tipo">Advertencia</p><p class="mn-txt">En 2027, el balance se titula &quot;Al 31 de Diciembre del 2027&quot; pero su columna de datos está rotulada &quot;11/2027&quot;.</p><p class="mn-accion"><span>Acción sugerida</span> Resolver a qué corte corresponde la columna y unificar el rótulo con el título de la hoja.</p></div><div class="mn-item mn-warn"><p class="mn-tipo">Advertencia</p><p class="mn-txt">En 2028 el estado de resultados declara &quot;Al 31/10/2028&quot; mientras el balance declara &quot;Al 31 de Diciembre del 2028&quot;. Las cifras del estado de resultados concilian con el balance de cierre.</p><p class="mn-accion"><span>Acción sugerida</span> Confirmar con contabilidad el corte real del estado de resultados y corregir el encabezado. Si las cifras son de cierre, el encabezado debe decir 31 de diciembre.</p></div><h4 class="mn-sec">Comparabilidad entre Periodos</h4><div class="mn-item mn-warn"><p class="mn-tipo">Advertencia</p><p class="mn-txt">El ejercicio 2028 reporta 1 cuenta(s) de resultados que no existían en 2027: gastos_de_desarrollo_de_nuevos_negocios (S/ 395,000).</p><p class="mn-accion"><span>Acción sugerida</span> Confirmar si se trata de un gasto nuevo o de una reclasificación de cuentas existentes. La variación entre periodos no es comparable hasta resolverlo, y el reporte debe llevar la salvedad.</p></div><h4 class="mn-sec">Verificaciones que Pasaron</h4><div class="mn-item mn-ok"><p class="mn-tipo">Verificado</p><p class="mn-txt">Ecuación patrimonial 2027: activo S/ 20,701,000 = pasivo S/ 14,249,725 + patrimonio S/ 6,451,275.</p></div><div class="mn-item mn-ok"><p class="mn-tipo">Verificado</p><p class="mn-txt">Consistencia 2027: el resultado del estado de resultados (S/ 1,801,275) coincide con el declarado en el patrimonio.</p></div><div class="mn-item mn-ok"><p class="mn-tipo">Verificado</p><p class="mn-txt">Ecuación patrimonial 2028: activo S/ 23,255,000 = pasivo S/ 15,717,881 + patrimonio S/ 7,537,119.</p></div><div class="mn-item mn-ok"><p class="mn-tipo">Verificado</p><p class="mn-txt">Consistencia 2028: el resultado del estado de resultados (S/ 1,985,844) coincide con el declarado en el patrimonio.</p></div>
           <p class="mn-pie">Documento generado automáticamente a partir del análisis de los estados
             financieros. Las observaciones deben ser validadas por el equipo contable antes de tomar
@@ -237,44 +248,48 @@
         <div class="proyecto-links">
           <a href="../assets/demo/reporte-ejecutivo/minuta_contable.docx" class="btn-repo">Descargar la minuta <i class="bi bi-file-earmark-word" aria-hidden="true"></i></a>
         </div>
-        <p class="proyecto-concepto"><strong>Las tres advertencias son defectos reales del archivo</strong>
-          —un encabezado de periodo que no coincide con sus propias cifras, un plan de cuentas que cambia
-          entre ejercicios y un rótulo de columna inconsistente—, y las verificaciones dejan constancia de
-          lo que se revisó y salió bien. Una minuta que sólo lista problemas se lee como alarmista; una que
-          además dice qué verificó se lee como un control.</p>
+        <p class="proyecto-concepto">Las verificaciones que pasaron están ahí a propósito: una minuta que
+          sólo lista problemas se lee como alarmista; una que además deja constancia de lo que revisó se
+          lee como un control. Y el orden importa —la minuta sale antes que las láminas—, así que si algo
+          no cuadra, el reporte espera. Un dato malo se discute con contabilidad, no en la reunión de
+          directorio.</p>
       </section>
 
       <section class="sub-seccion" aria-labelledby="t-construido">
-        <h2 id="t-construido">Cómo está construido</h2>
-        <p>El reparto importa. Los ratios, el enrutamiento por sector y país, y la generación de las tres
-          salidas son <strong>código determinista</strong>: mismos datos, mismo resultado, siempre. Lo que
-          aporta el modelo es la lectura —qué hallazgo gobierna el caso y cómo se redacta el comentario—,
-          no el cálculo.</p>
-        <div class="notas-grid">
-          <div class="nota-bloque"><h3>Pipeline</h3><p>Seis fases en orden fijo: entrevista, extracción,
-            minuta, cálculo y enrutamiento, generación y control visual.</p></div>
-          <div class="nota-bloque"><h3>Motor</h3><p>7 scripts en Python y JavaScript · 14 plantillas de
-            lámina · 9 módulos sectoriales · 1 módulo de normativa peruana.</p></div>
-          <div class="nota-bloque"><h3>Decisiones</h3><p>7 routers: periodo, riqueza de datos, severidad,
-            distorsión, alertas regulatorias, selección de gráficos y modo de reporte.</p></div>
-        </div>
+        <h2 id="t-construido">Lo que resuelve por debajo</h2>
+        <p>Casi todo lo que sigue es una objeción razonable ya resuelta, y por eso no se nota cuando el
+          flujo funciona.</p>
         <ul class="proyecto-tech">
-          <li>Detección de hojas por el título que llevan adentro, no por el nombre de la pestaña</li>
-          <li>Multiperiodo: una hoja por ejercicio y por estado, agrupadas automáticamente</li>
-          <li>Balance a dos columnas: activo a la izquierda, pasivo y patrimonio a la derecha</li>
-          <li>Router de distorsión: detecta cuando el resultado neto mejora mientras el operativo cae</li>
-          <li>Reconciliación obligatoria: un puente que no cierra no se dibuja</li>
+          <li><strong>Tu archivo entra como está.</strong> Las hojas se reconocen por el título que llevan
+            adentro, no por el nombre de la pestaña: <span class="mono">BG</span>,
+            <span class="mono">ERF</span> o <span class="mono">Hoja3</span> da lo mismo.</li>
+          <li><strong>Las estructuras que no coinciden entre años no son un problema.</strong> Las hojas se
+            agrupan por ejercicio solas. Este mismo caso entró con planes de cuentas distintos entre 2027
+            y 2028.</li>
+          <li><strong>Un balance a dos columnas se lee bien.</strong> Activo a la izquierda, pasivo y
+            patrimonio a la derecha, que es como viene la mitad de los cierres peruanos.</li>
+          <li><strong>Un gráfico que no cierra no se dibuja.</strong> Si los tramos de un puente no suman
+            el total declarado, en lugar del gráfico aparece qué falta mapear. Un waterfall que no cuadra
+            se presenta igual de bien que uno correcto, y ahí está el peligro.</li>
         </ul>
-        <div class="proyecto-links">
-          <a href="../assets/demo/reporte-ejecutivo/financial-executive-report.zip" class="btn-repo">Descargar el flujo <i class="bi bi-file-earmark-zip" aria-hidden="true"></i></a>
-          <a href="../assets/demo/reporte-ejecutivo/CAMBIOS.md" class="btn-repo">Registro de cambios <i class="bi bi-list-check" aria-hidden="true"></i></a>
-        </div>
       </section>
 
       <section class="sub-seccion" aria-labelledby="t-descargas">
         <h2 id="t-descargas">Todo el caso, publicado</h2>
-        <p>Entrada, intermedios y salidas. El generador verifica sus propias invariantes contables al
-          correr, así que no hace falta creerle a esta página.</p>
+        <p>Hasta acá te pedí que me creas. Acá está todo lo que hace falta para no hacerlo: la entrada,
+          los intermedios que el flujo escribe entre etapa y etapa, y las salidas. Bajas el Excel, corres
+          el flujo y tienes que obtener el mismo reporte que acabas de leer.</p>
+        <div class="nota-tesis">
+          <h3>El caso está diseñado, no encontrado</h3>
+          <p>Ninguna cifra proviene de una empresa existente. La estructura de cuentas y las mañas de
+            formato imitan un juego real peruano, pero el caso es sintético a propósito: además de
+            resolver la confidencialidad, permite <strong>diseñar el defecto que se quiere poner a
+            prueba</strong>. La distorsión cambiaria y los tres problemas de calidad están puestos ahí
+            para ver si el flujo los encontraba. Los encontró.</p>
+          <p>La empresa, NUTRIANDES DISTRIBUCIONES S.A.C., no existe, y los ejercicios son 2027 y 2028
+            —futuros a propósito— para que nadie los confunda con algo real. El generador verifica sus
+            propias invariantes contables al correr, así que el caso se puede reconstruir desde cero.</p>
+        </div>
         <div class="notas-grid">
           <div class="nota-bloque">
             <h3>Entrada</h3>
@@ -289,36 +304,49 @@
                <a href="../assets/demo/reporte-ejecutivo/slide_plan.json">slide_plan.json</a> — plan de láminas y distorsiones</p>
           </div>
           <div class="nota-bloque">
-            <h3>Salidas</h3>
-            <p><a href="../assets/demo/reporte-ejecutivo/reporte.html">reporte.html</a> — 8 láminas interactivas<br>
-               <a href="../assets/demo/reporte-ejecutivo/reporte.pdf">reporte.pdf</a> — el mismo reporte, imprimible<br>
-               <a href="../assets/demo/reporte-ejecutivo/reporte.pptx">reporte.pptx</a> — 10 láminas editables<br>
-               <a href="../assets/demo/reporte-ejecutivo/minuta_contable.docx">minuta_contable.docx</a> — 3 observaciones y 6 verificaciones</p>
+            <h3>Salidas y flujo</h3>
+            <p><a href="../assets/demo/reporte-ejecutivo/reporte.html">reporte.html</a> · <a href="../assets/demo/reporte-ejecutivo/reporte.pdf">reporte.pdf</a> ·
+               <a href="../assets/demo/reporte-ejecutivo/reporte.pptx">reporte.pptx</a><br>
+               <a href="../assets/demo/reporte-ejecutivo/minuta_contable.docx">minuta_contable.docx</a><br>
+               <a href="../assets/demo/reporte-ejecutivo/financial-executive-report.zip">el flujo completo</a> ·
+               <a href="../assets/demo/reporte-ejecutivo/CAMBIOS.md">registro de cambios</a></p>
           </div>
         </div>
       </section>
 
       <section class="sub-seccion" aria-labelledby="t-limites">
         <h2 id="t-limites">Límites</h2>
+        <p>Con los archivos a la vista corresponde decir también dónde se termina el flujo, porque el caso
+          publicado no lo muestra.</p>
         <div class="nota-limite">
-          <h3>Lo que este flujo todavía no hace</h3>
+          <h3>Lo que todavía no hace</h3>
           <ul>
             <li><strong>No compara contra presupuesto.</strong> Hoy sólo lee estados financieros. Es la
               mejora de mayor valor pendiente: control de gestión lo pide de manera explícita.</li>
-            <li><strong>No tiene tests automatizados.</strong> Este caso sintético es el insumo natural para
-              convertirlo en test de regresión —entrada fija, salida esperada conocida— y es lo siguiente.</li>
-            <li><strong>La capa de país es sólo Perú.</strong> Las observaciones normativas de la minuta no
-              aplican fuera de ese marco.</li>
+            <li><strong>No tiene tests automatizados todavía.</strong> El generador del caso verifica sus
+              invariantes al correr, pero el flujo en sí no tiene suite de regresión. Este caso sintético
+              es el insumo natural para armarla —entrada fija, salida esperada conocida— y es lo
+              siguiente.</li>
+            <li><strong>La capa de país es sólo Perú.</strong> Las observaciones normativas de la minuta y
+              las alertas regulatorias no aplican fuera de ese marco.</li>
             <li><strong>El control visual de las láminas es asistido, no automático.</strong> Colisiones de
               texto y formato de negativos se revisan sobre la salida rasterizada.</li>
+            <li><strong>Se probó sobre un archivo diseñado a propósito.</strong> Entró con estructuras que
+              no coinciden entre años y con las abreviaturas que se usan en Perú, pero eso no es lo mismo
+              que decir que lee cualquier Excel.</li>
           </ul>
         </div>
       </section>
 
       <section class="sub-seccion" aria-labelledby="t-cta">
-        <h2 id="t-cta">¿Un flujo así para tu proceso?</h2>
-        <p>Este nació de un cuello de botella real. Si tienes un proceso financiero que se repite cada mes,
-           probablemente se pueda sistematizar igual.</p>
+        <h2 id="t-cta">Si tu cierre se parece a este</h2>
+        <p>Todo lo de arriba salió de una corrida sobre un archivo que ni siquiera estaba prolijo. Si
+          armas reporte de directorio todos los meses ya sabes cuál es la parte que no te deja analizar:
+          no es pensar, es transcribir, cuadrar y maquetar. Y ya sabes que nadie audita el archivo antes
+          de que las cifras entren a la lámina.</p>
+        <p>Mándame un juego de estados financieros tuyo, o descríbeme el proceso, y te digo qué parte de
+          esto aplica tal cual, qué parte hay que adaptar a tu sector y tu plan de cuentas, y qué no se
+          puede automatizar. Si la respuesta es que no te sirve, te lo digo ahí.</p>
         <div class="proyecto-links">
           <a href="../index.html#contact" class="btn-demo">Conversemos <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
           <a href="index.html" class="btn-repo">Ver los cinco flujos <i class="bi bi-grid" aria-hidden="true"></i></a>
