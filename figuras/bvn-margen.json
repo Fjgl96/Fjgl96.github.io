@@ -1,0 +1,17 @@
+{
+  "tipo": "cascada",
+  "titulo": "DE DÓNDE SALIÓ LA UTILIDAD · MARGEN BRUTO, MILLONES DE US$",
+  "nota": "De cada dólar adicional de ingreso, 76 centavos quedaron en margen bruto: los ingresos subieron 110 % y el costo de ventas solo 30 %.",
+  "caption": "La barra roja es lo único que la empresa controla de verdad en el corto plazo; la azul es el mercado.",
+  "a11y": {
+    "id": "casc",
+    "titulo": "El margen bruto de 2023 a 2025",
+    "desc": "Cascada del margen bruto. Parte de 91 millones en 2023, suma 908 millones por mayores ingresos, resta 217 millones por mayor costo de ventas y termina en 782 millones en 2025."
+  },
+  "pasos": [
+    { "etiqueta": "Bruto 2023",   "valor":   91.2, "tipo": "base"  },
+    { "etiqueta": "Más ingresos", "valor":  907.8, "tipo": "delta" },
+    { "etiqueta": "Más costo",    "valor": -216.7, "tipo": "delta" },
+    { "etiqueta": "Bruto 2025",   "valor":  782.4, "tipo": "total" }
+  ]
+}

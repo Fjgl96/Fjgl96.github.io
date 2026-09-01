@@ -1,0 +1,20 @@
+{
+  "tipo": "cascada",
+  "titulo": "DEL RESULTADO OPERATIVO AL RESULTADO NETO · 2028, SOLES",
+  "nota": "El resultado operativo cae 38 % contra 2027. Lo que sostiene el resultado neto es la diferencia de cambio, que no viene de la operación.",
+  "caption": "La barra azul del centro es la que salva el año, y es la única que la empresa no controla.",
+  "a11y": {
+    "id": "puente",
+    "titulo": "Puente del resultado operativo al resultado neto en 2028",
+    "desc": "Cascada de siete tramos. Parte del resultado operativo de 2.106.800 soles, suma 105.000 de ingresos financieros, resta 810.000 de gastos financieros, suma 1.240.000 de diferencia de cambio, suma 175.000 de otros ingresos, resta 830.956 de impuesto a la renta y cierra en un resultado neto de 1.985.844 soles. El tramo de diferencia de cambio es el mayor de todos los positivos."
+  },
+  "pasos": [
+    { "etiqueta": "Result. operativo",   "valor":  2106800, "tipo": "base"  },
+    { "etiqueta": "Ing. financieros",    "valor":   105000, "tipo": "delta" },
+    { "etiqueta": "Gastos financieros",  "valor":  -810000, "tipo": "delta" },
+    { "etiqueta": "Difer. de cambio",    "valor":  1240000, "tipo": "delta" },
+    { "etiqueta": "Otros ingresos",      "valor":   175000, "tipo": "delta" },
+    { "etiqueta": "Impuesto renta",      "valor":  -830956, "tipo": "delta" },
+    { "etiqueta": "Resultado neto",      "valor":  1985844, "tipo": "total" }
+  ]
+}
