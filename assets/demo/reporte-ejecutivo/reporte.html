@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reporte Financiero — NUTRIANDES DISTRIBUCIONES S.A.C. — 2028</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--primary:#0B5394;--primary-dark:#073B6B;--secondary:#1B7F9B;--negative:#CC0000;
+--warning:#E67E22;--success:#27AE60;--bg-slide:#F8FAFC;--bg-summary:#EBF2FA;
+--bg-table-alt:#F8F9FA;--bg-footer:#F2F4F6;--bg-danger:#F8D7DA;--bg-warning:#FFF3CD;
+--bg-success:#D1E7DD;--text:#1A202C;--text-2:#4A5568;--muted:#718096;--line:#E2E8F0}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg-slide);color:var(--text);
+ font-family:Inter,-apple-system,"Segoe UI",sans-serif;font-size:15px;line-height:1.55}
+.slide{background:#fff;max-width:1080px;margin:0 auto 26px;padding:clamp(22px,4vw,44px);
+ border:1px solid var(--line);border-radius:12px;box-shadow:0 1px 3px rgba(16,42,67,.06)}
+.slide-header h2{margin:0 0 14px;font-size:clamp(1.15rem,2.4vw,1.6rem);color:var(--primary-dark);
+ font-weight:700;letter-spacing:-.01em}
+.portada{background:linear-gradient(135deg,#0B5394,#073B6B);color:#fff;border:none;
+ min-height:300px;display:flex;align-items:center}
+.portada h1{margin:6px 0 12px;font-size:clamp(1.5rem,4vw,2.5rem);font-weight:700}
+.eyebrow{margin:0;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;opacity:.82;font-weight:600}
+.sub{margin:0;opacity:.9}.sub.small{font-size:.85rem;margin-top:8px;opacity:.75}
+.summary-box{background:var(--bg-summary);border-left:4px solid var(--primary);
+ padding:13px 17px;border-radius:0 8px 8px 0;margin:0 0 18px}
+.summary-box p{margin:0;font-size:.95rem}
+.kpi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(158px,1fr));gap:10px;margin-bottom:18px}
+.kpi-card{background:var(--bg-footer);border-radius:9px;padding:12px 14px;display:flex;flex-direction:column;gap:2px}
+.kpi-card[data-status=good]{background:var(--bg-success)}
+.kpi-card[data-status=warning]{background:var(--bg-warning)}
+.kpi-card[data-status=danger]{background:var(--bg-danger)}
+.kpi-label{font-size:.7rem;letter-spacing:.06em;text-transform:uppercase;color:var(--text-2);font-weight:600}
+.kpi-value{font-size:1.3rem;font-weight:700;color:var(--primary-dark);font-variant-numeric:tabular-nums}
+.kpi-delta{font-size:.78rem;font-weight:700}
+.kpi-delta.positive{color:var(--success)}.kpi-delta.negative{color:var(--negative)}
+.kpi-ref{font-size:.7rem;color:var(--muted);font-style:italic}
+.fin-table{width:100%;border-collapse:collapse;margin:0 0 16px;font-size:.9rem}
+.fin-table th{background:var(--primary);color:#fff;padding:9px 11px;text-align:left;font-weight:600;font-size:.78rem;
+ letter-spacing:.04em;text-transform:uppercase}
+.fin-table td{padding:8px 11px;border-bottom:1px solid var(--line)}
+.fin-table .n{text-align:right;font-variant-numeric:tabular-nums}
+.fin-table tr:nth-child(even) td{background:var(--bg-table-alt)}
+.fin-table .subtotal td{font-weight:600;background:#E8E8E8}
+.fin-table .total td{font-weight:700;background:var(--primary);color:#fff}
+.fin-table td.neg{color:var(--negative)}
+.fin-table .total td.neg{color:#FFD9D9}
+.eval-good{background:var(--bg-success)}.eval-warning{background:var(--bg-warning)}.eval-danger{background:var(--bg-danger)}
+.slide-footer{background:var(--bg-footer);border-radius:8px;padding:11px 15px;margin-top:4px}
+.slide-footer p{margin:0;font-size:.86rem;color:var(--text-2)}
+.slide-footer[data-severity=warning]{background:var(--bg-warning)}
+.slide-footer[data-severity=critical]{background:var(--bg-danger)}
+.chart{margin:6px 0 16px}.chart svg{width:100%;height:auto;display:block}
+.wv{font:700 12px Inter,sans-serif}.we{font:600 10px Inter,sans-serif;fill:#5F7391}
+.three-blocks{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px}
+.bloque{background:var(--bg-footer);border-radius:9px;padding:14px 16px}
+.bloque h3{margin:0 0 8px;font-size:.85rem;display:flex;align-items:center;gap:7px}
+.bloque ul{margin:0;padding-left:17px}.bloque li{font-size:.86rem;margin-bottom:6px;color:var(--text-2)}
+.dot{width:10px;height:10px;border-radius:50%;display:inline-block}
+.dot.rojo{background:var(--negative)}.dot.ambar{background:#FFC107}.dot.verde{background:var(--success)}
+.leyenda{font-size:.76rem;color:var(--muted);margin:0}
+.alerta-datos{background:var(--bg-danger);border-left:4px solid var(--negative);padding:13px 17px;border-radius:0 8px 8px 0;margin:0 0 18px;font-size:.9rem}
+.slide-nav{position:fixed;right:14px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:7px;z-index:9}
+.nav-dot{width:9px;height:9px;border-radius:50%;border:1px solid var(--primary);background:#fff;cursor:pointer;padding:0}
+.nav-dot.active{background:var(--primary)}
+@media print{
+ body{background:#fff}
+ .slide{break-after:page;page-break-after:always;box-shadow:none;border:none;margin:0;max-width:none;min-height:auto}
+ .slide:last-child{break-after:auto;page-break-after:auto}
+ .slide-nav{display:none}
+ .portada{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+ *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+</style></head><body>
+<nav class="slide-nav"><button class="nav-dot" onclick="ir(0)" aria-label="Lámina 1"></button><button class="nav-dot" onclick="ir(1)" aria-label="Lámina 2"></button><button class="nav-dot" onclick="ir(2)" aria-label="Lámina 3"></button><button class="nav-dot" onclick="ir(3)" aria-label="Lámina 4"></button><button class="nav-dot" onclick="ir(4)" aria-label="Lámina 5"></button><button class="nav-dot" onclick="ir(5)" aria-label="Lámina 6"></button><button class="nav-dot" onclick="ir(6)" aria-label="Lámina 7"></button><button class="nav-dot" onclick="ir(7)" aria-label="Lámina 8"></button></nav>
+<section class="slide portada"><div>
+  <p class="eyebrow">Reporte ejecutivo · Diagnóstico</p>
+  <h1>NUTRIANDES DISTRIBUCIONES S.A.C.</h1>
+  <p class="sub">Estados financieros 2027 – 2028 · Sector distribución · Perú</p>
+  <p class="sub small">Moneda: soles · Severidad del diagnóstico: <b>RIESGO</b></p>
+</div></section><section class="slide"><div class="slide-header"><h2>Resumen ejecutivo</h2></div>
+<div class="summary-box"><p><em>Las ventas crecen 8.8 % pero el resultado operativo cae 38.0 %.
+La mejora del resultado neto no proviene de la operación.</em></p></div>
+<div class="kpi-grid">
+  <div class="kpi-card" data-status="neutral"><span class="kpi-label">Ventas netas</span><span class="kpi-value">45 700 000</span><span class="kpi-delta positive">↑ 8.8 %</span><span class="kpi-ref">vs 42 000 000</span></div>
+  <div class="kpi-card" data-status="warning"><span class="kpi-label">Margen bruto</span><span class="kpi-value">16.4 %</span><span class="kpi-ref">vs 18.5 %</span></div>
+  <div class="kpi-card" data-status="danger"><span class="kpi-label">Result. operativo</span><span class="kpi-value">2 106 800</span><span class="kpi-delta negative">↓ 38.0 %</span><span class="kpi-ref">vs 3 400 000</span></div>
+  <div class="kpi-card" data-status="warning"><span class="kpi-label">Resultado neto</span><span class="kpi-value">1 985 844</span><span class="kpi-delta positive">↑ 10.2 %</span><span class="kpi-ref">vs 1 801 275</span></div>
+  <div class="kpi-card" data-status="good"><span class="kpi-label">ROE</span><span class="kpi-value">26.3 %</span></div>
+  <div class="kpi-card" data-status="warning"><span class="kpi-label">Ratio corriente</span><span class="kpi-value">1.14</span></div>
+  <div class="kpi-card" data-status="warning"><span class="kpi-label">Endeudamiento</span><span class="kpi-value">68.0 %</span></div>
+  <div class="kpi-card" data-status="warning"><span class="kpi-label">Cobertura intereses</span><span class="kpi-value">2.60x</span></div>
+  <div class="kpi-card" data-status="warning"><span class="kpi-label">Días inventario</span><span class="kpi-value">42</span></div>
+  <div class="kpi-card" data-status="good"><span class="kpi-label">Días cobro</span><span class="kpi-value">45</span></div>
+</div>
+<div class="slide-footer" data-severity="warning"><p><em>El diagnóstico general se clasifica como <b>riesgo</b>: la rentabilidad operativa se deteriora aunque los indicadores de cierre mejoren.</em></p></div>
+</section><section class="slide"><div class="slide-header"><h2>Estado de resultados</h2></div>
+<div class="summary-box"><p><em>Se vendió más y se ganó menos: la utilidad bruta cae 3.5 % en soles mientras las ventas suben 8.8 %.</em></p></div>
+<table class="fin-table"><thead><tr><th>Concepto</th><th class="n">2027</th><th class="n">2028</th><th class="n">Var S/</th><th class="n">Var %</th></tr></thead><tbody>
+<tr class=""><td>Ventas netas</td><td class="n">42 000 000</td><td class="n">45 700 000</td><td class="n">3 700 000</td><td class="n">8.8 %</td></tr>
+<tr class=""><td>Costo de ventas</td><td class="n">34 230 000</td><td class="n">38 205 200</td><td class="n">3 975 200</td><td class="n">11.6 %</td></tr>
+<tr class="subtotal"><td>Utilidad bruta</td><td class="n">7 770 000</td><td class="n">7 494 800</td><td class="n" class="neg">−275 200</td><td class="n" class="neg">-3.5 %</td></tr>
+<tr class=""><td>Gastos operativos</td><td class="n">0</td><td class="n">0</td><td class="n">0</td><td class="n">—</td></tr>
+<tr class="subtotal"><td>Resultado operativo</td><td class="n">3 400 000</td><td class="n">2 106 800</td><td class="n" class="neg">−1 293 200</td><td class="n" class="neg">-38.0 %</td></tr>
+<tr class=""><td>Gastos financieros</td><td class="n">640 000</td><td class="n">810 000</td><td class="n">170 000</td><td class="n">26.6 %</td></tr>
+<tr class=""><td>Diferencia de cambio</td><td class="n">−350 000</td><td class="n">1 240 000</td><td class="n">1 590 000</td><td class="n">454.3 %</td></tr>
+<tr class="total"><td>Resultado del ejercicio</td><td class="n">1 801 275</td><td class="n">1 985 844</td><td class="n">184 569</td><td class="n">10.2 %</td></tr>
+</tbody></table>
+<div class="slide-footer" data-severity="critical"><p><em>El margen bruto perdió 210 puntos básicos y el operativo 350.</em></p></div>
+</section><section class="slide"><div class="slide-header"><h2>Del resultado operativo al resultado neto</h2></div>
+<div class="summary-box"><p><em>El resultado operativo cae 38.0% y el resultado neto sube 10.2%. El puente entre ambos son S/ 1,415,000 de partidas no operativas. Sin ellas el resultado sería S/ 570,844. La mejora del neto no proviene de la operación.</em></p></div>
+<div class="chart"><svg viewBox="0 0 900 330" role="img" aria-label="Puente del resultado operativo al resultado neto"><line x1="70" y1="250" x2="860" y2="250" stroke="#CFE0F2" stroke-width="1.4"/><rect x="70.0" y="92.9" width="84.0" height="157.1" rx="3" fill="#173B6C" fill-opacity="1"/><text x="112.0" y="84.9" text-anchor="middle" class="wv" fill="#173B6C">2 106 800</text><text x="112.0" y="268.0" text-anchor="middle" class="we">Result. operativo</text><rect x="187.7" y="85.1" width="84.0" height="7.8" rx="3" fill="#149DDD" fill-opacity="0.9"/><text x="229.7" y="77.1" text-anchor="middle" class="wv" fill="#149DDD">+105 000</text><text x="229.7" y="268.0" text-anchor="middle" class="we">Ing. financieros</text><line x1="154.0" y1="92.9" x2="187.7" y2="92.9" stroke="#CFE0F2" stroke-width="1.2" stroke-dasharray="3 3"/><rect x="305.3" y="85.1" width="84.0" height="60.4" rx="3" fill="#B33A3A" fill-opacity="0.9"/><text x="347.3" y="77.1" text-anchor="middle" class="wv" fill="#B33A3A">−810 000</text><text x="347.3" y="268.0" text-anchor="middle" class="we">Gastos financieros</text><line x1="271.7" y1="85.1" x2="305.3" y2="85.1" stroke="#CFE0F2" stroke-width="1.2" stroke-dasharray="3 3"/><rect x="423.0" y="53.0" width="84.0" height="92.4" rx="3" fill="#149DDD" fill-opacity="0.9"/><text x="465.0" y="45.0" text-anchor="middle" class="wv" fill="#149DDD">+1 240 000</text><text x="465.0" y="268.0" text-anchor="middle" class="we">Difer. de cambio</text><line x1="389.3" y1="145.5" x2="423.0" y2="145.5" stroke="#CFE0F2" stroke-width="1.2" stroke-dasharray="3 3"/><rect x="540.7" y="40.0" width="84.0" height="13.0" rx="3" fill="#149DDD" fill-opacity="0.9"/><text x="582.7" y="32.0" text-anchor="middle" class="wv" fill="#149DDD">+175 000</text><text x="582.7" y="268.0" text-anchor="middle" class="we">Otros ingresos</text><line x1="507.0" y1="53.0" x2="540.7" y2="53.0" stroke="#CFE0F2" stroke-width="1.2" stroke-dasharray="3 3"/><rect x="658.3" y="40.0" width="84.0" height="62.0" rx="3" fill="#B33A3A" fill-opacity="0.9"/><text x="700.3" y="32.0" text-anchor="middle" class="wv" fill="#B33A3A">−830 956</text><text x="700.3" y="268.0" text-anchor="middle" class="we">Impuesto renta</text><line x1="624.7" y1="40.0" x2="658.3" y2="40.0" stroke="#CFE0F2" stroke-width="1.2" stroke-dasharray="3 3"/><rect x="776.0" y="102.0" width="84.0" height="148.0" rx="3" fill="#0F6B46" fill-opacity="1"/><text x="818.0" y="94.0" text-anchor="middle" class="wv" fill="#0F6B46">1 985 844</text><text x="818.0" y="268.0" text-anchor="middle" class="we">Resultado neto</text><line x1="742.3" y1="102.0" x2="776.0" y2="102.0" stroke="#CFE0F2" stroke-width="1.2" stroke-dasharray="3 3"/></svg></div>
+<div class="slide-footer" data-severity="critical"><p><em>Sin el efecto cambiario, el ejercicio habría sido peor que el anterior en todas las líneas.</em></p></div>
+</section><section class="slide"><div class="slide-header"><h2>Capital de trabajo · sector distribución</h2></div>
+<div class="summary-box"><p><em>Las existencias crecen 24.6 % mientras las ventas crecen 8.8 %: se acumula inventario más rápido de lo que se vende.</em></p></div>
+<div class="kpi-grid">
+  <div class="kpi-card" data-status="warning"><span class="kpi-label">Días de inventario</span><span class="kpi-value">47</span><span class="kpi-ref">vs 42</span></div>
+  <div class="kpi-card" data-status="warning"><span class="kpi-label">Rotación inventario</span><span class="kpi-value">7.65x</span></div>
+  <div class="kpi-card" data-status="good"><span class="kpi-label">Días de cobro</span><span class="kpi-value">46</span></div>
+  <div class="kpi-card" data-status="good"><span class="kpi-label">CxC % del activo</span><span class="kpi-value">24.9 %</span></div>
+  <div class="kpi-card" data-status="danger"><span class="kpi-label">Días de efectivo</span><span class="kpi-value">1</span></div>
+</div>
+<table class="fin-table"><thead><tr><th>Concepto</th><th class="n">2027</th><th class="n">2028</th><th class="n">Var %</th></tr></thead><tbody>
+<tr><td>Existencias</td><td class="n">4 010 000</td><td class="n">4 995 000</td><td class="n neg">24.6 %</td></tr>
+<tr><td>Ventas netas</td><td class="n">42 000 000</td><td class="n">45 700 000</td><td class="n">8.8 %</td></tr>
+</tbody></table>
+<div class="slide-footer" data-severity="warning"><p><em>El ciclo de conversión se sostiene sobre el plazo de proveedores; el inventario es la palanca propia.</em></p></div>
+</section><section class="slide"><div class="slide-header"><h2>Ratios financieros</h2></div>
+<div class="summary-box"><p><em>La liquidez mejora y el endeudamiento cede, pero la cobertura de intereses se reduce a la mitad.</em></p></div>
+<table class="fin-table"><thead><tr><th>Ratio</th><th class="n">2028</th><th>Estado</th></tr></thead><tbody>
+<tr><td>Ratio corriente</td><td class="n">1.14</td><td class="eval-warning">Observación</td></tr>
+<tr><td>Prueba ácida</td><td class="n">0.74</td><td class="eval-warning">Observación</td></tr>
+<tr><td>Margen bruto</td><td class="n">16.4 %</td><td class="eval-warning">Observación</td></tr>
+<tr><td>Margen operativo</td><td class="n">4.6 %</td><td class="eval-warning">Observación</td></tr>
+<tr><td>Margen neto</td><td class="n">4.3 %</td><td class="eval-warning">Observación</td></tr>
+<tr><td>ROE</td><td class="n">26.3 %</td><td class="eval-good">Cumple</td></tr>
+<tr><td>Cobertura de intereses</td><td class="n">2.60x</td><td class="eval-warning">Observación</td></tr>
+</tbody></table>
+<p class="leyenda">Cumple · Observación · Fuera de benchmark — umbrales del módulo sectorial de distribución.</p>
+</section><section class="slide"><div class="slide-header"><h2>Conclusiones</h2></div>
+<div class="three-blocks">
+  <div class="bloque"><h3><span class="dot rojo"></span>Hallazgos</h3><ul>
+    <li>La utilidad bruta cae 3.5 % con ventas al alza: el margen se comprime.</li>
+    <li>El resultado operativo retrocede 38.0 %.</li>
+    <li>La mejora del neto proviene de la diferencia de cambio, no de la operación.</li>
+  </ul></div>
+  <div class="bloque"><h3><span class="dot ambar"></span>Riesgos</h3><ul>
+    <li>Cobertura de intereses en 2.60x, desde 5.31x.</li>
+    <li>Existencias creciendo 24.6 % contra ventas 8.8 %.</li>
+    <li>El resultado depende de una partida que la empresa no controla.</li>
+  </ul></div>
+  <div class="bloque"><h3><span class="dot verde"></span>Prioridades</h3><ul>
+    <li><b>0–3 meses.</b> Revisar política de precios y descuentos por línea.</li>
+    <li><b>3–6 meses.</b> Plan de reducción de inventario y cobertura cambiaria.</li>
+    <li><b>6–12 meses.</b> Reestructurar el costo financiero.</li>
+  </ul></div>
+</div>
+</section><section class="slide portada"><div>
+  <p class="eyebrow">Fin del reporte</p>
+  <h1>NUTRIANDES DISTRIBUCIONES S.A.C.</h1>
+  <p class="sub">Documento generado automáticamente a partir de los estados financieros.
+     Las observaciones contables se detallan en la minuta adjunta.</p>
+</div></section>
+<script>
+const laminas=[...document.querySelectorAll('.slide')],dots=[...document.querySelectorAll('.nav-dot')];
+function ir(i){laminas[i]&&laminas[i].scrollIntoView({behavior:'smooth',block:'start'})}
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){
+  const i=laminas.indexOf(e.target);dots.forEach((d,k)=>d.classList.toggle('active',k===i));}}),{threshold:.4});
+laminas.forEach(l=>io.observe(l));
+addEventListener('keydown',e=>{const a=dots.findIndex(d=>d.classList.contains('active'));
+ if(e.key==='ArrowDown'||e.key==='ArrowRight'){e.preventDefault();ir(Math.min(a+1,laminas.length-1))}
+ if(e.key==='ArrowUp'||e.key==='ArrowLeft'){e.preventDefault();ir(Math.max(a-1,0))}});
+</script></body></html>

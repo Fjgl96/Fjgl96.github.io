@@ -1,0 +1,321 @@
+{
+  "ratios": {
+    "2027": {
+      "liquidez": {
+        "ratio_corriente": 0.98,
+        "prueba_acida": 0.65,
+        "capital_trabajo": -187000,
+        "ratio_efectivo": 0.12
+      },
+      "solvencia": {
+        "pasivo_patrimonio": 2.21,
+        "endeudamiento": 0.69,
+        "concentracion_cp": 84.1,
+        "concentracion_lp": 15.9
+      },
+      "rentabilidad": {
+        "margen_bruto_pct": 18.5,
+        "margen_operativo_pct": 8.1,
+        "margen_neto_pct": 4.3,
+        "roe": 27.9,
+        "roa": 8.7,
+        "ebitda": "N/D",
+        "margen_ebitda": "N/D",
+        "cobertura_intereses": 5.31,
+        "depreciacion_periodo": "N/D"
+      },
+      "eficiencia": {
+        "rotacion_inventarios": 8.54,
+        "edad_inventario_dias": 42.0,
+        "rotacion_cxc": 7.61,
+        "periodo_cobro_dias": 47.0,
+        "rotacion_cxp": 3.96,
+        "periodo_pago_dias": 91.0,
+        "cce_dias": -1.0,
+        "recursos_cce": 890000
+      },
+      "dupont": {
+        "margen_neto": 4.3,
+        "rotacion_activos": 2.03,
+        "multiplicador_capital": 3.21,
+        "roe_dupont": 27.9
+      }
+    },
+    "2028": {
+      "liquidez": {
+        "ratio_corriente": 1.14,
+        "prueba_acida": 0.74,
+        "capital_trabajo": 1792000,
+        "ratio_efectivo": 0.09
+      },
+      "solvencia": {
+        "pasivo_patrimonio": 2.09,
+        "endeudamiento": 0.68,
+        "concentracion_cp": 79.1,
+        "concentracion_lp": 20.9
+      },
+      "rentabilidad": {
+        "margen_bruto_pct": 16.4,
+        "margen_operativo_pct": 4.6,
+        "margen_neto_pct": 4.3,
+        "roe": 26.3,
+        "roa": 8.5,
+        "ebitda": "N/D",
+        "margen_ebitda": "N/D",
+        "cobertura_intereses": 2.6,
+        "depreciacion_periodo": "N/D"
+      },
+      "eficiencia": {
+        "rotacion_inventarios": 8.49,
+        "edad_inventario_dias": 42.0,
+        "rotacion_cxc": 8.09,
+        "periodo_cobro_dias": 45.0,
+        "rotacion_cxp": 4.15,
+        "periodo_pago_dias": 87.0,
+        "cce_dias": 0.0,
+        "recursos_cce": 995000
+      },
+      "dupont": {
+        "margen_neto": 4.3,
+        "rotacion_activos": 1.97,
+        "multiplicador_capital": 3.09,
+        "roe_dupont": 26.3
+      }
+    }
+  },
+  "variaciones": {
+    "2028_vs_2027": {
+      "ventas": {
+        "monto": 3700000,
+        "pct": 8.8
+      },
+      "margen_bruto": {
+        "monto": -275200,
+        "pct": -3.5
+      },
+      "margen_operativo": {
+        "monto": -1293200,
+        "pct": -38.0
+      },
+      "resultado_neto": {
+        "monto": 184569,
+        "pct": 10.2
+      },
+      "total_activo": {
+        "monto": 2554000,
+        "pct": 12.3
+      },
+      "total_pasivo": {
+        "monto": 1468156,
+        "pct": 10.3
+      },
+      "patrimonio": {
+        "monto": 1085844,
+        "pct": 16.8
+      },
+      "capital_trabajo": {
+        "monto": 1979000,
+        "pct": 1058.3
+      }
+    }
+  },
+  "analisis_vertical": {
+    "2027": {
+      "balance": {
+        "activo_corriente_pct": 57.0,
+        "activo_no_corriente_pct": 43.0,
+        "pasivo_corriente_pct": 57.9,
+        "pasivo_no_corriente_pct": 10.9,
+        "patrimonio_pct": 31.2,
+        "detalle_ac": {
+          "efectivo_pct": 6.9,
+          "cxc_pct": 26.7,
+          "inventarios_pct": 19.4
+        }
+      },
+      "estado_resultados": {
+        "costo_ventas_pct": 81.5,
+        "margen_bruto_pct": 18.5,
+        "gastos_operativos_pct": 4.6,
+        "margen_operativo_pct": 8.1,
+        "margen_neto_pct": 4.3
+      }
+    },
+    "2028": {
+      "balance": {
+        "activo_corriente_pct": 61.2,
+        "activo_no_corriente_pct": 38.8,
+        "pasivo_corriente_pct": 53.5,
+        "pasivo_no_corriente_pct": 14.1,
+        "patrimonio_pct": 32.4,
+        "detalle_ac": {
+          "efectivo_pct": 5.1,
+          "cxc_pct": 24.9,
+          "inventarios_pct": 21.5
+        }
+      },
+      "estado_resultados": {
+        "costo_ventas_pct": 83.6,
+        "margen_bruto_pct": 16.4,
+        "gastos_operativos_pct": 4.5,
+        "margen_operativo_pct": 4.6,
+        "margen_neto_pct": 4.3
+      }
+    }
+  },
+  "punto_equilibrio": {
+    "2027": {
+      "punto_equilibrio": 10486486.0,
+      "gastos_fijos": 1940000,
+      "margen_contribucion_pct": 18.5,
+      "cobertura_pe_pct": 400.5
+    },
+    "2028": {
+      "punto_equilibrio": 12560976.0,
+      "gastos_fijos": 2060000,
+      "margen_contribucion_pct": 16.4,
+      "cobertura_pe_pct": 363.8
+    }
+  },
+  "kpis_resumen": {
+    "ventas_netas": 45700000,
+    "resultado_neto": 1985844,
+    "margen_bruto_pct": 16.4,
+    "margen_neto_pct": 4.3,
+    "roe": 26.3,
+    "roa": 8.5,
+    "ratio_corriente": 1.14,
+    "endeudamiento_de": 2.09,
+    "cce_dias": 0.0,
+    "moneda": "PEN",
+    "variaciones": {
+      "ventas": {
+        "monto": 3700000,
+        "pct": 8.8
+      },
+      "margen_bruto": {
+        "monto": -275200,
+        "pct": -3.5
+      },
+      "margen_operativo": {
+        "monto": -1293200,
+        "pct": -38.0
+      },
+      "resultado_neto": {
+        "monto": 184569,
+        "pct": 10.2
+      },
+      "total_activo": {
+        "monto": 2554000,
+        "pct": 12.3
+      },
+      "total_pasivo": {
+        "monto": 1468156,
+        "pct": 10.3
+      },
+      "patrimonio": {
+        "monto": 1085844,
+        "pct": 16.8
+      },
+      "capital_trabajo": {
+        "monto": 1979000,
+        "pct": 1058.3
+      }
+    }
+  },
+  "alertas": [],
+  "periodos": [
+    "2027",
+    "2028"
+  ],
+  "moneda": "PEN",
+  "sector": "distribution",
+  "kpis_sectoriales": {
+    "2027": {
+      "dso_dias": 47.31,
+      "rotacion_inventarios": 8.54,
+      "edad_inventario_dias": 42.0,
+      "dias_efectivo": 1.0,
+      "cxc_pct_activo": 26.7,
+      "concentracion_top10_pct": "N/D",
+      "perdida_tc": 350000,
+      "perdida_tc_pct_ventas": 0.8,
+      "benchmarks": {
+        "dso": {
+          "normal": [
+            30,
+            60
+          ],
+          "riesgo": 90
+        },
+        "rotacion_inv": {
+          "eficiente": 8,
+          "normal": [
+            4,
+            8
+          ],
+          "lento": 4
+        },
+        "concentracion": {
+          "diversificado": 30,
+          "concentrado": 50,
+          "critico": 70
+        },
+        "dias_efectivo": {
+          "holgura": 30,
+          "normal": [
+            15,
+            30
+          ],
+          "presion": 15
+        },
+        "cxc_pct_activo": {
+          "alerta": 40
+        }
+      }
+    },
+    "2028": {
+      "dso_dias": 45.53,
+      "rotacion_inventarios": 7.65,
+      "edad_inventario_dias": 47.0,
+      "dias_efectivo": 1.0,
+      "cxc_pct_activo": 24.9,
+      "concentracion_top10_pct": "N/D",
+      "perdida_tc": 1240000,
+      "perdida_tc_pct_ventas": 2.7,
+      "benchmarks": {
+        "dso": {
+          "normal": [
+            30,
+            60
+          ],
+          "riesgo": 90
+        },
+        "rotacion_inv": {
+          "eficiente": 8,
+          "normal": [
+            4,
+            8
+          ],
+          "lento": 4
+        },
+        "concentracion": {
+          "diversificado": 30,
+          "concentrado": 50,
+          "critico": 70
+        },
+        "dias_efectivo": {
+          "holgura": 30,
+          "normal": [
+            15,
+            30
+          ],
+          "presion": 15
+        },
+        "cxc_pct_activo": {
+          "alerta": 40
+        }
+      }
+    }
+  }
+}
