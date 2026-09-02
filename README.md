@@ -18,6 +18,7 @@ index.html                 Portada (una sola página, navegación por anclas)
 proyectos/                 Una sub-página por proyecto, con diagrama de bloques
   portfolio-suite.html     En construcción
   panel-minero.html
+  lab-planeamiento.html    Laboratorio de Planeamiento Financiero
   wacc-lab.html            Laboratorio de Costo de Capital
   lab-montecarlo.html      Laboratorio de Trayectorias de Patrimonio (Monte Carlo, Atlas)
   lab-payoff.html          Laboratorio de Derivados
