@@ -124,17 +124,17 @@
       </section>
 
       <section class="sub-seccion" aria-labelledby="t-pruebas">
-        <h2 id="t-pruebas">Cómo sé que el motor está bien</h2>
+        <h2 id="t-pruebas">Qué está verificado</h2>
         <p>Cuatro baterías, todas verdes en la versión publicada. La del motor comprueba AR(1),
            descomposición de Cholesky con reparación PSD, tratamiento fiscal con arrastre de pérdidas,
            capex y cierre de caja, con los números a la vista: 62 comprobaciones en la batería interna del
            motor, 19 en la suite de simulación y 14 en el lente mensual, todas en Node. La cuarta corre en
            el navegador y cubre la costura entre el motor y el tablero: 87 comprobaciones que se ejecutan
-           <em>después</em> del primer render, porque cuando corrían antes un error fatal al arrancar
-           dejaba la página muerta y el suite igual anunciaba verde.</p>
-        <p>El caso de la guía es parte del contrato: los tres números que el texto declara son los que
-           devuelve esa corrida con su semilla. Si el motor cambia y los números se mueven, la guía deja
-           de cuadrar.</p>
+           <em>después</em> del primer render, de modo que la batería no puede dar verde sobre una
+           página que no llegó a dibujarse.</p>
+        <p>El caso de la guía funciona como prueba de regresión: los tres números que el texto declara
+           son los que devuelve esa corrida con su semilla, así que cualquier cambio en el motor que
+           los mueva se nota de inmediato.</p>
       </section>
     </article>
   </main>
