@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Laboratorio de Planeamiento Financiero — Francisco Guerrero</title>
+  <meta name="description" content="Un presupuesto devuelve un número; el laboratorio devuelve la distribución que ese número esconde: probabilidad de quiebre de caja, financiamiento del peor escenario razonable y el supuesto que manda.">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#0b6d9e">
+  <link rel="canonical" href="https://fjgl96.github.io/proyectos/lab-planeamiento.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Laboratorio de Planeamiento Financiero — Francisco Guerrero">
+  <meta property="og:description" content="Un presupuesto devuelve un número; el laboratorio devuelve la distribución que ese número esconde: probabilidad de quiebre de caja, financiamiento del peor escenario razonable y el supuesto que manda.">
+  <meta property="og:url" content="https://fjgl96.github.io/proyectos/lab-planeamiento.html">
+  <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Raleway:400,600,700|Poppins:400,500,600,700&display=swap" rel="stylesheet">
+  <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="../assets/css/style.css" rel="stylesheet">
+  <link href="../assets/css/custom.css" rel="stylesheet">
+  <link href="../assets/css/subpagina.css" rel="stylesheet">
+</head>
+<body class="subpagina">
+  <a href="#contenido" class="skip-link">Saltar al contenido</a>
+  <header class="sub-top">
+    <div class="container">
+      <a href="../index.html#proyectos" class="sub-volver"><i class="bi bi-arrow-left" aria-hidden="true"></i> Proyectos</a>
+      <a href="../index.html" class="sub-marca">Francisco Guerrero</a>
+    </div>
+  </header>
+
+  <main id="contenido">
+    <article class="container sub-wrap">
+      <header class="sub-head">
+        <span class="proyecto-estado proyecto-estado--activo">En línea</span>
+        <p class="sub-modulo"><span lang="en">FP&amp;A</span> — planeamiento por escenarios</p>
+        <h1>Laboratorio de Planeamiento Financiero</h1>
+        <p class="sub-lead">Un presupuesto es una sola historia sobre el año. El laboratorio le pone
+           incertidumbre a los drivers, corre miles de futuros y mide cuánta plata hay que tener
+           arreglada para los años en que esa historia no se cumple.</p>
+        <div class="proyecto-links">
+          <a href="https://planeamiento-lab.vercel.app/" target="_blank" rel="noopener" class="btn-demo">
+            Abrir el laboratorio <i class="bi bi-box-arrow-up-right" aria-hidden="true"></i>
+          </a>
+          <a href="https://planeamiento-lab.vercel.app/guia.html" target="_blank" rel="noopener" class="btn-repo">
+            Leer la guía <i class="bi bi-box-arrow-up-right" aria-hidden="true"></i>
+          </a>
+          <span class="proyecto-nota">Repositorio privado</span>
+        </div>
+      </header>
+
+      <figure class="proyecto-media sub-figura">
+        <img width="1200" height="900" src="../assets/img/proyectos/lab-planeamiento.webp" alt="El laboratorio en modo avanzado: los supuestos del plan a la izquierda, el abanico del saldo de caja con sus bandas de percentiles al centro, y a la derecha el panel de escenarios y las restricciones del plan" loading="lazy" decoding="async">
+        <figcaption>El caso de la guía corriendo en el laboratorio: 2.000 futuros con semilla fija, el
+          abanico del saldo de caja y las tres restricciones que pueden romper un plan.</figcaption>
+      </figure>
+
+      <section class="sub-seccion" aria-labelledby="t-que">
+        <h2 id="t-que">Qué hace</h2>
+        <p>Un presupuesto se arma con el valor esperado de cada supuesto y devuelve un solo número, que
+           no dice si el plan resiste cuando el volumen falla. El laboratorio simula los drivers del
+           negocio —volumen, precio, costo variable, costos fijos, rotaciones de capital de trabajo y
+           tipo de cambio— miles de veces y devuelve una distribución en lugar de un resultado: con qué
+           probabilidad se rompe la caja, cuánto financiamiento hay que tener arreglado para el peor
+           escenario razonable, y qué supuesto explica la mayor parte de la dispersión.</p>
+        <p>Los drivers se correlacionan por descomposición de Cholesky y cada sigma declara de dónde sale
+           su calibración: volatilidad histórica, rango experto o dato de mercado. Hay un régimen de
+           estrés donde las correlaciones se acercan a uno, que es lo que ocurre cuando las cosas se
+           rompen de verdad. Los escenarios corren con la misma semilla, de modo que la diferencia entre
+           ellos es escenario y no ruido de muestreo.</p>
+        <p class="proyecto-concepto"><strong>El concepto.</strong> El error de principiante es ponerle una
+           distribución al resultado, al EBITDA o a la utilidad. Lo correcto es ponerle distribuciones a
+           los drivers y dejar que la aritmética del modelo produzca el estado de resultados y la caja.
+           Eso es lo que convierte un generador de números aleatorios en un modelo de planeamiento.</p>
+        <ul class="proyecto-tech"><li>JavaScript sin framework</li><li>SVG</li><li>Simulación Monte Carlo</li><li>Pruebas en Node</li></ul>
+      </section>
+
+      <section class="sub-seccion" aria-labelledby="t-caso">
+        <h2 id="t-caso">Un caso con números fijos</h2>
+        <p>La guía trae un caso reproducible: una empresa de uniformes que vende 2.000 unidades al año a
+           80, con costo variable de 48 y fijos de 50 mil —margen bruto del 40&nbsp;% y un EBITDA de 14 mil—,
+           que planea crecer 6&nbsp;% anual durante cinco años. Cobra a 45 días, mantiene 30 de inventario,
+           paga a 30 e invierte 4&nbsp;% de los ingresos en capex. El enlace de esa sección lleva los 45
+           parámetros, así que la corrida se repite: 2.000 futuros con la misma semilla devuelven siempre
+           estos números.</p>
+        <div class="notas-grid">
+          <div class="nota-bloque"><h3>Quiebre de caja: 15&nbsp;% ± 1,6 pp</h3><p>Uno de cada siete futuros toca el mínimo de tesorería en algún año del horizonte.</p></div>
+          <div class="nota-bloque"><h3>Financiamiento p95: 18,8k</h3><p>El cheque que hay que tener listo antes del año malo, no después.</p></div>
+          <div class="nota-bloque"><h3>El plan cae en el percentil 60</h3><p>El presupuesto no es neutral: es apenas optimista dentro de su propia distribución.</p></div>
+          <div class="nota-bloque"><h3>Covenant: 10,3&nbsp;% ± 1,3 pp</h3><p>Deuda/EBITDA rompe antes que la caja: el banco llama primero que la tesorería.</p></div>
+        </div>
+        <p>Ahí está la tensión que justifica la herramienta: el plan determinista nunca baja de 39,1k,
+           catorce mil por encima del mínimo, y aun así uno de cada siete futuros lo toca. Un presupuesto
+           de una sola hoja habría dicho que no hay problema.</p>
+        <p>La atribución de varianza cierra el diagnóstico —58&nbsp;% de la dispersión de la caja mínima sale
+           de la inflación del costo, contra 24&nbsp;% del volumen y 18&nbsp;% del precio: la conversación con
+           compras vale más que la conversación con ventas— y el panel de acción le pone precio a la
+           decisión. Cobrar quince días antes, de 45 a 30 de DSO, baja el quiebre de 15&nbsp;% a 13&nbsp;% y el
+           financiamiento p95 de 18,8k a 16,4k, sobre los mismos 2.000 futuros. Dos puntos de riesgo y
+           2,5k de línea de crédito, por una gestión de cobranza.</p>
+      </section>
+
+      <section class="sub-seccion" aria-labelledby="t-bloques">
+        <h2 id="t-bloques">Cómo está compuesto</h2>
+        <p>El motor es una función pura: recibe supuestos, devuelve resultados y no toca el DOM. Por eso
+           la batería corre en Node, fuera del navegador, y el tablero se puede romper sin romper la
+           matemática.</p>
+        <figure class="proyecto-media sub-figura sub-figura--bloques">
+          <div class="sub-figura-lienzo">
+            <img width="900" height="468" src="../assets/img/proyectos/bloques-lab-planeamiento.svg" alt="Diagrama de bloques del Laboratorio de Planeamiento Financiero: los supuestos alimentan el motor, el motor alimenta la medida de las restricciones y la salida dibuja el abanico y los escenarios" loading="lazy" decoding="async">
+          </div>
+          <figcaption>Los supuestos entran arriba, el motor simula, la capa de medida cuantifica las
+            restricciones y la salida solo dibuja.</figcaption>
+        </figure>
+        <div class="notas-grid">
+          <div class="nota-bloque"><h3>Se simulan los drivers</h3><p>Nunca el resultado: la aritmética del modelo produce el estado de resultados y la caja.</p></div>
+          <div class="nota-bloque"><h3>Misma semilla, mismo mundo</h3><p>El orden de sorteo es fijo, así que congelar un driver no mueve a los demás y los escenarios se comparan entre sí.</p></div>
+          <div class="nota-bloque"><h3>Cada sigma declara su fuente</h3><p>Volatilidad histórica, rango experto convertido por PERT o dato de mercado. Un supuesto sin origen no se puede defender.</p></div>
+          <div class="nota-bloque"><h3>La caja negativa se mide</h3><p>No se tapa: es financiamiento requerido, y es exactamente el número que se lleva al banco.</p></div>
+        </div>
+      </section>
+
+      <section class="sub-seccion" aria-labelledby="t-pruebas">
+        <h2 id="t-pruebas">Cómo sé que el motor está bien</h2>
+        <p>Cuatro baterías, todas verdes en la versión publicada. La del motor comprueba AR(1),
+           descomposición de Cholesky con reparación PSD, tratamiento fiscal con arrastre de pérdidas,
+           capex y cierre de caja, con los números a la vista: 62 comprobaciones en la batería interna del
+           motor, 19 en la suite de simulación y 14 en el lente mensual, todas en Node. La cuarta corre en
+           el navegador y cubre la costura entre el motor y el tablero: 87 comprobaciones que se ejecutan
+           <em>después</em> del primer render, porque cuando corrían antes un error fatal al arrancar
+           dejaba la página muerta y el suite igual anunciaba verde.</p>
+        <p>El caso de la guía es parte del contrato: los tres números que el texto declara son los que
+           devuelve esa corrida con su semilla. Si el motor cambia y los números se mueven, la guía deja
+           de cuadrar.</p>
+      </section>
+    </article>
+  </main>
+
+  <footer id="footer" class="sub-footer">
+    <div class="container">
+      <div class="copyright">&copy; <strong><span>Francisco Guerrero López</span></strong></div>
+      <div class="credits"><span lang="en">Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a></span></div>
+    </div>
+  </footer>
+</body>
+</html>

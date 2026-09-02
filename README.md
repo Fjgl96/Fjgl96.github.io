@@ -18,8 +18,9 @@ index.html                 Portada (una sola página, navegación por anclas)
 proyectos/                 Una sub-página por proyecto, con diagrama de bloques
   portfolio-suite.html     En construcción
   panel-minero.html
+  lab-planeamiento.html    Laboratorio de Planeamiento Financiero
   wacc-lab.html            Laboratorio de Costo de Capital
-  lab-montecarlo.html      Laboratorio de Monte Carlo
+  lab-montecarlo.html      Laboratorio de Trayectorias de Patrimonio (Monte Carlo, Atlas)
   lab-payoff.html          Laboratorio de Derivados
   cfagent.html
   atlas.html               Proyecto especial, fuera de la portada
@@ -47,7 +48,7 @@ assets/
 
 Secciones: Inicio · Perfil · Proyectos · Automatización financiera · Research · CV · Contacto.
 
-La portada funciona como índice: muestra cinco proyectos y tres flujos, y el detalle vive en las sub-páginas.
+La portada funciona como índice: muestra siete proyectos y tres flujos, y el detalle vive en las sub-páginas.
 
 ## Qué falta completar
 
