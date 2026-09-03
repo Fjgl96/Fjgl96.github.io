@@ -884,3 +884,37 @@ a.indice-card:focus-visible { outline: 3px solid var(--accent-text); outline-off
   .proyecto:nth-of-type(even) .proyecto-grid .proyecto-media { order: 2; }
   .proyecto:nth-of-type(even) .proyecto-grid .proyecto-body  { order: 1; }
 }
+
+/*--------------------------------------------------------------
+# Respirar en el teléfono
+# La plantilla deja 12 px a cada lado y el texto queda pegado al borde;
+# se lleva el margen a los 20 px que ya usa la portada. Y se afloja la
+# densidad que traía el bloque de 768: en un teléfono la página llega
+# como un muro, y conviene que cada bloque se lea de a uno.
+--------------------------------------------------------------*/
+/* El margen angosto de la plantilla arranca en 1199, que es donde se va
+   la barra lateral: la compensación tiene que cubrir el mismo tramo. */
+@media (max-width: 1199px) {
+  .container,
+  .container-fluid { padding-left: 20px; padding-right: 20px; }
+}
+
+@media (max-width: 991px) {
+  /* El riel del CV suma su propio sangrado a la izquierda: se recorta
+     para que el bloque no quede corrido respecto del borde derecho. */
+  .resume .resume-item { padding-left: 16px; padding-bottom: 28px; }
+  .resume .resume-item:last-child { padding-bottom: 8px; }
+  .resume .resume-title { margin-top: 34px; margin-bottom: 18px; }
+  .resume .resume-item h5 { margin-bottom: 12px; }
+  .resume .resume-item ul { padding-left: 18px; }
+  .resume .resume-item ul li { padding-bottom: 12px; line-height: 1.65; }
+}
+
+@media (max-width: 768px) {
+  section { padding: 54px 0; }
+  .section-title { padding-bottom: 26px; }
+  .section-title p + p { margin-top: 18px; }
+  .about .content h3 { margin-top: 26px; }
+  .about .content ul li { padding-bottom: 4px; }
+  .proyecto + .proyecto { margin-top: 8px; }
+}
