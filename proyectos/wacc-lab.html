@@ -12,6 +12,10 @@
   <meta property="og:title" content="Laboratorio de Costo de Capital — Francisco Guerrero">
   <meta property="og:description" content="Calculadora de costo de capital bottom-up con el método de Damodaran.">
   <meta property="og:url" content="https://fjgl96.github.io/proyectos/wacc-lab.html">
+  <meta property="og:image" content="https://fjgl96.github.io/assets/img/og-image.jpg">
+  <meta property="og:image:alt" content="Laboratorio de Costo de Capital — método bottom-up de Damodaran">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://fjgl96.github.io/assets/img/og-image.jpg">
   <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -39,7 +43,7 @@
     <article class="container sub-wrap">
 
       <header class="sub-head">
-        <span class="proyecto-estado proyecto-estado--activo">Activo</span>
+        <span class="proyecto-estado proyecto-estado--activo">En línea</span>
         <h1>Laboratorio de Costo de Capital <span class="proyecto-marca">Good Finance</span></h1>
         <p class="sub-lead">Calculadora de costo de capital bottom-up con el método de Damodaran.</p>
         <div class="proyecto-links">
@@ -57,7 +61,7 @@
         <h2 id="t-que">Qué es</h2>
         <p>Se elige sector y país, se mueve la estructura objetivo y la curva del WACC se recalcula en vivo, con el álgebra completa desglosada en siete pasos al costado.</p>
         <p class="proyecto-concepto"><strong>El concepto.</strong> Casi nadie ve por qué el WACC se mueve. El lab lo obliga: si la curva sale plana, eso es Modigliani-Miller —sin fricciones la estructura casi no mueve el costo—; cuando se empina, el culpable es el rating sintético, que encarece la deuda justo cuando más falta hace. Y antes de discutir apalancamiento al decimal, muestra que en mercados emergentes la prima por país mueve más puntos que la estructura.</p>
-        <ul class="proyecto-tech"><li>HTML y SVG</li><li>JavaScript</li><li>Node.js</li><li>Vercel</li></ul>
+        <ul class="proyecto-tech"><li>HTML y SVG</li><li>JavaScript</li><li><span lang="en">Scraper</span> en Node.js</li><li>Vercel</li></ul>
       </section>
 
       <section class="sub-seccion" aria-labelledby="t-flujo">
@@ -113,6 +117,13 @@
         <div class="notas-grid"><div class="nota-bloque"><h3>Un solo archivo</h3><p>Toda la aplicación vive en wacc.html: sin build, sin framework.</p></div><div class="nota-bloque"><h3>Scraper propio</h3><p>Lee las tablas de Damodaran y las incrusta en el HTML.</p></div><div class="nota-bloque"><h3>Rating sintético</h3><p>La cobertura EBIT/intereses clasifica y define el spread.</p></div><div class="nota-bloque"><h3>Cuatro casos</h3><p>Presets que cargan escenarios completos para arrancar.</p></div></div>
       </section>
 
+      <section class="sub-seccion" aria-labelledby="t-contacto">
+        <h2 id="t-contacto">¿Una valuación que sustentar?</h2>
+        <p>Si tienes que defender un costo de capital ante un comité o un directorio, escríbeme y lo vemos con números trazables.</p>
+        <div class="proyecto-links">
+          <a href="../index.html#contact" class="btn-demo">Escríbeme <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
+        </div>
+      </section>
     </article>
   </main>
 

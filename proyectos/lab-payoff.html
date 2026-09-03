@@ -4,14 +4,18 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Laboratorio de Derivados — Francisco Guerrero</title>
-  <meta name="description" content="Cualquier combinación de opciones, con su silueta, sus breakevens y su clasificación calculados solos.">
+  <meta name="description" content="Cualquier combinación de opciones, con su silueta, sus puntos de equilibrio y su clasificación calculados solos.">
   <meta name="robots" content="index, follow, max-image-preview:large">
   <meta name="theme-color" content="#0b6d9e">
   <link rel="canonical" href="https://fjgl96.github.io/proyectos/lab-payoff.html">
   <meta property="og:type" content="article">
   <meta property="og:title" content="Laboratorio de Derivados — Francisco Guerrero">
-  <meta property="og:description" content="Cualquier combinación de opciones, con su silueta, sus breakevens y su clasificación calculados solos.">
+  <meta property="og:description" content="Cualquier combinación de opciones, con su silueta, sus puntos de equilibrio y su clasificación calculados solos.">
   <meta property="og:url" content="https://fjgl96.github.io/proyectos/lab-payoff.html">
+  <meta property="og:image" content="https://fjgl96.github.io/assets/img/og-image.jpg">
+  <meta property="og:image:alt" content="Laboratorio de Derivados — constructor de opciones y perfil al vencimiento">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://fjgl96.github.io/assets/img/og-image.jpg">
   <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -38,7 +42,7 @@
         <span class="proyecto-estado proyecto-estado--activo">En línea</span>
         <p class="sub-modulo">Atlas · Nivel III — Derivatives LM01</p>
         <h1>Laboratorio de Derivados</h1>
-        <p class="sub-lead">Cualquier combinación de opciones, con su silueta, sus breakevens y su clasificación calculados solos.</p>
+        <p class="sub-lead">Cualquier combinación de opciones, con su silueta, sus puntos de equilibrio y su clasificación calculados solos.</p>
         <div class="proyecto-links">
           <a href="https://atlas-l3.vercel.app/labs/payoff.html" target="_blank" rel="noopener" class="btn-demo">
             Abrir el laboratorio <i class="bi bi-box-arrow-up-right" aria-hidden="true"></i>
@@ -48,14 +52,14 @@
       </header>
 
       <figure class="proyecto-media sub-figura">
-        <img width="1200" height="900" src="../assets/img/proyectos/lab-payoff.webp" alt="Laboratorio de Derivados: constructor de patas de opciones con la silueta de resultado al vencimiento y sus breakevens" loading="lazy" decoding="async">
-        <figcaption>Se arman las patas a la izquierda; la silueta y los breakevens se recalculan solos.</figcaption>
+        <img width="1200" height="900" src="../assets/img/proyectos/lab-payoff.webp" alt="Laboratorio de Derivados: constructor de patas de opciones con la silueta de resultado al vencimiento y sus puntos de equilibrio" loading="lazy" decoding="async">
+          <figcaption>Se arman las patas a la izquierda; la silueta y los equilibrios se recalculan solos.</figcaption>
       </figure>
 
       <section class="sub-seccion" aria-labelledby="t-que">
         <h2 id="t-que">Qué hace</h2>
         <p>Se arman las patas —calls, puts y subyacente, con su cantidad, strike y prima— y el lab dibuja el perfil de resultado al vencimiento, marca los puntos de equilibrio y clasifica la estructura por dirección y por exposición a volatilidad. Trae catorce estructuras precargadas.</p>
-        <p class="proyecto-concepto"><strong>El concepto.</strong> Las estrategias con opciones suelen estudiarse como catorce siluetas memorizadas por separado: el collar, el straddle, la mariposa. Pero todas son la misma operación —una suma de patas— y verlas como catálogo esconde eso. El lab invierte el orden: construyes la combinación y la silueta aparece sola. Entonces se nota que un collar y un bull call spread comparten forma, que el breakeven no es un dato que se memoriza sino donde la suma cruza cero, y que dirección y volatilidad son dos ejes independientes: se puede ser alcista y estar corto de volatilidad al mismo tiempo.</p>
+        <p class="proyecto-concepto"><strong>El concepto.</strong> Las estrategias con opciones suelen estudiarse como catorce siluetas memorizadas por separado: el collar, el straddle, la mariposa. Pero todas son la misma operación —una suma de patas— y verlas como catálogo esconde eso. El lab invierte el orden: construyes la combinación y la silueta aparece sola. Entonces se nota que un collar y un bull call spread comparten forma, que el punto de equilibrio no es un dato que se memoriza sino donde la suma cruza cero, y que dirección y volatilidad son dos ejes independientes: se puede ser alcista y estar corto de volatilidad al mismo tiempo.</p>
         <ul class="proyecto-tech"><li>JavaScript sin framework</li><li>SVG</li></ul>
       </section>
 
@@ -99,7 +103,14 @@
           </div>
           <figcaption>Las patas entran a la izquierda y la silueta sale calculada, no dibujada a mano.</figcaption>
         </figure>
-        <div class="notas-grid"><div class="nota-bloque"><h3>Una sola operación</h3><p>Catorce estructuras dejan de ser catorce dibujos y pasan a ser una suma de patas.</p></div><div class="nota-bloque"><h3>Dos ejes, no uno</h3><p>Dirección y volatilidad se clasifican por separado: son independientes.</p></div><div class="nota-bloque"><h3>Breakeven calculado</h3><p>No se memoriza: es donde la suma de las patas cruza cero.</p></div><div class="nota-bloque"><h3>Zona esperada</h3><p>Se fija un piso y un techo para leer la estructura dentro del rango que importa.</p></div></div>
+        <div class="notas-grid"><div class="nota-bloque"><h3>Una sola operación</h3><p>Catorce estructuras dejan de ser catorce dibujos y pasan a ser una suma de patas.</p></div><div class="nota-bloque"><h3>Dos ejes, no uno</h3><p>Dirección y volatilidad se clasifican por separado: son independientes.</p></div><div class="nota-bloque"><h3>Equilibrio calculado</h3><p>No se memoriza: es donde la suma de las patas cruza cero.</p></div><div class="nota-bloque"><h3>Zona esperada</h3><p>Se fija un piso y un techo para leer la estructura dentro del rango que importa.</p></div></div>
+      </section>
+      <section class="sub-seccion" aria-labelledby="t-contacto">
+        <h2 id="t-contacto">¿Una estructura con derivados que explicar?</h2>
+        <p>Si necesitas mostrar el perfil de resultado y los puntos de equilibrio de una combinación de opciones, escríbeme y la armamos.</p>
+        <div class="proyecto-links">
+          <a href="../index.html#contact" class="btn-demo">Escríbeme <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
+        </div>
       </section>
     </article>
   </main>

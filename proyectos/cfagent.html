@@ -4,14 +4,18 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CFAAgent — Francisco Guerrero</title>
-  <meta name="description" content="Sistema multi-agente para estudiar el programa CFA.">
+  <meta name="description" content="Ocho agentes coordinados por un supervisor que clasifica tu consulta CFA en teórica, práctica o de ayuda y la enruta al especialista, con RAG y cadena de respaldo.">
   <meta name="robots" content="index, follow, max-image-preview:large">
   <meta name="theme-color" content="#0b6d9e">
   <link rel="canonical" href="https://fjgl96.github.io/proyectos/cfagent.html">
   <meta property="og:type" content="article">
   <meta property="og:title" content="CFAAgent — Francisco Guerrero">
-  <meta property="og:description" content="Sistema multi-agente para estudiar el programa CFA.">
+  <meta property="og:description" content="Ocho agentes coordinados por un supervisor que clasifica tu consulta CFA y la enruta al especialista, con RAG y cadena de respaldo.">
   <meta property="og:url" content="https://fjgl96.github.io/proyectos/cfagent.html">
+  <meta property="og:image" content="https://fjgl96.github.io/assets/img/og-image.jpg">
+  <meta property="og:image:alt" content="CFAAgent — sistema multi-agente para estudiar el programa CFA">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://fjgl96.github.io/assets/img/og-image.jpg">
   <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -39,7 +43,7 @@
     <article class="container sub-wrap">
 
       <header class="sub-head">
-        <span class="proyecto-estado proyecto-estado--activo">Público</span>
+        <span class="proyecto-estado proyecto-estado--activo">En línea</span>
         <h1 lang="en">CFAAgent</h1>
         <p class="sub-lead">Sistema multi-agente para estudiar el programa CFA.</p>
         <div class="proyecto-links"><a href="https://github.com/Fjgl96/CFAVFin" target="_blank" rel="noopener" class="btn-repo">Código <i class="bi bi-github" aria-hidden="true"></i></a></div>
@@ -54,7 +58,7 @@
       <section class="sub-seccion" aria-labelledby="t-que">
         <h2 id="t-que">Qué es</h2>
         <p>Ocho agentes especializados —renta fija, finanzas corporativas, equity, portafolios, derivados, búsqueda, ayuda y síntesis— coordinados por un supervisor que decide quién responde.</p>
-        <p class="proyecto-concepto"><strong>El concepto.</strong> Una pregunta teórica y una de cálculo no se responden igual. El supervisor clasifica en una sola pasada —teórica, práctica o de ayuda— y enruta: lo teórico va a búsqueda vectorial con la consulta traducida al inglés y enriquecida con términos CFA; lo práctico va al especialista que tiene la fórmula. Si un proveedor de modelo se cae, la cadena sigue con el siguiente.</p>
+        <p class="proyecto-concepto"><strong>El concepto.</strong> Una pregunta teórica y una de cálculo no se responden igual. El supervisor clasifica en una sola pasada —teórica, práctica o de ayuda— y enruta: lo teórico va a búsqueda vectorial con la consulta traducida al inglés y enriquecida con términos CFA; lo práctico va al especialista que tiene la fórmula. Si un proveedor del modelo se cae, la cadena sigue con el siguiente.</p>
         <ul class="proyecto-tech"><li>Python 3.11</li><li>LangGraph</li><li>FastAPI</li><li>Elasticsearch</li><li>Docker</li></ul>
       </section>
 
@@ -69,7 +73,7 @@
           <div class="sub-figura-lienzo">
             <img src="../assets/img/proyectos/traza-cfagent.svg" width="856" height="512"
                loading="lazy" decoding="async"
-               alt="Arriba, una consulta de cálculo recorrida en cuatro pasos: entra sin historial, una sola llamada al modelo devuelve un esquema con categoría, agente y consulta optimizada, el especialista de finanzas corporativas ejecuta la herramienta de WACC y la respuesta cierra con una de cuatro etiquetas. Abajo, cuatro capas de respaldo independientes —proveedor de modelo, decisión de ruta, agente elegido y memoria de sesión— y un cortacircuitos que detiene la ejecución cuando se agotan.">
+               alt="Arriba, una consulta de cálculo recorrida en cuatro pasos: entra sin historial, una sola llamada al modelo devuelve un esquema con categoría, agente y consulta optimizada, el especialista de finanzas corporativas ejecuta la herramienta de WACC y la respuesta cierra con una de cuatro etiquetas. Abajo, cuatro capas de respaldo independientes —proveedor del modelo, decisión de ruta, agente elegido y memoria de sesión— y un cortacircuitos que detiene la ejecución cuando se agotan.">
           </div>
           <figcaption>Arriba, una consulta de cálculo de punta a punta. Abajo, lo que sostiene al sistema cuando algo falla.</figcaption>
         </figure>
@@ -82,7 +86,7 @@
         </p>
         <p class="proyecto-concepto">
           <strong>Degradar antes que caerse.</strong> Las cuatro redes de abajo son independientes
-          entre sí: el proveedor de modelo puede caerse sin tocar el enrutado, y el enrutado puede
+          entre sí: el proveedor del modelo puede caerse sin tocar el enrutado, y el enrutado puede
           fallar sin tocar la memoria. Cada una responde una sola pregunta —qué hago si esto no
           responde— y ninguna intenta arreglar el problema de otra. La regla que las ordena a todas
           está en el protocolo de los agentes: si falta un dato, está prohibido inventarlo. Vale
@@ -102,6 +106,13 @@
         <div class="notas-grid"><div class="nota-bloque"><h3>Clasificación en una pasada</h3><p>Teórica, práctica o ayuda, en torno a medio segundo.</p></div><div class="nota-bloque"><h3>Microservicio de búsqueda</h3><p>RAG separado, con índice invertido y deduplicación.</p></div><div class="nota-bloque"><h3>Cadena de respaldo</h3><p>Si un proveedor falla, el siguiente responde.</p></div><div class="nota-bloque"><h3>Tres suites de tests</h3><p>Supervisor, agentes y herramientas financieras.</p></div></div>
       </section>
 
+      <section class="sub-seccion" aria-labelledby="t-contacto">
+        <h2 id="t-contacto">¿Estudias para el CFA o automatizas análisis?</h2>
+        <p>El código es público y la arquitectura multi-agente se reutiliza en otros dominios. Escríbeme si quieres adaptarla.</p>
+        <div class="proyecto-links">
+          <a href="../index.html#contact" class="btn-demo">Escríbeme <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
+        </div>
+      </section>
     </article>
   </main>
 
