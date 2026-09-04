@@ -13,6 +13,8 @@ Moneda: soles (PEN). Escala: ventas ppto FY S/ 60.2M (~US$ 16M).
 | `gen_data.py` | Define el caso y verifica invariantes (patrimonio ata con resultado H1) |
 | `gen_modelo.py` | Escribe el Excel con fórmulas + gráficos PNG |
 | `gen_pdf.py` | Genera el 1-pager (ReportLab) |
+| `gen_supabase.py` | Genera `fpa_schema.sql` desde `data.json` (estrella mes×canal×línea×versión) |
+| `fpa_schema.sql` | DDL + RLS + 5 vistas + seed idempotente (pegar en SQL Editor, una vez) |
 
 ## Números canónicos (verificables)
 

@@ -159,8 +159,11 @@ for s in SKUS_HOGAR:
     s["valorizado"] = round(s["stock_u"]*s["costo_u"])
     s["cobertura_m"] = round(s["stock_u"]/s["vta_mes_u"],1)
 RESTO_HOGAR = 3_350_000-sum(s["valorizado"] for s in SKUS_HOGAR)
-SKUS_HOGAR.append({"sku":"HOG-RESTO","nombre":"Resto linea Hogar (agregado)","stock_u":None,
- "costo_u":None,"vta_mes_u":None,"valorizado":RESTO_HOGAR,"cobertura_m":2.1})
+# Fila agregada honesta ("varios"): cuadra valorizado y cobertura del resto.
+SKUS_HOGAR.append({"sku":"HOG-VAR","nombre":"Varios Hogar (agregado)","stock_u":163_620,
+ "costo_u":10.00,"vta_mes_u":77_914,"valorizado":RESTO_HOGAR,
+ "cobertura_m":round(163_620/77_914,1)})
+assert SKUS_HOGAR[-1]["valorizado"] == RESTO_HOGAR
 assert sum(s["valorizado"] for s in SKUS_HOGAR) == 3_350_000
 SOBRESTOCK = sum(s["valorizado"] for s in SKUS_HOGAR if isinstance(s["cobertura_m"],float) and s["cobertura_m"]>6)
 INV_LINEA = {"Abarrotes importados":4_100_000,"Cuidado del hogar":3_350_000}

@@ -412,11 +412,11 @@
    "cobertura_m": 6.7
   },
   {
-   "sku": "HOG-RESTO",
-   "nombre": "Resto linea Hogar (agregado)",
-   "stock_u": null,
-   "costo_u": null,
-   "vta_mes_u": null,
+   "sku": "HOG-VAR",
+   "nombre": "Varios Hogar (agregado)",
+   "stock_u": 163620,
+   "costo_u": 10.0,
+   "vta_mes_u": 77914,
    "valorizado": 1636200,
    "cobertura_m": 2.1
   }
