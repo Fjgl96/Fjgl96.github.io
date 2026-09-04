@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>FP&amp;A Monthly Pack — Distribuidora sintética · Junio 2026 — Francisco Guerrero</title>
   <meta name="description" content="Reporte mensual FP&A sobre un caso sintético: ventas S/ 28.40M vs S/ 30.10M, EBITDA S/ 2.35M vs S/ 3.30M, CCC de 79 días y decisión de línea por S/ 2.5M. Modelo Excel con fórmulas y 1-pager de directorio descargables.">
-  <meta name="robots" content="noindex, nofollow"><!-- temporal: proyecto oculto, no listo -->
+  <meta name="robots" content="noindex, nofollow"><!-- WIP: no indexar hasta republicar -->
   <meta name="theme-color" content="#0b6d9e">
   <link rel="canonical" href="https://fjgl96.github.io/proyectos/fpa-pack.html">
   <meta property="og:type" content="article">
@@ -60,7 +60,8 @@
           </a>
         </div>
         <p class="proyecto-nota"><em>Caso 100% sintético con fines demostrativos: la empresa, las cifras y los
-          documentos son inventados y no corresponden a ningún cliente real.</em></p>
+          documentos son inventados y generados por script (<a href="../assets/demo/fpa-pack/gen_data.py">gen_data.py</a>).
+          Reproduce patrones típicos de una distribuidora importadora, pero ningún dato corresponde a un cliente real.</em></p>
       </header>
 
       <figure class="proyecto-media sub-figura">
@@ -101,7 +102,7 @@
         </div>
         <figure class="proyecto-media sub-figura" style="margin-top:26px">
           <img width="1500" height="630" src="../assets/img/proyectos/fpa-pack-bridge.png" alt="Puente de EBITDA del H1: del ppto de 3.30 millones al real de 2.35 millones, con volumen, precio, costo cambiario, descuento, fletes y ahorro de marketing" loading="lazy" decoding="async">
-          <figcaption>Los −S/ 950k, atribuidos: volumen −410k, costo FX −300k, descuento −120k, precio/mix −120k, fletes −180k, ahorro +180k.</figcaption>
+          <figcaption>Los −S/ 950k, reconciliados a margen estándar 24%: volumen −264k, precio/mix/descuento −144k, costo FX −300k, otros costos −240k, opex −2k.</figcaption>
         </figure>
         <p>La foto cambiaria cierra el diagnóstico: exposición neta pasiva de <strong>USD 1.10M</strong>,
           sin cobertura. Cada 10 céntimos mueven <strong>S/ 110k</strong>, cerca del 17% de la utilidad
@@ -111,6 +112,13 @@
           <img width="1050" height="540" src="../assets/img/proyectos/fpa-pack-ccc.png" alt="Ciclo de conversión de caja: de 64 días en diciembre a 79 días en junio" loading="lazy" decoding="async">
           <figcaption>Quince días más de ciclo: la caja que el PyG no muestra y el balance sí.</figcaption>
         </figure>
+        <p>Y el flujo ata la historia sin fugas: neta S/ 663k más depreciación S/ 450k menos capital de trabajo
+          S/ 2.14M igual a flujo operativo −S/ 1.13M; menos capex S/ 350k más deuda neta +S/ 1.23M igual a caja
+          −S/ 250k, el saldo del balance. Los 14.6 días extra de ciclo son S/ 2.34M inmovilizados: justo la deuda incremental.</p>
+        <figure class="proyecto-media sub-figura">
+          <img width="1500" height="630" src="../assets/img/proyectos/fpa-pack-flujo.png" alt="Flujo de caja del H1: de la utilidad neta al flujo operativo, capex y deuda hasta la caja" loading="lazy" decoding="async">
+          <figcaption>De la neta a la caja, sin fugas: el operativo se lo come el capital de trabajo y la deuda lo financia.</figcaption>
+        </figure>
       </section>
 
       <section class="sub-seccion" aria-labelledby="t-drill">
@@ -118,14 +126,15 @@
         <p>El consolidado no dice quién debe la plata ni qué sobra en el almacén. El drill-down sí.
           Institucional crece +5.0% contra el año anterior pero falla un presupuesto agresivo (+22.9% vs LY):
           el desvío es de presupuesto, no de demanda. Y su cobranza tiene nombre y apellido: S/ 2.00M en
-          ocho clientes, con mora de más de 60 días por S/ 330k concentrada en tres —Red Salud Norte,
-          VialSur y Gobierno Regional— y un DSO del canal de 70 días.</p>
+          ocho clientes, con mora de más de 60 días por S/ 330k concentrada en cuatro —Red Salud Norte,
+          Municipalidad de San Juan, VialSur y Gobierno Regional, S/ 280k entre los cuatro— y un DSO del canal de 70 días.</p>
         <figure class="proyecto-media sub-figura">
           <img width="1500" height="660" src="../assets/img/proyectos/fpa-pack-aging.png" alt="CxC institucional por cliente y aging: la mora de más de 60 días se concentra en tres clientes" loading="lazy" decoding="async">
           <figcaption>La mora no está en el consolidado: está en tres clientes. De aquí sale la acción de cobranza.</figcaption>
         </figure>
         <p>En ventas, el puente precio-volumen-mix atribuye los −S/ 1.70M: volumen −1.10M, precio +250k
-          (la lista subió pero el descuento se la comió), mix −450k y descuento defensivo −400k. En Hogar,
+          (la lista subió pero el descuento se la comió), mix −450k y descuento defensivo −400k. El mix, de hecho,
+          jugó en contra de Hogar: la línea pierde peso (33.9% vs 35.0% del ppto) y Abarrotes lo gana. En Hogar,
           tres SKUs —escobas, trapeadores y bolsas de 100 litros— concentran S/ 702k con más de seis meses
           de cobertura: de ahí el recorte de compra del 15%.</p>
         <figure class="proyecto-media sub-figura">
@@ -145,8 +154,8 @@
           <figcaption>Entradas a la izquierda, motor con fórmulas al centro, salidas descargables a la derecha.</figcaption>
         </figure>
         <div class="notas-grid">
-          <div class="nota-bloque"><h3>PyG con LY</h3><p>H1-2025 al lado del ppto y del real: se crece +5.6% pero el margen se comprime igual. El puente PVM explica los −1.70M de ventas.</p></div>
-          <div class="nota-bloque"><h3>Balance que cuadra</h3><p>Activo S/ 25.31M = Pasivo + Patrimonio. El patrimonio ata con la neta del H1.</p></div>
+          <div class="nota-bloque"><h3>PyG con LY</h3><p>H1-2025 al lado del ppto y del real: se crece +5.6% pero el margen se comprime igual. El puente PVM explica los −1.70M de ventas y se reconcilia con el de EBITDA.</p></div>
+          <div class="nota-bloque"><h3>Balance y flujo que cuadran</h3><p>Activo S/ 25.31M = Pasivo + Patrimonio, y el indirecto ata a caja −S/ 250k. El patrimonio ata con la neta del H1.</p></div>
           <div class="nota-bloque"><h3>Drill-down con aging</h3><p>CxC institucional por cliente y tramo, con DSO. Inventario Hogar por SKU, con cobertura en meses.</p></div>
           <div class="nota-bloque"><h3>FX y forecast</h3><p>Exposición en USD con sensibilidad y FY base con plan A1–A5 cuantificado.</p></div>
         </div>
@@ -156,8 +165,8 @@
         <h2 id="t-verificado">Qué está verificado</h2>
         <p>Seis invariantes, comprobadas por el generador antes de publicar. El balance cuadra al sol en
           ambos cortes (dic-25 S/ 23.50M, jun-26 S/ 25.31M). El patrimonio de junio es el de diciembre más
-          la utilidad neta del H1, al centavo. Los dos puentes suman exacto sus desvíos (−950k y −1.70M).
-          El aging suma los S/ 2.00M institucionales, los SKUs los S/ 3.35M de Hogar y los canales atan con
+          la utilidad neta del H1, al centavo. El indirecto ata a caja −S/ 250k. Los dos puentes suman exacto
+          sus desvíos (−950k y −1.70M) y se reconcilian a margen estándar. El aging suma los S/ 2.00M institucionales, los SKUs los S/ 3.35M de Hogar y los canales atan con
           el balance. Los números que declara esta ficha son los que devuelve el Excel: si alguna fórmula
           se rompe, se nota.</p>
         <div class="proyecto-links">
@@ -173,9 +182,10 @@
       </section>
 
       <section class="sub-seccion" aria-labelledby="t-contacto">
-        <h2 id="t-contacto">¿Un pack así para tu cierre?</h2>
-        <p>Si tu mes cierra en varios Excels, el real vs ppto se explica de memoria y el directorio pide
-          la caja que el reporte no muestra, escríbeme: lo armamos con tus cuentas y tus drivers.</p>
+        <h2 id="t-contacto">Metodología abierta</h2>
+        <p>Todo lo de arriba sale de un modelo descargable con fórmulas y de scripts reproducibles: ningún total
+          se escribe a mano y cada número de esta ficha está en el Excel. Si diriges planeamiento o control de
+          gestión y quieres discutir el método —puentes, aging, cobertura—, escríbeme.</p>
         <div class="proyecto-links">
           <a href="../index.html#contact" class="btn-demo">Escríbeme <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
         </div>

@@ -97,6 +97,8 @@ if dj.exists():
     check("T5 balance cuadra", tot == pp == 25310000)
     check("T5 aging", sum(c["total"] for c in d["clientes_inst"]) == 2000000)
     check("T5 skus", sum(s["valorizado"] for s in d["skus_hogar"]) == 3350000)
+    check("T5 flujo ata", d["flujo"]["d_caja"] == -250000 == d["flujo"]["fco"] + d["flujo"]["capex"] + d["flujo"]["d_deuda_cp"] + d["flujo"]["d_deuda_lp"])
+    check("T5 LTM", d["supuestos"]["ebitda_ltm"] == 5550000 and d["supuestos"]["deuda_ebitda"] == 1.80)
     # ---------- T6: ficha vs canonicos ----------
     ficha = (BASE / "proyectos" / "fpa-pack.html").read_text(encoding="utf-8")
     for txt in ["28.40M", "30.10M", "2.35M", "3.30M", "79 d", "330k", "702k"]:
