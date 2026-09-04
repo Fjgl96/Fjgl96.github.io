@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dynamics of contagion and immunity thresholds — Francisco Guerrero</title>
+  <meta name="description" content="Modelo SIS en una red Erdös–Rényi con un planificador que aísla nodos según su conectividad: el umbral beta ≈ 0,40 entre extinguir el virus y convivir con la endemia, y por qué el error y la capacidad de testeo lo rompen.">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#0b6d9e">
+  <link rel="canonical" href="https://fjgl96.github.io/research/contagio-grafos.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Dynamics of contagion and immunity thresholds — Francisco Guerrero">
+  <meta property="og:description" content="Cuánto tiene que pesar la salud frente a la economía para que una epidemia en red se extinga en vez de volverse endémica.">
+  <meta property="og:url" content="https://fjgl96.github.io/research/contagio-grafos.html">
+  <meta property="og:image" content="https://fjgl96.github.io/assets/img/og-image.jpg">
+  <meta property="og:image:alt" content="Contagio y umbrales de inmunidad en redes — modelo SIS con planificador">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://fjgl96.github.io/assets/img/og-image.jpg">
+  <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Raleway:400,600,700|Poppins:400,500,600,700&display=swap" rel="stylesheet">
+  <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="../assets/css/style.css" rel="stylesheet">
+  <link href="../assets/css/custom.css" rel="stylesheet">
+  <link href="../assets/css/subpagina.css" rel="stylesheet">
+</head>
+<body class="subpagina">
+  <a href="#contenido" class="skip-link">Saltar al contenido</a>
+  <header class="sub-top">
+    <div class="container">
+      <a href="../index.html#research" class="sub-volver"><i class="bi bi-arrow-left" aria-hidden="true"></i> Research</a>
+      <a href="../index.html" class="sub-marca">Francisco Guerrero</a>
+    </div>
+  </header>
+
+  <main id="contenido">
+    <article class="container sub-wrap">
+      <header class="sub-head">
+        <p class="sub-modulo">Sistemas sociales complejos · Diciembre 2021</p>
+        <h1 lang="en">Dynamics of contagion and immunity thresholds in social environments: an approach from graph systems</h1>
+        <p class="sub-lead">
+          Gaston Garcia · Francisco Guerrero · Ramiro Rossi<br>
+          Curso de Sistemas Sociales Complejos
+        </p>
+        <div class="proyecto-links">
+          <a href="../assets/docs/complexSocialSystems.pdf" target="_blank" rel="noopener noreferrer" class="btn-demo">
+            Leer el documento <i class="bi bi-file-earmark-pdf" aria-hidden="true"></i>
+          </a>
+        </div>
+      </header>
+
+      <section class="sub-seccion" aria-labelledby="t-paper">
+        <h2 id="t-paper">Cómo funciona el modelo</h2>
+        <p>El paper pregunta cuánto tiene que pesar la economía frente a la salud para que una epidemia se vuelva endémica. La respuesta es un umbral de preferencias del planificador, y lo que lo mueve es a qué nodos decide aislar y con qué información cuenta.</p>
+        <div class="paper-body">
+          <h3 class="paper-sub">El modelo</h3>
+          <p>
+            Los experimentos corren sobre una <strong>red aleatoria de Erdös–Rényi</strong> de 300 nodos con
+            grado medio de conectividad 5,7. Entra una enfermedad con tasa de contagio p = 0,7 y tasa de
+            recuperación r = 0,6. Cada nodo puede infectarse aunque ya se haya enfermado antes: es una
+            variante del modelo <strong>SIS</strong> (susceptible–infectado–susceptible), que sin intervención
+            converge a una <strong>endemia estable de alrededor del 53 %</strong> de la red infectada.
+          </p>
+          <p>
+            Desde la iteración 2000 actúa un <strong>planificador</strong> —un gobierno externo a la red— que
+            conoce la matriz de adyacencias pero no el estado de cada nodo: tiene que testear. Si el test
+            detecta infección, decide si <strong>restringe el nodo cortando todos sus links</strong> (con
+            capacidad máxima del 10 % de la red) y lo reconecta cuando sana. La decisión minimiza la
+            función de pérdida L<sub>t</sub> = β·(links₀ − links<sub>t</sub>)² + (1 − β)·infectados<sub>t</sub>²,
+            donde <strong>β ∈ [0,1]</strong> pondera economía frente a salud: β cercano a 0 es salud primero,
+            β cercano a 1 es economía primero.
+          </p>
+
+          <figure class="proyecto-media paper-figura">
+            <img src="../assets/img/research/grafos-red.svg" width="900" height="430" loading="lazy" decoding="async"
+                 alt="Red aleatoria con nodos susceptibles e infectados y un nodo hub aislado por el planificador, con sus links cortados">
+            <figcaption>El contagio viaja por los links; aislar un hub corta muchas rutas de golpe, pero cuesta links.</figcaption>
+          </figure>
+
+          <figure class="proyecto-media paper-figura">
+            <img src="../assets/img/research/grafos-ciclo.svg" width="900" height="380" loading="lazy" decoding="async"
+                 alt="Mapa conceptual del ciclo de un nodo entre susceptible e infectado y la decisión del planificador según beta">
+            <figcaption>El ciclo de cada nodo y la decisión del planificador, con el umbral y las fricciones que rompen el resultado.</figcaption>
+          </figure>
+
+          <h3 class="paper-sub">Ejercicio: por qué los hubs mandan</h3>
+          <p>
+            Cada vecino infectado contagia con probabilidad <em>p</em> de forma independiente. Con
+            <em>k</em> vecinos infectados, la probabilidad de contagiarse en un paso es
+            <strong>P = 1 − (1 − p)<sup>k</sup></strong>: crece rápido con <em>k</em>. Por eso un hub —
+            con muchos vecinos — se contagia casi seguro y luego contagia a todos. Mueve <em>p</em>
+            y <em>k</em> y compruébalo simulando pasos.
+          </p>
+
+          <style>
+            .lab-grafos{border:1px solid #e4edf9;border-radius:10px;background:#f5f8fd;padding:20px 20px 16px;margin:18px 0 26px}
+            .lab-grafos .lab-controles{display:flex;flex-wrap:wrap;gap:16px 28px;align-items:end;margin-bottom:14px}
+            .lab-grafos .lab-campo{display:flex;flex-direction:column;gap:6px;font-size:13px;color:#5f7391}
+            .lab-grafos .lab-campo label{font-family:Poppins,Helvetica,Arial,sans-serif;font-size:11px;font-weight:600;letter-spacing:.8px;text-transform:uppercase;color:#0b6d9e}
+            .lab-grafos .lab-campo output{font-weight:700;color:#173b6c;font-size:15px}
+            .lab-grafos input[type=range]{accent-color:#0b6d9e;width:200px}
+            .lab-grafos .lab-stepper{display:flex;align-items:center;gap:10px}
+            .lab-grafos .lab-stepper button{width:32px;height:32px;border-radius:50%;border:1.5px solid #0b6d9e;background:#fff;color:#0b6d9e;font-size:18px;line-height:1;cursor:pointer}
+            .lab-grafos .lab-stepper button:hover{background:#0b6d9e;color:#fff}
+            .lab-grafos .lab-stepper output{font-weight:700;color:#173b6c;font-size:18px;min-width:1.4em;text-align:center}
+            .lab-grafos .lab-red{display:flex;flex-wrap:wrap;gap:18px;align-items:flex-start}
+            .lab-grafos .lab-red svg{background:#fff;border:1px solid #e4edf9;border-radius:8px;max-width:100%;height:auto}
+            .lab-grafos .lab-lectura{flex:1 1 220px;min-width:220px}
+            .lab-grafos .lab-formula{font-size:15px;color:#173b6c;background:#fff;border:1px solid #e4edf9;border-radius:8px;padding:10px 14px;margin-bottom:10px}
+            .lab-grafos .lab-formula strong{font-size:19px}
+            .lab-grafos .lab-barra{height:14px;border-radius:7px;background:#dbe7f5;overflow:hidden;margin:8px 0 4px}
+            .lab-grafos .lab-barra span{display:block;height:100%;width:0;background:linear-gradient(90deg,#149ddd,#c0392b);transition:width .25s}
+            .lab-grafos .lab-resultado{font-size:14px;min-height:1.6em;color:#272829}
+            .lab-grafos .lab-botones{display:flex;flex-wrap:wrap;gap:10px;margin:12px 0}
+            .lab-grafos .lab-botones button{font-family:Poppins,Helvetica,Arial,sans-serif;font-size:13px;font-weight:600;border-radius:6px;padding:8px 16px;cursor:pointer;border:1.5px solid #0b6d9e}
+            .lab-grafos .lab-simular{background:#0b6d9e;color:#fff}
+            .lab-grafos .lab-simular:hover{background:#149ddd;border-color:#149ddd}
+            .lab-grafos .lab-reiniciar{background:#fff;color:#0b6d9e}
+            .lab-grafos .lab-hist{display:flex;flex-wrap:wrap;gap:5px;margin:8px 0;min-height:18px}
+            .lab-grafos .lab-hist i{width:13px;height:13px;border-radius:50%;display:inline-block}
+            .lab-grafos .lab-hist i.c{background:#c0392b}
+            .lab-grafos .lab-hist i.s{background:#fff;border:1.5px solid #0b6d9e}
+            .lab-grafos .lab-empirica{font-size:13px;color:#5f7391}
+          </style>
+
+          <div class="lab-grafos" id="lab-grafos">
+            <div class="lab-controles">
+              <div class="lab-campo">
+                <label for="lab-p">Probabilidad por link (p)</label>
+                <input type="range" id="lab-p" min="0.05" max="1" step="0.05" value="0.7">
+                <output id="lab-p-out" for="lab-p">p = 0,70</output>
+              </div>
+              <div class="lab-campo">
+                <label id="lab-k-label">Vecinos infectados (k)</label>
+                <div class="lab-stepper" role="group" aria-labelledby="lab-k-label">
+                  <button type="button" id="lab-k-menos" aria-label="Quitar un vecino infectado">−</button>
+                  <output id="lab-k-out" aria-live="polite">3</output>
+                  <button type="button" id="lab-k-mas" aria-label="Agregar un vecino infectado">+</button>
+                </div>
+              </div>
+            </div>
+            <div class="lab-red">
+              <svg id="lab-svg" viewBox="0 0 360 280" width="360" height="280" role="img" aria-label="Nodo susceptible central rodeado de vecinos infectados">
+                <g id="lab-links"></g>
+                <g id="lab-vecinos"></g>
+                <g id="lab-centro"></g>
+              </svg>
+              <div class="lab-lectura">
+                <p class="lab-formula" id="lab-formula" aria-live="polite"></p>
+                <div class="lab-barra" aria-hidden="true"><span id="lab-fill"></span></div>
+                <p class="lab-resultado" id="lab-resultado" aria-live="polite">Pulsa «Simular un paso» para ensayar el contagio.</p>
+                <div class="lab-botones">
+                  <button type="button" class="lab-simular" id="lab-simular">Simular un paso</button>
+                  <button type="button" class="lab-reiniciar" id="lab-reiniciar">Reiniciar</button>
+                </div>
+                <div class="lab-hist" id="lab-hist" aria-label="Historial de simulaciones"></div>
+                <p class="lab-empirica" id="lab-empirica"></p>
+              </div>
+            </div>
+            <noscript><p>Necesitas JavaScript activado para usar el simulador. Con p = 0,7 y k = 3, P = 1 − 0,3³ ≈ 97 %.</p></noscript>
+          </div>
+
+          <script>
+          (function () {
+            var NS = 'http://www.w3.org/2000/svg';
+            var CX = 180, CY = 148, R = 104;
+            var p = 0.7, k = 3, hist = [];
+            var elP = document.getElementById('lab-p'),
+                elPOut = document.getElementById('lab-p-out'),
+                elKOut = document.getElementById('lab-k-out'),
+                elLinks = document.getElementById('lab-links'),
+                elVec = document.getElementById('lab-vecinos'),
+                elCen = document.getElementById('lab-centro'),
+                elFor = document.getElementById('lab-formula'),
+                elFill = document.getElementById('lab-fill'),
+                elRes = document.getElementById('lab-resultado'),
+                elHist = document.getElementById('lab-hist'),
+                elEmp = document.getElementById('lab-empirica');
+
+            function fmt(x) { return x.toFixed(2).replace('.', ','); }
+            function prob(pp, kk) { return 1 - Math.pow(1 - pp, kk); }
+            function circle(x, y, r, fill, stroke, dash) {
+              var c = document.createElementNS(NS, 'circle');
+              c.setAttribute('cx', x); c.setAttribute('cy', y); c.setAttribute('r', r);
+              c.setAttribute('fill', fill); c.setAttribute('stroke', stroke);
+              c.setAttribute('stroke-width', '2');
+              if (dash) c.setAttribute('stroke-dasharray', '5 3');
+              return c;
+            }
+            function text(x, y, s, color, size) {
+              var t = document.createElementNS(NS, 'text');
+              t.setAttribute('x', x); t.setAttribute('y', y);
+              t.setAttribute('text-anchor', 'middle');
+              t.setAttribute('font-size', size || 12);
+              t.setAttribute('font-weight', '700');
+              t.setAttribute('fill', color || '#173b6c');
+              t.setAttribute('font-family', "'Open Sans',Helvetica,Arial,sans-serif");
+              t.textContent = s;
+              return t;
+            }
+            function pos(i, n) {
+              var a = -Math.PI / 2 + i * 2 * Math.PI / Math.max(n, 1);
+              return [CX + R * Math.cos(a), CY + R * Math.sin(a)];
+            }
+            function dibujar(centroInfectado) {
+              elLinks.textContent = ''; elVec.textContent = ''; elCen.textContent = '';
+              for (var i = 0; i < k; i++) {
+                var q = pos(i, k);
+                var l = document.createElementNS(NS, 'line');
+                l.setAttribute('x1', CX); l.setAttribute('y1', CY);
+                l.setAttribute('x2', q[0]); l.setAttribute('y2', q[1]);
+                l.setAttribute('stroke', '#c6dbef'); l.setAttribute('stroke-width', '1.6');
+                elLinks.appendChild(l);
+                elVec.appendChild(circle(q[0], q[1], 17, '#c0392b', '#922b21'));
+                elVec.appendChild(text(q[0], q[1] + 4.5, 'I', '#fff', 11));
+              }
+              if (k === 0) {
+                elVec.appendChild(text(CX, 30, 'sin vecinos infectados: P = 0', '#5f7391', 12));
+              }
+              elCen.appendChild(centroInfectado
+                ? circle(CX, CY, 21, '#c0392b', '#922b21')
+                : circle(CX, CY, 21, '#fff', '#0b6d9e'));
+              elCen.appendChild(text(CX, CY + 5, centroInfectado ? 'I' : 'S', centroInfectado ? '#fff' : '#173b6c', 13));
+            }
+            function actualizar() {
+              var P = prob(p, k);
+              elPOut.textContent = 'p = ' + fmt(p);
+              elKOut.textContent = k;
+              elFor.innerHTML = 'P = 1 − (1 − ' + fmt(p) + ')<sup>' + k + '</sup> = <strong>' + fmt(P * 100) + ' %</strong>';
+              elFill.style.width = (P * 100).toFixed(1) + '%';
+              var n = hist.length, c = hist.filter(Boolean).length;
+              elHist.textContent = '';
+              hist.slice(-24).forEach(function (h) {
+                var d = document.createElement('i');
+                d.className = h ? 'c' : 's';
+                d.title = h ? 'contagiado' : 'sano';
+                elHist.appendChild(d);
+              });
+              elEmp.textContent = n === 0
+                ? 'De cada 100 pasos así, unos ' + Math.round(P * 100) + ' terminarían en contagio.'
+                : 'Simulado: ' + c + '/' + n + ' contagios (' + Math.round(c / n * 100) + ' %) frente a ' + fmt(P * 100) + ' % teórico.';
+            }
+            elP.addEventListener('input', function () { p = parseFloat(elP.value); hist = []; dibujar(false); actualizar(); });
+            document.getElementById('lab-k-menos').addEventListener('click', function () { if (k > 0) { k--; hist = []; dibujar(false); actualizar(); } });
+            document.getElementById('lab-k-mas').addEventListener('click', function () { if (k < 6) { k++; hist = []; dibujar(false); actualizar(); } });
+            document.getElementById('lab-simular').addEventListener('click', function () {
+              var P = prob(p, k), ok = Math.random() < P;
+              hist.push(ok);
+              dibujar(ok);
+              elRes.textContent = ok
+                ? 'En este paso: CONTAGIADO (probabilidad era ' + fmt(P * 100) + ' %).'
+                : 'En este paso: sano (probabilidad de contagio era ' + fmt(P * 100) + ' %).';
+              actualizar();
+            });
+            document.getElementById('lab-reiniciar').addEventListener('click', function () {
+              hist = []; dibujar(false);
+              elRes.textContent = 'Historial borrado. Pulsa «Simular un paso» para ensayar el contagio.';
+              actualizar();
+            });
+            dibujar(false); actualizar();
+          })();
+          </script>
+
+          <h3 class="paper-sub">El resultado</h3>
+          <p>
+            Con β = 1 el planificador no restringe nada y la epidemia sigue su curso endémico. A medida que
+            β se acerca a 0, los casos endémicos caen y los nodos aislados suben, hasta que con
+            β = 0 el virus se extingue rápido. En el medio hay una <strong>discontinuidad: con
+            β ≤ 0,39 la epidemia se extingue; con β ≥ 0,41 se vuelve endémica</strong>. El planificador no
+            necesita ser muy agresivo con la estructura de conexiones para erradicar el virus, siempre que
+            la política esté sesgada hacia los nodos más influyentes.
+          </p>
+
+          <figure class="proyecto-media paper-figura">
+            <img src="../assets/img/research/grafos-umbral.svg" width="900" height="330" loading="lazy" decoding="async"
+                 alt="Eje de beta con el umbral alrededor de 0,40 entre virus extinguido y endemia, más las fricciones de testeo">
+            <figcaption>El umbral β ≈ 0,40 separa extinción de endemia; las fricciones de testeo lo desactivan.</figcaption>
+          </figure>
+
+          <h3 class="paper-sub">Por qué importa</h3>
+          <p>
+            El umbral es una <strong>cota superior</strong>: supone testeo masivo y perfecto. Con
+            <strong>error de diagnóstico mayor al 18 %</strong>, o con <strong>capacidad de testeo menor al
+            70 % de la población</strong>, la epidemia se vuelve endémica aun con preferencias extremas por
+            la salud (β = 0). Aislar conexiones, por más sesgado que esté hacia los nodos influyentes, no
+            alcanza cuando la información es incompleta y la tecnología imperfecta: ahí la discusión pasa a
+            si vale la pena el costo económico del aislamiento y a complementar con inmunización, como
+            campañas de vacunación priorizadas por influencia en la red.
+          </p>
+
+          <div class="notas-grid">
+            <div class="nota-bloque">
+              <h3>Calibración base</h3>
+              <p>300 nodos · grado medio 5,7 · p = 0,7 · r = 0,6 · 10.000 iteraciones · el planificador actúa desde t = 2000 · capacidad de aislamiento 10 %.</p>
+            </div>
+            <div class="nota-bloque">
+              <h3>Supuesto a notar</h3>
+              <p>Todos los nodos comparten la misma productividad, estén sanos o infectados. Con productividad heterogénea, aislar un infectado poco productivo tendría menor costo de oportunidad.</p>
+            </div>
+            <div class="nota-bloque">
+              <h3>Código</h3>
+              <p>Los códigos de las simulaciones están disponibles a pedido a los autores.</p>
+            </div>
+          </div>
+
+          <p class="paper-cita">
+            Garcia, G., Guerrero, F. y Rossi, R. (2021).
+            <em lang="en">Dynamics of contagion and immunity thresholds in social environments: an approach from graph systems</em>.
+            Sistemas Sociales Complejos, diciembre de 2021.
+          </p>
+        </div>
+      </section>
+    </article>
+  </main>
+
+  <footer id="footer" class="sub-footer">
+    <div class="container">
+      <div class="copyright">&copy; <strong><span>Francisco Guerrero López</span></strong></div>
+      <div class="credits"><span lang="en">Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a></span></div>
+    </div>
+  </footer>
+</body>
+</html>

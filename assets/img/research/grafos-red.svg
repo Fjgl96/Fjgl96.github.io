@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="430" viewBox="0 0 900 430" role="img" aria-label="Red aleatoria con nodos susceptibles, infectados y un nodo restringido aislado por el planificador">
+<style>
+  .lb{font-family:Poppins,Helvetica,Arial,sans-serif;font-size:10px;font-weight:600;letter-spacing:1.1px;fill:#0b6d9e}
+  .ttl{font-family:Raleway,Helvetica,Arial,sans-serif;font-size:13px;font-weight:700;fill:#173b6c}
+  .t{font-family:'Open Sans',Helvetica,Arial,sans-serif;font-size:11.5px;fill:#173b6c}
+  .s{font-family:'Open Sans',Helvetica,Arial,sans-serif;font-size:11px;fill:#5f7391}
+  .link{stroke:#c6dbef;stroke-width:1.4}
+  .linkcut{stroke:#c6dbef;stroke-width:1.4;stroke-dasharray:4 4}
+  .sus{fill:#fff;stroke:#0b6d9e;stroke-width:2}
+  .inf{fill:#c0392b;stroke:#922b21;stroke-width:2}
+  .res{fill:#dff3fc;stroke:#149ddd;stroke-width:2;stroke-dasharray:5 3}
+</style>
+<rect width="900" height="430" fill="#fff"/>
+<text class="lb" x="24" y="30">EL MODELO · RED ERDÖS–RÉNYI + PLANIFICADOR</text>
+<!-- Left: contagion network -->
+<text class="ttl" x="24" y="58">Contagio SIS</text>
+<g>
+  <line class="link" x1="110" y1="140" x2="180" y2="110"/>
+  <line class="link" x1="180" y1="110" x2="250" y2="140"/>
+  <line class="link" x1="110" y1="140" x2="90" y2="220"/>
+  <line class="link" x1="110" y1="140" x2="175" y2="190"/>
+  <line class="link" x1="180" y1="110" x2="175" y2="190"/>
+  <line class="link" x1="250" y1="140" x2="175" y2="190"/>
+  <line class="link" x1="250" y1="140" x2="270" y2="220"/>
+  <line class="link" x1="175" y1="190" x2="90" y2="220"/>
+  <line class="link" x1="175" y1="190" x2="270" y2="220"/>
+  <line class="link" x1="90" y1="220" x2="140" y2="300"/>
+  <line class="link" x1="175" y1="190" x2="140" y2="300"/>
+  <line class="link" x1="270" y1="220" x2="230" y2="300"/>
+  <line class="link" x1="140" y1="300" x2="230" y2="300"/>
+  <circle class="sus" cx="110" cy="140" r="14"/>
+  <circle class="inf" cx="180" cy="110" r="14"/>
+  <circle class="sus" cx="250" cy="140" r="14"/>
+  <circle class="inf" cx="175" cy="190" r="16"/>
+  <circle class="sus" cx="90" cy="220" r="14"/>
+  <circle class="sus" cx="270" cy="220" r="14"/>
+  <circle class="sus" cx="140" cy="300" r="14"/>
+  <circle class="inf" cx="230" cy="300" r="14"/>
+  <text class="t" x="175" y="194" text-anchor="middle" style="fill:#fff;font-weight:700;font-size:10px">HUB</text>
+</g>
+<text class="s" x="24" y="350">Cada infectado contagia a cada vecino</text>
+<text class="s" x="24" y="367">con probabilidad p = 0,7; se recupera</text>
+<text class="s" x="24" y="384">con r = 0,6 y vuelve a ser susceptible.</text>
+<!-- Right: planner isolates hub -->
+<text class="ttl" x="440" y="58">Intervención del planificador</text>
+<g>
+  <line class="link" x1="530" y1="140" x2="560" y2="220"/>
+  <line class="link" x1="670" y1="140" x2="640" y2="220"/>
+  <line class="link" x1="530" y1="140" x2="670" y2="140"/>
+  <line class="link" x1="560" y1="220" x2="560" y2="300"/>
+  <line class="link" x1="640" y1="220" x2="640" y2="300"/>
+  <line class="link" x1="560" y1="300" x2="640" y2="300"/>
+  <line class="linkcut" x1="600" y1="190" x2="530" y2="140"/>
+  <line class="linkcut" x1="600" y1="190" x2="670" y2="140"/>
+  <line class="linkcut" x1="600" y1="190" x2="560" y2="220"/>
+  <line class="linkcut" x1="600" y1="190" x2="640" y2="220"/>
+  <line class="linkcut" x1="600" y1="190" x2="560" y2="300"/>
+  <line class="linkcut" x1="600" y1="190" x2="640" y2="300"/>
+  <circle class="sus" cx="530" cy="140" r="14"/>
+  <circle class="sus" cx="670" cy="140" r="14"/>
+  <circle class="sus" cx="560" cy="220" r="14"/>
+  <circle class="sus" cx="640" cy="220" r="14"/>
+  <circle class="sus" cx="560" cy="300" r="14"/>
+  <circle class="sus" cx="640" cy="300" r="14"/>
+  <circle class="res" cx="600" cy="190" r="18"/>
+  <text class="t" x="600" y="194" text-anchor="middle" style="font-size:9px;font-weight:700">AISLADO</text>
+</g>
+<text class="s" x="440" y="350">Si el test detecta infección, el planificador</text>
+<text class="s" x="440" y="367">decide aislar según β: corta todos los links</text>
+<text class="s" x="440" y="384">del nodo y los restablece cuando se recupera.</text>
+<!-- Legend -->
+<g>
+  <circle class="sus" cx="760" cy="120" r="9"/><text class="s" x="775" y="124">Susceptible</text>
+  <circle class="inf" cx="760" cy="148" r="9"/><text class="s" x="775" y="152">Infectado</text>
+  <circle class="res" cx="760" cy="176" r="9"/><text class="s" x="775" y="180">Restringido</text>
+  <text class="s" x="740" y="220">300 nodos · grado medio 5,7</text>
+  <text class="s" x="740" y="237">Capacidad de aislamiento: 10 %</text>
+  <text class="s" x="740" y="254">El planificador actúa desde t = 2000</text>
+</g>
+</svg>

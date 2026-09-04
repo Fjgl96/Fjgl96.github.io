@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="380" viewBox="0 0 900 380" role="img" aria-label="Mapa conceptual: ciclo SIS de un nodo y decisión del planificador según beta">
+<style>
+  .lb{font-family:Poppins,Helvetica,Arial,sans-serif;font-size:10px;font-weight:600;letter-spacing:1.1px;fill:#0b6d9e}
+  .ttl{font-family:Raleway,Helvetica,Arial,sans-serif;font-size:13px;font-weight:700;fill:#173b6c}
+  .t{font-family:'Open Sans',Helvetica,Arial,sans-serif;font-size:12px;font-weight:700;fill:#173b6c}
+  .s{font-family:'Open Sans',Helvetica,Arial,sans-serif;font-size:11px;fill:#5f7391}
+  .box{fill:#fff;stroke:#0b6d9e;stroke-width:2;rx:8}
+  .boxinf{fill:#fdecea;stroke:#c0392b;stroke-width:2}
+  .boxres{fill:#dff3fc;stroke:#149ddd;stroke-width:2;stroke-dasharray:6 3}
+  .boxplan{fill:#f5f8fd;stroke:#173b6c;stroke-width:1.6}
+  .fl{stroke:#9db9d6;stroke-width:1.8;fill:none}
+  .flb{stroke:#149ddd;stroke-width:1.8;fill:none}
+  .flr{stroke:#c0392b;stroke-width:1.8;fill:none}
+  .arr{fill:#9db9d6}
+  .arrb{fill:#149ddd}
+  .arrr{fill:#c0392b}
+</style>
+<rect width="900" height="380" fill="#fff"/>
+<text class="lb" x="24" y="30">MAPA CONCEPTUAL · CICLO DE UN NODO + DECISIÓN DEL PLANIFICADOR</text>
+<!-- Boxes: S -> I top row -->
+<rect class="box" x="60" y="70" width="170" height="56" rx="8"/>
+<text class="t" x="145" y="93" text-anchor="middle">Susceptible</text>
+<text class="s" x="145" y="110" text-anchor="middle">sano, conectado</text>
+<rect class="boxinf" x="365" y="70" width="170" height="56" rx="8"/>
+<text class="t" x="450" y="93" text-anchor="middle" style="fill:#922b21">Infectado</text>
+<text class="s" x="450" y="110" text-anchor="middle">contagia con p = 0,7</text>
+<!-- arrow S -> I -->
+<line class="flr" x1="230" y1="98" x2="355" y2="98"/>
+<polygon class="arrr" points="355,92 367,98 355,104"/>
+<text class="s" x="292" y="88" text-anchor="middle">contagio</text>
+<!-- I -> branches -->
+<rect class="boxres" x="60" y="190" width="200" height="60" rx="8"/>
+<text class="t" x="160" y="213" text-anchor="middle" style="fill:#0b6d9e">Restringido</text>
+<text class="s" x="160" y="230" text-anchor="middle">links cortados</text>
+<rect class="box" x="340" y="190" width="200" height="60" rx="8"/>
+<text class="t" x="440" y="213" text-anchor="middle">No restringido</text>
+<text class="s" x="440" y="230" text-anchor="middle">sigue contagiando</text>
+<line class="flb" x1="400" y1="126" x2="200" y2="185"/>
+<polygon class="arrb" points="194,183 198,195 208,188"/>
+<line class="fl" x1="500" y1="126" x2="470" y2="185"/>
+<polygon class="arr" points="464,183 468,195 478,188"/>
+<text class="s" x="300" y="165" text-anchor="middle">el planificador decide</text>
+<!-- bottom: back to susceptible -->
+<rect class="box" x="245" y="296" width="170" height="52" rx="8"/>
+<text class="t" x="330" y="317" text-anchor="middle">Susceptible</text>
+<text class="s" x="330" y="333" text-anchor="middle">se recupera con r = 0,6</text>
+<line class="flb" x1="160" y1="250" x2="280" y2="300"/>
+<polygon class="arrb" points="272,296 288,302 280,310"/>
+<line class="fl" x1="440" y1="250" x2="370" y2="296"/>
+<polygon class="arr" points="362,292 362,304 374,300"/>
+<text class="s" x="130" y="285">reconexión</text>
+<text class="s" x="500" y="285">recuperación</text>
+<!-- Planner box -->
+<rect class="boxplan" x="620" y="70" width="256" height="278" rx="8"/>
+<text class="ttl" x="748" y="100" text-anchor="middle">Planificador</text>
+<text class="s" x="638" y="126">1. Testea (no ve el estado)</text>
+<text class="s" x="638" y="146">2. Si infectado, compara:</text>
+<text class="s" x="638" y="166">   costo económico de aislar</text>
+<text class="s" x="638" y="184">   vs. costo sanitario esperado</text>
+<text class="s" x="638" y="210">3. Pondera con β ∈ [0, 1]</text>
+<text class="s" x="638" y="230">   β→0 salud · β→1 economía</text>
+<text class="s" x="638" y="256">4. Capacidad: máx. 10 %</text>
+<text class="s" x="638" y="276">5. Fricciones: error &gt; 18 %</text>
+<text class="s" x="638" y="294">   o testeo &lt; 70 % → endemia</text>
+<text class="s" x="638" y="320">6. Umbral: β ≤ 0,39 extingue;</text>
+<text class="s" x="638" y="338">   β ≥ 0,41 endemia</text>
+</svg>

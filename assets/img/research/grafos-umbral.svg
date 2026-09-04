@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="330" viewBox="0 0 900 330" role="img" aria-label="Umbral de preferencias beta y fricciones de testeo que impiden extinguir la epidemia">
+<style>
+  .lb{font-family:Poppins,Helvetica,Arial,sans-serif;font-size:10px;font-weight:600;letter-spacing:1.1px;fill:#0b6d9e}
+  .ttl{font-family:Raleway,Helvetica,Arial,sans-serif;font-size:13px;font-weight:700;fill:#173b6c}
+  .t{font-family:'Open Sans',Helvetica,Arial,sans-serif;font-size:12px;font-weight:700;fill:#173b6c}
+  .s{font-family:'Open Sans',Helvetica,Arial,sans-serif;font-size:11px;fill:#5f7391}
+  .axis{stroke:#9db9d6;stroke-width:1.5}
+  .tick{stroke:#9db9d6;stroke-width:1.2}
+  .ext{fill:#d5f0e0;stroke:#27ae60;stroke-width:1.5}
+  .end{fill:#fdecea;stroke:#c0392b;stroke-width:1.5}
+  .thr{stroke:#173b6c;stroke-width:2;stroke-dasharray:6 4}
+</style>
+<rect width="900" height="330" fill="#fff"/>
+<text class="lb" x="24" y="30">EL RESULTADO · UMBRAL DE PREFERENCIAS β Y FRICCIONES</text>
+<!-- Beta axis -->
+<line class="axis" x1="60" y1="140" x2="560" y2="140"/>
+<line class="tick" x1="60" y1="132" x2="60" y2="148"/>
+<line class="tick" x1="310" y1="132" x2="310" y2="148"/>
+<line class="tick" x1="560" y1="132" x2="560" y2="148"/>
+<text class="s" x="60" y="165" text-anchor="middle">β = 0</text>
+<text class="s" x="310" y="165" text-anchor="middle">β ≈ 0,40</text>
+<text class="s" x="560" y="165" text-anchor="middle">β = 1</text>
+<rect class="ext" x="60" y="90" width="235" height="50" rx="6"/>
+<rect class="end" x="325" y="90" width="235" height="50" rx="6"/>
+<line class="thr" x1="310" y1="80" x2="310" y2="150"/>
+<text class="t" x="177" y="112" text-anchor="middle" style="fill:#1e8449">Virus extinguido</text>
+<text class="s" x="177" y="129" text-anchor="middle">β ≤ 0,39</text>
+<text class="t" x="442" y="112" text-anchor="middle" style="fill:#922b21">Endémico ~53 % → ~30 %</text>
+<text class="s" x="442" y="129" text-anchor="middle">β ≥ 0,41</text>
+<text class="s" x="60" y="195">β pondera economía frente a salud en Lt = β·(links₀−linksₜ)² + (1−β)·infectados². Con β = 1 no se restringe nada.</text>
+<!-- Frictions -->
+<text class="ttl" x="24" y="235">Aun con β = 0 (salud primero), la epidemia persiste si hay fricciones</text>
+<g>
+  <rect x="24" y="248" width="410" height="60" rx="8" fill="#f5f8fd" stroke="#cfe0f2" stroke-width="1.5"/>
+  <text class="t" x="40" y="272">Error de testeo &gt; 18 %</text>
+  <text class="s" x="40" y="292">Falsos positivos y negativos: el virus no se extingue.</text>
+  <rect x="450" y="248" width="410" height="60" rx="8" fill="#f5f8fd" stroke="#cfe0f2" stroke-width="1.5"/>
+  <text class="t" x="466" y="272">Capacidad de testeo &lt; 70 %</text>
+  <text class="s" x="466" y="292">Solo se reduce la presencia; no se erradica.</text>
+</g>
+</svg>
