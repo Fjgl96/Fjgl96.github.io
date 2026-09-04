@@ -212,5 +212,218 @@
    "efecto_py": "- S/ 90k intereses 2H",
    "kpi": "Cubre pico de octubre"
   }
- ]
+ ],
+ "ly_h1": 26900000,
+ "ly_canal": {
+  "Mayorista": 12600000,
+  "Minorista": 9400000,
+  "Institucional": 4900000
+ },
+ "ly_linea": {
+  "Abarrotes importados": 17600000,
+  "Cuidado del hogar": 9300000
+ },
+ "ly_ub": 6240800,
+ "ly_cogs": 20659200,
+ "ly_opex": 3480000,
+ "ly_ebitda": 2760800,
+ "ly_ebit": 2330800,
+ "ly_gf": 520000,
+ "ly_dc": -120000,
+ "ly_ebt": 1690800,
+ "ly_ir": 498786,
+ "ly_net": 1192014,
+ "pvm": [
+  {
+   "paso": "Ventas ppto",
+   "monto": 30100000
+  },
+  {
+   "paso": "Efecto volumen",
+   "monto": -1100000
+  },
+  {
+   "paso": "Efecto precio (+2% lista parcial)",
+   "monto": 250000
+  },
+  {
+   "paso": "Efecto mix canal/linea",
+   "monto": -450000
+  },
+  {
+   "paso": "Descuento comercial defensivo",
+   "monto": -400000
+  },
+  {
+   "paso": "Ventas real H1",
+   "monto": 28400000
+  }
+ ],
+ "clientes_inst": [
+  {
+   "nombre": "Municipalidad de San Juan",
+   "corriente": 300000,
+   "b30": 150000,
+   "b60": 70000,
+   "b90": 0,
+   "total": 520000,
+   "dso": 18.3,
+   "mora60": 70000
+  },
+  {
+   "nombre": "Red Salud Norte",
+   "corriente": 200000,
+   "b30": 120000,
+   "b60": 60000,
+   "b90": 30000,
+   "total": 410000,
+   "dso": 14.4,
+   "mora60": 90000
+  },
+  {
+   "nombre": "EduCorp S.A.",
+   "corriente": 250000,
+   "b30": 80000,
+   "b60": 20000,
+   "b90": 0,
+   "total": 350000,
+   "dso": 12.3,
+   "mora60": 20000
+  },
+  {
+   "nombre": "Minera Cascajal",
+   "corriente": 280000,
+   "b30": 0,
+   "b60": 0,
+   "b90": 0,
+   "total": 280000,
+   "dso": 9.9,
+   "mora60": 0
+  },
+  {
+   "nombre": "Agroindustrial del Valle",
+   "corriente": 100000,
+   "b30": 50000,
+   "b60": 30000,
+   "b90": 0,
+   "total": 180000,
+   "dso": 6.3,
+   "mora60": 30000
+  },
+  {
+   "nombre": "Constructora VialSur",
+   "corriente": 40000,
+   "b30": 30000,
+   "b60": 20000,
+   "b90": 30000,
+   "total": 120000,
+   "dso": 4.2,
+   "mora60": 50000
+  },
+  {
+   "nombre": "Gobierno Regional",
+   "corriente": 0,
+   "b30": 20000,
+   "b60": 30000,
+   "b90": 40000,
+   "total": 90000,
+   "dso": 3.2,
+   "mora60": 70000
+  },
+  {
+   "nombre": "Otros menores",
+   "corriente": 30000,
+   "b30": 20000,
+   "b60": 0,
+   "b90": 0,
+   "total": 50000,
+   "dso": 1.8,
+   "mora60": 0
+  }
+ ],
+ "cxc_canal": {
+  "Mayorista": 3900000,
+  "Minorista": 2260000,
+  "Institucional": 2000000
+ },
+ "mora60": 330000,
+ "skus_hogar": [
+  {
+   "sku": "HOG-014",
+   "nombre": "Detergente industrial 20kg",
+   "stock_u": 14000,
+   "costo_u": 18.5,
+   "vta_mes_u": 3200,
+   "valorizado": 259000,
+   "cobertura_m": 4.4
+  },
+  {
+   "sku": "HOG-022",
+   "nombre": "Jabon liquido 5L",
+   "stock_u": 22000,
+   "costo_u": 12.8,
+   "vta_mes_u": 4800,
+   "valorizado": 281600,
+   "cobertura_m": 4.6
+  },
+  {
+   "sku": "HOG-031",
+   "nombre": "Papel toalla x12",
+   "stock_u": 30000,
+   "costo_u": 9.4,
+   "vta_mes_u": 7500,
+   "valorizado": 282000,
+   "cobertura_m": 4.0
+  },
+  {
+   "sku": "HOG-007",
+   "nombre": "Desinfectante 1L",
+   "stock_u": 45000,
+   "costo_u": 4.2,
+   "vta_mes_u": 12000,
+   "valorizado": 189000,
+   "cobertura_m": 3.8
+  },
+  {
+   "sku": "HOG-045",
+   "nombre": "Escobas premium",
+   "stock_u": 18000,
+   "costo_u": 6.9,
+   "vta_mes_u": 2100,
+   "valorizado": 124200,
+   "cobertura_m": 8.6
+  },
+  {
+   "sku": "HOG-046",
+   "nombre": "Trapeadores",
+   "stock_u": 25000,
+   "costo_u": 5.6,
+   "vta_mes_u": 3000,
+   "valorizado": 140000,
+   "cobertura_m": 8.3
+  },
+  {
+   "sku": "HOG-052",
+   "nombre": "Bolsas basura 100L x50",
+   "stock_u": 60000,
+   "costo_u": 7.3,
+   "vta_mes_u": 9000,
+   "valorizado": 438000,
+   "cobertura_m": 6.7
+  },
+  {
+   "sku": "HOG-RESTO",
+   "nombre": "Resto linea Hogar (agregado)",
+   "stock_u": null,
+   "costo_u": null,
+   "vta_mes_u": null,
+   "valorizado": 1636200,
+   "cobertura_m": 2.1
+  }
+ ],
+ "inv_linea": {
+  "Abarrotes importados": 4100000,
+  "Cuidado del hogar": 3350000
+ },
+ "sobrestock": 702200
 }

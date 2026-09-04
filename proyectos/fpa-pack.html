@@ -79,7 +79,7 @@
           contra el ppto y describir la diferencia. Lo correcto es atribuirla: cuánto es volumen, cuánto es
           precio y mix, cuánto es tipo de cambio y cuánto es decisión comercial. Eso es lo que convierte un
           reporte en una recomendación defendible —y es lo que este pack hace con el puente de EBITDA.</p>
-        <ul class="proyecto-tech"><li>Excel con fórmulas</li><li>PyG · Balance · KPIs</li><li>Puente EBITDA</li><li>Exposición FX</li><li>Forecast FY</li></ul>
+        <ul class="proyecto-tech"><li>Excel con fórmulas</li><li>PyG · Balance · KPIs</li><li>Puente EBITDA + PVM</li><li>Drill-down clientes y SKUs</li><li>Comparativo LY</li><li>1-pager PDF</li></ul>
       </section>
 
       <section class="sub-seccion" aria-labelledby="t-caso">
@@ -113,9 +113,30 @@
         </figure>
       </section>
 
+      <section class="sub-seccion" aria-labelledby="t-drill">
+        <h2 id="t-drill">Dónde vive el desvío</h2>
+        <p>El consolidado no dice quién debe la plata ni qué sobra en el almacén. El drill-down sí.
+          Institucional crece +5.0% contra el año anterior pero falla un presupuesto agresivo (+22.9% vs LY):
+          el desvío es de presupuesto, no de demanda. Y su cobranza tiene nombre y apellido: S/ 2.00M en
+          ocho clientes, con mora de más de 60 días por S/ 330k concentrada en tres —Red Salud Norte,
+          VialSur y Gobierno Regional— y un DSO del canal de 70 días.</p>
+        <figure class="proyecto-media sub-figura">
+          <img width="1500" height="660" src="../assets/img/proyectos/fpa-pack-aging.png" alt="CxC institucional por cliente y aging: la mora de más de 60 días se concentra en tres clientes" loading="lazy" decoding="async">
+          <figcaption>La mora no está en el consolidado: está en tres clientes. De aquí sale la acción de cobranza.</figcaption>
+        </figure>
+        <p>En ventas, el puente precio-volumen-mix atribuye los −S/ 1.70M: volumen −1.10M, precio +250k
+          (la lista subió pero el descuento se la comió), mix −450k y descuento defensivo −400k. En Hogar,
+          tres SKUs —escobas, trapeadores y bolsas de 100 litros— concentran S/ 702k con más de seis meses
+          de cobertura: de ahí el recorte de compra del 15%.</p>
+        <figure class="proyecto-media sub-figura">
+          <img width="1500" height="630" src="../assets/img/proyectos/fpa-pack-pvm.png" alt="Puente de ventas del H1: del ppto de 30.10 millones al real de 28.40 millones por volumen, precio, mix y descuento" loading="lazy" decoding="async">
+          <figcaption>Volumen, precio, mix y descuento, con eje recortado: a escala completa los deltas serían invisibles.</figcaption>
+        </figure>
+      </section>
+
       <section class="sub-seccion" aria-labelledby="t-bloques">
         <h2 id="t-bloques">Cómo está compuesto</h2>
-        <p>Nueve hojas, una sola regla: ningún total se escribe a mano. Todo desvío es <code>=REAL−PPTO</code>
+        <p>Nueve hojas en la v1, trece en la v2: una sola regla, ningún total se escribe a mano. Todo desvío es <code>=REAL−PPTO</code>
           y todo margen es <code>=CUENTA/VENTAS</code>. El 1-pager de directorio sale del modelo, no al revés.</p>
         <figure class="proyecto-media sub-figura sub-figura--bloques">
           <div class="sub-figura-lienzo">
@@ -124,19 +145,21 @@
           <figcaption>Entradas a la izquierda, motor con fórmulas al centro, salidas descargables a la derecha.</figcaption>
         </figure>
         <div class="notas-grid">
-          <div class="nota-bloque"><h3>PyG con fórmulas</h3><p>Desvíos y márgenes calculados, no pegados. El puente explica los −950k del EBITDA.</p></div>
+          <div class="nota-bloque"><h3>PyG con LY</h3><p>H1-2025 al lado del ppto y del real: se crece +5.6% pero el margen se comprime igual. El puente PVM explica los −1.70M de ventas.</p></div>
           <div class="nota-bloque"><h3>Balance que cuadra</h3><p>Activo S/ 25.31M = Pasivo + Patrimonio. El patrimonio ata con la neta del H1.</p></div>
-          <div class="nota-bloque"><h3>KPIs con semáforo</h3><p>DSO, DIO, DPO y CCC con fórmula y lectura vs ppto. Deuda y cobertura incluidas.</p></div>
+          <div class="nota-bloque"><h3>Drill-down con aging</h3><p>CxC institucional por cliente y tramo, con DSO. Inventario Hogar por SKU, con cobertura en meses.</p></div>
           <div class="nota-bloque"><h3>FX y forecast</h3><p>Exposición en USD con sensibilidad y FY base con plan A1–A5 cuantificado.</p></div>
         </div>
       </section>
 
       <section class="sub-seccion" aria-labelledby="t-verificado">
         <h2 id="t-verificado">Qué está verificado</h2>
-        <p>Tres invariantes, comprobadas por el generador antes de publicar. El balance cuadra al sol en
+        <p>Seis invariantes, comprobadas por el generador antes de publicar. El balance cuadra al sol en
           ambos cortes (dic-25 S/ 23.50M, jun-26 S/ 25.31M). El patrimonio de junio es el de diciembre más
-          la utilidad neta del H1, al centavo. El puente suma exactamente el desvío de EBITDA. Los números
-          que declara esta ficha son los que devuelve el Excel: si alguna fórmula se rompe, se nota.</p>
+          la utilidad neta del H1, al centavo. Los dos puentes suman exacto sus desvíos (−950k y −1.70M).
+          El aging suma los S/ 2.00M institucionales, los SKUs los S/ 3.35M de Hogar y los canales atan con
+          el balance. Los números que declara esta ficha son los que devuelve el Excel: si alguna fórmula
+          se rompe, se nota.</p>
         <div class="proyecto-links">
           <a href="../assets/demo/fpa-pack/fpa_pack_jun2026.xlsx" class="btn-demo" download>Abrir el Excel <i class="bi bi-file-earmark-excel" aria-hidden="true"></i></a>
           <a href="../assets/demo/fpa-pack/fpa_1pager_jun2026.pdf" class="btn-repo" target="_blank" rel="noopener">1-pager en PDF <i class="bi bi-file-earmark-pdf" aria-hidden="true"></i></a>

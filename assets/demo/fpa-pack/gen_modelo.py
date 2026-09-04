@@ -45,6 +45,10 @@ indice = ["PARAM: supuestos (TC, tasas, calendario)",
  "BAL: balance dic-25 vs jun-26, cuadra Activo = Pasivo + Patrimonio",
  "KPIs: DSO/DIO/DPO/CCC y rentabilidad con semáforos y fórmulas",
  "BRIDGE: puente EBITDA ppto → real (atribuye los -950k)",
+ "COMP_LY: H1-2025 vs H1-2026 like-for-like + canales YoY",
+ "PUENTE_VENTAS: volumen, precio, mix y descuento (atribuye los -1.70M)",
+ "DRILL_CLIENTES: CxC institucional por cliente y aging, con DSO",
+ "DRILL_SKUS: inventarios Hogar por SKU, valorizado y cobertura",
  "FX_FORECAST: exposición USD, sensibilidad y forecast FY con plan de acción",
  "DICC: diccionario de campos y linaje"]
 for i, t in enumerate(indice, start=6):
@@ -229,6 +233,84 @@ for i,a in enumerate(d["acciones"], start=18):
     ws.cell(row=i,column=5,value=a["kpi"]).font=N_FONT
 for col,w in zip("ABCDE",(34,42,16,30,30)): ws.column_dimensions[col].width=w
 
+# ---------- COMP_LY (V2) ----------
+ws = wb.create_sheet("COMP_LY")
+ws["A1"]="Comparativo H1-2025 vs H1-2026 (S/) — like-for-like"; ws["A1"].font=T_FONT
+for c,h in enumerate(["Cuenta","H1-2025","H1-2026 real","Var YoY","Var %"],1): ws.cell(row=2,column=c,value=h)
+estilo_header(ws,2,5)
+lyrows = [("Ventas netas",d["ly_h1"],d["real_h1"],0),("Costo de ventas",d["ly_cogs"],d["cogs_real"],0),
+ ("Utilidad bruta",d["ly_ub"],d["ub_real"],1),("Gastos operativos",d["ly_opex"],d["opex_real"],0),
+ ("EBITDA",d["ly_ebitda"],d["ebitda_real"],1),("Utilidad neta",d["ly_net"],d["net_real"],1)]
+for i,(cta,ly,rl,bold) in enumerate(lyrows, start=3):
+    ws.cell(row=i,column=1,value=cta).font = B_FONT if bold else N_FONT
+    dinero(ws,i,2,ly,bold=bold); dinero(ws,i,3,rl,bold=bold)
+    dinero(ws,i,4,None,formula=f"=C{i}-B{i}",bold=bold)
+    c5=ws.cell(row=i,column=5); c5.value=f"=IF(B{i}=0,0,C{i}/B{i}-1)"; c5.number_format=PCT; c5.font=B_FONT if bold else N_FONT; c5.border=BORDER
+r = 10
+ws.cell(row=r,column=1,value="Por canal — ventas (S/)").font=T_FONT; r+=1
+for c,h in enumerate(["Canal","H1-2025","H1-2026 real","Var YoY","Ppto H1","Vs ppto"],1): ws.cell(row=r,column=c,value=h)
+estilo_header(ws,r,6); r+=1
+for canal in ("Mayorista","Minorista","Institucional"):
+    ly=d["ly_canal"][canal]; rl=d["canal_real"][canal]; pp=d["canal_ppto"][canal]
+    ws.cell(row=r,column=1,value=canal).font=N_FONT
+    dinero(ws,r,2,ly); dinero(ws,r,3,rl)
+    dinero(ws,r,4,None,formula=f"=C{r}-B{r}")
+    dinero(ws,r,5,pp); dinero(ws,r,6,None,formula=f"=C{r}-E{r}")
+    r+=1
+for col,w in zip("ABCDEF",(28,16,16,16,16,16)): ws.column_dimensions[col].width=w
+
+# ---------- PUENTE_VENTAS (V2) ----------
+ws = wb.create_sheet("PUENTE_VENTAS")
+for c,h in enumerate(["Paso","Monto (S/)","Acumulado"],1): ws.cell(row=1,column=c,value=h)
+estilo_header(ws,1,3)
+acum=0; n=len(d["pvm"])
+for i,b in enumerate(d["pvm"], start=2):
+    last=(i==n+1); first=(i==2)
+    ws.cell(row=i,column=1,value=b["paso"]).font = B_FONT if (first or last) else N_FONT
+    dinero(ws,i,2,b["monto"],bold=(first or last))
+    if first: acum=b["monto"]
+    elif not last: acum+=b["monto"]
+    else: acum=b["monto"]
+    dinero(ws,i,3,acum,bold=(first or last))
+for col,w in zip("ABC",(40,16,16)): ws.column_dimensions[col].width=w
+
+# ---------- DRILL_CLIENTES (V2) ----------
+ws = wb.create_sheet("DRILL_CLIENTES")
+ws["A1"]="Drill-down cobranza — CxC Institucional S/ 2.00M por cliente y aging (S/)"; ws["A1"].font=T_FONT
+for c,h in enumerate(["Cliente","Corriente","31-60","61-90","90+","Total","DSO (d)","Mora 60+"],1):
+    ws.cell(row=2,column=c,value=h)
+estilo_header(ws,2,8)
+for i,c in enumerate(d["clientes_inst"], start=3):
+    ws.cell(row=i,column=1,value=c["nombre"]).font=N_FONT
+    for col,k in [(2,"corriente"),(3,"b30"),(4,"b60"),(5,"b90")]: dinero(ws,i,col,c[k])
+    dinero(ws,i,6,None,formula=f"=SUM(B{i}:E{i})",bold=True)
+    cc=ws.cell(row=i,column=7,value=c["dso"]); cc.font=N_FONT; cc.border=BORDER; cc.number_format='0.0'
+    dinero(ws,i,8,None,formula=f"=D{i}+E{i}")
+tot=3+len(d["clientes_inst"])
+ws.cell(row=tot,column=1,value="TOTAL").font=B_FONT
+for col in (2,3,4,5,6,8):
+    dinero(ws,tot,col,None,formula=f"=SUM({get_column_letter(col)}3:{get_column_letter(col)}{tot-1})",bold=True)
+for col,w in zip("ABCDEFGH",(30,14,14,14,14,14,10,14)): ws.column_dimensions[col].width=w
+
+# ---------- DRILL_SKUS (V2) ----------
+ws = wb.create_sheet("DRILL_SKUS")
+ws["A1"]="Drill-down inventarios — linea Hogar S/ 3.35M por SKU"; ws["A1"].font=T_FONT
+for c,h in enumerate(["SKU","Descripcion","Stock (u)","Costo u","Valorizado","Vta/mes (u)","Cobertura (m)"],1):
+    ws.cell(row=2,column=c,value=h)
+estilo_header(ws,2,7)
+for i,s in enumerate(d["skus_hogar"], start=3):
+    ws.cell(row=i,column=1,value=s["sku"]).font=N_FONT
+    ws.cell(row=i,column=2,value=s["nombre"]).font=N_FONT
+    for col,k in [(3,"stock_u"),(4,"costo_u")]:
+        cc=ws.cell(row=i,column=col,value=s[k]); cc.font=N_FONT; cc.border=BORDER
+    dinero(ws,i,5,s["valorizado"],bold=(s["sku"]=="HOG-RESTO"))
+    cc=ws.cell(row=i,column=6,value=s["vta_mes_u"]); cc.font=N_FONT; cc.border=BORDER
+    cc=ws.cell(row=i,column=7,value=s["cobertura_m"]); cc.font=N_FONT; cc.border=BORDER; cc.number_format='0.0'
+tot=3+len(d["skus_hogar"])
+ws.cell(row=tot,column=1,value="TOTAL").font=B_FONT
+dinero(ws,tot,5,None,formula=f"=SUM(E3:E{tot-1})",bold=True)
+for col,w in zip("ABCDEFG",(12,30,12,10,14,12,13)): ws.column_dimensions[col].width=w
+
 # ---------- DICC ----------
 ws = wb.create_sheet("DICC")
 for c,h in enumerate(["Campo","Definición","Origen"],1): ws.cell(row=1,column=c,value=h)
@@ -240,7 +322,13 @@ dicc = [("Ventas netas","Ventas brutas menos devoluciones y descuentos","ERP ven
  ("CCC","DSO + DIO − DPO","Calculado"),
  ("Exposición USD","CxP USD − caja USD","Tesorería"),
  ("Bridge EBITDA","Atribución volumen/precio/FX/descuento/opex","FP&A"),
- ("Forecast base","Ventas 58.5M, EBITDA 5.4M, pico deuda oct 11.2M","Modelo + acciones A1-A5")]
+  ("Forecast base","Ventas 58.5M, EBITDA 5.4M, pico deuda oct 11.2M","Modelo + acciones A1-A5"),
+  ("H1-2025","Ventas 26.9M, EBITDA 2.76M: crece +5.6% YoY pero el margen se comprime","Comparativo like-for-like"),
+  ("Puente PVM","Volumen -1.10M, precio +250k, mix -450k, descuento -400k","FP&A (ventas ppto->real)"),
+  ("Aging institucional","2.00M en 8 clientes, mora 60+ de 330k (DSO 70d del canal)","Auxiliar cobranza (sintetico)"),
+  ("SKUs Hogar","3.35M en 8 SKUs, 3 con +6 meses de cobertura (702k)","Auxiliar inventarios (sintetico)")]
+
+# LEEME: 9 -> 13 hojas
 for i,(a,b,c_) in enumerate(dicc, start=2):
     for col,v in enumerate([a,b,c_],1):
         cell=ws.cell(row=i,column=col,value=v); cell.font=N_FONT; cell.border=BORDER; cell.alignment=Alignment(wrap_text=True,vertical="top")
@@ -279,4 +367,28 @@ ax.bar(["Dic-25","Real jun-26"],[d["k_dic"]["ccc"],d["k_real"]["ccc"]],color=["#
 ax.set_ylabel("Días"); ax.set_title("Ciclo de conversión: 64 → 79 días (+15)")
 for i,v in enumerate([d["k_dic"]["ccc"],d["k_real"]["ccc"]]): ax.text(i,v+1,f"{v:.0f} d",ha="center",fontweight="bold")
 fig.tight_layout(); fig.savefig(BASE/"ccc.png",dpi=150); plt.close(fig)
+# 4. Puente de ventas PVM (V2)
+labels=[b["paso"] for b in d["pvm"]]; vals=[b["monto"]/1e3 for b in d["pvm"]]
+fig,ax=plt.subplots(figsize=(10,4.2))
+cum=vals[0]; heights=[]; bottoms=[]; colors=[]
+for i,v in enumerate(vals):
+    if i==0 or i==len(vals)-1: heights.append(v); bottoms.append(0); colors.append("#0B6D9E")
+    else: bottoms.append(cum); heights.append(v); colors.append("#149DDD" if v>0 else "#C0392B"); cum+=v
+ax.bar(range(len(labels)),heights,bottom=bottoms,color=colors)
+ax.set_ylim(27800,30400)  # eje recortado: los deltas de ±400k son invisibles a escala completa
+ax.set_xticks(range(len(labels)),[l.replace(" (+2% lista parcial)","") for l in labels],rotation=16,ha="right",fontsize=8)
+ax.set_ylabel("S/ miles (eje recortado)"); ax.set_title("Puente de ventas H1: ppto S/ 30.10M → real S/ 28.40M (−S/ 1.70M)")
+fig.tight_layout(); fig.savefig(BASE/"pvm_ventas.png",dpi=150); plt.close(fig)
+# 5. Aging institucional (V2)
+cl=d["clientes_inst"]
+fig,ax=plt.subplots(figsize=(10,4.4))
+ypos=range(len(cl))
+ax.barh(list(ypos),[c["corriente"]/1e3 for c in cl],color="#0B6D9E",label="Corriente")
+ax.barh(list(ypos),[c["b30"]/1e3 for c in cl],left=[c["corriente"]/1e3 for c in cl],color="#149DDD",label="31-60")
+ax.barh(list(ypos),[c["b60"]/1e3 for c in cl],left=[(c["corriente"]+c["b30"])/1e3 for c in cl],color="#E67E22",label="61-90")
+ax.barh(list(ypos),[c["b90"]/1e3 for c in cl],left=[(c["corriente"]+c["b30"]+c["b60"])/1e3 for c in cl],color="#C0392B",label="90+")
+ax.set_yticks(list(ypos),[c["nombre"] for c in cl],fontsize=8)
+ax.set_xlabel("S/ miles"); ax.set_title("CxC Institucional S/ 2.00M por cliente y aging — mora 60+: S/ 330k")
+ax.legend(frameon=False,fontsize=8,ncol=4)
+fig.tight_layout(); fig.savefig(BASE/"aging_inst.png",dpi=150); plt.close(fig)
 print("pngs OK")
