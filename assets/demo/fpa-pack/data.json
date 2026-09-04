@@ -1,5 +1,5 @@
 {
- "empresa": "Distribuidora Andina del Sur S.A.C.",
+ "empresa": "Comercial Los Alamos S.A.C.",
  "corte": "Junio 2026 (H1)",
  "moneda": "PEN (soles)",
  "tasa_ir": 0.295,
@@ -18,26 +18,26 @@
   "Dic"
  ],
  "ppto_m": [
-  4600000,
-  4400000,
-  5000000,
-  5000000,
-  5200000,
-  5900000,
-  5200000,
-  5000000,
-  4900000,
-  5100000,
-  5000000,
-  4900000
+  1800000,
+  1750000,
+  2000000,
+  2000000,
+  2100000,
+  2350000,
+  2050000,
+  2000000,
+  1950000,
+  2050000,
+  2000000,
+  1950000
  ],
  "real_m": [
-  4550000,
-  4200000,
-  4750000,
-  4700000,
-  4850000,
-  5350000,
+  1760000,
+  1680000,
+  1900000,
+  1880000,
+  1950000,
+  2130000,
   null,
   null,
   null,
@@ -45,152 +45,199 @@
   null,
   null
  ],
- "ppto_h1": 30100000,
- "real_h1": 28400000,
- "desvio_ventas": -1700000,
- "ub_ppto": 7224000,
- "ub_real": 6276400,
- "cogs_ppto": 22876000,
- "cogs_real": 22123600,
- "opex_ppto": 3924000,
- "opex_real": 3926400,
- "ebitda_ppto": 3300000,
- "ebitda_real": 2350000,
- "ebit_ppto": 2850000,
- "ebit_real": 1900000,
- "gf_ppto": 550000,
- "gf_real": 680000,
- "dc_ppto": -100000,
- "dc_real": -280000,
- "ebt_ppto": 2200000,
- "ebt_real": 940000,
- "ir_ppto": 649000,
- "ir_real": 277300,
- "net_ppto": 1551000,
- "net_real": 662700,
+ "ppto_h1": 12000000,
+ "real_h1": 11300000,
+ "desvio_ventas": -700000,
+ "ub_ppto": 3120000,
+ "ub_real": 2734600,
+ "cogs_ppto": 8880000,
+ "cogs_real": 8565400,
+ "opex_ppto": 1680000,
+ "opex_real": 1684600,
+ "ebitda_ppto": 1440000,
+ "ebitda_real": 1050000,
+ "ebit_ppto": 1260000,
+ "ebit_real": 870000,
+ "gf_ppto": 220000,
+ "gf_real": 275000,
+ "dc_ppto": -40000,
+ "dc_real": -110000,
+ "ebt_ppto": 1000000,
+ "ebt_real": 485000,
+ "ir_ppto": 295000,
+ "ir_real": 143075,
+ "net_ppto": 705000,
+ "net_real": 341925,
+ "ly_h1": 10700000,
+ "ly_canal": {
+  "Ferretero": 5000000,
+  "Constructor": 3600000,
+  "Retail": 2100000
+ },
+ "ly_linea": {
+  "Materiales base": 7100000,
+  "Acabados": 3600000
+ },
+ "ly_ub": 2685700,
+ "ly_cogs": 8014300,
+ "ly_opex": 1450000,
+ "ly_ebitda": 1235700,
+ "ly_ebit": 1065700,
+ "ly_gf": 210000,
+ "ly_dc": -50000,
+ "ly_ebt": 805700,
+ "ly_ir": 237682,
+ "ly_net": 568018,
  "bridge": [
   {
    "paso": "EBITDA ppto",
-   "monto": 3300000
+   "monto": 1440000
   },
   {
-   "paso": "Efecto volumen (margen std 24%)",
-   "monto": -264000
+   "paso": "Efecto volumen (margen std 26%)",
+   "monto": -117000
   },
   {
    "paso": "Efecto precio / mix / descuento",
-   "monto": -144000
+   "monto": -65000
   },
   {
    "paso": "Costo FX (TC 3.72->3.81)",
-   "monto": -300000
+   "monto": -120000
   },
   {
    "paso": "Otros costos",
-   "monto": -239600
+   "monto": -83400
   },
   {
    "paso": "Opex neto",
-   "monto": -2400
+   "monto": -4600
   },
   {
    "paso": "EBITDA real H1",
-   "monto": 2350000
+   "monto": 1050000
+  }
+ ],
+ "pvm": [
+  {
+   "paso": "Ventas ppto",
+   "monto": 12000000
+  },
+  {
+   "paso": "Efecto volumen",
+   "monto": -450000
+  },
+  {
+   "paso": "Efecto precio (+2% lista parcial)",
+   "monto": 110000
+  },
+  {
+   "paso": "Efecto mix canal/linea",
+   "monto": -180000
+  },
+  {
+   "paso": "Descuento comercial defensivo",
+   "monto": -180000
+  },
+  {
+   "paso": "Ventas real H1",
+   "monto": 11300000
   }
  ],
  "canal_ppto": {
-  "Mayorista": 13545000,
-  "Minorista": 10535000,
-  "Institucional": 6020000
+  "Ferretero": 5400000,
+  "Constructor": 4200000,
+  "Retail": 2400000
  },
  "canal_real": {
-  "Mayorista": 13314000,
-  "Minorista": 9942000,
-  "Institucional": 5144000
+  "Ferretero": 5130000,
+  "Constructor": 3840000,
+  "Retail": 2330000
  },
  "linea_ppto": {
-  "Abarrotes importados": 19565000,
-  "Cuidado del hogar": 10535000
+  "Materiales base": 7800000,
+  "Acabados": 4200000
  },
  "linea_real": {
-  "Abarrotes importados": 18768000,
-  "Cuidado del hogar": 9632000
+  "Materiales base": 7450000,
+  "Acabados": 3850000
  },
  "tc_ppto": 3.72,
  "tc_real": 3.81,
  "tc_jun": 3.84,
+ "pct_usd": 0.4,
  "bal_dic": {
-  "caja": 1200000,
-  "cxc": 6800000,
-  "inv": 6650000,
-  "otros_ac": 400000,
-  "af_neto": 8450000,
-  "cxp": 4500000,
-  "deuda_cp": 3800000,
-  "otros_pc": 1000000,
-  "deuda_lp": 4970000,
-  "patrimonio": 9230000
+  "caja": 480000,
+  "cxc": 2720000,
+  "inv": 2660000,
+  "otros_ac": 160000,
+  "af_neto": 3380000,
+  "cxp": 1800000,
+  "deuda_cp": 1520000,
+  "otros_pc": 400000,
+  "deuda_lp": 1990000,
+  "patrimonio": 3690000
  },
  "bal_jun": {
-  "caja": 950000,
-  "cxc": 8160000,
-  "inv": 7450000,
-  "otros_ac": 400000,
-  "af_neto": 8350000,
-  "cxp": 4320000,
-  "deuda_cp": 6097300,
-  "otros_pc": 1100000,
-  "deuda_lp": 3900000,
-  "patrimonio": 9892700
+  "caja": 380000,
+  "cxc": 3246400,
+  "inv": 2886895,
+  "otros_ac": 160000,
+  "af_neto": 3370000,
+  "cxp": 1651700,
+  "otros_pc": 440000,
+  "deuda_lp": 1560000,
+  "patrimonio": 4031925,
+  "deuda_cp": 2359670
  },
  "k_real": {
   "dso": 52.0,
   "dio": 61.0,
-  "dpo": 34.1,
-  "ccc": 78.8
+  "dpo": 34.0,
+  "ccc": 79.0
  },
  "k_dic": {
-  "dso": 45.3,
-  "dio": 58.1,
-  "dpo": 39.2,
-  "ccc": 64.2
+  "dso": 46.1,
+  "dio": 59.8,
+  "dpo": 38.5,
+  "ccc": 67.4
  },
  "fx": {
-  "exposicion_usd": 1100000,
-  "cxp_usd": 1350000,
-  "caja_usd": 250000,
-  "sens_10cts": 110000,
-  "pct_neta": 16.6
+  "exposicion_usd": 180000,
+  "cxp_usd": 220000,
+  "caja_usd": 40000,
+  "sens_10cts": 18000,
+  "pct_neta": 5.3
  },
  "fy": {
-  "ventas_base": 58500000,
-  "ebitda_base": 5400000,
-  "neta_base": 1700000,
-  "ventas_ppto": 60200000,
-  "ebitda_ppto": 6700000,
-  "neta_ppto": 3100000,
-  "pico_deuda_oct": 11200000,
-  "linea_adicional": 2500000
+  "ventas_base": 23100000,
+  "ebitda_base": 2250000,
+  "neta_base": 720000,
+  "ventas_ppto": 24000000,
+  "ebitda_ppto": 2880000,
+  "neta_ppto": 1410000,
+  "pico_deuda_oct": 4500000,
+  "linea_adicional": 1000000
  },
  "acciones": [
   {
    "id": "A1",
-   "nombre": "Cobranza institucional + pronto pago",
-   "efecto_caja": 950000,
-   "efecto_py": "- S/ 60k descuento financiero",
+   "nombre": "Cobranza constructor + pronto pago",
+   "efecto_caja": 375000,
+   "efecto_py": "- S/ 25k descuento financiero",
    "kpi": "DSO 52 -> 46 dias"
   },
   {
    "id": "A2",
    "nombre": "Ajuste lista de precios 2H (+2%)",
-   "efecto_caja": 550000,
-   "efecto_py": "+ S/ 550k margen",
-   "kpi": "Margen bruto +90 pbs en 2H"
+   "efecto_caja": 220000,
+   "efecto_py": "+ S/ 220k margen",
+   "kpi": "Margen bruto +80 pbs en 2H"
   },
   {
    "id": "A3",
-   "nombre": "Recorte compra hogar -15%",
-   "efecto_caja": 700000,
+   "nombre": "Recorte compra acabados -15%",
+   "efecto_caja": 280000,
    "efecto_py": "neutro",
    "kpi": "DIO 61 -> 55 dias"
   },
@@ -198,260 +245,214 @@
    "id": "A4",
    "nombre": "Forward 50% exposicion 90 dias",
    "efecto_caja": 0,
-   "efecto_py": "acota riesgo 110k -> 55k por 10 cts",
-   "kpi": "Exposicion neta USD 1.10M -> 0.55M"
+   "efecto_py": "acota riesgo 18k -> 9k por 10 cts",
+   "kpi": "Exposicion neta USD 180k -> 90k"
   },
   {
    "id": "A5",
-   "nombre": "Linea revolvente +S/ 2.5M",
-   "efecto_caja": 2500000,
-   "efecto_py": "- S/ 90k intereses 2H",
+   "nombre": "Linea revolvente +S/ 1.0M",
+   "efecto_caja": 1000000,
+   "efecto_py": "- S/ 35k intereses 2H",
    "kpi": "Cubre pico de octubre"
   }
  ],
- "ly_h1": 26900000,
- "ly_canal": {
-  "Mayorista": 12600000,
-  "Minorista": 9400000,
-  "Institucional": 4900000
- },
- "ly_linea": {
-  "Abarrotes importados": 17600000,
-  "Cuidado del hogar": 9300000
- },
- "ly_ub": 6240800,
- "ly_cogs": 20659200,
- "ly_opex": 3480000,
- "ly_ebitda": 2760800,
- "ly_ebit": 2330800,
- "ly_gf": 520000,
- "ly_dc": -120000,
- "ly_ebt": 1690800,
- "ly_ir": 498786,
- "ly_net": 1192014,
- "pvm": [
-  {
-   "paso": "Ventas ppto",
-   "monto": 30100000
-  },
-  {
-   "paso": "Efecto volumen",
-   "monto": -1100000
-  },
-  {
-   "paso": "Efecto precio (+2% lista parcial)",
-   "monto": 250000
-  },
-  {
-   "paso": "Efecto mix canal/linea",
-   "monto": -450000
-  },
-  {
-   "paso": "Descuento comercial defensivo",
-   "monto": -400000
-  },
-  {
-   "paso": "Ventas real H1",
-   "monto": 28400000
-  }
+ "deuda_h2": [
+  4100000,
+  4300000,
+  4400000,
+  4500000,
+  4200000,
+  4000000
  ],
+ "flujo": {
+  "neta": 341925,
+  "dep": 180000,
+  "d_cxc": -526400,
+  "d_inv": -226895,
+  "d_cxp_com": -148300,
+  "d_otros_pc": 40000,
+  "fco": -339670,
+  "capex": -170000,
+  "d_deuda_cp": 839670,
+  "d_deuda_lp": -430000,
+  "d_caja": -100000
+ },
+ "supuestos": {
+  "ly_h2_ebitda": 1350000,
+  "ly_h2_ebit": 980000,
+  "ly_intereses_ltm": 514000,
+  "dso_ppto": 45.0,
+  "nota": "H2-2025 supuesto; LTM = H2-2025 + H1-2026",
+  "ebitda_ltm": 2400000,
+  "deuda_total_jun": 3919670,
+  "deuda_ebitda": 1.63,
+  "cobertura": 3.6
+ },
  "clientes_inst": [
   {
    "nombre": "Municipalidad de San Juan",
-   "corriente": 300000,
-   "b30": 150000,
-   "b60": 70000,
+   "corriente": 120000,
+   "b30": 60000,
+   "b60": 28000,
    "b90": 0,
-   "total": 520000,
-   "dso": 18.3,
-   "mora60": 70000
+   "total": 208000,
+   "dso": 9.8,
+   "mora60": 28000
   },
   {
    "nombre": "Red Salud Norte",
-   "corriente": 200000,
-   "b30": 120000,
-   "b60": 60000,
-   "b90": 30000,
-   "total": 410000,
-   "dso": 14.4,
-   "mora60": 90000
+   "corriente": 80000,
+   "b30": 48000,
+   "b60": 24000,
+   "b90": 12000,
+   "total": 164000,
+   "dso": 7.7,
+   "mora60": 36000
   },
   {
    "nombre": "EduCorp S.A.",
-   "corriente": 250000,
-   "b30": 80000,
-   "b60": 20000,
+   "corriente": 100000,
+   "b30": 32000,
+   "b60": 8000,
    "b90": 0,
-   "total": 350000,
-   "dso": 12.3,
-   "mora60": 20000
+   "total": 140000,
+   "dso": 6.6,
+   "mora60": 8000
   },
   {
    "nombre": "Minera Cascajal",
-   "corriente": 280000,
+   "corriente": 112000,
    "b30": 0,
    "b60": 0,
    "b90": 0,
-   "total": 280000,
-   "dso": 9.9,
+   "total": 112000,
+   "dso": 5.3,
    "mora60": 0
   },
   {
    "nombre": "Agroindustrial del Valle",
-   "corriente": 100000,
-   "b30": 50000,
-   "b60": 30000,
+   "corriente": 40000,
+   "b30": 20000,
+   "b60": 12000,
    "b90": 0,
-   "total": 180000,
-   "dso": 6.3,
-   "mora60": 30000
+   "total": 72000,
+   "dso": 3.4,
+   "mora60": 12000
   },
   {
    "nombre": "Constructora VialSur",
-   "corriente": 40000,
-   "b30": 30000,
-   "b60": 20000,
-   "b90": 30000,
-   "total": 120000,
-   "dso": 4.2,
-   "mora60": 50000
+   "corriente": 16000,
+   "b30": 12000,
+   "b60": 8000,
+   "b90": 12000,
+   "total": 48000,
+   "dso": 2.3,
+   "mora60": 20000
   },
   {
    "nombre": "Gobierno Regional",
    "corriente": 0,
-   "b30": 20000,
-   "b60": 30000,
-   "b90": 40000,
-   "total": 90000,
-   "dso": 3.2,
-   "mora60": 70000
+   "b30": 8000,
+   "b60": 12000,
+   "b90": 16000,
+   "total": 36000,
+   "dso": 1.7,
+   "mora60": 28000
   },
   {
    "nombre": "Otros menores",
-   "corriente": 30000,
-   "b30": 20000,
+   "corriente": 12000,
+   "b30": 8000,
    "b60": 0,
    "b90": 0,
-   "total": 50000,
-   "dso": 1.8,
+   "total": 20000,
+   "dso": 0.9,
    "mora60": 0
   }
  ],
  "cxc_canal": {
-  "Mayorista": 3900000,
-  "Minorista": 2260000,
-  "Institucional": 2000000
+  "Ferretero": 1566400,
+  "Constructor": 800000,
+  "Retail": 880000
  },
- "mora60": 330000,
+ "mora60": 132000,
  "skus_hogar": [
   {
-   "sku": "HOG-014",
-   "nombre": "Detergente industrial 20kg",
-   "stock_u": 14000,
-   "costo_u": 18.5,
-   "vta_mes_u": 3200,
-   "valorizado": 259000,
+   "sku": "CER-101",
+   "nombre": "Porcelanato 60x60 caja",
+   "stock_u": 2100,
+   "costo_u": 68.0,
+   "vta_mes_u": 475,
+   "valorizado": 142800,
    "cobertura_m": 4.4
   },
   {
-   "sku": "HOG-022",
-   "nombre": "Jabon liquido 5L",
-   "stock_u": 22000,
-   "costo_u": 12.8,
-   "vta_mes_u": 4800,
-   "valorizado": 281600,
-   "cobertura_m": 4.6
+   "sku": "PIN-020",
+   "nombre": "Pintura latex 20L",
+   "stock_u": 1900,
+   "costo_u": 92.5,
+   "vta_mes_u": 390,
+   "valorizado": 175750,
+   "cobertura_m": 4.9
   },
   {
-   "sku": "HOG-031",
-   "nombre": "Papel toalla x12",
-   "stock_u": 30000,
-   "costo_u": 9.4,
-   "vta_mes_u": 7500,
-   "valorizado": 282000,
-   "cobertura_m": 4.0
+   "sku": "PEG-025",
+   "nombre": "Pegamento ceramico 25kg",
+   "stock_u": 4500,
+   "costo_u": 24.8,
+   "vta_mes_u": 1100,
+   "valorizado": 111600,
+   "cobertura_m": 4.1
   },
   {
-   "sku": "HOG-007",
-   "nombre": "Desinfectante 1L",
-   "stock_u": 45000,
-   "costo_u": 4.2,
-   "vta_mes_u": 12000,
-   "valorizado": 189000,
+   "sku": "LAC-011",
+   "nombre": "Laca selladora 1L",
+   "stock_u": 3250,
+   "costo_u": 18.9,
+   "vta_mes_u": 850,
+   "valorizado": 61425,
    "cobertura_m": 3.8
   },
   {
-   "sku": "HOG-045",
-   "nombre": "Escobas premium",
-   "stock_u": 18000,
-   "costo_u": 6.9,
-   "vta_mes_u": 2100,
-   "valorizado": 124200,
+   "sku": "PER-008",
+   "nombre": "Perfiles aluminio 6m",
+   "stock_u": 1200,
+   "costo_u": 45.0,
+   "vta_mes_u": 140,
+   "valorizado": 54000,
    "cobertura_m": 8.6
   },
   {
-   "sku": "HOG-046",
-   "nombre": "Trapeadores",
-   "stock_u": 25000,
-   "costo_u": 5.6,
-   "vta_mes_u": 3000,
-   "valorizado": 140000,
+   "sku": "SAN-031",
+   "nombre": "Griferia cocina",
+   "stock_u": 950,
+   "costo_u": 62.0,
+   "vta_mes_u": 115,
+   "valorizado": 58900,
    "cobertura_m": 8.3
   },
   {
-   "sku": "HOG-052",
-   "nombre": "Bolsas basura 100L x50",
-   "stock_u": 60000,
-   "costo_u": 7.3,
-   "vta_mes_u": 9000,
-   "valorizado": 438000,
-   "cobertura_m": 6.7
+   "sku": "ILU-044",
+   "nombre": "Focos LED 12W caja x24",
+   "stock_u": 2500,
+   "costo_u": 38.4,
+   "vta_mes_u": 360,
+   "valorizado": 96000,
+   "cobertura_m": 6.9
   },
   {
-   "sku": "HOG-VAR",
-   "nombre": "Varios Hogar (agregado)",
-   "stock_u": 163620,
+   "sku": "ACA-VAR",
+   "nombre": "Varios Acabados (agregado)",
+   "stock_u": 68642,
    "costo_u": 10.0,
-   "vta_mes_u": 77914,
-   "valorizado": 1636200,
+   "vta_mes_u": 32687,
+   "valorizado": 686420,
    "cobertura_m": 2.1
   }
  ],
  "inv_linea": {
-  "Abarrotes importados": 4100000,
-  "Cuidado del hogar": 3350000
+  "Materiales base": 1500000,
+  "Acabados": 1386895
  },
- "sobrestock": 702200,
- "flujo": {
-  "neta": 662700,
-  "dep": 450000,
-  "d_cxc": -1360000,
-  "d_inv": -800000,
-  "d_cxp_com": -180000,
-  "d_otros_pc": 100000,
-  "fco": -1127300,
-  "capex": -350000,
-  "d_deuda_cp": 2297300,
-  "d_deuda_lp": -1070000,
-  "d_caja": -250000
- },
- "supuestos": {
-  "ly_h2_ebitda": 3200000,
-  "ly_h2_ebit": 2300000,
-  "ly_intereses_ltm": 1166700,
-  "dso_ppto": 45.0,
-  "nota": "H2-2025 supuesto; LTM = H2-2025 + H1-2026",
-  "ebitda_ltm": 5550000,
-  "deuda_total_jun": 9997300,
-  "deuda_ebitda": 1.8,
-  "cobertura": 3.6
- },
- "deuda_h2": [
-  10400000,
-  10700000,
-  10900000,
-  11200000,
-  10600000,
-  10000000
- ]
+ "sobrestock": 208900
 }

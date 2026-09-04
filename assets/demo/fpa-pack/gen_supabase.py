@@ -1,7 +1,8 @@
 """Genera supabase/fpa_schema.sql: DDL + RLS + vistas + seed del FP&A Monthly Pack.
 
-El seed sale de data.json (fuente canonica). Idempotente: todo con
-CREATE TABLE IF NOT EXISTS + INSERT ... ON CONFLICT DO NOTHING.
+El seed sale de data.json (fuente canonica). Idempotente y correctivo:
+CREATE TABLE IF NOT EXISTS + INSERT ... ON CONFLICT DO UPDATE
+(recargar actualiza; nunca ignora en silencio).
 
 Convencion de la casa (panel-minero/supabase/migracion.sql):
 pegar completo en Supabase > SQL Editor y ejecutar.
@@ -13,8 +14,8 @@ BASE = pathlib.Path(r"C:\Users\FGUERR~1\AppData\Local\Temp\opencode\fpa-pack")
 d = json.loads((BASE / "data.json").read_text(encoding="utf-8"))
 
 MESES = d["meses"][:6]
-CANALES = ["Mayorista", "Minorista", "Institucional"]
-LINEAS = ["Abarrotes importados", "Cuidado del hogar"]
+CANALES = ["Ferretero", "Constructor", "Retail"]
+LINEAS = ["Materiales base", "Acabados"]
 TRAMOS = ["Corriente", "31-60", "61-90", "90+"]
 
 # ---------- hecho ventas: mes x canal x linea x version (soles enteros) ----------
@@ -44,7 +45,7 @@ for version, mes_tot, c_tot, l_tot in [
         dc = c_tot[c] - sum(m for (mi, cc, ll, vv, m) in cells if vv == version and cc == c)
         assert abs(dc) < 50, (version, c, dc)
         for i, (mi, cc, ll, vv, m) in enumerate(cells):
-            if vv == version and mi == 6 and cc == c and ll == "Cuidado del hogar":
+            if vv == version and mi == 6 and cc == c and ll == "Acabados":
                 cells[i] = (mi, cc, ll, vv, m + dc)
                 break
     for c in CANALES:
@@ -127,7 +128,7 @@ PARAMS = [("tc_ppto", d["tc_ppto"], "Tipo de cambio presupuesto 2026"),
           ("tc_jun", d["tc_jun"], "TC cierre junio"),
           ("tasa_ir", d["tasa_ir"], "Impuesto a la renta"),
           ("dias_h1", 181, "Dias del semestre"),
-          ("pct_compras_usd", 0.70, "Compras en USD"),
+          ("pct_compras_usd", d["pct_usd"], "Compras en USD"),
           ("exposicion_usd", d["fx"]["exposicion_usd"], "Exposicion neta pasiva USD"),
           ("pico_deuda_oct", d["fy"]["pico_deuda_oct"], "Pico de deuda octubre (base)"),
           ("linea_adicional", d["fy"]["linea_adicional"], "Linea revolvente propuesta")]
@@ -148,7 +149,8 @@ A = L.append
 A("-- ============================================================")
 A("-- FP&A MONTHLY PACK — esquema estrella sintético (Supabase)")
 A("-- Caso 100% inventado. Pegar completo en SQL Editor y ejecutar.")
-A("-- Idempotente: re-ejecutable sin duplicar (ON CONFLICT DO NOTHING).")
+A("-- Idempotente y correctivo: re-ejecutable sin duplicar")
+A("-- (ON CONFLICT DO UPDATE: recargar actualiza, nunca ignora).")
 A("-- Tablas fpa_*: conviven con panel-minero / vigilante / registro.")
 A("-- Supuesto declarado: LY mensual reparte cada canal con la")
 A("-- estacionalidad del ppto (ver DICC del Excel).")
@@ -162,8 +164,8 @@ A("drop view if exists v_fpa_sku cascade;")
 A("")
 A("create table if not exists fpa_ventas (")
 A("  mes     int not null check (mes between 1 and 6),")
-A("  canal   text not null check (canal in ('Mayorista','Minorista','Institucional')),")
-A("  linea   text not null check (linea in ('Abarrotes importados','Cuidado del hogar')),")
+A("  canal   text not null check (canal in ('Ferretero','Constructor','Retail')),")
+A("  linea   text not null check (linea in ('Materiales base','Acabados')),")
 A("  version text not null check (version in ('LY','PPTO','REAL')),")
 A("  monto   numeric(14,2) not null check (monto >= 0),")
 A("  primary key (mes, canal, linea, version)")
@@ -216,12 +218,12 @@ A("  etiqueta text not null")
 A(");")
 A("")
 A("create table if not exists fpa_cxc_canal (")
-A("  canal text primary key check (canal in ('Mayorista','Minorista','Institucional')),")
+A("  canal text primary key check (canal in ('Ferretero','Constructor','Retail')),")
 A("  monto numeric(14,2) not null check (monto >= 0)")
 A(");")
 A("")
 A("create table if not exists fpa_inv_linea (")
-A("  linea text primary key check (linea in ('Abarrotes importados','Cuidado del hogar')),")
+A("  linea text primary key check (linea in ('Materiales base','Acabados')),")
 A("  monto numeric(14,2) not null check (monto >= 0)")
 A(");")
 A("")
@@ -251,12 +253,13 @@ A("")
 A("create or replace view v_fpa_ventas_linea as")
 A("select version, linea, sum(monto) as monto from fpa_ventas group by version, linea;")
 A("")
-A("-- DSO del canal institucional: ventas diarias = 5144000 / 181 --")
+A("-- DSO del canal Constructor, calculado de fpa_ventas (sin hardcode) --")
 A("create or replace view v_fpa_aging_cliente as")
 A("select cliente,")
 A("  sum(monto) as total,")
 A("  sum(case when tramo in ('61-90','90+') then monto else 0 end) as mora60,")
-A("  round((sum(monto) / (5144000.0 / 181))::numeric, 1) as dso")
+A("  round((sum(monto) / ((select sum(monto) from fpa_ventas")
+A("    where version = 'REAL' and canal = 'Constructor') / 181.0))::numeric, 1) as dso")
 A("from fpa_cxc_aging group by cliente order by total desc;")
 A("")
 A("create or replace view v_fpa_sku as")
@@ -265,28 +268,29 @@ A("  round((stock_u * costo_u)::numeric, 0) as valorizado,")
 A("  round((stock_u::numeric / vta_mes_u), 1) as cobertura_m")
 A("from fpa_inv_sku order by valorizado desc;")
 A("")
-A("-- Seed (idempotente) --")
-def ins(table, cols, rows):
+A("-- Seed idempotente que CORRIGE: recargar actualiza (no ignora) --")
+def ins(table, cols, rows, pk, upd):
     A(f"insert into {table} ({', '.join(cols)}) values")
     A(",\n".join("  (" + ", ".join(lit(v) for v in r) + ")" for r in rows))
-    A("on conflict do nothing;")
+    A(f"on conflict ({', '.join(pk)}) do update set " + ", ".join(f"{c} = excluded.{c}" for c in upd) + ";")
     A("")
 
-ins("fpa_ventas", ["mes", "canal", "linea", "version", "monto"], cells)
-ins("fpa_pyg", ["periodo", "cuenta", "monto", "orden"], PYG)
-ins("fpa_balance", ["corte", "grupo", "cuenta", "monto", "orden"], BAL)
-ins("fpa_cxc_aging", ["cliente", "tramo", "monto"], AGING)
-ins("fpa_inv_sku", ["sku", "nombre", "stock_u", "costo_u", "vta_mes_u"], SKUS)
-ins("fpa_puente", ["tipo", "paso", "monto", "orden"], PUENTES)
-ins("fpa_parametros", ["clave", "valor", "etiqueta"], PARAMS)
-ins("fpa_cxc_canal", ["canal", "monto"], CXC_CANAL)
-ins("fpa_inv_linea", ["linea", "monto"], INV_LINEA)
-ins("fpa_acciones", ["id", "nombre", "efecto_caja", "efecto_py", "kpi"], ACCIONES)
+ins("fpa_ventas", ["mes", "canal", "linea", "version", "monto"], cells,
+    ["mes", "canal", "linea", "version"], ["monto"])
+ins("fpa_pyg", ["periodo", "cuenta", "monto", "orden"], PYG, ["periodo", "cuenta"], ["monto", "orden"])
+ins("fpa_balance", ["corte", "grupo", "cuenta", "monto", "orden"], BAL, ["corte", "cuenta"], ["monto", "orden"])
+ins("fpa_cxc_aging", ["cliente", "tramo", "monto"], AGING, ["cliente", "tramo"], ["monto"])
+ins("fpa_inv_sku", ["sku", "nombre", "stock_u", "costo_u", "vta_mes_u"], SKUS, ["sku"], ["nombre", "stock_u", "costo_u", "vta_mes_u"])
+ins("fpa_puente", ["tipo", "paso", "monto", "orden"], PUENTES, ["tipo", "paso"], ["monto", "orden"])
+ins("fpa_parametros", ["clave", "valor", "etiqueta"], PARAMS, ["clave"], ["valor", "etiqueta"])
+ins("fpa_cxc_canal", ["canal", "monto"], CXC_CANAL, ["canal"], ["monto"])
+ins("fpa_inv_linea", ["linea", "monto"], INV_LINEA, ["linea"], ["monto"])
+ins("fpa_acciones", ["id", "nombre", "efecto_caja", "efecto_py", "kpi"], ACCIONES, ["id"], ["nombre", "efecto_caja", "efecto_py", "kpi"])
 
 A("-- Verificacion post-carga (deben devolver una fila 'OK' cada una) --")
-A("-- select case when sum(monto)=28400000 then 'OK ventas REAL' else 'FALLA' end from fpa_ventas where version='REAL';")
-A("-- select case when sum(monto)=2000000 then 'OK aging' else 'FALLA' end from fpa_cxc_aging;")
-A("-- select case when sum(stock_u*costo_u)=1713800 then 'OK skus' else 'FALLA' end from fpa_inv_sku;")
+A("-- select case when sum(monto)=11300000 then 'OK ventas REAL' else 'FALLA' end from fpa_ventas where version='REAL';")
+A("-- select case when sum(monto)=800000 then 'OK aging' else 'FALLA' end from fpa_cxc_aging;")
+A("-- select case when sum(stock_u*costo_u)=1386900 then 'OK skus' else 'FALLA' end from fpa_inv_sku;")
 
 sql = "\n".join(L)
 (BASE / "fpa_schema.sql").write_text(sql, encoding="utf-8")

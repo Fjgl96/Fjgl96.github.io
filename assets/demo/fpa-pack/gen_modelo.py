@@ -10,6 +10,14 @@ from openpyxl.utils import get_column_letter
 BASE = pathlib.Path(r"C:\Users\FGUERR~1\AppData\Local\Temp\opencode\fpa-pack")
 d = json.loads((BASE/"data.json").read_text(encoding="utf-8"))
 
+M1 = d["real_h1"]/1e6; M2 = d["ppto_h1"]/1e6
+DESV = d["real_h1"]-d["ppto_h1"]
+PC = (d["real_h1"]/d["ppto_h1"]-1)*100
+E1 = d["ebitda_real"]/1e6; E2 = d["ebitda_ppto"]/1e6
+DESE = d["ebitda_real"]-d["ebitda_ppto"]
+def S(v): return f"S/ {v/1e6:,.2f}M".replace(",","_").replace(".",",").replace("_",".")
+def SS(v): return ("-" if v < 0 else "") + f"S/ {abs(v)/1e3:,.0f}k".replace(",",".")
+
 AZUL = "0B6D9E"; AZUL_L = "DFF3FC"; GRIS = "F5F8FD"; VERDE = "0F6B46"; ROJO = "B00020"
 H_FILL = PatternFill("solid", fgColor=AZUL); H_FONT = Font(name="Calibri", bold=True, color="FFFFFF", size=10)
 T_FONT = Font(name="Calibri", bold=True, size=11, color=AZUL)
@@ -44,11 +52,13 @@ indice = ["PARAM: supuestos (TC, tasas, calendario)",
  "PyG_H1: estado de resultados H1 con fórmulas, desvíos y márgenes",
  "BAL: balance dic-25 vs jun-26, cuadra Activo = Pasivo + Patrimonio",
  "KPIs: DSO/DIO/DPO/CCC y rentabilidad con semáforos y fórmulas",
- "BRIDGE: puente EBITDA ppto → real (atribuye los -950k)",
+ "BRIDGE: puente EBITDA ppto → real reconciliado con el PVM (margen std 24%)",
+ "FLUJO: caja H1 indirecta que ata neta + WC + deuda = Δcaja -250k",
+ "FORECAST_H2: deuda mensual jul-dic con pico en octubre (supuesto base)",
  "COMP_LY: H1-2025 vs H1-2026 like-for-like + canales YoY",
- "PUENTE_VENTAS: volumen, precio, mix y descuento (atribuye los -1.70M)",
- "DRILL_CLIENTES: CxC institucional por cliente y aging, con DSO",
- "DRILL_SKUS: inventarios Hogar por SKU, valorizado y cobertura",
+ "PUENTE_VENTAS: volumen, precio, mix y descuento (atribuye el desvio de ventas)",
+ "DRILL_CLIENTES: CxC Constructor por cliente y aging, con DSO",
+ "DRILL_SKUS: inventarios Acabados por SKU, valorizado y cobertura",
  "FX_FORECAST: exposición USD, sensibilidad y forecast FY con plan de acción",
  "DICC: diccionario de campos y linaje"]
 for i, t in enumerate(indice, start=6):
@@ -162,15 +172,15 @@ for col,w in zip("ABCDE",(32,16,16,16,10)): ws.column_dimensions[col].width=w
 ws = wb.create_sheet("KPIs")
 for c,h in enumerate(["KPI","Dic-25","Ppto H1","Real H1","Desv vs ppto","Semáforo"],1): ws.cell(row=1,column=c,value=h)
 estilo_header(ws,1,6)
-k = d["k_real"]; kd = d["k_dic"]
-krows = [("DSO (días)",kd["dso"],45.0,k["dso"],"alto malo"),
- ("DIO (días)",kd["dio"],56.0,k["dio"],"alto malo"),
+k = d["k_real"]; kd = d["k_dic"]; su = d["supuestos"]
+krows = [("DSO (días)",kd["dso"],su["dso_ppto"],k["dso"],"alto malo"),
+ ("DIO (días)",kd["dio"],58.0,k["dio"],"alto malo"),
  ("DPO (días)",kd["dpo"],34.0,k["dpo"],"alto bueno"),
- ("CCC (días)",kd["ccc"],67.0,k["ccc"],"alto malo"),
- ("Margen bruto %",None,24.0,round(d["ub_real"]/d["real_h1"]*100,1),"alto bueno"),
+ ("CCC (días)",kd["ccc"],69.0,k["ccc"],"alto malo"),
+ ("Margen bruto %",None,round(d["ub_ppto"]/d["ppto_h1"]*100,1),round(d["ub_real"]/d["real_h1"]*100,1),"alto bueno"),
  ("Margen EBITDA %",None,round(d["ebitda_ppto"]/d["ppto_h1"]*100,1),round(d["ebitda_real"]/d["real_h1"]*100,1),"alto bueno"),
- ("Deuda total / EBITDA LTM (x)",1.45,1.40,1.80,"alto malo"),
- ("Cobertura intereses (x)",4.8,4.5,3.6,"alto bueno")]
+ ("Deuda total / EBITDA LTM (x)",1.55,1.45,su["deuda_ebitda"],"alto malo"),
+ ("Cobertura intereses (x)",4.6,4.2,su["cobertura"],"alto bueno")]
 for i,(n,dic_,pp,real,crit) in enumerate(krows, start=2):
     ws.cell(row=i,column=1,value=n).font=N_FONT
     ws.cell(row=i,column=2,value=dic_).font=N_FONT
@@ -191,15 +201,51 @@ for col,w in zip("ABCDEF",(30,12,12,12,14,12)): ws.column_dimensions[col].width=
 ws = wb.create_sheet("BRIDGE")
 for c,h in enumerate(["Paso","Monto (S/)","Acumulado"],1): ws.cell(row=1,column=c,value=h)
 estilo_header(ws,1,3)
-acum = 0
+acum=0; n=len(d["bridge"])
 for i,b in enumerate(d["bridge"], start=2):
-    ws.cell(row=i,column=1,value=b["paso"]).font = B_FONT if i in (2,9) else N_FONT
-    dinero(ws,i,2,b["monto"],bold=(i in (2,9)))
-    if i==2: acum = b["monto"]
-    elif i<9: acum += b["monto"]
-    else: acum = b["monto"]
-    dinero(ws,i,3,acum,bold=(i in (2,9)))
+    last=(i==n+1); first=(i==2)
+    ws.cell(row=i,column=1,value=b["paso"]).font = B_FONT if (first or last) else N_FONT
+    dinero(ws,i,2,b["monto"],bold=(first or last))
+    if first: acum=b["monto"]
+    elif not last: acum+=b["monto"]
+    else: acum=b["monto"]
+    dinero(ws,i,3,acum,bold=(first or last))
 for col,w in zip("ABC",(40,16,16)): ws.column_dimensions[col].width=w
+
+# ---------- FLUJO (V4) ----------
+ws = wb.create_sheet("FLUJO")
+ws["A1"]="Flujo de caja H1 indirecto (S/) — ata Δcaja -250k"; ws["A1"].font=T_FONT
+for c,h in enumerate(["Concepto","Monto","Check"],1): ws.cell(row=2,column=c,value=h)
+estilo_header(ws,2,3)
+fl = d["flujo"]
+frowns = [("Utilidad neta",fl["neta"]),("Depreciación",fl["dep"]),
+ ("Δ Cuentas por cobrar",fl["d_cxc"]),("Δ Inventarios",fl["d_inv"]),
+ ("Δ Cuentas por pagar comerciales",fl["d_cxp_com"]),("Δ Otros pasivos CP",fl["d_otros_pc"]),
+ ("FLUJO OPERATIVO",fl["fco"]),("Capex",fl["capex"]),
+ ("Δ Deuda CP",fl["d_deuda_cp"]),("Δ Deuda LP",fl["d_deuda_lp"]),
+ ("Δ CAJA (dic->jun)",fl["d_caja"])]
+for i,(a,b_) in enumerate(frowns, start=3):
+    bold = a.isupper()
+    ws.cell(row=i,column=1,value=a).font = B_FONT if bold else N_FONT
+    dinero(ws,i,2,b_,bold=bold)
+    cc=ws.cell(row=i,column=3); cc.border=BORDER; cc.font=N_FONT
+    if a=="FLUJO OPERATIVO": cc.value="=SUM(B3:B8)"
+    elif a=="Δ CAJA (dic->jun)": cc.value="=B9+B10+B11+B12+B13"
+dinero(ws,14,2,None,formula="=C9-B9",bold=True)
+ws.cell(row=14,column=1,value="Check FCO (debe dar 0)").font=B_FONT
+dinero(ws,15,2,None,formula="=C13-B13",bold=True)
+ws.cell(row=15,column=1,value="Check caja (debe dar 0)").font=B_FONT
+for col,w in zip("ABC",(36,16,16)): ws.column_dimensions[col].width=w
+
+# ---------- FORECAST_H2 (V4) ----------
+ws = wb.create_sheet("FORECAST_H2")
+ws["A1"]="Deuda total fin de mes jul-dic 2026 base (S/) — supuesto, pico octubre"; ws["A1"].font=T_FONT
+for c,h in enumerate(["Mes","Deuda fin de mes"],1): ws.cell(row=2,column=c,value=h)
+estilo_header(ws,2,2)
+for i,(m,v) in enumerate(zip(d["meses"][6:],d["deuda_h2"]), start=3):
+    ws.cell(row=i,column=1,value=m).font=N_FONT
+    dinero(ws,i,2,v,bold=(v==max(d["deuda_h2"])))
+for col,w in zip("AB",(12,20)): ws.column_dimensions[col].width=w
 
 # ---------- FX_FORECAST ----------
 ws = wb.create_sheet("FX_FORECAST")
@@ -250,7 +296,7 @@ r = 10
 ws.cell(row=r,column=1,value="Por canal — ventas (S/)").font=T_FONT; r+=1
 for c,h in enumerate(["Canal","H1-2025","H1-2026 real","Var YoY","Ppto H1","Vs ppto"],1): ws.cell(row=r,column=c,value=h)
 estilo_header(ws,r,6); r+=1
-for canal in ("Mayorista","Minorista","Institucional"):
+for canal in list(d["canal_ppto"].keys()):
     ly=d["ly_canal"][canal]; rl=d["canal_real"][canal]; pp=d["canal_ppto"][canal]
     ws.cell(row=r,column=1,value=canal).font=N_FONT
     dinero(ws,r,2,ly); dinero(ws,r,3,rl)
@@ -276,7 +322,7 @@ for col,w in zip("ABC",(40,16,16)): ws.column_dimensions[col].width=w
 
 # ---------- DRILL_CLIENTES (V2) ----------
 ws = wb.create_sheet("DRILL_CLIENTES")
-ws["A1"]="Drill-down cobranza — CxC Institucional S/ 2.00M por cliente y aging (S/)"; ws["A1"].font=T_FONT
+ws["A1"]=f"Drill-down cobranza — CxC Constructor {S(d['cxc_canal']['Constructor'])} por cliente y aging (S/)"; ws["A1"].font=T_FONT
 for c,h in enumerate(["Cliente","Corriente","31-60","61-90","90+","Total","DSO (d)","Mora 60+"],1):
     ws.cell(row=2,column=c,value=h)
 estilo_header(ws,2,8)
@@ -294,7 +340,7 @@ for col,w in zip("ABCDEFGH",(30,14,14,14,14,14,10,14)): ws.column_dimensions[col
 
 # ---------- DRILL_SKUS (V2) ----------
 ws = wb.create_sheet("DRILL_SKUS")
-ws["A1"]="Drill-down inventarios — linea Hogar S/ 3.35M por SKU"; ws["A1"].font=T_FONT
+ws["A1"]=f"Drill-down inventarios — linea Acabados {S(d['inv_linea']['Acabados'])} por SKU"; ws["A1"].font=T_FONT
 for c,h in enumerate(["SKU","Descripcion","Stock (u)","Costo u","Valorizado","Vta/mes (u)","Cobertura (m)"],1):
     ws.cell(row=2,column=c,value=h)
 estilo_header(ws,2,7)
@@ -322,11 +368,13 @@ dicc = [("Ventas netas","Ventas brutas menos devoluciones y descuentos","ERP ven
  ("CCC","DSO + DIO − DPO","Calculado"),
  ("Exposición USD","CxP USD − caja USD","Tesorería"),
  ("Bridge EBITDA","Atribución volumen/precio/FX/descuento/opex","FP&A"),
-  ("Forecast base","Ventas 58.5M, EBITDA 5.4M, pico deuda oct 11.2M","Modelo + acciones A1-A5"),
+  ("Forecast base",f"Ventas {S(d['fy']['ventas_base'])}, EBITDA {S(d['fy']['ebitda_base'])}, pico deuda oct {S(d['fy']['pico_deuda_oct'])}","Modelo + acciones A1-A5"),
+  ("Flujo H1","FCO -1.13M, capex -350k, deuda neta +1.23M, caja -250k","PyG + Balance"),
+  ("Deuda H2","jul 10.4 a oct 11.2 y dic 10.0 (supuesto base)","Escenario, no ERP"),
   ("H1-2025","Ventas 26.9M, EBITDA 2.76M: crece +5.6% YoY pero el margen se comprime","Comparativo like-for-like"),
   ("Puente PVM","Volumen -1.10M, precio +250k, mix -450k, descuento -400k","FP&A (ventas ppto->real)"),
-  ("Aging institucional","2.00M en 8 clientes, mora 60+ de 330k (DSO 70d del canal)","Auxiliar cobranza (sintetico)"),
-  ("SKUs Hogar","3.35M en 8 SKUs, 3 con +6 meses de cobertura (702k)","Auxiliar inventarios (sintetico)")]
+ ("Aging constructor",f"{S(d['cxc_canal']['Constructor'])} en 8 clientes, mora 60+ de {SS(d['mora60'])} (DSO {d['k_real']['dso']:.0f}d del canal)".replace(".",","),"Auxiliar cobranza (sintetico)"),
+ ("SKUs Acabados",f"{S(d['inv_linea']['Acabados'])} en 8 SKUs, 3 con +6 meses de cobertura ({SS(d['sobrestock'])})","Auxiliar inventarios (sintetico)")]
 
 # LEEME: 9 -> 13 hojas
 for i,(a,b,c_) in enumerate(dicc, start=2):
@@ -340,13 +388,15 @@ wb.save(BASE/"fpa_pack_jun2026.xlsx")
 print("xlsx OK")
 
 # ---------- PNGs ----------
+
+# ---------- PNGs ----------
 plt.rcParams.update({"font.size":10,"axes.spines.top":False,"axes.spines.right":False})
 # 1. Ventas ppto vs real
 fig,ax = plt.subplots(figsize=(9,4))
 x = range(6); w=0.35
 ax.bar([i-w/2 for i in x],[v/1e6 for v in d["ppto_m"][:6]],width=w,label="Ppto",color="#0B6D9E")
 ax.bar([i+w/2 for i in x],[v/1e6 for v in d["real_m"][:6]],width=w,label="Real",color="#149DDD")
-ax.set_xticks(list(x),d["meses"][:6]); ax.set_ylabel("S/ millones"); ax.set_title("Ventas H1 2026: real vs ppto (−5.6%, −S/ 1.70M)")
+ax.set_xticks(list(x),d["meses"][:6]); ax.set_ylabel("S/ millones"); ax.set_title(f"Ventas H1 2026: real vs ppto ({PC:+.1f}%, {SS(DESV)})".replace(".",","))
 ax.legend(frameon=False)
 fig.tight_layout(); fig.savefig(BASE/"ventas_ppto_real.png",dpi=150); plt.close(fig)
 # 2. Bridge waterfall simplificado
@@ -359,12 +409,12 @@ for i,v in enumerate(vals):
     else: bottoms.append(cum); heights.append(v); colors.append("#149DDD" if v>0 else "#C0392B"); cum+=v
 ax.bar(xs,heights,bottom=bottoms,color=colors)
 ax.set_xticks(xs,labels,rotation=18,ha="right",fontsize=8)
-ax.set_ylabel("S/ miles"); ax.set_title("Puente EBITDA H1: ppto S/ 3.30M → real S/ 2.35M (−S/ 950k)")
+ax.set_ylabel("S/ miles"); ax.set_title(f"Puente EBITDA H1: ppto {S(d['ebitda_ppto'])} → real {S(d['ebitda_real'])} ({SS(DESE)})")
 fig.tight_layout(); fig.savefig(BASE/"bridge_ebitda.png",dpi=150); plt.close(fig)
 # 3. CCC
 fig,ax=plt.subplots(figsize=(7,3.6))
 ax.bar(["Dic-25","Real jun-26"],[d["k_dic"]["ccc"],d["k_real"]["ccc"]],color=["#90A4AE","#0B6D9E"])
-ax.set_ylabel("Días"); ax.set_title("Ciclo de conversión: 64 → 79 días (+15)")
+ax.set_ylabel("Días"); ax.set_title(f"Ciclo de conversión: {d['k_dic']['ccc']:.0f} → {d['k_real']['ccc']:.0f} días (+{d['k_real']['ccc']-d['k_dic']['ccc']:.0f})")
 for i,v in enumerate([d["k_dic"]["ccc"],d["k_real"]["ccc"]]): ax.text(i,v+1,f"{v:.0f} d",ha="center",fontweight="bold")
 fig.tight_layout(); fig.savefig(BASE/"ccc.png",dpi=150); plt.close(fig)
 # 4. Puente de ventas PVM (V2)
@@ -377,7 +427,7 @@ for i,v in enumerate(vals):
 ax.bar(range(len(labels)),heights,bottom=bottoms,color=colors)
 ax.set_ylim(27800,30400)  # eje recortado: los deltas de ±400k son invisibles a escala completa
 ax.set_xticks(range(len(labels)),[l.replace(" (+2% lista parcial)","") for l in labels],rotation=16,ha="right",fontsize=8)
-ax.set_ylabel("S/ miles (eje recortado)"); ax.set_title("Puente de ventas H1: ppto S/ 30.10M → real S/ 28.40M (−S/ 1.70M)")
+ax.set_ylabel("S/ miles (eje recortado)"); ax.set_title(f"Puente de ventas H1: ppto {S(d['ppto_h1'])} → real {S(d['real_h1'])} ({SS(DESV)})")
 fig.tight_layout(); fig.savefig(BASE/"pvm_ventas.png",dpi=150); plt.close(fig)
 # 5. Aging institucional (V2)
 cl=d["clientes_inst"]
@@ -388,7 +438,22 @@ ax.barh(list(ypos),[c["b30"]/1e3 for c in cl],left=[c["corriente"]/1e3 for c in 
 ax.barh(list(ypos),[c["b60"]/1e3 for c in cl],left=[(c["corriente"]+c["b30"])/1e3 for c in cl],color="#E67E22",label="61-90")
 ax.barh(list(ypos),[c["b90"]/1e3 for c in cl],left=[(c["corriente"]+c["b30"]+c["b60"])/1e3 for c in cl],color="#C0392B",label="90+")
 ax.set_yticks(list(ypos),[c["nombre"] for c in cl],fontsize=8)
-ax.set_xlabel("S/ miles"); ax.set_title("CxC Institucional S/ 2.00M por cliente y aging — mora 60+: S/ 330k")
+ax.set_xlabel("S/ miles"); ax.set_title(f"CxC Constructor {S(sum(d['cxc_canal'].values()) and d['cxc_canal']['Constructor'])} por cliente y aging — mora 60+: {SS(d['mora60'])}")
 ax.legend(frameon=False,fontsize=8,ncol=4)
 fig.tight_layout(); fig.savefig(BASE/"aging_inst.png",dpi=150); plt.close(fig)
+# 6. Flujo de caja (V4): neta -> FCO -> caja
+fl = d["flujo"]
+fig,ax=plt.subplots(figsize=(10,4.2))
+fl_labels=["Neta H1","+ Deprec.","- ΔCxC","- ΔInv","- ΔCxP","+ Otros PC","FCO","Capex","+ Deuda CP","- Deuda LP","Δ Caja"]
+fl_vals=[fl["neta"]/1e3,fl["dep"]/1e3,fl["d_cxc"]/1e3,fl["d_inv"]/1e3,fl["d_cxp_com"]/1e3,
+ fl["d_otros_pc"]/1e3,fl["fco"]/1e3,fl["capex"]/1e3,fl["d_deuda_cp"]/1e3,fl["d_deuda_lp"]/1e3,fl["d_caja"]/1e3]
+cum=0; heights=[]; bottoms=[]; colors=[]
+anchor={6,10}
+for i,v in enumerate(fl_vals):
+    if i in anchor: heights.append(v if i==6 else v); bottoms.append(0); colors.append("#0B6D9E" if v<0 else "#0F6B46")
+    else: bottoms.append(cum); heights.append(v); colors.append("#149DDD" if v>0 else "#C0392B"); cum+=v
+ax.bar(range(len(fl_labels)),heights,bottom=bottoms,color=colors)
+ax.set_xticks(range(len(fl_labels)),fl_labels,rotation=20,ha="right",fontsize=8)
+ax.set_ylabel("S/ miles"); ax.set_title(f"Flujo H1: neta {SS(fl['neta'])} + WC {SS(fl['d_cxc']+fl['d_inv']+fl['d_cxp_com']+fl['d_otros_pc'])} + deuda {SS(fl['d_deuda_cp']+fl['d_deuda_lp'])} = caja {SS(fl['d_caja'])}")
+fig.tight_layout(); fig.savefig(BASE/"flujo_h1.png",dpi=150); plt.close(fig)
 print("pngs OK")

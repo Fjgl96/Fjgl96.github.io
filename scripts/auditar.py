@@ -87,22 +87,25 @@ for pag in pags:
 dj = BASE / "assets" / "demo" / "fpa-pack" / "data.json"
 if dj.exists():
     d = json.loads(dj.read_text(encoding="utf-8"))
-    check("T5 desvio ventas", d["real_h1"] - d["ppto_h1"] == -1700000)
-    check("T5 desvio ebitda", d["ebitda_real"] - d["ebitda_ppto"] == -950000)
-    check("T5 puente ebitda", sum(b["monto"] for b in d["bridge"][1:-1]) == -950000)
-    check("T5 puente pvm", sum(b["monto"] for b in d["pvm"][1:-1]) == -1700000)
+    check("T5 desvio ventas", d["real_h1"] - d["ppto_h1"] == -700000)
+    check("T5 desvio ebitda", d["ebitda_real"] - d["ebitda_ppto"] == -390000)
+    check("T5 puente ebitda", sum(b["monto"] for b in d["bridge"][1:-1]) == -390000)
+    check("T5 puente pvm", sum(b["monto"] for b in d["pvm"][1:-1]) == -700000)
     b = d["bal_jun"]
     tot = b["caja"] + b["cxc"] + b["inv"] + b["otros_ac"] + b["af_neto"]
     pp = b["cxp"] + b["deuda_cp"] + b["otros_pc"] + b["deuda_lp"] + b["patrimonio"]
-    check("T5 balance cuadra", tot == pp == 25310000)
-    check("T5 aging", sum(c["total"] for c in d["clientes_inst"]) == 2000000)
-    check("T5 skus", sum(s["valorizado"] for s in d["skus_hogar"]) == 3350000)
-    check("T5 flujo ata", d["flujo"]["d_caja"] == -250000 == d["flujo"]["fco"] + d["flujo"]["capex"] + d["flujo"]["d_deuda_cp"] + d["flujo"]["d_deuda_lp"])
-    check("T5 LTM", d["supuestos"]["ebitda_ltm"] == 5550000 and d["supuestos"]["deuda_ebitda"] == 1.80)
+    check("T5 balance cuadra", tot == pp == 10043295)
+    check("T5 aging", sum(c["total"] for c in d["clientes_inst"]) == 800000)
+    check("T5 skus", sum(s["valorizado"] for s in d["skus_hogar"]) == 1386895)
+    check("T5 flujo ata", d["flujo"]["d_caja"] == -100000 == d["flujo"]["fco"] + d["flujo"]["capex"] + d["flujo"]["d_deuda_cp"] + d["flujo"]["d_deuda_lp"])
+    check("T5 LTM", d["supuestos"]["ebitda_ltm"] == 2400000 and d["supuestos"]["deuda_ebitda"] == 1.63)
+    check("T5 empresa nueva", d["empresa"] == "Comercial Los Alamos S.A.C.")
     # ---------- T6: ficha vs canonicos ----------
     ficha = (BASE / "proyectos" / "fpa-pack.html").read_text(encoding="utf-8")
-    for txt in ["28.40M", "30.10M", "2.35M", "3.30M", "79 d", "330k", "702k"]:
+    for txt in ["11.30M", "12.00M", "1.05M", "1.44M", "79 d", "132k", "209k"]:
         check(f"T6 ficha dice {txt}", txt in ficha)
+    for txt in ["28.40M", "30.10M", "Andina del Sur", "Pro-Premix"]:
+        check(f"T6 ficha sin resto viejo ({txt})", txt not in ficha)
 else:
     print("T5/T6 omitidos (sin data.json del pack)")
 
