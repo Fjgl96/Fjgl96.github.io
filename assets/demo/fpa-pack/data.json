@@ -74,28 +74,24 @@
    "monto": 3300000
   },
   {
-   "paso": "Efecto volumen",
-   "monto": -410000
+   "paso": "Efecto volumen (margen std 24%)",
+   "monto": -264000
   },
   {
-   "paso": "Efecto precio / mix",
-   "monto": -120000
+   "paso": "Efecto precio / mix / descuento",
+   "monto": -144000
   },
   {
-   "paso": "Efecto costo FX (TC 3.72->3.81)",
+   "paso": "Costo FX (TC 3.72->3.81)",
    "monto": -300000
   },
   {
-   "paso": "Descuento comercial defensivo",
-   "monto": -120000
+   "paso": "Otros costos",
+   "monto": -239600
   },
   {
-   "paso": "Fletes y personal",
-   "monto": -180000
-  },
-  {
-   "paso": "Ahorro marketing y variables",
-   "monto": 180000
+   "paso": "Opex neto",
+   "monto": -2400
   },
   {
    "paso": "EBITDA real H1",
@@ -425,5 +421,37 @@
   "Abarrotes importados": 4100000,
   "Cuidado del hogar": 3350000
  },
- "sobrestock": 702200
+ "sobrestock": 702200,
+ "flujo": {
+  "neta": 662700,
+  "dep": 450000,
+  "d_cxc": -1360000,
+  "d_inv": -800000,
+  "d_cxp_com": -180000,
+  "d_otros_pc": 100000,
+  "fco": -1127300,
+  "capex": -350000,
+  "d_deuda_cp": 2297300,
+  "d_deuda_lp": -1070000,
+  "d_caja": -250000
+ },
+ "supuestos": {
+  "ly_h2_ebitda": 3200000,
+  "ly_h2_ebit": 2300000,
+  "ly_intereses_ltm": 1166700,
+  "dso_ppto": 45.0,
+  "nota": "H2-2025 supuesto; LTM = H2-2025 + H1-2026",
+  "ebitda_ltm": 5550000,
+  "deuda_total_jun": 9997300,
+  "deuda_ebitda": 1.8,
+  "cobertura": 3.6
+ },
+ "deuda_h2": [
+  10400000,
+  10700000,
+  10900000,
+  11200000,
+  10600000,
+  10000000
+ ]
 }
