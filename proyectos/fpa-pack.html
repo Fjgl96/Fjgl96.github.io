@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FP&amp;A Monthly Pack — Distribuidora sintética · Junio 2026 — Francisco Guerrero</title>
+  <meta name="description" content="Reporte mensual FP&A sobre un caso sintético: ventas S/ 28.40M vs S/ 30.10M, EBITDA S/ 2.35M vs S/ 3.30M, CCC de 79 días y decisión de línea por S/ 2.5M. Modelo Excel con fórmulas y 1-pager de directorio descargables.">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#0b6d9e">
+  <link rel="canonical" href="https://fjgl96.github.io/proyectos/fpa-pack.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="FP&A Monthly Pack — Distribuidora sintética · Junio 2026 — Francisco Guerrero">
+  <meta property="og:description" content="Ventas S/ 28.40M vs S/ 30.10M, EBITDA S/ 2.35M vs S/ 3.30M, CCC de 79 días. Modelo Excel con fórmulas y 1-pager de directorio, todo descargable.">
+  <meta property="og:url" content="https://fjgl96.github.io/proyectos/fpa-pack.html">
+  <meta property="og:image" content="https://fjgl96.github.io/assets/img/og-image.jpg">
+  <meta property="og:image:alt" content="FP&A Monthly Pack — reporte mensual con puente de EBITDA y ciclo de conversión">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://fjgl96.github.io/assets/img/og-image.jpg">
+  <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Raleway:400,600,700|Poppins:400,500,600,700&display=swap" rel="stylesheet">
+  <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="../assets/css/style.css" rel="stylesheet">
+  <link href="../assets/css/custom.css" rel="stylesheet">
+  <link href="../assets/css/subpagina.css" rel="stylesheet">
+</head>
+<body class="subpagina">
+  <a href="#contenido" class="skip-link">Saltar al contenido</a>
+
+  <header class="sub-top">
+    <div class="container">
+      <a href="../index.html#proyectos" class="sub-volver">
+        <i class="bi bi-arrow-left" aria-hidden="true"></i> Proyectos
+      </a>
+      <a href="../index.html" class="sub-marca">Francisco Guerrero</a>
+    </div>
+  </header>
+
+  <main id="contenido">
+    <article class="container sub-wrap">
+
+      <header class="sub-head">
+        <span class="proyecto-estado proyecto-estado--activo">En línea</span>
+        <p class="sub-modulo"><span lang="en">FP&amp;A</span> — reporte mensual y control de gestión</p>
+        <h1>FP&amp;A Monthly Pack</h1>
+        <p class="sub-lead">El cierre de junio de una distribuidora importadora, explicado como se explica en un
+          directorio: qué se desvió, por qué, cuánta caja inmovilizó y qué se propone. Con modelo abierto.</p>
+        <div class="proyecto-links">
+          <a href="https://fpa-pack.vercel.app/" target="_blank" rel="noopener" class="btn-demo">
+            Abrir el demo <i class="bi bi-box-arrow-up-right" aria-hidden="true"></i>
+          </a>
+          <a href="../assets/demo/fpa-pack/fpa_pack_jun2026.xlsx" class="btn-repo" download>
+            Descargar el modelo <i class="bi bi-file-earmark-excel" aria-hidden="true"></i>
+          </a>
+          <a href="../assets/demo/fpa-pack/fpa_1pager_jun2026.pdf" class="btn-repo" target="_blank" rel="noopener">
+            Leer el 1-pager <i class="bi bi-file-earmark-pdf" aria-hidden="true"></i>
+          </a>
+        </div>
+        <p class="proyecto-nota"><em>Caso 100% sintético con fines demostrativos: la empresa, las cifras y los
+          documentos son inventados y no corresponden a ningún cliente real.</em></p>
+      </header>
+
+      <figure class="proyecto-media sub-figura">
+        <img width="900" height="400" src="../assets/img/proyectos/flujo-fpa-pack.svg" alt="Flujo del FP&A Monthly Pack: del cierre contable y el presupuesto al modelo de tres estados, el pack de directorio y la decisión" loading="lazy" decoding="async">
+        <figcaption>Del cierre al directorio en cuatro pasos: entradas, modelo con fórmulas, pack y decisión.</figcaption>
+      </figure>
+
+      <section class="sub-seccion" aria-labelledby="t-que">
+        <h2 id="t-que">Qué responde</h2>
+        <p>Un reporte mensual no resume el mes: lo atribuye. Este pack parte del cierre de junio 2026 de
+          <strong>Distribuidora Andina del Sur S.A.C.</strong>, importadora sintética de S/ 60.2M anuales de
+          presupuesto (~US$ 16M), con 70% de compras en dólares, y responde las cuatro preguntas que un
+          directorio hace siempre: cuánto se vendió contra el plan, dónde se perdió el margen, cuánta caja
+          se inmovilizó y qué se pide aprobar.</p>
+        <p class="proyecto-concepto"><strong>El concepto.</strong> El error de principiante es comparar el real
+          contra el ppto y describir la diferencia. Lo correcto es atribuirla: cuánto es volumen, cuánto es
+          precio y mix, cuánto es tipo de cambio y cuánto es decisión comercial. Eso es lo que convierte un
+          reporte en una recomendación defendible —y es lo que este pack hace con el puente de EBITDA.</p>
+        <ul class="proyecto-tech"><li>Excel con fórmulas</li><li>PyG · Balance · KPIs</li><li>Puente EBITDA</li><li>Exposición FX</li><li>Forecast FY</li></ul>
+      </section>
+
+      <section class="sub-seccion" aria-labelledby="t-caso">
+        <h2 id="t-caso">El H1 con números fijos</h2>
+        <p>Corte a junio, seis meses acumulados. Ventas <strong>S/ 28.40M vs S/ 30.10M</strong> del ppto
+          (−5.6%, −S/ 1.70M): el desvío se concentra de abril en adelante y en el canal Institucional
+          (−14.5%), mientras Mayorista sostiene (−1.7%). El margen bruto cae a <strong>22.1%</strong>
+          (ppto 24.0%): 110 puntos por tipo de cambio (S/ 3.72 → 3.81), el resto por descuento defensivo
+          y mix hacia Hogar.</p>
+        <figure class="proyecto-media sub-figura">
+          <img width="1350" height="600" src="../assets/img/proyectos/fpa-pack-ventas.png" alt="Ventas mensuales H1 2026 real versus presupuesto: el real queda por debajo del ppto los seis meses" loading="lazy" decoding="async">
+          <figcaption>Seis meses por debajo del plan, con la brecha abriéndose en el segundo trimestre.</figcaption>
+        </figure>
+        <div class="notas-grid">
+          <div class="nota-bloque"><h3>EBITDA: S/ 2.35M vs S/ 3.30M</h3><p>Desvío de −S/ 950k (−28.8%). Margen 8.3% vs 11.0% del ppto.</p></div>
+          <div class="nota-bloque"><h3>Neta: S/ 0.66M vs S/ 1.55M</h3><p>La diferencia de cambio (−S/ 280k) y los financieros (+S/ 130k) amplifican la caída operativa.</p></div>
+          <div class="nota-bloque"><h3>CCC: 64 → 79 días</h3><p>DSO 52 (+7 vs ppto) por institucional moroso; DIO 61 por sobrestock de Hogar; DPO 34.</p></div>
+          <div class="nota-bloque"><h3>Deuda CP: +S/ 2.30M</h3><p>El capital de trabajo se financia con corto plazo. Deuda/EBITDA LTM 1.80x; cobertura 3.6x.</p></div>
+        </div>
+        <figure class="proyecto-media sub-figura" style="margin-top:26px">
+          <img width="1500" height="630" src="../assets/img/proyectos/fpa-pack-bridge.png" alt="Puente de EBITDA del H1: del ppto de 3.30 millones al real de 2.35 millones, con volumen, precio, costo cambiario, descuento, fletes y ahorro de marketing" loading="lazy" decoding="async">
+          <figcaption>Los −S/ 950k, atribuidos: volumen −410k, costo FX −300k, descuento −120k, precio/mix −120k, fletes −180k, ahorro +180k.</figcaption>
+        </figure>
+        <p>La foto cambiaria cierra el diagnóstico: exposición neta pasiva de <strong>USD 1.10M</strong>,
+          sin cobertura. Cada 10 céntimos mueven <strong>S/ 110k</strong>, cerca del 17% de la utilidad
+          neta del semestre. El forecast base lleva el año a ventas S/ 58.5M y EBITDA S/ 5.4M, con pico
+          de deuda de S/ 11.2M en octubre —de ahí el pedido de línea por S/ 2.5M y el forward del 50%.</p>
+        <figure class="proyecto-media sub-figura">
+          <img width="1050" height="540" src="../assets/img/proyectos/fpa-pack-ccc.png" alt="Ciclo de conversión de caja: de 64 días en diciembre a 79 días en junio" loading="lazy" decoding="async">
+          <figcaption>Quince días más de ciclo: la caja que el PyG no muestra y el balance sí.</figcaption>
+        </figure>
+      </section>
+
+      <section class="sub-seccion" aria-labelledby="t-bloques">
+        <h2 id="t-bloques">Cómo está compuesto</h2>
+        <p>Nueve hojas, una sola regla: ningún total se escribe a mano. Todo desvío es <code>=REAL−PPTO</code>
+          y todo margen es <code>=CUENTA/VENTAS</code>. El 1-pager de directorio sale del modelo, no al revés.</p>
+        <figure class="proyecto-media sub-figura sub-figura--bloques">
+          <div class="sub-figura-lienzo">
+            <img width="900" height="468" src="../assets/img/proyectos/bloques-fpa-pack.svg" alt="Diagrama de bloques del FP&A Monthly Pack: entradas, motor de fórmulas con PyG, balance, KPIs, puente y FX, y salidas en PDF y Excel" loading="lazy" decoding="async">
+          </div>
+          <figcaption>Entradas a la izquierda, motor con fórmulas al centro, salidas descargables a la derecha.</figcaption>
+        </figure>
+        <div class="notas-grid">
+          <div class="nota-bloque"><h3>PyG con fórmulas</h3><p>Desvíos y márgenes calculados, no pegados. El puente explica los −950k del EBITDA.</p></div>
+          <div class="nota-bloque"><h3>Balance que cuadra</h3><p>Activo S/ 25.31M = Pasivo + Patrimonio. El patrimonio ata con la neta del H1.</p></div>
+          <div class="nota-bloque"><h3>KPIs con semáforo</h3><p>DSO, DIO, DPO y CCC con fórmula y lectura vs ppto. Deuda y cobertura incluidas.</p></div>
+          <div class="nota-bloque"><h3>FX y forecast</h3><p>Exposición en USD con sensibilidad y FY base con plan A1–A5 cuantificado.</p></div>
+        </div>
+      </section>
+
+      <section class="sub-seccion" aria-labelledby="t-verificado">
+        <h2 id="t-verificado">Qué está verificado</h2>
+        <p>Tres invariantes, comprobadas por el generador antes de publicar. El balance cuadra al sol en
+          ambos cortes (dic-25 S/ 23.50M, jun-26 S/ 25.31M). El patrimonio de junio es el de diciembre más
+          la utilidad neta del H1, al centavo. El puente suma exactamente el desvío de EBITDA. Los números
+          que declara esta ficha son los que devuelve el Excel: si alguna fórmula se rompe, se nota.</p>
+        <div class="proyecto-links">
+          <a href="../assets/demo/fpa-pack/fpa_pack_jun2026.xlsx" class="btn-demo" download>Abrir el Excel <i class="bi bi-file-earmark-excel" aria-hidden="true"></i></a>
+          <a href="../assets/demo/fpa-pack/fpa_1pager_jun2026.pdf" class="btn-repo" target="_blank" rel="noopener">1-pager en PDF <i class="bi bi-file-earmark-pdf" aria-hidden="true"></i></a>
+          <a href="../assets/demo/fpa-pack/data.json" class="btn-repo" target="_blank" rel="noopener">data.json</a>
+        </div>
+        <p class="proyecto-nota" style="margin-top:14px">Reproducible:
+          <a href="../assets/demo/fpa-pack/gen_data.py">gen_data.py</a> ·
+          <a href="../assets/demo/fpa-pack/gen_modelo.py">gen_modelo.py</a> ·
+          <a href="../assets/demo/fpa-pack/gen_pdf.py">gen_pdf.py</a> ·
+          <a href="../assets/demo/fpa-pack/README.md">README del caso</a></p>
+      </section>
+
+      <section class="sub-seccion" aria-labelledby="t-contacto">
+        <h2 id="t-contacto">¿Un pack así para tu cierre?</h2>
+        <p>Si tu mes cierra en varios Excels, el real vs ppto se explica de memoria y el directorio pide
+          la caja que el reporte no muestra, escríbeme: lo armamos con tus cuentas y tus drivers.</p>
+        <div class="proyecto-links">
+          <a href="../index.html#contact" class="btn-demo">Escríbeme <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
+        </div>
+      </section>
+    </article>
+  </main>
+
+  <footer id="footer" class="sub-footer">
+    <div class="container">
+      <div class="copyright">&copy; <strong><span>Francisco Guerrero López</span></strong></div>
+      <div class="credits"><span lang="en">Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a></span></div>
+    </div>
+  </footer>
+</body>
+</html>

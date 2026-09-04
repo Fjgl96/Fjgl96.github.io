@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="400" viewBox="0 0 900 400" role="img" aria-label="Flujo del FP&A Monthly Pack: del cierre contable al reporte de directorio">
+<defs>
+  <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+    <path d="M0 0 L10 5 L0 10 z" fill="#9db9d6"/>
+  </marker>
+  <style>
+    .bx{fill:#ffffff;stroke:#cfe0f2;stroke-width:1.5}
+    .bxa{fill:#149ddd;stroke:#149ddd;stroke-width:1.5}
+    .t{font-family:Raleway,Helvetica,Arial,sans-serif;font-size:14px;font-weight:700;fill:#173b6c}
+    .ta{font-family:Raleway,Helvetica,Arial,sans-serif;font-size:14px;font-weight:700;fill:#fff}
+    .s{font-family:'Open Sans',Helvetica,Arial,sans-serif;font-size:11px;fill:#6f7180}
+    .sa{font-family:'Open Sans',Helvetica,Arial,sans-serif;font-size:11px;fill:#dff3fc}
+    .lb{font-family:Poppins,Helvetica,Arial,sans-serif;font-size:10px;font-weight:600;letter-spacing:1.2px;fill:#a8b6cc}
+    .ln{stroke:#9db9d6;stroke-width:1.6;fill:none;marker-end:url(#ar)}
+  </style>
+</defs>
+<rect width="900" height="400" fill="#f5f8fd"/>
+<text class="lb" x="16" y="22">CIERRE</text><text class="lb" x="252" y="22">MODELO</text><text class="lb" x="500" y="22">PACK</text><text class="lb" x="716" y="22">DECISIÓN</text>
+<rect class="bx" x="16" y="60" width="200" height="110" rx="8"/><text class="t" x="116" y="102" text-anchor="middle">ERP + TC BCRP</text><text class="s" x="116" y="120" text-anchor="middle">ventas, CxC, inventarios</text><text class="s" x="116" y="136" text-anchor="middle">CxP, deuda, tipo de cambio</text>
+<rect class="bx" x="16" y="200" width="200" height="110" rx="8"/><text class="t" x="116" y="242" text-anchor="middle">Presupuesto 2026</text><text class="s" x="116" y="260" text-anchor="middle">mes × canal × línea</text><text class="s" x="116" y="276" text-anchor="middle">S/ 60.2M aprobado</text>
+<rect class="bx" x="252" y="110" width="212" height="150" rx="8"/><text class="t" x="358" y="152" text-anchor="middle">Modelo 3 estados</text><text class="s" x="358" y="170" text-anchor="middle">PyG · Balance · KPIs</text><text class="s" x="358" y="186" text-anchor="middle">bridge EBITDA · FX</text><text class="s" x="358" y="202" text-anchor="middle">todo con fórmulas</text><text class="s" x="358" y="228" text-anchor="middle">variance + forecast FY</text>
+<rect class="bx" x="500" y="60" width="180" height="110" rx="8"/><text class="t" x="590" y="102" text-anchor="middle">1-pager directorio</text><text class="s" x="590" y="120" text-anchor="middle">titular · PyG · puente</text><text class="s" x="590" y="136" text-anchor="middle">caja · decisión A1–A5</text>
+<rect class="bx" x="500" y="200" width="180" height="110" rx="8"/><text class="t" x="590" y="242" text-anchor="middle">Anexos auditables</text><text class="s" x="590" y="260" text-anchor="middle">Excel 9 hojas + data.json</text><text class="s" x="590" y="276" text-anchor="middle">diccionario + linaje</text>
+<rect class="bxa" x="716" y="110" width="168" height="150" rx="8"/><text class="ta" x="800" y="158" text-anchor="middle">Línea S/ 2.5M</text><text class="sa" x="800" y="178" text-anchor="middle">forward 50% · pricing</text><text class="sa" x="800" y="194" text-anchor="middle">cobranza · recorte</text><text class="sa" x="800" y="210" text-anchor="middle">compra hogar</text><text class="sa" x="800" y="232" text-anchor="middle">pico octubre cubierto</text>
+<path class="ln" d="M216 115 H248"/><path class="ln" d="M216 255 H248"/>
+<path class="ln" d="M464 185 H496"/><path class="ln" d="M464 185 H496"/>
+<path class="ln" d="M680 115 H712"/><path class="ln" d="M680 255 H712"/>
+<text class="lb" x="16" y="352">CORTE JUN-26 · H1 REAL S/ 28.40M VS PPTO S/ 30.10M · EBITDA S/ 2.35M VS S/ 3.30M · CCC 79 DÍAS</text>
+</svg>

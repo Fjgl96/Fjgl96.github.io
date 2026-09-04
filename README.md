@@ -16,6 +16,7 @@ El archivo `.nojekyll` evita que Jekyll procese los assets.
 ```
 index.html                 Portada (una sola página, navegación por anclas)
 proyectos/                 Una sub-página por proyecto
+  fpa-pack.html            FP&A Monthly Pack (caso sintético, primero en portada)
   lab-planeamiento.html    Laboratorio de Planeamiento Financiero
   portfolio-suite.html     En desarrollo
   panel-minero.html
@@ -54,6 +55,7 @@ assets/
   img/og-image.jpg         Imagen para compartir (1200 × 630)
   docs/cv-francisco-guerrero.pdf  CV en PDF (botón de descarga de la sección CV)
   demo/reporte-ejecutivo/  Demo del flujo de reporte sobre un caso sintético
+  demo/fpa-pack/          Modelo Excel con fórmulas + 1-pager + data.json (sintético)
   vendor/                  Bootstrap (solo CSS), Bootstrap Icons, AOS, Typed.js, PureCounter
 ```
 
