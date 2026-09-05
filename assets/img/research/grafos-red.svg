@@ -71,11 +71,11 @@
 <text class="s" x="440" y="384">del nodo y los restablece cuando se recupera.</text>
 <!-- Legend -->
 <g>
-  <circle class="sus" cx="760" cy="120" r="9"/><text class="s" x="775" y="124">Susceptible</text>
-  <circle class="inf" cx="760" cy="148" r="9"/><text class="s" x="775" y="152">Infectado</text>
-  <circle class="res" cx="760" cy="176" r="9"/><text class="s" x="775" y="180">Restringido</text>
-  <text class="s" x="740" y="220">300 nodos · grado medio 5,7</text>
-  <text class="s" x="740" y="237">Capacidad de aislamiento: 10 %</text>
-  <text class="s" x="740" y="254">El planificador actúa desde t = 2000</text>
+  <circle class="sus" cx="752" cy="120" r="9"/><text class="s" x="767" y="124">Susceptible</text>
+  <circle class="inf" cx="752" cy="148" r="9"/><text class="s" x="767" y="152">Infectado</text>
+  <circle class="res" cx="752" cy="176" r="9"/><text class="s" x="767" y="180">Restringido</text>
+  <text class="s" x="720" y="220">300 nodos · grado medio 5,7</text>
+  <text class="s" x="720" y="237">Aislamiento máx.: 10 %</text>
+  <text class="s" x="720" y="254">Actúa desde t = 2000</text>
 </g>
 </svg>

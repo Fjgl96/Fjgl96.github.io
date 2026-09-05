@@ -37,7 +37,18 @@
   </header>
 
   <main id="contenido">
-    <article class="container sub-wrap">
+    <article class="container sub-wrap sub-wrap--ancho">
+      <style>
+        .sis-duo{display:grid;grid-template-columns:1.6fr 1fr;gap:22px;align-items:start;margin:4px 0}
+        @media(max-width:991px){.sis-duo{grid-template-columns:1fr}}
+        .ficha-sis{margin:0}
+        .ficha-sis dt{font-family:Poppins,Helvetica,Arial,sans-serif;font-size:10.5px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:#0b6d9e;margin-top:12px}
+        .ficha-sis dt:first-child{margin-top:0}
+        .ficha-sis dd{margin:3px 0 0;font-size:13.5px;line-height:1.6;color:#272829}
+        .cta-mini{display:flex;flex-direction:column;justify-content:center;height:100%;background:#040b14;border-radius:10px;padding:28px 26px;color:#fff}
+        .cta-mini h3{font-family:Raleway,sans-serif;font-size:19px;font-weight:700;margin:0 0 10px}
+        .cta-mini p{font-size:13.5px;line-height:1.65;color:#a8a9b4;margin:0 0 18px}
+      </style>
       <header class="sub-head">
         <p class="sub-modulo">Sistemas sociales complejos · Diciembre 2021</p>
         <h1 lang="en">Dynamics of contagion and immunity thresholds in social environments: an approach from graph systems</h1>
@@ -52,27 +63,267 @@
         </div>
       </header>
 
+      <section class="sub-seccion agents" aria-labelledby="t-panel">
+        <h2 id="t-panel">El paper en 7 piezas</h2>
+        <p>Cuatro números para ubicarse y siete piezas para recorrerlo: el mecanismo, la red, la política, el umbral, las fricciones, el laboratorio y el documento. Cada tarjeta lleva a su sección.</p>
+
+        <div class="row no-gutters agents-stats">
+          <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch">
+            <div class="count-box">
+              <i class="bi bi-diagram-3" aria-hidden="true"></i>
+              <span>300</span>
+              <p><strong>Nodos</strong> en la red simulada</p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch">
+            <div class="count-box">
+              <i class="bi bi-sliders" aria-hidden="true"></i>
+              <span>0,40</span>
+              <p><strong>Umbral β:</strong> extingue o endemia</p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch">
+            <div class="count-box">
+              <i class="bi bi-exclamation-triangle" aria-hidden="true"></i>
+              <span>18 %</span>
+              <p><strong>Error de testeo</strong> que rompe todo</p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch">
+            <div class="count-box">
+              <i class="bi bi-clipboard2-check" aria-hidden="true"></i>
+              <span>70 %</span>
+              <p><strong>Testeo mínimo</strong> para erradicar</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="row agents-grid">
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+            <article class="agent-card">
+              <header class="agent-head">
+                <div class="agent-icon"><i class="bi bi-share" aria-hidden="true"></i></div>
+                <div class="agent-tags"><span class="agent-id">01</span><span class="agent-version">SIS</span></div>
+              </header>
+              <h3 class="agent-name">El contagio</h3>
+              <p class="agent-interno" lang="en">One link, one dice roll</p>
+              <p class="agent-tagline">Cada infectado tira los dados con cada vecino, en cada paso.</p>
+              <ul class="agent-specs">
+                <li><i class="bi bi-check2" aria-hidden="true"></i> p = 0,7 de contagio por link y por iteración</li>
+                <li><i class="bi bi-check2" aria-hidden="true"></i> r = 0,6 de recuperación: el nodo vuelve a ser susceptible</li>
+                <li><i class="bi bi-check2" aria-hidden="true"></i> Con k vecinos infectados: P = 1 − (1 − p)<sup>k</sup></li>
+              </ul>
+              <div class="agent-pipeline">
+                <span class="agent-pipeline-label">Mecanismo</span>
+                <span>Vecino</span><span>Tiro</span><span>Contagio</span><span>Repite</span>
+              </div>
+              <a class="agent-ficha" href="#p-ejercicio">Probar el simulador <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
+              <footer class="agent-foot">
+                <span class="agent-chip">p = 0,7</span><span class="agent-chip">r = 0,6</span><span class="agent-chip">SIS</span>
+              </footer>
+            </article>
+          </div>
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+            <article class="agent-card">
+              <header class="agent-head">
+                <div class="agent-icon"><i class="bi bi-diagram-3" aria-hidden="true"></i></div>
+                <div class="agent-tags"><span class="agent-id">02</span><span class="agent-version">Red</span></div>
+              </header>
+              <h3 class="agent-name">La red</h3>
+              <p class="agent-interno" lang="en">Random graph, unequal influence</p>
+              <p class="agent-tagline">Trescientos nodos al azar, pero no todos pesan igual.</p>
+              <ul class="agent-specs">
+                <li><i class="bi bi-check2" aria-hidden="true"></i> Erdös–Rényi: 300 nodos, grado medio 5,7</li>
+                <li><i class="bi bi-check2" aria-hidden="true"></i> Los hubs contagian a más vecinos en promedio</li>
+                <li><i class="bi bi-check2" aria-hidden="true"></i> Discriminar por grado restaura el umbral epidémico</li>
+              </ul>
+              <div class="agent-pipeline">
+                <span class="agent-pipeline-label">Sistema</span>
+                <span>Red</span><span>Grado</span><span>Hub</span><span>Aislar</span>
+              </div>
+              <a class="agent-ficha" href="#p-modelo">Ver el sistema <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
+              <footer class="agent-foot">
+                <span class="agent-chip">300 nodos</span><span class="agent-chip">5,7 links</span>
+              </footer>
+            </article>
+          </div>
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+            <article class="agent-card">
+              <header class="agent-head">
+                <div class="agent-icon"><i class="bi bi-bank" aria-hidden="true"></i></div>
+                <div class="agent-tags"><span class="agent-id">03</span><span class="agent-version">Política</span></div>
+              </header>
+              <h3 class="agent-name">El planificador</h3>
+              <p class="agent-interno" lang="en">Sees the network, not the sick</p>
+              <p class="agent-tagline">Ve la red, no a los enfermos: tiene que testear para decidir.</p>
+              <ul class="agent-specs">
+                <li><i class="bi bi-check2" aria-hidden="true"></i> Conoce adyacencias, no estados: testea cada nodo</li>
+                <li><i class="bi bi-check2" aria-hidden="true"></i> Si hay infección, decide aislar (tope: 10 % de la red)</li>
+                <li><i class="bi bi-check2" aria-hidden="true"></i> Minimiza L = β·links² + (1 − β)·infectados²</li>
+              </ul>
+              <div class="agent-pipeline">
+                <span class="agent-pipeline-label">Decisión</span>
+                <span>Test</span><span>Costo</span><span>β</span><span>Aislar</span>
+              </div>
+              <a class="agent-ficha" href="#p-mapa">Ver la decisión <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
+              <footer class="agent-foot">
+                <span class="agent-chip">β ∈ [0,1]</span><span class="agent-chip">Tope 10 %</span>
+              </footer>
+            </article>
+          </div>
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+            <article class="agent-card">
+              <header class="agent-head">
+                <div class="agent-icon"><i class="bi bi-sliders" aria-hidden="true"></i></div>
+                <div class="agent-tags"><span class="agent-id">04</span><span class="agent-version">β ≈ 0,40</span></div>
+              </header>
+              <h3 class="agent-name">El umbral</h3>
+              <p class="agent-interno" lang="en">How much must health weigh?</p>
+              <p class="agent-tagline">Cuánto debe pesar la salud para extinguir el virus.</p>
+              <ul class="agent-specs">
+                <li><i class="bi bi-check2" aria-hidden="true"></i> β ≤ 0,39: la epidemia se extingue</li>
+                <li><i class="bi bi-check2" aria-hidden="true"></i> β ≥ 0,41: la epidemia se vuelve endémica</li>
+                <li><i class="bi bi-check2" aria-hidden="true"></i> β = 1 no restringe nada: endemia del 53 %</li>
+              </ul>
+              <div class="agent-pipeline">
+                <span class="agent-pipeline-label">Resultado</span>
+                <span>β bajo</span><span>Aislar</span><span>Extingue</span>
+              </div>
+              <a class="agent-ficha" href="#p-umbral">Ver el umbral <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
+              <footer class="agent-foot">
+                <span class="agent-chip">Extingue</span><span class="agent-chip">Endemia</span>
+              </footer>
+            </article>
+          </div>
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+            <article class="agent-card">
+              <header class="agent-head">
+                <div class="agent-icon"><i class="bi bi-exclamation-triangle" aria-hidden="true"></i></div>
+                <div class="agent-tags"><span class="agent-id">05</span><span class="agent-version">Testeo</span></div>
+              </header>
+              <h3 class="agent-name">Las fricciones</h3>
+              <p class="agent-interno" lang="en">An upper bound, not a promise</p>
+              <p class="agent-tagline">El umbral es cota superior: supone testeo perfecto.</p>
+              <ul class="agent-specs">
+                <li><i class="bi bi-check2" aria-hidden="true"></i> Error &gt; 18 %: endemia aun con β = 0</li>
+                <li><i class="bi bi-check2" aria-hidden="true"></i> Testeo &lt; 70 %: solo se reduce, no se erradica</li>
+                <li><i class="bi bi-check2" aria-hidden="true"></i> Aislar no basta: entra la vacunación</li>
+              </ul>
+              <div class="agent-pipeline">
+                <span class="agent-pipeline-label">Fricción</span>
+                <span>Test</span><span>Error</span><span>Falla</span><span>Endemia</span>
+              </div>
+              <a class="agent-ficha" href="#p-fricciones">Ver las fricciones <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
+              <footer class="agent-foot">
+                <span class="agent-chip">&gt; 18 %</span><span class="agent-chip">&lt; 70 %</span>
+              </footer>
+            </article>
+          </div>
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+            <article class="agent-card">
+              <header class="agent-head">
+                <div class="agent-icon"><i class="bi bi-play-circle" aria-hidden="true"></i></div>
+                <div class="agent-tags"><span class="agent-id">06</span><span class="agent-version">Lab</span></div>
+              </header>
+              <h3 class="agent-name">El ejercicio</h3>
+              <p class="agent-interno" lang="en">Move p and k, roll the dice</p>
+              <p class="agent-tagline">Mueve p y k y simula el contagio de un nodo.</p>
+              <ul class="agent-specs">
+                <li><i class="bi bi-check2" aria-hidden="true"></i> Fórmula viva: 1 − (1 − p)<sup>k</sup> con barra</li>
+                <li><i class="bi bi-check2" aria-hidden="true"></i> Estrella de vecinos que se redibuja sola</li>
+                <li><i class="bi bi-check2" aria-hidden="true"></i> Historial empírico contra valor teórico</li>
+              </ul>
+              <div class="agent-pipeline">
+                <span class="agent-pipeline-label">Práctica</span>
+                <span>p y k</span><span>Paso</span><span>Historial</span><span>Compara</span>
+              </div>
+              <a class="agent-ficha" href="#p-ejercicio">Ir al laboratorio <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
+              <footer class="agent-foot">
+                <span class="agent-chip">Interactivo</span><span class="agent-chip">SVG</span>
+              </footer>
+            </article>
+          </div>
+
+          <div class="col-lg-8 col-md-6 d-flex align-items-stretch">
+            <article class="agent-card">
+              <header class="agent-head">
+                <div class="agent-icon"><i class="bi bi-file-earmark-pdf" aria-hidden="true"></i></div>
+                <div class="agent-tags"><span class="agent-id">07</span><span class="agent-version">PDF</span></div>
+              </header>
+              <h3 class="agent-name">Usos y documento</h3>
+              <p class="agent-interno" lang="en">From simulation to health policy</p>
+              <p class="agent-tagline">De la simulación a la política sanitaria: qué hacer cuando aislar no alcanza.</p>
+              <ul class="agent-specs">
+                <li><i class="bi bi-check2" aria-hidden="true"></i> Vacunar por influencia: priorizar los hubs de la red</li>
+                <li><i class="bi bi-check2" aria-hidden="true"></i> Productividad heterogénea: aislar al poco productivo cuesta menos</li>
+                <li><i class="bi bi-check2" aria-hidden="true"></i> Costo-beneficio: ¿vale la pena aislar si no se extingue?</li>
+              </ul>
+              <div class="agent-pipeline">
+                <span class="agent-pipeline-label">Salida</span>
+                <span>Aislar</span><span>Vacunar</span><span>Priorizar</span><span>Inmunidad</span>
+              </div>
+              <a class="agent-ficha" href="../assets/docs/complexSocialSystems.pdf" target="_blank" rel="noopener noreferrer">Leer el documento <i class="bi bi-box-arrow-up-right" aria-hidden="true"></i></a>
+              <footer class="agent-foot">
+                <span class="agent-chip">Dic 2021</span><span class="agent-chip">Código a pedido</span>
+              </footer>
+            </article>
+          </div>
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+            <div class="cta-mini w-100">
+              <h3>¿Redes en tu organización?</h3>
+              <p>Contagios, impagos en cadena, riesgo de contraparte: la misma matemática de hubs y umbrales.</p>
+              <a href="../index.html#contact" class="btn-demo">Escríbeme <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section class="sub-seccion" aria-labelledby="t-paper">
         <h2 id="t-paper">Cómo funciona el modelo</h2>
         <p>El paper pregunta cuánto tiene que pesar la economía frente a la salud para que una epidemia se vuelva endémica. La respuesta es un umbral de preferencias del planificador, y lo que lo mueve es a qué nodos decide aislar y con qué información cuenta.</p>
         <div class="paper-body">
-          <h3 class="paper-sub">El modelo</h3>
-          <p>
-            Los experimentos corren sobre una <strong>red aleatoria de Erdös–Rényi</strong> de 300 nodos con
-            grado medio de conectividad 5,7. Entra una enfermedad con tasa de contagio p = 0,7 y tasa de
-            recuperación r = 0,6. Cada nodo puede infectarse aunque ya se haya enfermado antes: es una
-            variante del modelo <strong>SIS</strong> (susceptible–infectado–susceptible), que sin intervención
-            converge a una <strong>endemia estable de alrededor del 53 %</strong> de la red infectada.
-          </p>
-          <p>
-            Desde la iteración 2000 actúa un <strong>planificador</strong> —un gobierno externo a la red— que
-            conoce la matriz de adyacencias pero no el estado de cada nodo: tiene que testear. Si el test
-            detecta infección, decide si <strong>restringe el nodo cortando todos sus links</strong> (con
-            capacidad máxima del 10 % de la red) y lo reconecta cuando sana. La decisión minimiza la
-            función de pérdida L<sub>t</sub> = β·(links₀ − links<sub>t</sub>)² + (1 − β)·infectados<sub>t</sub>²,
-            donde <strong>β ∈ [0,1]</strong> pondera economía frente a salud: β cercano a 0 es salud primero,
-            β cercano a 1 es economía primero.
-          </p>
+          <h3 class="paper-sub" id="p-modelo">El modelo</h3>
+          <div class="sis-duo">
+            <div>
+              <p>
+                Los experimentos corren sobre una <strong>red aleatoria de Erdös–Rényi</strong> de 300 nodos con
+                grado medio de conectividad 5,7. Entra una enfermedad con tasa de contagio p = 0,7 y tasa de
+                recuperación r = 0,6. Cada nodo puede infectarse aunque ya se haya enfermado antes: es una
+                variante del modelo <strong>SIS</strong> (susceptible–infectado–susceptible), que sin intervención
+                converge a una <strong>endemia estable de alrededor del 53 %</strong> de la red infectada.
+              </p>
+              <p>
+                Desde la iteración 2000 actúa un <strong>planificador</strong> —un gobierno externo a la red— que
+                conoce la matriz de adyacencias pero no el estado de cada nodo: tiene que testear. Si el test
+                detecta infección, decide si <strong>restringe el nodo cortando todos sus links</strong> (con
+                capacidad máxima del 10 % de la red) y lo reconecta cuando sana. La decisión minimiza la
+                función de pérdida L<sub>t</sub> = β·(links₀ − links<sub>t</sub>)² + (1 − β)·infectados<sub>t</sub>²,
+                donde <strong>β ∈ [0,1]</strong> pondera economía frente a salud: β cercano a 0 es salud primero,
+                β cercano a 1 es economía primero.
+              </p>
+            </div>
+            <aside class="nota-bloque ficha-sis" aria-label="Ficha del sistema">
+              <h3>Ficha del sistema</h3>
+              <dl>
+                <dt>Red</dt>
+                <dd>Erdös–Rényi · 300 nodos · grado medio 5,7</dd>
+                <dt>Enfermedad</dt>
+                <dd>SIS · p = 0,7 · r = 0,6 · endemia base 53 %</dd>
+                <dt>Planificador</dt>
+                <dd>Actúa desde t = 2000 · testea todo · aísla hasta 10 %</dd>
+                <dt>Decisión</dt>
+                <dd>L<sub>t</sub> con β ∈ [0,1]: economía frente a salud</dd>
+                <dt>Horizonte</dt>
+                <dd>10.000 iteraciones por experimento</dd>
+              </dl>
+            </aside>
+          </div>
 
           <figure class="proyecto-media paper-figura">
             <img src="../assets/img/research/grafos-red.svg" width="900" height="430" loading="lazy" decoding="async"
@@ -80,13 +331,13 @@
             <figcaption>El contagio viaja por los links; aislar un hub corta muchas rutas de golpe, pero cuesta links.</figcaption>
           </figure>
 
-          <figure class="proyecto-media paper-figura">
+          <figure class="proyecto-media paper-figura" id="p-mapa">
             <img src="../assets/img/research/grafos-ciclo.svg" width="900" height="380" loading="lazy" decoding="async"
                  alt="Mapa conceptual del ciclo de un nodo entre susceptible e infectado y la decisión del planificador según beta">
             <figcaption>El ciclo de cada nodo y la decisión del planificador, con el umbral y las fricciones que rompen el resultado.</figcaption>
           </figure>
 
-          <h3 class="paper-sub">Ejercicio: por qué los hubs mandan</h3>
+          <h3 class="paper-sub" id="p-ejercicio">Ejercicio: por qué los hubs mandan</h3>
           <p>
             Cada vecino infectado contagia con probabilidad <em>p</em> de forma independiente. Con
             <em>k</em> vecinos infectados, la probabilidad de contagiarse en un paso es
@@ -264,7 +515,7 @@
           })();
           </script>
 
-          <h3 class="paper-sub">El resultado</h3>
+          <h3 class="paper-sub" id="p-umbral">El resultado</h3>
           <p>
             Con β = 1 el planificador no restringe nada y la epidemia sigue su curso endémico. A medida que
             β se acerca a 0, los casos endémicos caen y los nodos aislados suben, hasta que con
@@ -280,21 +531,30 @@
             <figcaption>El umbral β ≈ 0,40 separa extinción de endemia; las fricciones de testeo lo desactivan.</figcaption>
           </figure>
 
-          <h3 class="paper-sub">Por qué importa</h3>
+          <h3 class="paper-sub" id="p-fricciones">Por qué importa</h3>
           <p>
             El umbral es una <strong>cota superior</strong>: supone testeo masivo y perfecto. Con
             <strong>error de diagnóstico mayor al 18 %</strong>, o con <strong>capacidad de testeo menor al
             70 % de la población</strong>, la epidemia se vuelve endémica aun con preferencias extremas por
             la salud (β = 0). Aislar conexiones, por más sesgado que esté hacia los nodos influyentes, no
-            alcanza cuando la información es incompleta y la tecnología imperfecta: ahí la discusión pasa a
-            si vale la pena el costo económico del aislamiento y a complementar con inmunización, como
-            campañas de vacunación priorizadas por influencia en la red.
+            alcanza cuando la información es incompleta y la tecnología imperfecta.
+          </p>
+
+          <h3 class="paper-sub" id="p-usos">Qué sigue: usos y extensiones</h3>
+          <p>
+            Si aislar no alcanza para extinguir, dos preguntas quedan abiertas. Primera, si vale la pena
+            pagar el costo económico del aislamiento a cambio de solo reducir la endemia. Segunda, cómo
+            complementar con <strong>inmunización</strong>: campañas de vacunación priorizadas por influencia
+            en la red, que vuelven irrelevante la heterogeneidad de grados para el contagio. El modelo además
+            supone productividad homogénea: con productividad heterogénea, aislar un infectado poco
+            productivo tendría menor costo de oportunidad —y si fuera del todo improductivo, erradicar
+            cuanto antes sería óptimo en salud y en economía.
           </p>
 
           <div class="notas-grid">
             <div class="nota-bloque">
-              <h3>Calibración base</h3>
-              <p>300 nodos · grado medio 5,7 · p = 0,7 · r = 0,6 · 10.000 iteraciones · el planificador actúa desde t = 2000 · capacidad de aislamiento 10 %.</p>
+              <h3>Endemia base</h3>
+              <p>Sin planificador, la red converge al 53 % infectado: es el punto de comparación contra el que se mide toda intervención.</p>
             </div>
             <div class="nota-bloque">
               <h3>Supuesto a notar</h3>
