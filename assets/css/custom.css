@@ -485,7 +485,7 @@ h3.paper-sub, h4.paper-sub, .paper-sub {
   margin: 22px 0 24px 0;
   overflow-x: auto;
 }
-.paper-figura img { min-width: 620px; }
+.paper-figura img { min-width: 480px; }
 .paper-cita {
   margin-top: 28px;
   padding-top: 18px;
@@ -864,8 +864,8 @@ a.indice-card:focus-visible { outline: 3px solid var(--accent-text); outline-off
 --------------------------------------------------------------*/
 .paper-figura {
   -webkit-overflow-scrolling: touch; scrollbar-width: thin;
-  -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 40px), transparent 100%);
-          mask-image: linear-gradient(to right, #000 calc(100% - 40px), transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 12px), transparent 100%);
+          mask-image: linear-gradient(to right, #000 calc(100% - 12px), transparent 100%);
 }
 .paper-figura:hover { -webkit-mask-image: none; mask-image: none; }
 @media (max-width: 991px) {

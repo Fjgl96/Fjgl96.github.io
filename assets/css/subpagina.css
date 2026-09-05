@@ -33,6 +33,9 @@ body.subpagina #footer { margin-left: 0; }
 
 .sub-wrap { max-width: 900px; padding-top: 48px; padding-bottom: 64px; }
 
+/* El header fijo tapaba los destinos de las anclas internas */
+#t-panel, #t-intro, #t-paper, .paper-sub, figure[id] { scroll-margin-top: 76px; }
+
 .sub-head { margin-bottom: 34px; }
 .sub-head h1 {
   font-family: "Raleway", sans-serif;

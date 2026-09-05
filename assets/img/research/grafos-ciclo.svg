@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="900" height="380" viewBox="0 0 900 380" role="img" aria-label="Mapa conceptual: ciclo SIS de un nodo y decisión del planificador según beta">
 <style>
   .lb{font-family:Poppins,Helvetica,Arial,sans-serif;font-size:10px;font-weight:600;letter-spacing:1.1px;fill:#0b6d9e}
@@ -26,8 +25,8 @@
 <text class="t" x="450" y="93" text-anchor="middle" style="fill:#922b21">Infectado</text>
 <text class="s" x="450" y="110" text-anchor="middle">contagia con p = 0,7</text>
 <!-- arrow S -> I -->
-<line class="flr" x1="230" y1="98" x2="355" y2="98"/>
-<polygon class="arrr" points="355,92 367,98 355,104"/>
+<line class="flr" x1="230" y1="98" x2="353" y2="98"/>
+<polygon class="arrr" points="353,92 365,98 353,104"/>
 <text class="s" x="292" y="88" text-anchor="middle">contagio</text>
 <!-- I -> branches -->
 <rect class="boxres" x="60" y="190" width="200" height="60" rx="8"/>
@@ -40,7 +39,7 @@
 <polygon class="arrb" points="194,183 198,195 208,188"/>
 <line class="fl" x1="500" y1="126" x2="470" y2="185"/>
 <polygon class="arr" points="464,183 468,195 478,188"/>
-<text class="s" x="300" y="165" text-anchor="middle">el planificador decide</text>
+<text class="s" x="300" y="158" text-anchor="middle" style="paint-order:stroke;stroke:#fff;stroke-width:4">el planificador decide</text>
 <!-- bottom: back to susceptible -->
 <rect class="box" x="245" y="296" width="170" height="52" rx="8"/>
 <text class="t" x="330" y="317" text-anchor="middle">Susceptible</text>
